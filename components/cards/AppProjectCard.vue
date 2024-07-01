@@ -19,7 +19,7 @@ const props = defineProps({
 });
 
 const isExternalUrl = computed(() => {
-  return props.projectUrl.startsWith("https://" || "http://");
+  return props.projectUrl.startsWith("https://");
 });
 </script>
 
