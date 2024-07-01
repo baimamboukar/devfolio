@@ -3,6 +3,8 @@ const profiles = {
   GitHub: "https://github.com/baimamboukar",
   X: "https://twitter.com/baimamboukar",
   LinkedIn: "https://linkedin.com/in/baimamboukar",
+  StackOverflow: "https://stackoverflow.com/users/12345678/baimamboukar",
+  HuggingFace: "https://huggingface.co/baimamboukar",
 };
 </script>
 
@@ -18,7 +20,7 @@ const profiles = {
       loading="lazy"
       width="112"
       height="112"
-      src="/profile.jpg"
+      src="/baimamboukar.jpeg"
       alt="Profile Picture"
       class="text-center border rounded-full w-28 border-zinc-200 dark:border-zinc-800"
     />

@@ -36,7 +36,7 @@ const handlePagination = {
     }
   },
   next() {
-    if (page.value <script totalPages.value) {
+    if (page.value < totalPages.value) {
       this.goTo(page.value + 1);
     }
   },

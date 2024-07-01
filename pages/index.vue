@@ -114,7 +114,7 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2">
         <template v-if="projectsPending">
           <app-project-skeleton
-            v-for="skeletonId in generateKeys(2)"
+            v-for="skeletonId in generateKeys(4)"
             :key="skeletonId"
           />
         </template>
