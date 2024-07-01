@@ -49,12 +49,12 @@ useSeoMeta({
       >
         <nuxt-link
           to="/projects"
-          class="no-underline focus-visible:global-focus border-b-[.1rem] border-b-green-500/75"
+          class="no-underline focus-visible:global-focus border-b-[.1rem] border-b-blue-500/75"
           >Projects</nuxt-link
         >
         <Icon
           name="heroicons:chevron-right-20-solid"
-          class="mx-1 text-green-500"
+          class="mx-1 text-blue-500"
         />
         <span>{{ doc.title }}</span>
       </h1>
@@ -101,7 +101,7 @@ useSeoMeta({
             :to="doc.live_url"
             title="Live Preview"
             aria-label="Live Preview"
-            class="flex items-center justify-center w-8 h-8 p-1 bg-green-500 border-none rounded-full text-zinc-800"
+            class="flex items-center justify-center w-8 h-8 p-1 bg-blue-500 border-none rounded-full text-zinc-800"
           >
             <Icon name="heroicons:arrow-up-right-20-solid" />
           </nuxt-link>

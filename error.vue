@@ -35,7 +35,7 @@ useSeoMeta({
 
   <!-- Mobile Navigation -->
   <app-nav
-    class="flex ring-1 ring-inset ring-green-500 md:hidden after:shadow-2xl"
+    class="flex ring-1 ring-inset ring-blue-500 md:hidden after:shadow-2xl"
   />
 </template>
 

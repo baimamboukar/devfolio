@@ -4,7 +4,7 @@
   >
     <p class="my-0 font-bold">Let's Connect</p>
 
-    <Icon name="heroicons:chevron-right-20-solid" class="text-green-500" />
+    <Icon name="heroicons:chevron-right-20-solid" class="text-blue-500" />
 
     <nuxt-link
       class="focus-visible:global-focus"

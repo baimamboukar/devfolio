@@ -1,13 +1,13 @@
 <script setup>
-  // Dark theme attributes
-  const isDark = useDark();
-  const toggle = () => !isDark;
+// Dark theme attributes
+const isDark = useDark();
+const toggle = () => !isDark;
 </script>
 
 <!-- Theme Toggle -->
 <template>
   <label
-    class="flex h-6 w-10 p-[.125rem] items-center cursor-pointer rounded-full bg-zinc-200 dark:bg-zinc-700 border border-zinc-300 dark:border-zinc-600 text-zinc-700 [&:has(:focus-visible)]:outline-none [&:has(:focus-visible)]:ring-2 [&:has(:focus-visible)]:ring-green-500 [&:has(:focus-visible)]:ring-opacity-50 [&:has(:focus-visible)]:ring-offset-0"
+    class="flex h-6 w-10 p-[.125rem] items-center cursor-pointer rounded-full bg-zinc-200 dark:bg-zinc-700 border border-zinc-300 dark:border-zinc-600 text-zinc-700 [&:has(:focus-visible)]:outline-none [&:has(:focus-visible)]:ring-2 [&:has(:focus-visible)]:ring-blue-500 [&:has(:focus-visible)]:ring-opacity-50 [&:has(:focus-visible)]:ring-offset-0"
     title="Toggle Theme"
     aria-label="Toggle Website Theme"
   >

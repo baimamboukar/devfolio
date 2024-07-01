@@ -1,6 +1,6 @@
 <script setup>
-  // Regex pattern for any blog post route
-  const routeRegEx = /(\/blog|\/leetcode)\/.*/i;
+// Regex pattern for any blog post route
+const routeRegEx = /(\/blog|\/leetcode)\/.*/i;
 </script>
 
 <!-- Sidebar -->
@@ -24,13 +24,13 @@
 </template>
 
 <style scoped>
-  /* Gradient Border: Content Backdrop */
-  #sidebar::before {
-    @apply content-[""] -z-10 absolute inset-0 md:-bottom-2 rounded-[calc(.75rem-2px)] dark:rounded-[calc(.75rem-1px)] md:rounded-b-none dark:md:rounded-b-none bg-gradient-to-b from-white to-zinc-50 dark:from-zinc-900 dark:to-zinc-950;
-  }
+/* Gradient Border: Content Backdrop */
+#sidebar::before {
+  @apply content-[""] -z-10 absolute inset-0 md:-bottom-2 rounded-[calc(.75rem-2px)] dark:rounded-[calc(.75rem-1px)] md:rounded-b-none dark:md:rounded-b-none bg-gradient-to-b from-white to-zinc-50 dark:from-zinc-900 dark:to-zinc-950;
+}
 
-  /* Gradient Border: Colorful Backdrop */
-  #sidebar::after {
-    @apply content-[""] -z-20 absolute inset-[-2px] dark:inset-[-1px] rounded-[.75rem] md:rounded-b-none bg-gradient-to-b from-green-500 via-lime-400 to-lime-400 md:to-transparent opacity-75 dark:opacity-60;
-  }
+/* Gradient Border: Colorful Backdrop */
+#sidebar::after {
+  @apply content-[""] -z-20 absolute inset-[-2px] dark:inset-[-1px] rounded-[.75rem] md:rounded-b-none bg-gradient-to-b from-blue-500 via-lime-400 to-lime-400 md:to-transparent opacity-75 dark:opacity-60;
+}
 </style>

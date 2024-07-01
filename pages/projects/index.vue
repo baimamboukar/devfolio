@@ -1,17 +1,15 @@
 <script setup>
-  definePageMeta({
-    title: "Projects",
-    description: "Projects that I am currently working on and have worked on."
-  });
+definePageMeta({
+  title: "Projects",
+  description: "Projects that I am currently working on and have worked on.",
+});
 
-  // Fetch all featured projects
-  const { pending, data: allProjects } = await useLazyAsyncData(
-    "projects",
-    () =>
-      queryContent("/projects")
-        .where({ title: { $ne: "More" } })
-        .find()
-  );
+// Fetch all featured projects
+const { pending, data: allProjects } = await useLazyAsyncData("projects", () =>
+  queryContent("/projects")
+    .where({ title: { $ne: "More" } })
+    .find()
+);
 </script>
 
 <!-- Projects Page -->
@@ -45,7 +43,7 @@
     <!-- Link to More Projects -->
     <nuxt-link
       to="/projects/more"
-      class="flex items-center justify-center w-24 py-2 font-semibold no-underline duration-150 bg-green-500 rounded-md focus-visible:global-focus text-zinc-800 group/hover-effect"
+      class="flex items-center justify-center w-24 py-2 font-semibold no-underline duration-150 bg-blue-500 rounded-md focus-visible:global-focus text-zinc-800 group/hover-effect"
       >More
       <Icon
         name="heroicons:chevron-right-20-solid"

@@ -68,7 +68,7 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
         <li
           v-for="skillName in skillset.essentials"
           :key="skillName"
-          class="text-green-500 list-inside"
+          class="text-blue-500 list-inside"
         >
           <span class="font-medium text-zinc-700 dark:text-zinc-300">{{
             skillName
@@ -86,7 +86,7 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
         <li
           v-for="skillName in skillset.tinker"
           :key="skillName"
-          class="text-green-500 list-inside"
+          class="text-blue-500 list-inside"
         >
           <span class="font-medium text-zinc-700 dark:text-zinc-300">{{
             skillName
@@ -104,7 +104,7 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
           My Projects
           <Icon
             name="heroicons:chevron-right-solid"
-            class="ml-2 text-green-500 group-hover:translate-x-1"
+            class="ml-2 text-blue-500 group-hover:translate-x-1"
           />
         </nuxt-link>
       </h2>
@@ -140,7 +140,7 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
           My Articles
           <Icon
             name="heroicons:chevron-right-solid"
-            class="ml-2 text-green-500 group-hover:translate-x-1"
+            class="ml-2 text-blue-500 group-hover:translate-x-1"
           />
         </nuxt-link>
       </h2>
@@ -175,14 +175,14 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
         class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:grid-flow-col gap-2 lg:[&_:first-child]:row-span-2 [&_:first-child]:col-span-2 lg:[&_:first-child]:col-span-1"
       >
         <div
-          class="flex items-center justify-center p-[1px] overflow-hidden font-medium shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:bg-gradient-to-b before:from-green-500 before:to-lime-400 rounded-[calc(.375rem+1px)] dark:before:opacity-60 focus-within:ring-2 ring-offset-0 focus-within:ring-green-400 focus-within:ring-opacity-75"
+          class="flex items-center justify-center p-[1px] overflow-hidden font-medium shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:bg-gradient-to-b before:from-blue-500 before:to-lime-400 rounded-[calc(.375rem+1px)] dark:before:opacity-60 focus-within:ring-2 ring-offset-0 focus-within:ring-blue-400 focus-within:ring-opacity-75"
         >
           <div
             class="flex flex-col items-center justify-center w-full h-full gap-6 p-4 bg-white rounded-md dark:bg-zinc-800"
           >
             <p class="text-lg font-bold">Let's Chat.</p>
             <nuxt-link
-              class="px-4 py-2 bg-green-500 rounded-lg focus-visible:outline-none text-zinc-800"
+              class="px-4 py-2 bg-blue-500 rounded-lg focus-visible:outline-none text-zinc-800"
               to="/contact"
               id="contact-btn"
               >Message</nuxt-link

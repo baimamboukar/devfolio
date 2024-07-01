@@ -131,7 +131,7 @@ async function submit(e) {
       </div>
 
       <button
-        class="px-4 py-2 font-medium bg-green-500 rounded-lg w-36 text-zinc-800 focus-visible:global-focus focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-zinc-800 focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:bg-zinc-400"
+        class="px-4 py-2 font-medium bg-blue-500 rounded-lg w-36 text-zinc-800 focus-visible:global-focus focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-zinc-800 focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:bg-zinc-400"
         :disabled="isSubmitting"
       >
         <Icon v-if="isSubmitting" name="svg-spinners:3-dots-fade" />

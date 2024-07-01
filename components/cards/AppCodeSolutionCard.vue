@@ -1,21 +1,21 @@
 <script setup>
-  const props = defineProps({
-    problemTitle: String,
-    url: String,
-    tags: Array,
-    problemUrl: String
-  });
+const props = defineProps({
+  problemTitle: String,
+  url: String,
+  tags: Array,
+  problemUrl: String,
+});
 
-  const platform = computed(() => {
-    let urlHostname = new URL(props.problemUrl).hostname.split(".");
-    return urlHostname[urlHostname.length - 2].toLowerCase();
-  });
+const platform = computed(() => {
+  let urlHostname = new URL(props.problemUrl).hostname.split(".");
+  return urlHostname[urlHostname.length - 2].toLowerCase();
+});
 </script>
 
 <!-- Coding Solution: Card -->
 <template>
   <nuxt-link
-    class="relative flex items-center justify-start w-full px-4 py-2 transition-colors duration-150 focus-visible:global-focus card-style rounded-xl hover:bg-green-50/25 dark:hover:bg-zinc-700/75"
+    class="relative flex items-center justify-start w-full px-4 py-2 transition-colors duration-150 focus-visible:global-focus card-style rounded-xl hover:bg-blue-50/25 dark:hover:bg-zinc-700/75"
     :to="url"
     :title="problemTitle"
   >

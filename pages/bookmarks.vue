@@ -77,7 +77,7 @@ watch(
         :disabled="pending || page <= INITIAL_PAGE"
         @click="handlePagination.prev()"
         type="button"
-        class="flex items-center justify-center w-1/2 md:w-24 py-1 font-semibold duration-150 bg-green-500 rounded-l-lg rounded-r-sm focus-visible:global-focus text-zinc-800 group/hover-effect disabled:bg-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed"
+        class="flex items-center justify-center w-1/2 md:w-24 py-1 font-semibold duration-150 bg-blue-500 rounded-l-lg rounded-r-sm focus-visible:global-focus text-zinc-800 group/hover-effect disabled:bg-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed"
       >
         <Icon
           name="heroicons:chevron-left-20-solid"
@@ -89,7 +89,7 @@ watch(
         :disabled="pending || page >= totalPages"
         @click="handlePagination.next()"
         type="button"
-        class="flex items-center justify-center w-1/2 md:w-24 py-1 font-semibold duration-150 bg-green-500 rounded-r-lg rounded-l-sm focus-visible:global-focus text-zinc-800 group/hover-effect disabled:bg-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed"
+        class="flex items-center justify-center w-1/2 md:w-24 py-1 font-semibold duration-150 bg-blue-500 rounded-r-lg rounded-l-sm focus-visible:global-focus text-zinc-800 group/hover-effect disabled:bg-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed"
       >
         Next
         <Icon

@@ -1,15 +1,15 @@
 <script setup>
-  import { OnClickOutside } from "@vueuse/components";
+import { OnClickOutside } from "@vueuse/components";
 
-  const menuToggled = ref(false);
-  const toggleMenu = useToggle(menuToggled);
+const menuToggled = ref(false);
+const toggleMenu = useToggle(menuToggled);
 
-  const navLinks = {
-    Home: "",
-    About: "about",
-    Projects: "projects",
-    Blog: "blog"
-  };
+const navLinks = {
+  Home: "",
+  About: "about",
+  Projects: "projects",
+  Blog: "blog",
+};
 </script>
 
 <!-- Navigation: Links -->
@@ -34,7 +34,7 @@
           {{ link }}
           <Icon
             name="heroicons:chevron-right-20-solid"
-            class="ml-2 text-green-500"
+            class="ml-2 text-blue-500"
           />
         </nuxt-link>
       </li>
@@ -50,7 +50,7 @@
     >
       <button
         @click="toggleMenu()"
-        class="flex items-center justify-center w-full h-10 px-4 py-1 font-semibold bg-green-500 rounded-lg md:hidden hover:bg-green-400 text-zinc-800"
+        class="flex items-center justify-center w-full h-10 px-4 py-1 font-semibold bg-blue-500 rounded-lg md:hidden hover:bg-blue-400 text-zinc-800"
         aria-label="Menu"
         title="Menu"
       >
@@ -66,26 +66,26 @@
 </template>
 
 <style scoped>
-  nav {
-    transition-property: width, max-height, padding;
-    transition-duration: 150ms;
-  }
+nav {
+  transition-property: width, max-height, padding;
+  transition-duration: 150ms;
+}
 
-  ul {
-    transition-property: opacity, visibility;
-    transition-duration: 500ms;
-    transition-delay: 500ms;
-  }
+ul {
+  transition-property: opacity, visibility;
+  transition-duration: 500ms;
+  transition-delay: 500ms;
+}
 
-  nav.toggled {
-    @apply w-[calc(100%-2rem)] flex max-h-80 overflow-hidden p-3;
-  }
+nav.toggled {
+  @apply w-[calc(100%-2rem)] flex max-h-80 overflow-hidden p-3;
+}
 
-  nav.toggled > ul {
-    @apply flex visible opacity-100;
-  }
+nav.toggled > ul {
+  @apply flex visible opacity-100;
+}
 
-  nav.toggled > button {
-    @apply mt-3;
-  }
+nav.toggled > button {
+  @apply mt-3;
+}
 </style>
