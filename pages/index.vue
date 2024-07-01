@@ -23,13 +23,13 @@ const skillset = ref({
 // Fetch latest 2 blog posts
 const { pending: blogsPending, data: blogPosts } = await useLazyAsyncData(
   "featured-posts",
-  () => queryContent("/blog").sort({ published_on: -1 }).limit(2).find()
+  () => queryContent("/blog").sort({ published_on: -1 }).limit(4).find()
 );
 
 // Fetch 2 featured projects
 const { pending: projectsPending, data: projects } = await useLazyAsyncData(
   "featured-projects",
-  () => queryContent("/projects").limit(2).find()
+  () => queryContent("/projects").limit(4).find()
 );
 </script>
 
@@ -39,7 +39,7 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
     <!-- Introduction -->
     <section>
       <h1 class="mb-4 text-2xl font-semibold">
-        Hi, I'm Baimam Boukar
+        Hi, I'm 🧞‍♂️ Baimam Boukar
         <span id="wave">👋</span>
       </h1>
       <p class="mb-4 text-xl font-medium text-zinc-700 dark:text-zinc-300">
