@@ -3,7 +3,8 @@ const profiles = {
   GitHub: "https://github.com/baimamboukar",
   X: "https://twitter.com/baimamboukar",
   LinkedIn: "https://linkedin.com/in/baimamboukar",
-  StackOverflow: "https://stackoverflow.com/users/12345678/baimamboukar",
+  StackOverflow:
+    "https://stackoverflow.com/users/15155605/baimam-boukar-jean-jacques",
   HuggingFace: "https://huggingface.co/baimamboukar",
 };
 </script>
