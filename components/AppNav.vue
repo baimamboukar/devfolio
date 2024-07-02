@@ -8,6 +8,7 @@ const navLinks = {
   Home: "",
   About: "about",
   Projects: "projects",
+  //Presentations "presentations",
   Blog: "blog",
 };
 </script>
