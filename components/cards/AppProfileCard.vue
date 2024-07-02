@@ -3,10 +3,11 @@ const profiles = {
   GitHub: "https://github.com/baimamboukar",
   X: "https://twitter.com/baimamboukar",
   LinkedIn: "https://linkedin.com/in/baimamboukar",
-  StackOverflow:
-    "https://stackoverflow.com/users/15155605/baimam-boukar-jean-jacques",
+  Medium: "https://baimamboukar.medium.com",
   HuggingFace: "https://huggingface.co/baimamboukar",
   Credly: "https://www.credly.com/users/baimamboukar",
+  StackOverflow:
+    "https://stackoverflow.com/users/15155605/baimam-boukar-jean-jacques",
 };
 </script>
 
@@ -27,10 +28,11 @@ const profiles = {
       class="text-center border rounded-full w-28 border-zinc-200 dark:border-zinc-800"
     />
     <h2 class="text-xl font-bold md:text-2xl text-zinc-900 dark:text-zinc-100">
-      Baimam Boukar
+      Baimam Boukar JJ
     </h2>
+
     <h2 class="text-lg font-medium md:text-xl text-zinc-700 dark:text-zinc-400">
-      Software Engineer
+      Software Engineer ⚡️
     </h2>
     <div
       class="flex items-center justify-center w-full h-8 text-zinc-900 dark:text-zinc-200"
