@@ -60,15 +60,15 @@ definePageMeta({
     </p>
     <app-divider class="md:my-6" />
     <p>
-      I'm a hobbyist photographer.
+      I'm a hobbyist Memer 🤗.
       <a
-        href="https://unsplash.com/@baimamboukar"
+        href="https://medium.com/@baimamboukar"
         class="focus-visible:global-focus focus-visible:rounded no-underline border-b-[.1rem] border-b-blue-500/75"
         target="_blank"
         external
-        >My photos on Unsplash</a
+        >My memes on WhatsApp statues</a
       >
-      have been viewed close to 7 million times 🤯.
+      have been viewed close to 20K times 🤯.
     </p>
     <br />
     <div
@@ -107,15 +107,15 @@ definePageMeta({
     </div>
     <br />
     <p>
-      I also enjoy playing story-driven games. So much so that I built
+      I also enjoy watching story-driven series.
       <a
-        href="https://playtales.baimamboukar.dev"
+        href="https://baimamboukar.dev"
         class="focus-visible:global-focus focus-visible:rounded no-underline border-b-[.1rem] border-b-blue-500/75"
         target="_blank"
       >
-        a full-stack project
+        Cool and Instructive
       </a>
-      around the idea. My current favorite - 'Banishers: Ghosts of New Eden'.
+      My current favorite - 'The BlackList'.
     </p>
   </article>
 </template>
