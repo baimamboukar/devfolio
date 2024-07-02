@@ -54,6 +54,51 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
         to share my passion and expertise.
       </p> -->
     </section>
+    <app-divider class="md:my-6" />
+    <section class="mb-2 space-y-2">
+      <div
+        class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:grid-flow-col gap-2 lg:[&_:first-child]:row-span-2 [&_:first-child]:col-span-2 lg:[&_:first-child]:col-span-1"
+      >
+        <div
+          class="flex items-center justify-center p-[1px] overflow-hidden font-medium shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:bg-gradient-to-b before:from-blue-500 before:to-lime-400 rounded-[calc(.375rem+1px)] dark:before:opacity-60 focus-within:ring-2 ring-offset-0 focus-within:ring-blue-400 focus-within:ring-opacity-75"
+        >
+          <div
+            class="flex flex-col items-center justify-center w-full h-full gap-6 p-4 bg-white rounded-md dark:bg-zinc-800"
+          >
+            <p class="text-lg font-bold">Let's Talk</p>
+            <nuxt-link
+              class="px-4 py-2 bg-blue-500 rounded-lg focus-visible:outline-none text-zinc-800"
+              to="#"
+              id="contact-btn"
+              >Book Call</nuxt-link
+            >
+          </div>
+        </div>
+        <app-link-card
+          label="LeetCode"
+          icon="fluent-emoji:teacup-without-handle"
+          url="/leetcode"
+        ></app-link-card>
+        <app-link-card
+          label="Projects"
+          icon="fluent-emoji:sparkles"
+          url="/bookmarks"
+        ></app-link-card>
+        <app-link-card
+          label="My Talks"
+          icon="fluent-emoji:laptop"
+          :is-external-url="true"
+          url="#"
+        ></app-link-card>
+        <app-link-card
+          label="My Streaks"
+          icon="fluent-emoji:fire"
+          :is-external-url="true"
+          url="#"
+        ></app-link-card>
+      </div>
+    </section>
+    <app-divider class="md:my-6" />
     <!-- Skills -->
     <section>
       <h2 class="py-2 mb-1 text-xl font-semibold">Skills</h2>
@@ -170,7 +215,7 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
     </section>
     <app-divider />
     <!-- Other Links -->
-    <section class="mb-2 space-y-2">
+    <!-- <section class="mb-2 space-y-2">
       <div
         class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:grid-flow-col gap-2 lg:[&_:first-child]:row-span-2 [&_:first-child]:col-span-2 lg:[&_:first-child]:col-span-1"
       >
@@ -212,7 +257,7 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
           url="https://unsplash.com/@baimamboukar"
         ></app-link-card>
       </div>
-    </section>
+    </section> -->
     <app-footer />
   </article>
 </template>

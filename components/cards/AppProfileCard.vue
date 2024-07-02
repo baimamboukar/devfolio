@@ -6,6 +6,7 @@ const profiles = {
   StackOverflow:
     "https://stackoverflow.com/users/15155605/baimam-boukar-jean-jacques",
   HuggingFace: "https://huggingface.co/baimamboukar",
+  Credly: "https://www.credly.com/users/baimamboukar",
 };
 </script>
 
