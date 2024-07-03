@@ -1,5 +1,5 @@
 ---
-id: djabbama-code-oss-talk
+id: djabbama-code-oss-talkxuz
 title: "Build Your Career with a Community Driven Approach"
 community: "GDNC"
 icon: "github"

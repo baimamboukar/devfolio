@@ -1,10 +1,11 @@
 ---
-id: mlh-fellowship-talks
+id: djabbama-code-oss-talkxxx
 title: "Build Your Career with a Community Driven Approach"
-description: "Discover how open source can impact your career growth"
-cover: "/content/cover/iam-users.png"
+community: "GDNC"
+icon: "github"
+cover: "/content/presentations/oss-talk-gdnc.png"
+date: "2024-06-23"
 url: "https://raw.githubusercontent.com/baimamboukar/portfolio/main/public/content/cover/nuxt-content-with-remote-markdown.png"
-canonical_url: "https://baimamboukar.dev/presentations/mlh-fellowship-talks"
 head:
   meta:
     - name: robots
@@ -15,10 +16,8 @@ head:
       content: article
     - name: "twitter:card"
       content: summary_large_image
-published: true
-published_on: "2024-07-04"
-date: "2024-07-03"
 ---
+
 
 
 # How To Become a Millionaire

@@ -4,30 +4,34 @@ const props = defineProps({
     type: String,
     default: "",
   },
-  presentationDescription: {
+  presentationCommunity: {
     type: String,
     default: "",
   },
-  presentationtUrl: {
+  presentationUrl: {
     type: String,
     default: "#",
   },
-  presentationtDate: {
+  presentationDate: {
     type: String,
-    default: "#",
+    default: "",
   },
   cover: {
+    type: String,
+    default: "",
+  },
+  icon: {
     type: String,
     default: "",
   },
 });
 
 const isExternalUrl = computed(() => {
-  return props.projectUrl.startsWith("https://");
+  return props.presentationUrl.startsWith("https://");
 });
 
 const lastUpdateTime = computed(() => {
-  const dateObj = new Date(props.presentationtDate);
+  const dateObj = new Date(props.presentationDate);
 
   return dateObj.toLocaleDateString("en-US", {
     year: "numeric",
@@ -35,47 +39,96 @@ const lastUpdateTime = computed(() => {
     day: "numeric",
   });
 });
+
+const truncatedTitle = computed(() => {
+  const words = props.presentationTitle.split(" ");
+  return words.length > 10
+    ? words.slice(0, 8).join(" ") + "..."
+    : props.presentationTitle;
+});
 </script>
 
-<!-- Project: Card -->
 <template>
   <nuxt-link
     :to="presentationUrl"
-    class="relative flex items-center w-full h-24 px-4 py-2 overflow-hidden duration-200 bg-white border focus-visible:global-focus rounded-xl transition- border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800/50 hover:ring-2 hover:ring-offset-0 hover:ring-blue-400 hover:ring-opacity-75"
+    target="_blank"
+    class="relative flex flex-col w-[300px] overflow-hidden duration-200 bg-white border focus-visible:global-focus rounded-xl transition border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800/50 hover:ring-2 hover:ring-offset-0 hover:ring-blue-400 hover:ring-opacity-75"
   >
-    <div
-      class="w-12 h-12 flex items-center justify-center rounded-2xl shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:rounded-[calc(.75rem+1px)] before:bg-gradient-to-b before:from-blue-500 before:to-lime-400"
-    >
-      <template v-if="cover.startsWith('https://')">
-        <nuxt-img
-          preload
-          placeholder
-          width="40"
-          height="40"
-          :src="cover"
-          :alt="`Project Logo for ${presentationTitle}`"
-          class="w-full h-full p-2 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
-        />
-      </template>
-      <template v-else>
-        <Icon
-          :name="`simple-icons:${cover}`"
-          class="w-full h-full p-3 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
-        />
-      </template>
+    <div class="relative">
+      <nuxt-img
+        preload
+        placeholder
+        format="webp"
+        loading="lazy"
+        width="300"
+        height="200"
+        :src="cover"
+        :alt="`${presentationTitle} Talk cover page`"
+        :title="presentationTitle"
+        class="object-cover w-full h-auto"
+      />
+      <div
+        class="absolute top-2 right-2 p-2 bg-white/30 backdrop-blur-md rounded-lg w-10 h-10 justfy-center items-center"
+      >
+        <Icon name="heroicons:arrow-up-right-20-solid" class="text-blue-500" />
+      </div>
     </div>
-    <div class="flex flex-col items-start justify-center pl-4">
-      <h3 class="font-semibold">{{ presentationTitle }}</h3>
-      <p class="text-[.825rem] text-zinc-600 dark:text-zinc-400">
+    <div class="flex flex-col items-start justify-center p-4">
+      <h3 class="font-semibold">
+        {{ truncatedTitle }}
+      </h3>
+
+      <!-- <p class="text-[.825rem] text-zinc-600 dark:text-zinc-400">
         {{ presentationDescription }}
-      </p>
+      </p> -->
+      <div
+        class="flex items-center mt-2 text-[.825rem] text-zinc-600 dark:text-zinc-400"
+      >
+        <nuxt-link
+          class="icon-link focus-visible:global-focus text-[#00DC82]"
+          to="https://nuxt.com/"
+          aria-label="NuxtJS Website"
+          target="_blank"
+          title="NuxtJS"
+          external
+        >
+          <div
+            class="w-6 h-6 flex items-center justify-center rounded-xl shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:rounded-[calc(.75rem+1px)] before:bg-gradient-to-b before:from-blue-500 before:to-lime-400"
+          >
+            <template v-if="icon.startsWith('https://')">
+              <nuxt-img
+                preload
+                placeholder
+                width="28"
+                height="28"
+                :src="icon"
+                :alt="`Community Logo for ${projectTitle}'s Talk'`"
+                class="w-full h-full p-2 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
+              />
+            </template>
+            <template v-else>
+              <Icon
+                :name="`simple-icons:${icon}`"
+                class="w-full h-full p-3 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
+              />
+            </template>
+          </div>
+        </nuxt-link>
+        <span class="text-[.825rem] text-zinc-600 dark:text-zinc-400"
+          >{{ presentationCommunity }} | {{ lastUpdateTime }}</span
+        >
+      </div>
     </div>
-    <Icon
-      v-show="isExternalUrl"
-      name="heroicons:arrow-up-right-20-solid"
-      size="1.25rem"
-      aria-label="Opens in a new tab"
-      class="absolute flex-shrink-0 text-blue-500 top-1 right-1"
-    />
   </nuxt-link>
 </template>
+
+<style>
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+</style>

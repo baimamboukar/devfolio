@@ -6,7 +6,7 @@ definePageMeta({
 
 // Fetch all featured projects
 const { pending, data: allPresentations } = await useLazyAsyncData(
-  "presentations",
+  "talks",
   () =>
     queryContent("/presentations")
       // .where({ title: { $ne: "More" } })
@@ -22,14 +22,12 @@ const { pending, data: allPresentations } = await useLazyAsyncData(
       I love sharing what I know with a broad and diverse audience at tech
       events.
     </p>
-    <!-- Featured Projects -->
-    <section
-      class="grid grid-cols-1 grid-rows-2 gap-4 mb-10 lg:grid-cols-2 lg:grid-flow-row"
-    >
-      <!-- <template v-if="error"> Somehting occured ooooh</template> -->
+    <!-- Featured Presentation -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10 justify-evenly">
+      <!-- <template v-if="error"> Something occurred ooooh</template> -->
       <template v-if="pending">
         <app-project-skeleton
-          v-for="skeletonId in generateKeys(4)"
+          v-for="skeletonId in generateKeys(5)"
           :key="skeletonId"
         />
       </template>
@@ -38,10 +36,11 @@ const { pending, data: allPresentations } = await useLazyAsyncData(
           v-for="presentation in allPresentations"
           :key="presentation.id"
           :cover="presentation.cover"
+          :icon="presentation.icon"
           :presentation-title="presentation.title"
-          :presentation-description="presentation.description"
-          :presentation-date="presentation.date"
-          :presentation-url="presentation.canonical_url"
+          :presentation-community="presentation.community"
+          :presentationt-date="presentation.date"
+          :presentation-url="presentation.url"
         />
       </template>
     </section>
