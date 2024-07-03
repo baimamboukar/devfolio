@@ -44,10 +44,19 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
       </h1>
       <p class="mb-4 text-xl font-medium text-zinc-700 dark:text-zinc-300">
         I craft
-        <span class="highlight">delightful</span>
-        and <span class="highlight">accessible</span>
-        web apps...
+        <span class="highlight">awesome</span> softwares as a
+        <span class="highlight">Flutter</span> Mobile Engineer,
+        <span class="highlight">Go</span> Backend Builder,
+        <span class="highlight">2xAWS</span> certified,
+        <span class="highlight">Machine Learning</span> Practionner, and
+        Impactful <span class="highlight">OSS contributor</span>.
       </p>
+      <!-- <a href="https://skillicons.dev">
+        <img
+          src="https://skillicons.dev/icons?i=flutter,nuxtjs,vercel,githubactions,firebase,golang,flask,docker,gcp,aws&perline=8"
+          alt="Skill Icons"
+        />
+      </a> -->
       <!-- <p class="my-2 text-zinc-700 dark:text-zinc-300">
         I am
         <span class="subtle-highlight">currently seeking opportunities</span>
@@ -55,6 +64,7 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
       </p> -->
     </section>
     <app-divider class="md:my-6" />
+
     <section class="mb-2 space-y-2">
       <div
         class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:grid-flow-col gap-2 lg:[&_:first-child]:row-span-2 [&_:first-child]:col-span-2 lg:[&_:first-child]:col-span-1"
