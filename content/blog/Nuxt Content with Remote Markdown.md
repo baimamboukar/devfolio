@@ -8,7 +8,7 @@ tags:
   - markdown
   - vue
   - github
-image: "/content/cover/nuxt-content-with-remote-markdown.png"
+image: "/content/cover/iam-users.png"
 cover_image: "https://raw.githubusercontent.com/baimamboukar/portfolio/main/public/content/cover/nuxt-content-with-remote-markdown.png"
 canonical_url: "https://baimamboukar.dev/blog/nuxt-content-with-remote-markdown"
 head:
