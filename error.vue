@@ -1,6 +1,6 @@
 <script setup>
 const pageMeta = {
-  title: "Page Not Found · Baimam Boukar",
+  title: "Page Not Found",
   description: "This page doesn't exist.",
 };
 

@@ -1,0 +1,81 @@
+<script setup>
+const props = defineProps({
+  presentationTitle: {
+    type: String,
+    default: "",
+  },
+  presentationDescription: {
+    type: String,
+    default: "",
+  },
+  presentationtUrl: {
+    type: String,
+    default: "#",
+  },
+  presentationtDate: {
+    type: String,
+    default: "#",
+  },
+  cover: {
+    type: String,
+    default: "",
+  },
+});
+
+const isExternalUrl = computed(() => {
+  return props.projectUrl.startsWith("https://");
+});
+
+const lastUpdateTime = computed(() => {
+  const dateObj = new Date(props.presentationtDate);
+
+  return dateObj.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+});
+</script>
+
+<!-- Project: Card -->
+<template>
+  <nuxt-link
+    :to="presentationUrl"
+    class="relative flex items-center w-full h-24 px-4 py-2 overflow-hidden duration-200 bg-white border focus-visible:global-focus rounded-xl transition- border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800/50 hover:ring-2 hover:ring-offset-0 hover:ring-blue-400 hover:ring-opacity-75"
+  >
+    <div
+      class="w-12 h-12 flex items-center justify-center rounded-2xl shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:rounded-[calc(.75rem+1px)] before:bg-gradient-to-b before:from-blue-500 before:to-lime-400"
+    >
+      <template v-if="cover.startsWith('https://')">
+        <nuxt-img
+          preload
+          placeholder
+          width="40"
+          height="40"
+          :src="cover"
+          :alt="`Project Logo for ${presentationTitle}`"
+          class="w-full h-full p-2 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
+        />
+      </template>
+      <template v-else>
+        <Icon
+          :name="`simple-icons:${cover}`"
+          class="w-full h-full p-3 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
+        />
+      </template>
+    </div>
+    <div class="flex flex-col items-start justify-center pl-4">
+      <h3 class="font-semibold">{{ presentationTitle }}</h3>
+      <p class="text-[.825rem] text-zinc-600 dark:text-zinc-400">
+        {{ presentationDescription }}
+      </p>
+    </div>
+    <Icon
+      v-show="isExternalUrl"
+      name="heroicons:arrow-up-right-20-solid"
+      size="1.25rem"
+      aria-label="Opens in a new tab"
+      class="absolute flex-shrink-0 text-blue-500 top-1 right-1"
+    />
+  </nuxt-link>
+</template>

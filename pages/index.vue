@@ -1,11 +1,12 @@
 <script setup>
 definePageMeta({
-  title: "Baimam Boukar · Software Engineer",
-  description: "I craft delightful and accessible web apps.",
+  title: "Baimam Boukar JJ | Software Engineer ⚡️",
+  description:
+    "I craft awesome softwares as a Flutter Mobile Engineer, Go Backend Builder, 2xAWS Certified, Machine Learning Practionner, and Impactful OSS contributor.",
 });
 
 useHead({
-  titleTemplate: "",
+  titleTemplate: "Baimam Boukar JJ",
 });
 
 const route = useRoute();
@@ -17,7 +18,7 @@ useSeoMeta({
 
 const skillset = ref({
   essentials: ["Flutter", "Dart", "Nuxt", "Go", "AWS", "Python"],
-  tinker: ["C++", "ML", "Blockchain", "Docker"],
+  tinker: ["C++", "ML", "Blockchain", "Cloud Native"],
 });
 
 // Fetch latest 2 blog posts
@@ -164,7 +165,8 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
         </nuxt-link>
       </h2>
       <p class="mb-4 text-zinc-700 dark:text-zinc-300">
-        Passion turned into pixels.
+        I often work on personnal projects on my spare time. My projects span a
+        diverse range of technologies and domains.
       </p>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2">
         <template v-if="projectsPending">
@@ -200,7 +202,8 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
         </nuxt-link>
       </h2>
       <p class="mb-4 text-zinc-700 dark:text-zinc-300">
-        Writing as a tool for thinking.
+        I love sharing my knowledge via blog posts and articles. I write about
+        Go, AWS, Flutter, Nuxt, Google Cloud and other cool stuff.
       </p>
       <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <template v-if="blogsPending">

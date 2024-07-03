@@ -23,14 +23,14 @@ const serverMeta = {
   ogType: "article",
   ogLocale: "en_US",
   twitterCard: "summary",
-  twitterCreator: "@baimamboukar",
+  twitterCreator: "@baimamboukarr",
 };
 
 useSeoMeta({
   title: () => postTitle,
   description: () => postDescription,
-  ogTitle: () => `${postTitle} | Blog · Baimam Boukar`,
-  twitterTitle: () => `${postTitle} | Blog · Baimam Boukar`,
+  ogTitle: () => `${postTitle} | Blog · Baimam Boukar JJ`,
+  twitterTitle: () => `${postTitle} | Blog · Baimam Boukar JJ`,
   ogDescription: () => postDescription,
   twitterDescription: () => postDescription,
   ogImage: () => postCover,
@@ -70,7 +70,7 @@ useSeoMeta({
           <summary
             class="flex items-center list-none appearance-none cursor-pointer focus:outline-none group"
           >
-            <span class="inline-block mr-2 text-lg font-bold">Outline</span>
+            <span class="inline-block mr-2 text-lg font-bold">Outlines</span>
             <Icon
               class="text-blue-500 arrow-right group-focus-visible:global-focus rounded-full"
               name="heroicons:chevron-right-20-solid"

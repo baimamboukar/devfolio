@@ -8,7 +8,7 @@
 
     <nuxt-link
       class="focus-visible:global-focus"
-      to="https://twitter.com/baimamboukar"
+      to="https://twitter.com/baimamboukarr"
       target="_blank"
       external
       >Twitter

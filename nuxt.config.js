@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       },
       meta: [
         { "http-equiv": "X-UA-Compatible", content: "IE=edge" },
-        { name: "author", content: "Baimam Boukar (@baimamboukar)" },
+        { name: "author", content: "Baimam Boukar JJ (@baimamboukar)" },
         { name: "robots", content: "index, follow" },
       ],
       link: [
