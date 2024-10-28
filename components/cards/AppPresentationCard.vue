@@ -107,7 +107,7 @@
         </div>
 
         <span class="text-[.825rem] text-zinc-600 dark:text-zinc-400"
-          >{{ presentationCommunity }} | {{ lastUpdateTime }}</span
+          >{{ presentationCommunity }} | {{ presentationDate}}</span
         >
       </div>
     </div>
