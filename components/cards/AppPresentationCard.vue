@@ -1,58 +1,58 @@
 <script setup>
-const props = defineProps({
-  presentationTitle: {
-    type: String,
-    default: "",
-  },
-  presentationCommunity: {
-    type: String,
-    default: "",
-  },
-  presentationUrl: {
-    type: String,
-    default: "#",
-  },
-  presentationDate: {
-    type: String,
-    default: "",
-  },
-  cover: {
-    type: String,
-    default: "",
-  },
-  icon: {
-    type: String,
-    default: "",
-  },
-});
-
-const isExternalUrl = computed(() => {
-  return props.presentationUrl.startsWith("https://");
-});
-
-const lastUpdateTime = computed(() => {
-  const dateObj = new Date(props.presentationDate);
-
-  return dateObj.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
+  const props = defineProps({
+    presentationTitle: {
+      type: String,
+      default: "",
+    },
+    presentationCommunity: {
+      type: String,
+      default: "",
+    },
+    presentationUrl: {
+      type: String,
+      default: "#",
+    },
+    presentationDate: {
+      type: String,
+      default: "",
+    },
+    cover: {
+      type: String,
+      default: "",
+    },
+    icon: {
+      type: String,
+      default: "",
+    },
   });
-});
 
-const truncatedTitle = computed(() => {
-  const words = props.presentationTitle.split(" ");
-  return words.length > 10
-    ? words.slice(0, 8).join(" ") + "..."
-    : props.presentationTitle;
-});
+  const isExternalUrl = computed(() => {
+    return props.presentationUrl.startsWith("https://");
+  });
+
+  const lastUpdateTime = computed(() => {
+    const dateObj = new Date(props.presentationDate);
+
+    return dateObj.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  });
+
+  const truncatedTitle = computed(() => {
+    const words = props.presentationTitle.split(" ");
+    return words.length > 10
+      ? words.slice(0, 8).join(" ") + "..."
+      : props.presentationTitle;
+  });
 </script>
 
 <template>
   <nuxt-link
     :to="presentationUrl"
     target="_blank"
-    class="relative flex flex-col w-[300px] overflow-hidden duration-200 bg-white border focus-visible:global-focus rounded-xl transition border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800/50 hover:ring-2 hover:ring-offset-0 hover:ring-blue-400 hover:ring-opacity-75"
+    class="relative flex flex-col w-[90%] overflow-hidden duration-200 bg-white border focus-visible:global-focus rounded-xl transition border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800/50 hover:ring-2 hover:ring-offset-0 hover:ring-blue-400 hover:ring-opacity-75"
   >
     <div class="relative">
       <nuxt-img
@@ -60,8 +60,8 @@ const truncatedTitle = computed(() => {
         placeholder
         format="webp"
         loading="lazy"
-        width="300"
-        height="200"
+        width="420"
+        height="228"
         :src="cover"
         :alt="`${presentationTitle} Talk cover page`"
         :title="presentationTitle"
@@ -84,36 +84,28 @@ const truncatedTitle = computed(() => {
       <div
         class="flex items-center mt-2 text-[.825rem] text-zinc-600 dark:text-zinc-400"
       >
-        <nuxt-link
-          class="icon-link focus-visible:global-focus text-[#00DC82]"
-          to="https://nuxt.com/"
-          aria-label="NuxtJS Website"
-          target="_blank"
-          title="NuxtJS"
-          external
+        <div
+          class="w-6 h-6 flex items-center justify-center rounded-xl shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:rounded-[calc(.75rem+1px)] before:bg-gradient-to-b before:from-blue-500 before:to-lime-400"
         >
-          <div
-            class="w-6 h-6 flex items-center justify-center rounded-xl shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:rounded-[calc(.75rem+1px)] before:bg-gradient-to-b before:from-blue-500 before:to-lime-400"
-          >
-            <template v-if="icon.startsWith('https://')">
-              <nuxt-img
-                preload
-                placeholder
-                width="28"
-                height="28"
-                :src="icon"
-                :alt="`Community Logo for ${projectTitle}'s Talk'`"
-                class="w-full h-full p-2 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
-              />
-            </template>
-            <template v-else>
-              <Icon
-                :name="`simple-icons:${icon}`"
-                class="w-full h-full p-3 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
-              />
-            </template>
-          </div>
-        </nuxt-link>
+          <template v-if="icon.startsWith('https://')">
+            <nuxt-img
+              preload
+              placeholder
+              width="28"
+              height="28"
+              :src="icon"
+              :alt="`Community Logo for ${projectTitle}'s Talk'`"
+              class="w-full h-full p-2 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
+            />
+          </template>
+          <template v-else>
+            <Icon
+              :name="`simple-icons:${icon}`"
+              class="w-full h-full p-3 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
+            />
+          </template>
+        </div>
+
         <span class="text-[.825rem] text-zinc-600 dark:text-zinc-400"
           >{{ presentationCommunity }} | {{ lastUpdateTime }}</span
         >
@@ -123,12 +115,12 @@ const truncatedTitle = computed(() => {
 </template>
 
 <style>
-.line-clamp-1 {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 </style>
