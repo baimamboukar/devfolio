@@ -1,37 +1,37 @@
 <script setup>
-definePageMeta({
-  title: "Baimam Boukar JJ | Software Engineer ⚡️",
-  description:
-    "I craft awesome softwares as a Flutter Mobile Engineer, Go Backend Builder, 2xAWS Certified, Machine Learning Practionner, and Impactful OSS contributor.",
-});
+  definePageMeta({
+    title: "Baimam Boukar Jean Jacques",
+    description:
+      "I craft awesome softwares as a Flutter Mobile Engineer, Go Backend Builder, 2xAWS Certified, Machine Learning Practionner, and Impactful OSS contributor.",
+  });
 
-useHead({
-  titleTemplate: "Baimam Boukar JJ",
-});
+  useHead({
+    titleTemplate: "Baimam Boukar JJ",
+  });
 
-const route = useRoute();
+  const route = useRoute();
 
-useSeoMeta({
-  ogTitle: () => route.meta.title,
-  twitterTitle: () => route.meta.title,
-});
+  useSeoMeta({
+    ogTitle: () => route.meta.title,
+    twitterTitle: () => route.meta.title,
+  });
 
-const skillset = ref({
-  essentials: ["Flutter", "Dart", "Nuxt", "Go", "AWS", "Python"],
-  tinker: ["C++", "ML", "Blockchain", "Cloud Native"],
-});
+  const skillset = ref({
+    essentials: ["Flutter", "Dart", "Nuxt", "Go", "AWS", "Python"],
+    tinker: ["Earth Observation", "Applied Machine Learning", "HuggingFace Transformers"],
+  });
 
-// Fetch latest 2 blog posts
-const { pending: blogsPending, data: blogPosts } = await useLazyAsyncData(
-  "featured-posts",
-  () => queryContent("/blog").sort({ published_on: -1 }).limit(4).find()
-);
+  // Fetch latest 2 blog posts
+  const { pending: blogsPending, data: blogPosts } = await useLazyAsyncData(
+    "featured-posts",
+    () => queryContent("/blog").sort({ published_on: -1 }).limit(4).find()
+  );
 
-// Fetch 2 featured projects
-const { pending: projectsPending, data: projects } = await useLazyAsyncData(
-  "featured-projects",
-  () => queryContent("/projects").limit(4).find()
-);
+  // Fetch 2 featured projects
+  const { pending: projectsPending, data: projects } = await useLazyAsyncData(
+    "featured-projects",
+    () => queryContent("/projects").limit(4).find()
+  );
 </script>
 
 <!-- Landing Page -->
@@ -40,7 +40,7 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
     <!-- Introduction -->
     <section>
       <h1 class="mb-4 text-2xl font-semibold">
-        Hi, I'm 🧞‍♂️ Baimam Boukar
+        Hi, I'm Baimam Boukar
         <span id="wave">👋</span>
       </h1>
       <p class="mb-4 text-xl font-medium text-zinc-700 dark:text-zinc-300">
@@ -276,72 +276,72 @@ const { pending: projectsPending, data: projects } = await useLazyAsyncData(
 </template>
 
 <style scoped>
-#contact-btn {
-  animation: 1500ms linear 2000ms infinite pulse;
-}
+  #contact-btn {
+    animation: 1500ms linear 2000ms infinite pulse;
+  }
 
-@keyframes pulse {
-  0% {
-    box-shadow: #4ade80 0 0 0 0;
+  @keyframes pulse {
+    0% {
+      box-shadow: #4ade80 0 0 0 0;
+    }
+    50% {
+      box-shadow: #4ade8000 0 0 0 0.5rem;
+    }
   }
-  50% {
-    box-shadow: #4ade8000 0 0 0 0.5rem;
-  }
-}
 
-#wave {
-  @apply inline-block ml-1 origin-[70%_70%] animate-[10s_ease_2s_infinite_wave] hover:animate-[1.5s_ease_hoverwave];
-}
+  #wave {
+    @apply inline-block ml-1 origin-[70%_70%] animate-[10s_ease_2s_infinite_wave] hover:animate-[1.5s_ease_hoverwave];
+  }
 
-@keyframes wave {
-  0% {
-    transform: rotate(0deg);
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    2.5%,
+    7.5% {
+      transform: rotate(14deg);
+    }
+    5% {
+      transform: rotate(-8deg);
+    }
+    10% {
+      transform: rotate(-4deg);
+    }
+    12.5% {
+      transform: rotate(10deg);
+    }
+    15% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
-  2.5%,
-  7.5% {
-    transform: rotate(14deg);
-  }
-  5% {
-    transform: rotate(-8deg);
-  }
-  10% {
-    transform: rotate(-4deg);
-  }
-  12.5% {
-    transform: rotate(10deg);
-  }
-  15% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
 
-@keyframes hoverwave {
-  0% {
-    transform: rotate(0deg);
+  @keyframes hoverwave {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
-  10% {
-    transform: rotate(14deg);
-  }
-  20% {
-    transform: rotate(-8deg);
-  }
-  30% {
-    transform: rotate(14deg);
-  }
-  40% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
 </style>
