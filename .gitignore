@@ -22,3 +22,5 @@ seeds
 .next
 pods/service-connections
 
+.vercel
+run.sh
