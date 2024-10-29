@@ -2,10 +2,10 @@
 id: actinspace-2022
 title: "Reducing The Impact of Aviation on Climate Change by 50%"
 community: "ACTINSPACE 2022"
-icon: "github"
+icon: "medium"
 cover: "/content/presentations/actinspace-2022.jpg"
-date: "2024-06-23"
-url: "https://raw.githubusercontent.com/baimamboukar/portfolio/main/public/content/cover/nuxt-content-with-remote-markdown.png"
+date: "2022-02-18"
+#url: "https://raw.githubusercontent.com/baimamboukar/portfolio/main/public/content/cover/nuxt-content-with-remote-markdown.png"
 head:
   meta:
     - name: robots

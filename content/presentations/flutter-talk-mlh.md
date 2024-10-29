@@ -3,7 +3,7 @@ id: flutter-talk-mlh
 title: "Mobile App Development With Flutter and Dart | MLH Fellowship 23.SUM.B"
 community: "MLH Fellowship"
 icon: "github"
-cover: "/content/presentations/actinspace-2022.jpg"
+cover: "/content/presentations/flutter-talk-mlh.jpg"
 date: "2024-06-23"
 url: "https://raw.githubusercontent.com/baimamboukar/portfolio/main/public/content/cover/nuxt-content-with-remote-markdown.png"
 head:

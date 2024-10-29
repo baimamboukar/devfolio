@@ -24,19 +24,19 @@
 <!-- Blog: Card -->
 <template>
   <nuxt-link
-    class="focus-visible:global-focus rounded-xl w-full p-0 overflow-hidden flex flex-col border-none bg-none bg-transparent dark:bg-transparent [&_img]:hover:scale-105"
+    class="focus-visible:global-focus rounded-lg w-full p-0 overflow-hidden flex flex-col border-none bg-none bg-transparent dark:bg-transparent [&_img]:hover:scale-105"
     :to="url"
   >
     <!-- Blog Cover Image -->
     <div
       v-if="coverImage"
-      class="flex items-center justify-center flex-shrink-0 w-full h-32 mr-1 overflow-hidden card-style rounded-xl"
+      class="flex items-center justify-center flex-shrink-0 w-full h-48 mr-1 overflow-hidden card-style rounded-xl"
     >
       <nuxt-img
         preload
         placeholder
         format="webp"
-        height="325"
+        height="500"
         :src="coverImage"
         :alt="`Cover Image for an Article Titled ${blogTitle}`"
         class="object-cover w-full h-auto text-center"
@@ -57,7 +57,7 @@
       <h3 class="font-bold">{{ blogTitle }}</h3>
       <!-- Publish Date -->
       <p class="text-xs text-zinc-400 mt-[.125rem]">
-        Published {{ lastUpdateTime }}
+        Published on {{ lastUpdateTime }}
       </p>
     </div>
   </nuxt-link>

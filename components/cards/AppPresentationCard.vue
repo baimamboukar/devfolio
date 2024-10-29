@@ -84,30 +84,8 @@
       <div
         class="flex items-center mt-2 text-[.825rem] text-zinc-600 dark:text-zinc-400"
       >
-        <div
-          class="w-6 h-6 flex items-center justify-center rounded-xl shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:rounded-[calc(.75rem+1px)] before:bg-gradient-to-b before:from-blue-500 before:to-lime-400"
-        >
-          <template v-if="icon.startsWith('https://')">
-            <nuxt-img
-              preload
-              placeholder
-              width="28"
-              height="28"
-              :src="icon"
-              :alt="`Community Logo for ${projectTitle}'s Talk'`"
-              class="w-full h-full p-2 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
-            />
-          </template>
-          <template v-else>
-            <Icon
-              :name="`simple-icons:${icon}`"
-              class="w-full h-full p-3 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
-            />
-          </template>
-        </div>
-
         <span class="text-[.825rem] text-zinc-600 dark:text-zinc-400"
-          >{{ presentationCommunity }} | {{ presentationDate}}</span
+          >{{ presentationCommunity }} | {{ lastUpdateTime }}</span
         >
       </div>
     </div>

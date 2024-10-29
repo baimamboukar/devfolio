@@ -1,43 +1,47 @@
 <script setup>
-definePageMeta({
-  layout: "blog-layout",
-});
+    definePageMeta({
+      layout: "blog-layout",
+    });
 
-useHead({
-  titleTemplate: "%s | Blog · Baimam Boukar",
-});
+    useHead({
+      titleTemplate: "%s | Blog · Baimam Boukar",
+    });
 
-const route = useRoute();
+    const route = useRoute();
 
-const { data } = await useAsyncData("get-blog-post", () =>
-  queryContent(route.path).only(["title", "description", "image"]).findOne()
-);
+    // const { data } = await useAsyncData("get-blog-post", () =>
+    //   queryContent("/blog/create-iam-users-with-aws").only(["title", "description", "image"]).findOne()
+    // );
 
-const {
-  title: postTitle,
-  description: postDescription,
-  image: postCover,
-} = data.value;
+    // const {
+    //   title: postTitle,
+    //   description: postDescription,
+    //   image: postCover,
+    // } = data.value;
+    const data = {
+      title: 'Create',
+      description: 'Create IAM Users with AWS',
+      image: 'https://baimamboukar.dev/assets/images/og-image.png'
+  }
+    const serverMeta = {
+      ogType: "article",
+      ogLocale: "en_US",
+      twitterCard: "summary",
+      twitterCreator: "@baimamboukarr",
+    };
 
-const serverMeta = {
-  ogType: "article",
-  ogLocale: "en_US",
-  twitterCard: "summary",
-  twitterCreator: "@baimamboukarr",
-};
-
-useSeoMeta({
-  title: () => postTitle,
-  description: () => postDescription,
-  ogTitle: () => `${postTitle} | Blog · Baimam Boukar JJ`,
-  twitterTitle: () => `${postTitle} | Blog · Baimam Boukar JJ`,
-  ogDescription: () => postDescription,
-  twitterDescription: () => postDescription,
-  ogImage: () => postCover,
-  twitterImage: () => postCover,
-  ogUrl: () => `https://baimamboukar.dev${route.path}`,
-  ...serverMeta,
-});
+    useSeoMeta({
+      title: () => postTitle,
+      description: () => postDescription,
+      ogTitle: () => `${postTitle} | Blog · Baimam Boukar JJ`,
+      twitterTitle: () => `${postTitle} | Blog · Baimam Boukar JJ`,
+      ogDescription: () => postDescription,
+      twitterDescription: () => postDescription,
+      ogImage: () => postCover,
+      twitterImage: () => postCover,
+      ogUrl: () => `https://baimamboukar.dev${route.path}`,
+      ...serverMeta,
+    });
 </script>
 
 <template>
@@ -106,28 +110,28 @@ useSeoMeta({
 </template>
 
 <style scoped>
-img {
-  @apply w-full h-auto object-cover bg-cover origin-center border border-zinc-300 dark:border-zinc-600;
-}
+  img {
+    @apply w-full h-auto object-cover bg-cover origin-center border border-zinc-300 dark:border-zinc-600;
+  }
 
-details > summary::marker,
-details > summary::-webkit-details-marker {
-  @apply hidden;
-}
+  details > summary::marker,
+  details > summary::-webkit-details-marker {
+    @apply hidden;
+  }
 
-/* Collapsed */
-details > summary .arrow-right {
-  @apply inline-block;
-}
-details > summary .arrow-down {
-  @apply hidden;
-}
+  /* Collapsed */
+  details > summary .arrow-right {
+    @apply inline-block;
+  }
+  details > summary .arrow-down {
+    @apply hidden;
+  }
 
-/* Expanded */
-details[open] > summary .arrow-down {
-  @apply inline-block;
-}
-details[open] > summary .arrow-right {
-  @apply hidden;
-}
+  /* Expanded */
+  details[open] > summary .arrow-down {
+    @apply inline-block;
+  }
+  details[open] > summary .arrow-right {
+    @apply hidden;
+  }
 </style>

@@ -1,17 +1,18 @@
 <script setup>
-definePageMeta({
-  title: "Presentations",
-  description: "Discover my different talks and interventions at Tech events",
-});
+  definePageMeta({
+    title: "Presentations",
+    description: "Discover my different talks and interventions at Tech events",
+  });
 
-// Fetch all featured projects
-const { pending, data: allPresentations } = await useLazyAsyncData(
-  "talks",
-  () =>
-    queryContent("/presentations")
-      // .where({ title: { $ne: "More" } })
-      .find()
-);
+  // Fetch all featured projects
+  const { pending, data: allPresentations } = await useLazyAsyncData(
+    "talks",
+    () =>
+      queryContent("/presentations")
+       .sort({ date: -1 }) // Sort by date in descending order
+        // .where({ title: { $ne: "More" } })
+        .find()
+  );
 </script>
 
 <!-- Projects Page -->
@@ -23,7 +24,9 @@ const { pending, data: allPresentations } = await useLazyAsyncData(
       events.
     </p>
     <!-- Featured Presentation -->
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10 justify-evenly">
+    <section
+      class="grid grid-cols-1 lg:grid-cols-2 gap-x-auto gap-y-10 mb-6 w-full justify-evently"
+    >
       <!-- <template v-if="error"> Something occurred ooooh</template> -->
       <template v-if="pending">
         <app-project-skeleton
@@ -39,7 +42,7 @@ const { pending, data: allPresentations } = await useLazyAsyncData(
           :icon="presentation.icon"
           :presentation-title="presentation.title"
           :presentation-community="presentation.community"
-          :presentationt-date="presentation.date"
+          :presentation-date="presentation.date"
           :presentation-url="presentation.url"
         />
       </template>
