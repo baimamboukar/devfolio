@@ -1,14 +1,15 @@
 <script setup>
-const profiles = {
-  GitHub: "https://github.com/baimamboukar",
-  X: "https://twitter.com/baimamboukar",
-  LinkedIn: "https://linkedin.com/in/baimamboukar",
-  Medium: "https://baimamboukar.medium.com",
-  HuggingFace: "https://huggingface.co/baimamboukar",
-  Credly: "https://www.credly.com/users/baimamboukar",
-  StackOverflow:
-    "https://stackoverflow.com/users/15155605/baimam-boukar-jean-jacques",
-};
+  const profiles = {
+    GitHub: "https://github.com/baimamboukar",
+    X: "https://twitter.com/baimamboukar",
+    LinkedIn: "https://linkedin.com/in/baimamboukar",
+    Instagram: "https://instagram.com/baimamboukar",
+    Medium: "https://baimamboukar.medium.com",
+    HuggingFace: "https://huggingface.co/baimamboukar",
+    Credly: "https://www.credly.com/users/baimamboukar",
+    StackOverflow:
+      "https://stackoverflow.com/users/15155605/baimam-boukar-jean-jacques",
+  };
 </script>
 
 <!-- Profile card: Profile Picture, Name, Title + Social Profiles -->
@@ -32,7 +33,7 @@ const profiles = {
     </h2>
 
     <h2 class="text-lg font-medium md:text-xl text-zinc-700 dark:text-zinc-400">
-      Software Engineer ⚡️
+      Designed for Failure
     </h2>
     <div
       class="flex items-center justify-center w-full h-8 text-zinc-900 dark:text-zinc-200"

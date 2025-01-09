@@ -1,23 +1,23 @@
 <script setup>
-definePageMeta({
-  title: "More Projects",
-  description:
-    "More projects that I am currently working on and have worked on.",
-});
+  definePageMeta({
+    title: "More Projects",
+    description:
+      "More projects that I am currently working on and have worked on.",
+  });
 
-// Fetch all other projects
-const { pending, data: projects } = await useLazyAsyncData(
-  "all-projects",
-  () => queryContent("/projects/more").findOne(),
-  {
-    transform: (projects) => {
-      return {
-        visual: projects.body.filter((project) => project.visual),
-        nonVisual: projects.body.filter((project) => !project.visual),
-      };
-    },
-  }
-);
+  // Fetch all other projects
+  const { pending, data: projects } = await useLazyAsyncData(
+    "all-projects",
+    () => queryContent("/projects/more").findOne(),
+    {
+      transform: (projects) => {
+        return {
+          visual: projects.body.filter((project) => project.visual),
+          nonVisual: projects.body.filter((project) => !project.visual),
+        };
+      },
+    }
+  );
 </script>
 
 <!-- Projects.more() Page -->
