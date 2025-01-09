@@ -66,7 +66,7 @@ export default defineNuxtConfig({
       toc: { depth: 1, searchDepth: 2 },
     },
   },
-
+  extends: ['@nuxt/ui-pro'],
   modules: [
     '@nuxt/content',
     '@nuxtjs/partytown',
@@ -74,6 +74,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
+    '@nuxt/ui',
     'nuxt-icon',
   ],
 
