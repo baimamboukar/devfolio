@@ -1,0 +1,194 @@
+overview: "I craft awesome softwares as a Flutter Mobile Engineer, Go Backend Builder, 2xAWS certified, Machine Learning Practionner, and Impactful OSS contributor."
+
+education:
+  - degree: "Master of Science in Information Technology"
+    institution: "Carnegie Mellon University Africa"
+    specialization: "Applied Machine Learning"
+    period: "2024-2025"
+    icon: "/icons/cmu.svg"
+  
+  - degree: "Major League Hacking Fellow in Software Engineering"
+    institution: "MLH Fellowship"
+    specialization: "Open Source"
+    period: "2023-2023"
+    icon: "/icons/mlh.svg"
+  
+  - degree: "Bachelor of Science in Computer Science"
+    institution: "ICT University"
+    specialization: "Distributed Systems and Cloud Computing"
+    period: "2020-2024"
+    icon: "/icons/ictu.svg"
+# Update experience section with corrected dates and details
+experience:
+  - title: "Research Assistant"
+    company: "Carnegie Mellon University Africa"
+    location: "Rwanda"
+    period: "Jan 2025 - May 2025"
+    icon: "https://github.com/user-attachments/assets/19d6cd68-1b39-454a-85e6-03c4d8048f0e"
+    status: "Upcoming"
+
+  - title: "Mobile Development Team Lead"
+    company: "Caasitech Group LLC"
+    location: "Cameroon"
+    period: "April 2023 - June 2024"
+    icon: "https://github.com/user-attachments/assets/261d7f72-f4f4-43c5-be89-d37151e98d9e"
+    responsibilities:
+      - "Developed and maintained mobile applications by ensuring seamless integration and optimal performance across Android and iOS platforms (EcoCaasitech, SOS Cameroon)"
+      - "Automated the deployment process to the Apple Store and Play Store"
+      - "Implemented unit tests to ensure code quality, resulting in a 60% reduction in post-release bugs"
+      - "Implemented observability strategies to understand post-deployment software usage and collect analytics data"
+
+  - title: "Software Engineering MLH Fellow"
+    company: "G-Research"
+    location: "London"
+    period: "May 2022 - September 2022"
+    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    responsibilities:
+      - "Contributed to open-source software projects focused on performance benchmarking and automation for .NET ecosystem components"
+      - "Automated benchmarks data processing with CI/CD workflows and reduced manual processing by 90%"
+      - "Automated performance testing and deployment workflows with GitHub Actions which reduced manual processes time by 60%"
+
+  - title: "Flutter Mobile Developer"
+    company: "Enchird Technologies"
+    period: "May 2022 - September 2022"
+    responsibilities:
+      - "Responsible for building and integrating mobile applications with complex backends to ensure a smooth seamless user experience"
+      - "Integrated pixel-perfect UI designs, improving the app's visual consistency and user satisfaction"
+      - "Connected mobile apps with robust backends HTTP REST APIs"
+      - "Speeded up the development process by implementing reusable components in a clean architecture"
+
+leadership:
+  - role: "Google Developer Group Organizer"
+    icon: "/icons/gdg.svg"
+  - role: "Google Developer Student Clubs Leader"
+    icon: "/icons/gdsc.svg"
+  - role: "Postman Student Leader"
+    icon: "/icons/postman.svg"
+  - role: "AWS Cloud Club Captain at CMU"
+    icon: "/icons/aws-club.svg"
+  - role: "Cameroonian Students Representative at CMU"
+    icon: "/icons/cmu-rep.svg"
+
+community:
+  - role: "AWS Community Builder"
+    icon: "/icons/aws-community.svg"
+  - role: "Open-Source Contributor at MboaLab"
+    icon: "/icons/mboalab.svg"
+  - role: "AWS Labs"
+    icon: "/icons/aws-labs.svg"
+  - role: "Rwandan Space Agency Outreach Event Volunteer"
+    icon: "/icons/rsa.svg"
+
+interests:
+  - "Machine Learning"
+  - "Nanosatellites"
+  - "Space Missions"
+  - "Earth Observation"
+
+research:
+  - title: "Air Quality Monitoring in Rwanda"
+    cover: "/research/air-quality.jpg"
+    paper_link: "https://example.com/paper1"
+    topics: ["Air Quality", "IoT", "Environmental Monitoring"]
+    supervision: "Dr. John Doe"
+    contributors: ["Baimam Boukar", "Jane Smith"]
+    status: "Ongoing"
+    venue: "IEEE Conference 2024"
+
+  - title: "Assessing Environmental Impact of contrails using GOES-16 satellite data over East Africa"
+    cover: "/research/contrails.jpg"
+    paper_link: "https://example.com/paper2"
+    topics: ["Remote Sensing", "Environmental Science", "Satellite Data"]
+    supervision: "Dr. Sarah Johnson"
+    contributors: ["Baimam Boukar", "Mike Brown"]
+    status: "Published"
+    venue: "Environmental Science Journal"
+
+  - title: "Thermography for Breast Cancer Diagnosis using AI"
+    cover: "/research/thermography.jpg"
+    paper_link: "https://example.com/paper3"
+    topics: ["AI", "Healthcare", "Medical Imaging"]
+    supervision: "Dr. Alice Williams"
+    contributors: ["Baimam Boukar", "Robert Chen"]
+    status: "Under Review"
+    venue: "Medical AI Conference 2024"
+
+  - title: "Using PGM to estimate disease progression in Maroua, Cameroun"
+    cover: "/research/pgm.jpg"
+    paper_link: "https://example.com/paper4"
+    topics: ["Machine Learning", "Healthcare", "Disease Modeling"]
+    supervision: "Dr. David Lee"
+    contributors: ["Baimam Boukar", "Emma Wilson"]
+    status: "Completed"
+    venue: "Health Informatics Journal"
+
+  - title: "Using BIG Data solutions for massive storage of data"
+    cover: "/research/bigdata.jpg"
+    paper_link: "https://example.com/paper5"
+    topics: ["Big Data", "Data Storage", "Cloud Computing"]
+    supervision: "Dr. Mark Thompson"
+    contributors: ["Baimam Boukar", "Lisa Anderson"]
+    status: "In Progress"
+    venue: "Big Data Conference 2024"
+
+# Update certifications section
+certifications:
+  - name: "NASA Open Science"
+    badge: "https://github.com/user-attachments/assets/8829d089-810c-4013-b490-58e6ba7f2b1b"
+  - name: "GitHub Foundations"
+    badge: "https://github.com/user-attachments/assets/172f3c7a-2577-496c-8c12-4e652a622f78"
+  - name: "Open Source Contributor"
+    badge: "https://github.com/user-attachments/assets/c42f9e11-ffdd-428d-8bd6-e592844365c9"
+  - name: "Google Project Management"
+    badge: "https://github.com/user-attachments/assets/39fe19f2-3ad1-4c4a-b8bf-b06687944c1c"
+  - name: "Open Source Licensing"
+    badge: "https://github.com/user-attachments/assets/e4443381-f5dc-49c6-8c88-c7027ae6606f"
+  - name: "AWS Cloud Practitioner"
+    badge: "https://github.com/user-attachments/assets/ff52fb0b-394e-43bf-b1b9-840b87227e22"
+
+# Add new sections
+hackathons:
+  - name: "Democracy Studio"
+    icon: "/icons/democracy-studio.svg"
+    date: "2023"
+    place: "TBD"
+  - name: "ACTINSPACE"
+    icon: "/icons/actinspace.svg"
+    date: "2023"
+    place: "TBD"
+  - name: "Social Innovations"
+    icon: "/icons/social-innovations.svg"
+    date: "2023"
+    place: "TBD"
+  - name: "GreenHack"
+    icon: "/icons/greenhack.svg"
+    date: "2023"
+    place: "TBD"
+
+conferences:
+  - name: "Digital Skills Campaign"
+    icon: "/icons/digital-skills.svg"
+    date: "2023"
+    place: "TBD"
+  - name: "CITS"
+    icon: "/icons/cits.svg"
+    date: "2023"
+    place: "TBD"
+  - name: "GSMA Mobile"
+    icon: "/icons/gsma.svg"
+    date: "2023"
+    place: "TBD"
+  - name: "Flutter Forward"
+    icon: "/icons/flutter-forward.svg"
+    date: "2023"
+    place: "TBD"
+
+achievements:
+  - name: "Prix D'excellence MINSEEC"
+    icon: "/icons/minseec.svg"
+    date: "2023"
+    place: "TBD"
+  - name: "Prix D'excellence MINESEC"
+    icon: "/icons/minesec.svg"
+    date: "2023"
+    place: "TBD"

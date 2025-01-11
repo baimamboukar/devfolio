@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   app: {
     rootId: 'app',
     rootTag: 'body',
+    ui: {
+      global: true,
+    },
     routes: {
       '/blog/:id': {
         component: 'pages/blog/[id].vue',
@@ -66,15 +69,34 @@ export default defineNuxtConfig({
       toc: { depth: 1, searchDepth: 2 },
     },
   },
+  fonts: {
+    families: [
+      // do not resolve this font with any provider from `@nuxt/fonts`
+      { name: 'Montserrat', provider: 'google' },
+      { name: 'Raleway', provider: 'google' },
+      { name: 'Work Sans', provider: 'google' },
+      // only resolve this font with the `google` provider
+      { name: 'Space Grotesk', provider: 'google' },
+
+      // specify specific font data - this will bypass any providers
+    ],
+  },
+  colorMode: {
+    disableTransition: false,
+    preference: 'system',
+  },
+  future: {
+    compatibilityVersion: 4,
+  },
   extends: ['@nuxt/ui-pro'],
   modules: [
+    '@nuxt/ui',
     '@nuxt/content',
     '@nuxtjs/partytown',
     '@nuxtjs/turnstile',
     '@nuxt/image',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
-    '@nuxt/ui',
     'nuxt-icon',
   ],
 
@@ -93,25 +115,25 @@ export default defineNuxtConfig({
     // turnstile: { secretKey: process.env.TURNSTILE_SECRET_KEY },
   },
 
-  tailwindcss: {
-    config: {
-      mode: 'jit',
-      darkMode: 'class',
-      content: [
-        './app.vue',
-        './components/**/*.vue',
-        './layouts/**/*.vue',
-        './pages/**/*.vue',
-      ],
-      plugins: [tailwindTypography],
-    },
-  },
+  // tailwindcss: {
+  //   config: {
+  //     mode: 'jit',
+  //     darkMode: 'class',
+  //     content: [
+  //       './app.vue',
+  //       './components/**/*.vue',
+  //       './layouts/**/*.vue',
+  //       './pages/**/*.vue',
+  //     ],
+  //     plugins: [tailwindTypography],
+  //   },
+  // },
 
   telemetry: false,
 
   turnstile: {
     siteKey: '0x4AAAAAAABlDwSHN3HVmFWH',
   },
-
+  experimental: { appManifest: false },
   compatibilityDate: '2025-01-09',
 })
