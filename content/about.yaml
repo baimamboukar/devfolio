@@ -5,19 +5,19 @@ education:
     institution: "Carnegie Mellon University Africa"
     specialization: "Applied Machine Learning"
     period: "2024-2025"
-    icon: "/icons/cmu.svg"
+    icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
   
   - degree: "Major League Hacking Fellow in Software Engineering"
     institution: "MLH Fellowship"
     specialization: "Open Source"
     period: "2023-2023"
-    icon: "/icons/mlh.svg"
+    icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
   
   - degree: "Bachelor of Science in Computer Science"
     institution: "ICT University"
     specialization: "Distributed Systems and Cloud Computing"
     period: "2020-2024"
-    icon: "/icons/ictu.svg"
+    icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
 # Update experience section with corrected dates and details
 experience:
   - title: "Research Assistant"
