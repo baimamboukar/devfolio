@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Montserrat', ...defaultTheme.fontFamily.serif],
+        sans: [...defaultTheme.fontFamily.serif],
       },
       colors: {
         niagara: {
