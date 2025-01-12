@@ -24,3 +24,4 @@ pods/service-connections
 
 .vercel
 run.sh
+commit.sh
