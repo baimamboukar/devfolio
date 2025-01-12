@@ -188,69 +188,181 @@
       </div>
     </section>
 
-    <!-- Tabbed Sections for Remaining Data -->
+    <!-- Certifications Section -->
     <section class="mb-12">
-      <!-- Horizontal navigation for tabs -->
-      <UHorizontalNavigation v-model="activeTab" :items="tabs" />
-
-      <!-- Dynamic content based on active tab -->
-      <div v-if="activeTab === 'research'" class="grid gap-6">
-        <!-- Research Section -->
+      <h2 class="text-2xl font-bold mb-8">Certifications</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <UCard
-          v-for="research in data.research"
-          :key="research.title"
-          class="hover:shadow-lg transition-shadow duration-200"
+          v-for="cert in data.certifications"
+          :key="cert.name"
+          class="flex flex-col items-center p-4 hover:bg-gray-900/50 transition-colors duration-300"
         >
-          <template #header>
-            <div class="flex gap-4">
-              <!-- Research cover image -->
-              <img
-                :src="research.cover"
-                :alt="research.title"
-                class="w-24 h-24 object-cover rounded"
-              />
-              <!-- Research details -->
-              <div>
-                <h3 class="text-lg font-medium">{{ research.title }}</h3>
-                <p class="text-sm text-gray-600">{{ research.supervision }}</p>
-              </div>
-            </div>
-          </template>
-
-          <!-- Topics and status badges -->
-          <div class="space-y-2">
-            <!-- Topics as badges -->
-            <div class="flex flex-wrap gap-2">
-              <UBadge
-                v-for="topic in research.topics"
-                :key="topic"
-                color="primary"
-                variant="soft"
-                >{{ topic }}</UBadge
-              >
-            </div>
-
-            <!-- Status and paper link -->
-            <div class="flex justify-between text-sm">
-              <UBadge
-                :color="{ Published: 'green', Ongoing: 'blue' }[research.status] || 'gray'"
-                >{{ research.status }}</UBadge
-              >
-              <a
-                v-if="research.paper_link"
-                :href="research.paper_link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-primary hover:underline"
-                >View Paper</a
-              >
-            </div>
-          </div>
+          <nuxt-img
+            :src="cert.badge"
+            :alt="cert.name"
+            class="w-24 h-24 mb-2 hover:scale-105 transition-transform duration-300 cursor-pointer"
+          />
+          <h3 class="text-center font-medium">{{ cert.name }}</h3>
         </UCard>
       </div>
+    </section>
 
-      <!-- Achievements Tab -->
-      <!-- Add similar logic for achievements, certifications, conferences, and hackathons here -->
+    <section class="mb-12">
+      <!-- Leadership Section -->
+      <div class="mb-8">
+        <h2 class="text-xl font-bold mb-6">Leadership</h2>
+        <div class="space-y-6">
+          <div
+            v-for="(leader, index) in data.leadership"
+            :key="leader.role"
+            class="relative"
+          >
+            <!-- Dashed line connector -->
+            <div
+              v-if="index !== data.leadership.length - 1"
+              class="absolute left-6 top-12 bottom-0 w-0.9 border-l-2 border-dashed border-gray-300 dark:border-gray-700"
+            />
+
+            <!-- Leadership Item -->
+            <div class="flex items-center gap-4">
+              <UAvatar
+                :src="leader.icon"
+                :alt="leader.role"
+                size="md"
+                class="rounded-lg bg-white dark:bg-gray-800 p-1"
+              />
+              <div class="flex-1">
+                <p class="text-lg">{{ leader.role }}</p>
+                <p class="text-base text-gray-600 dark:text-gray-400">
+                  ICT University, Yaounde •●• {{leader.period}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-8">Hackathons</h2>
+
+      <div class="space-y-8">
+        <div
+          v-for="hackathon in data.hackathons"
+          :key="hackathon.name"
+          class="relative"
+        >
+          <!-- Dashed connector line -->
+          <div
+            v-if="index !== data.hackathons.length - 1"
+            class="absolute left-16 top-28 bottom-0 w-0.5 border-l-2 border-dashed border-gray-300 dark:border-gray-700"
+          />
+
+          <UCard class="bg-gray-50 dark:bg-gray-900/50">
+            <div class="relative">
+              <!-- Logo -->
+              <UAvatar
+                :src="hackathon.logo"
+                :alt="hackathon.name"
+                size="2xl"
+                class="absolute left-4 top-4 rounded-lg bg-white dark:bg-gray-800 p-2"
+              />
+
+              <!-- Content -->
+              <div class="ml-32 min-h-[160px]">
+                <!-- Year badge in top-right -->
+                <UBadge
+                  color="green"
+                  variant="subtle"
+                  class="absolute top-4 right-4"
+                >
+                  {{ hackathon.date }}
+                </UBadge>
+
+                <div class="space-y-3 pt-4">
+                  <h3 class="text-xl font-semibold">{{ hackathon.name }}</h3>
+
+                  <div class="space-y-1 text-gray-600 dark:text-gray-400">
+                    <p>Organized by {{ hackathon.organizer }}</p>
+                    <p>{{ hackathon.timeframe }}</p>
+                    <p>{{ hackathon.place }}</p>
+                  </div>
+                </div>
+
+                <!-- View More button in bottom-right -->
+                <UButton
+                  color="primary"
+                  variant="ghost"
+                  size="sm"
+                  class="absolute bottom-4 right-4"
+                >
+                  View Details
+                </UButton>
+              </div>
+            </div>
+          </UCard>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-8">Conferences</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div
+          v-for="conf in data.conferences"
+          :key="conf.name"
+          class="relative group"
+        >
+          <UCard
+            class="overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-primary-100 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900 hover:from-primary-100 hover:to-gray-50 dark:hover:from-primary-900 dark:hover:to-gray-900 transition-all duration-300"
+          >
+            <!-- Top Section -->
+            <div class="flex flex-col h-full">
+              <!-- Logo and Main Content -->
+              <div class="flex gap-4 mb-4">
+                <UAvatar
+                  :src="conf.logo"
+                  :alt="conf.name"
+                  size="3xl"
+                  class="rounded-lg bg-white dark:bg-gray-800 p-2 border border-gray-200 dark:border-gray-700"
+                />
+                <div class="flex-1">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 dark:text-white mb-1"
+                  >
+                    {{ conf.name }}
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    {{ conf.place }}, {{ conf.country }}
+                  </p>
+                  <p class="text-gray-500 dark:text-gray-500 text-sm mt-1">
+                    {{ conf.date }}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Role -->
+              <div class="mt-auto">
+                <UChip
+                  label="Attendee"
+                  color="primary"
+                  variant="solid"
+                  class="text-lg"
+                />
+              </div>
+            </div>
+
+            <!-- Hover Overlay -->
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+            >
+              <UButton color="white" variant="ghost" size="sm">
+                View Details
+              </UButton>
+            </div>
+          </UCard>
+        </div>
+      </div>
     </section>
   </div>
 </template>

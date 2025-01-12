@@ -60,25 +60,35 @@ experience:
 
 leadership:
   - role: "Google Developer Group Organizer"
-    icon: "/icons/gdg.svg"
+    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    period: "2022-Present"
   - role: "Google Developer Student Clubs Leader"
-    icon: "/icons/gdsc.svg"
+    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    period: "2021-2023"
   - role: "Postman Student Leader"
-    icon: "/icons/postman.svg"
+    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    period: "2022-2023"
   - role: "AWS Cloud Club Captain at CMU"
-    icon: "/icons/aws-club.svg"
+    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    period: "2024-2025"
   - role: "Cameroonian Students Representative at CMU"
-    icon: "/icons/cmu-rep.svg"
+    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    period: "2024-2025"
 
 community:
   - role: "AWS Community Builder"
-    icon: "/icons/aws-community.svg"
+    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    period: "2023-Present"
   - role: "Open-Source Contributor at MboaLab"
-    icon: "/icons/mboalab.svg"
+    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    period: "2022-Present"
   - role: "AWS Labs"
-    icon: "/icons/aws-labs.svg"
+    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    period: "2023-Present"
   - role: "Rwandan Space Agency Outreach Event Volunteer"
-    icon: "/icons/rsa.svg"
+    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    period: "2024-Present"
+
 
 
 interests:
