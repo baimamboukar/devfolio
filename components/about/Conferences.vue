@@ -6,6 +6,16 @@
       required: true
     }
   });
+
+  // State for modal control
+  const isGalleryOpen = ref(false);
+  const selectedConference = ref(null);
+
+  // Handle view details click
+  const openGallery = (conference) => {
+    selectedConference.value = conference;
+    isGalleryOpen.value = true;
+  };
 </script>
 
 <template>
@@ -53,12 +63,27 @@
           <div
             class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
           >
-            <UButton color="white" variant="ghost" size="sm">
+            <UButton
+              color="white"
+              variant="ghost"
+              size="sm"
+              @click="openGallery(conf)"
+            >
               View Details
             </UButton>
           </div>
         </UCard>
       </div>
     </div>
+
+    <!-- Gallery Modal -->
+    <AppGallery
+      v-if="selectedConference"
+      v-model="isGalleryOpen"
+      :title="selectedConference.name"
+      :description="`${selectedConference.place}, ${selectedConference.country} - ${selectedConference.date}`"
+      :highlight-image="selectedConference.highlightImage"
+      :images="selectedConference.images"
+    />
   </section>
 </template>
