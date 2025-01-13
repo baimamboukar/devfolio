@@ -1,0 +1,46 @@
+
+research:
+  - title: "Air Quality Monitoring in Rwanda"
+    cover: "/content/cover/iam-users.png"
+    paper_link: "#"
+    topics: ["Air Quality", "IoT", "Environmental Monitoring"]
+    supervision: "Dr. John Doe"
+    contributors: ["Baimam Boukar", "Jane Smith"]
+    status: "Ongoing"
+    venue: "IEEE Conference 2024"
+
+  - title: "Assessing Environmental Impact of contrails using GOES-16 satellite data over East Africa"
+    cover: "/content/cover/iam-users.png"
+    paper_link: "#"
+    topics: ["Remote Sensing", "Environmental Science", "Satellite Data"]
+    supervision: "Dr. Sarah Johnson"
+    contributors: ["Baimam Boukar", "Mike Brown"]
+    status: "Published"
+    venue: "Environmental Science Journal"
+
+  - title: "Thermography for Breast Cancer Diagnosis using AI"
+    cover: "/content/cover/iam-users.png"
+    paper_link: "#"
+    topics: ["AI", "Healthcare", "Medical Imaging"]
+    supervision: "Dr. Alice Williams"
+    contributors: ["Baimam Boukar", "Robert Chen"]
+    status: "Under Review"
+    venue: "Medical AI Conference 2024"
+
+  - title: "Using PGM to estimate disease progression in Maroua, Cameroun"
+    cover: "/content/cover/iam-users.png"
+    paper_link: "#"
+    topics: ["Machine Learning", "Healthcare", "Disease Modeling"]
+    supervision: "Dr. David Lee"
+    contributors: ["Baimam Boukar", "Emma Wilson"]
+    status: "Completed"
+    venue: "Health Informatics Journal"
+
+  - title: "Using BIG Data solutions for massive storage of data"
+    cover: "/content/cover/iam-users.png"
+    paper_link: "#"
+    topics: ["Big Data", "Data Storage", "Cloud Computing"]
+    supervision: "Dr. Mark Thompson"
+    contributors: ["Baimam Boukar", "Lisa Anderson"]
+    status: "In Progress"
+    venue: "Big Data Conference 2024"
