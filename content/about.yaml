@@ -23,16 +23,16 @@ education:
 experience:
   - title: "Research Assistant"
     company: "Carnegie Mellon University Africa"
-    location: "Rwanda"
+    location: "Kigali, Rwanda"
     period: "Jan 2025 - May 2025"
-    icon: "https://github.com/user-attachments/assets/19d6cd68-1b39-454a-85e6-03c4d8048f0e"
+    icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
     status: "Upcoming"
 
   - title: "Mobile Development Team Lead"
     company: "Caasitech Group LLC"
-    location: "Cameroon"
+    location: "Yaounde, Cameroon"
     period: "April 2023 - June 2024"
-    icon: "https://github.com/user-attachments/assets/261d7f72-f4f4-43c5-be89-d37151e98d9e"
+    icon: "https://github.com/user-attachments/assets/19d6cd68-1b39-454a-85e6-03c4d8048f0e"
     responsibilities:
       - "Developed and maintained mobile applications by ensuring seamless integration and optimal performance across Android and iOS platforms (EcoCaasitech, SOS Cameroon)"
       - "Automated the deployment process to the Apple Store and Play Store"
@@ -41,9 +41,9 @@ experience:
 
   - title: "Software Engineering MLH Fellow"
     company: "G-Research"
-    location: "London"
+    location: "Remote, London"
     period: "May 2022 - September 2022"
-    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    icon: "https://github.com/user-attachments/assets/261d7f72-f4f4-43c5-be89-d37151e98d9e"
     responsibilities:
       - "Contributed to open-source software projects focused on performance benchmarking and automation for .NET ecosystem components"
       - "Automated benchmarks data processing with CI/CD workflows and reduced manual processing by 90%"
@@ -51,7 +51,9 @@ experience:
 
   - title: "Flutter Mobile Developer"
     company: "Enchird Technologies"
+    location: "Yaounde, Cameroon"
     period: "May 2022 - September 2022"
+    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
     responsibilities:
       - "Responsible for building and integrating mobile applications with complex backends to ensure a smooth seamless user experience"
       - "Integrated pixel-perfect UI designs, improving the app's visual consistency and user satisfaction"
@@ -98,52 +100,6 @@ interests:
     icon: "i-heroicons-globe-americas"
   - name: "Earth Observation"
     icon: "i-heroicons-globe-alt"
-
-research:
-  - title: "Air Quality Monitoring in Rwanda"
-    cover: "/content/cover/iam-users.png"
-    paper_link: "#"
-    topics: ["Air Quality", "IoT", "Environmental Monitoring"]
-    supervision: "Dr. John Doe"
-    contributors: ["Baimam Boukar", "Jane Smith"]
-    status: "Ongoing"
-    venue: "IEEE Conference 2024"
-
-  - title: "Assessing Environmental Impact of contrails using GOES-16 satellite data over East Africa"
-    cover: "/content/cover/iam-users.png"
-    paper_link: "#"
-    topics: ["Remote Sensing", "Environmental Science", "Satellite Data"]
-    supervision: "Dr. Sarah Johnson"
-    contributors: ["Baimam Boukar", "Mike Brown"]
-    status: "Published"
-    venue: "Environmental Science Journal"
-
-  - title: "Thermography for Breast Cancer Diagnosis using AI"
-    cover: "/content/cover/iam-users.png"
-    paper_link: "#"
-    topics: ["AI", "Healthcare", "Medical Imaging"]
-    supervision: "Dr. Alice Williams"
-    contributors: ["Baimam Boukar", "Robert Chen"]
-    status: "Under Review"
-    venue: "Medical AI Conference 2024"
-
-  - title: "Using PGM to estimate disease progression in Maroua, Cameroun"
-    cover: "/content/cover/iam-users.png"
-    paper_link: "#"
-    topics: ["Machine Learning", "Healthcare", "Disease Modeling"]
-    supervision: "Dr. David Lee"
-    contributors: ["Baimam Boukar", "Emma Wilson"]
-    status: "Completed"
-    venue: "Health Informatics Journal"
-
-  - title: "Using BIG Data solutions for massive storage of data"
-    cover: "/content/cover/iam-users.png"
-    paper_link: "#"
-    topics: ["Big Data", "Data Storage", "Cloud Computing"]
-    supervision: "Dr. Mark Thompson"
-    contributors: ["Baimam Boukar", "Lisa Anderson"]
-    status: "In Progress"
-    venue: "Big Data Conference 2024"
 
 # Update certifications section
 certifications:
@@ -192,19 +148,63 @@ conferences:
   - name: "Digital Skills Campaign"
     icon: "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
     date: "July 2022"
-    place: "Starland Yaounde, Cameroon"
+    place: "Starland Yaounde"
+    country: "Cameroon"
+    description: "A groundbreaking initiative focused on empowering African youth with essential digital skills for the modern workforce."
+    highlightImage: "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
+    images:
+      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
+      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
+      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
+      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
+      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
+      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
+
   - name: "CITS"
     icon: "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
     date: "October 2024"
-    place: "Palais des Congres Yaounde, Cameroon"
+    place: "Palais des Congres Yaounde"
+    country: "Cameroon"
+    description: "Cameroon Information Technology Summit - The premier tech conference bringing together industry leaders and innovators from across Central Africa."
+    highlightImage: "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
+    images:
+      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
+      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
+      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
+      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
+      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
+      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
+
   - name: "GSMA Mobile"
     icon: "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
     date: "February 2025"
-    place: "KCC Kigali, Rwanda"
+    place: "KCC Kigali"
+    country: "Rwanda"
+    description: "The largest mobile industry gathering in Africa, showcasing the latest innovations in mobile technology and digital transformation."
+    highlightImage: "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
+    images:
+      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
+      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
+      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
+      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
+      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
+      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
+
   - name: "Flutter Forward"
     icon: "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
     date: "January 2023"
-    place: "Radisson Blu Nairobi, Kenya"
+    place: "Radisson Blu Nairobi"
+    country: "Kenya"
+    description: "An immersive Flutter development conference featuring hands-on workshops, technical sessions, and networking with the Flutter community."
+    highlightImage: "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
+    images:
+      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
+      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
+      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
+      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
+      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
+      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
+
 
 achievements:
   - name: "Prix D'excellence MINSEEC"
@@ -251,12 +251,6 @@ achievements:
     gallery:
       - "imagelink1"
       - "imagelink2"
-  - name: "Cameroon's TOP Open Source Contributor"
-    icon: "https://github.com/user-attachments/assets/19771f37-ee31-43d6-a993-29de6929379c"
-    date: "Feb 2022 - Apr 2023"
-    place: "Github"
-    gallery:
-      - "imagelink1"
       - "imagelink2"
 
   - name: "Excellence Fellowship"

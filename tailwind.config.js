@@ -1,10 +1,10 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
-
+import { Config } from 'tailwindcss'
 export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: [...defaultTheme.fontFamily.serif],
+        sans: ['Space Grotesk', ...defaultTheme.fontFamily.serif],
       },
       colors: {
         niagara: {

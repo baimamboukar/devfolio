@@ -1,20 +1,21 @@
 <script setup>
-definePageMeta({
-  title: "Projects",
-  description: "Projects that I am currently working on and have worked on.",
-});
+  definePageMeta({
+    title: "Projects",
+    description: "Projects that I am currently working on and have worked on.",
+  });
 
-// Fetch all featured projects
-const { pending, data: allProjects } = await useLazyAsyncData("projects", () =>
-  queryContent("/projects")
-    .where({ title: { $ne: "More" } })
-    .find()
-);
+  // Fetch all featured projects
+  const { pending, data: allProjects } = await useLazyAsyncData("projects", () =>
+    queryContent("/projects")
+      .where({ title: { $ne: "More" } })
+      .find()
+  );
 </script>
 
 <!-- Projects Page -->
 <template>
   <article>
+    <Research />
     <h1 class="mb-4 text-3xl font-bold text-left">Projects</h1>
     <p class="mb-6 text-zinc-700 dark:text-zinc-300">
       Each project is a story waiting to be told.

@@ -20,7 +20,7 @@
         <!-- Dashed connector line -->
         <div
           v-if="index !== hackathons.length - 1"
-          class="absolute left-16 top-28 bottom-0 w-0.5 border-l-2 border-dashed border-gray-300 dark:border-gray-700"
+          class="absolute left-20 top-28 bottom-0 w-0.5 border-l-2 border-dashed border-gray-300 dark:border-gray-700"
         />
         <UCard class="bg-gray-50 dark:bg-gray-900/50">
           <div class="relative">

@@ -11,13 +11,13 @@
   const heroLinks = ref([
     {
       label: 'Download CV',
-      to: '/',
+      to: '#',
       icon: 'i-heroicons-document-arrow-down',
       color: 'primary',
     },
     {
       label: 'Get in Touch',
-      to: '/contact',
+      to: '#',
       color: 'gray',
       variant: 'subtle',
       trailingIcon: 'i-heroicons-arrow-right'
@@ -33,12 +33,13 @@
       headline="Software Engineer"
       orientation="horizontal"
       :links="heroLinks"
-      class="mb-12"
+      class="mb-4 !pt-0"
+      reverse
     >
       <nuxt-img
-        src="/self.jpg"
+        src="/bbjj.jpg"
         alt="Baimam Boukar"
-        class="rounded-full w-64 h-64 object-cover shadow-2xl ring-4 ring-primary-500/30"
+        class="rounded-lg shadow-2xl ring ring-[var(--ui-border)] w-64 h-72 object-cover objec"
       />
     </UPageHero>
   </div>

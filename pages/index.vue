@@ -1,37 +1,59 @@
 <script setup>
-  definePageMeta({
-    title: "Baimam Boukar Jean Jacques",
-    description:
-      "I craft awesome softwares as a Flutter Mobile Engineer, Go Backend Builder, 2xAWS Certified, Machine Learning Practionner, and Impactful OSS contributor.",
-  });
+        definePageMeta({
+          title: "Baimam Boukar Jean Jacques",
+          description:
+            "I craft awesome softwares as a Flutter Mobile Engineer, Go Backend Builder, 2xAWS Certified, Machine Learning Practionner, and Impactful OSS contributor.",
+        });
 
-  useHead({
-    titleTemplate: "Baimam Boukar JJ",
-  });
+        useHead({
+          titleTemplate: "Baimam Boukar JJ",
+        });
 
-  const route = useRoute();
+        const route = useRoute();
 
-  useSeoMeta({
-    ogTitle: () => route.meta.title,
-    twitterTitle: () => route.meta.title,
-  });
+        useSeoMeta({
+          ogTitle: () => route.meta.title,
+          twitterTitle: () => route.meta.title,
+        });
 
-  const skillset = ref({
-    essentials: ["Flutter", "Dart", "Nuxt", "Go", "AWS", "Python"],
-    tinker: ["Earth Observation", "Applied Machine Learning", "HuggingFace Transformers"],
-  });
+        const skillset = ref({
+          essentials: ["Flutter", "Dart", "Nuxt", "Go", "AWS", "Python"],
+          tinker: ["Earth Observation", "Applied Machine Learning", "HuggingFace Transformers"],
+        });
 
-  // Fetch latest 2 blog posts
-  const { pending: blogsPending, data: blogPosts } = await useLazyAsyncData(
-    "featured-posts",
-    () => queryContent("/blog").sort({ published_on: -1 }).limit(4).find()
-  );
+        // Fetch latest 2 blog posts
+        const { pending: blogsPending, data: blogPosts } = await useLazyAsyncData(
+          "featured-posts",
+          () => queryContent("/blog").sort({ published_on: -1 }).limit(4).find()
+        );
 
-  // Fetch 2 featured projects
-  const { pending: projectsPending, data: projects } = await useLazyAsyncData(
-    "featured-projects",
-    () => queryContent("/projects").limit(4).find()
-  );
+        // Fetch 2 featured projects
+        const { pending: projectsPending, data: projects } = await useLazyAsyncData(
+          "featured-projects",
+          () => queryContent("/projects").limit(4).find()
+        );
+  const isGalleryOpen = ref(false);
+
+  const galleryData = {
+    title: "Flutter Forward Extended Cameroon",
+    description: "A vibrant community event bringing together Flutter developers for learning, sharing, and networking. Experience highlights from workshops, presentations, and collaborative sessions.",
+    highlightImage: "https://github.com/user-attachments/assets/21035f17-4e63-408c-ad08-9cdc47c218aa",
+    images: [
+       "https://github.com/user-attachments/assets/a920ed50-5994-42c5-8318-0c5e6e5c1c7c",
+      "https://github.com/user-attachments/assets/aeeabf7a-4cb6-4992-bb05-365f1e01517e",
+      "https://github.com/user-attachments/assets/9a0c0ef8-9a30-4500-aa1c-18772efe27a8",
+       "https://github.com/user-attachments/assets/a920ed50-5994-42c5-8318-0c5e6e5c1c7c",
+      "https://github.com/user-attachments/assets/aeeabf7a-4cb6-4992-bb05-365f1e01517e",
+      "https://github.com/user-attachments/assets/9a0c0ef8-9a30-4500-aa1c-18772efe27a8",
+
+      "https://github.com/user-attachments/assets/a920ed50-5994-42c5-8318-0c5e6e5c1c7c",
+      "https://github.com/user-attachments/assets/aeeabf7a-4cb6-4992-bb05-365f1e01517e",
+      "https://github.com/user-attachments/assets/9a0c0ef8-9a30-4500-aa1c-18772efe27a8",
+      "https://github.com/user-attachments/assets/a920ed50-5994-42c5-8318-0c5e6e5c1c7c",
+      "https://github.com/user-attachments/assets/aeeabf7a-4cb6-4992-bb05-365f1e01517e",
+      "https://github.com/user-attachments/assets/9a0c0ef8-9a30-4500-aa1c-18772efe27a8"
+    ]
+  };
 </script>
 
 <!-- Landing Page -->
@@ -65,7 +87,17 @@
       </p> -->
     </section>
     <app-divider class="md:my-6" />
+    <!-- Button to open gallery -->
+    <UButton @click="isGalleryOpen = true"> View Event Gallery </UButton>
 
+    <!-- Gallery Component -->
+    <AppGallery
+      v-model="isGalleryOpen"
+      :title="galleryData.title"
+      :description="galleryData.description"
+      :highlight-image="galleryData.highlightImage"
+      :images="galleryData.images"
+    />
     <section class="mb-2 space-y-2">
       <div
         class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:grid-flow-col gap-2 lg:[&_:first-child]:row-span-2 [&_:first-child]:col-span-2 lg:[&_:first-child]:col-span-1"

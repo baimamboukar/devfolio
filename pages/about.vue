@@ -106,8 +106,8 @@
             {{ item.description }}
           </p>
           <div class="space-y-12">
-            <Hackathons :hackathons="data.hackathons" />
             <Conferences :conferences="data.conferences" />
+            <Hackathons :hackathons="data.hackathons" />
             <Achievements :achievements="data.achievements" />
           </div>
         </template>

@@ -18,14 +18,13 @@
           :ui="{ body: { padding: 'p-0' } }"
         >
           <!-- Main Content -->
-          <div class="p-6">
+          <div class="!p-0">
             <!-- Header with Logo and Title -->
             <div class="flex flex-col md:flex-row gap-6 items-start">
-              <UAvatar
+              <nuxt-img
                 :src="exp.icon"
                 :alt="exp.company"
-                size="2xl"
-                class="rounded-lg bg-white dark:bg-gray-800 p-2"
+                class="rounded-lg bg-white dark:bg-gray-800 w-24 h-24"
               />
               <div class="flex-1">
                 <div class="flex flex-wrap items-center justify-between gap-4">
@@ -75,7 +74,7 @@
                 class="flex gap-3 items-start"
               >
                 <UIcon
-                  name="i-heroicons-arrow-right"
+                  name="i-heroicons-check-badge"
                   class="flex-shrink-0 mt-1 text-primary-500"
                 />
                 <p class="text-gray-700 dark:text-gray-300">{{ resp }}</p>
