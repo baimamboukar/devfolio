@@ -12,25 +12,21 @@
   <section class="mb-12">
     <h2 class="text-2xl font-bold mb-8">Achievements</h2>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <div
-        v-for="achievement in achievements"
-        :key="achievement.name"
-        class="relative"
-      >
+      <div v-for="achievement in achievements" :key="achievement.name" class="">
         <UCard
-          class="bg-white dark:bg-gray-900/90 hover:bg-gray-50 dark:hover:bg-gray-800/90 transition-all duration-300 cursor-pointer group"
+          class="bg-white dark:bg-gray-900/90 hover:bg-gray-50 dark:hover:bg-gray-800/90 transition-all duration-300 cursor-pointer group rounded-lg"
         >
-          <div class="p-4 text-center">
+          <div class="p-2 text-center rounded-lg">
             <!-- Achievement Icon/Image -->
             <nuxt-img
               :src="achievement.icon"
               :alt="achievement.name"
-              class="w-15 h-15 object-contain mb-4 mx-auto group-hover:scale-105 transition-transform duration-300 rounded-lg"
+              class="w-15 h-15 object-cover mx-auto group-hover:scale-105 transition-transform duration-300 rounded-lg"
             />
             <!-- Achievement Details -->
-            <div class="space-y-2">
+            <div class="space-y-2 mt-2">
               <h3
-                class="text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors"
+                class="text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors text-ellipsis"
               >
                 {{ achievement.name }}
               </h3>
