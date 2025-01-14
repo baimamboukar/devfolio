@@ -1,4 +1,5 @@
 {
+  "name": "nuxt-ui-pro-template-saas",
   "private": true,
   "scripts": {
     "build": "nuxi build",
