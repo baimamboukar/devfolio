@@ -88,7 +88,7 @@
     </section>
     <app-divider class="md:my-6" />
     <!-- Button to open gallery -->
-    <UButton @click="isGalleryOpen = true"> View Event Gallery </UButton>
+    <!-- <UButton @click="isGalleryOpen = true"> View Event Gallery </UButton> -->
 
     <!-- Gallery Component -->
     <AppGallery

@@ -66,21 +66,21 @@
           </div>
 
           <!-- Responsibilities Section -->
-          <UCollapsible :model-value="exp.isOpen">
-            <div class="px-6 pb-6 space-y-3">
-              <div
-                v-for="(resp, rIndex) in exp.responsibilities"
-                :key="rIndex"
-                class="flex gap-3 items-start"
-              >
-                <UIcon
-                  name="i-heroicons-check-badge"
-                  class="flex-shrink-0 mt-1 text-primary-500"
-                />
-                <p class="text-gray-700 dark:text-gray-300">{{ resp }}</p>
-              </div>
+          <!-- <UCollapsible :model-value="exp.isOpen"> -->
+          <div class="px-6 pb-6 space-y-3">
+            <div
+              v-for="(resp, rIndex) in exp.responsibilities"
+              :key="rIndex"
+              class="flex gap-3 items-start"
+            >
+              <UIcon
+                name="i-heroicons-check-badge"
+                class="flex-shrink-0 mt-1 text-primary-500"
+              />
+              <p class="text-gray-700 dark:text-gray-300">{{ resp }}</p>
             </div>
-          </UCollapsible>
+          </div>
+          <!-- </UCollapsible> -->
         </UCard>
       </div>
     </div>
