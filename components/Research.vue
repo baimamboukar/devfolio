@@ -1,125 +1,123 @@
 <script setup>
-  defineProps({
-    modelValue: {
-      type: Boolean,
-      required: true
-    },
-    title: {
-      type: String,
-      required: true
-    },
-    description: {
-      type: String,
-      required: true
-    },
-    highlightImage: {
-      type: String,
-      required: true
-    },
-    images: {
-      type: Array,
-      required: true
-    }
-  });
+  const { data: researchData, pending } = await useAsyncData('research', () =>
+    queryContent('research').findOne()
+  );
 
-  const emit = defineEmits(['update:modelValue']);
-
-  const downloadImage = (imageUrl) => {
-    const link = document.createElement('a');
-    link.href = imageUrl;
-    link.download = imageUrl.split('/').pop();
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const statusColors = {
+    'Ongoing': 'text-yellow-500',
+    'Published': 'text-green-500',
+    'Under Review': 'text-blue-500',
+    'Completed': 'text-purple-500',
+    'In Progress': 'text-orange-500'
   };
+
+  const dummyAvatars = [
+    { src: "https://github.com/benjamincanac.png", alt: "Benjamin Canac" },
+    { src: "https://github.com/romhml.png", alt: "Romain Hamel" },
+    { src: "https://github.com/noook.png", alt: "Neil Richter" }
+  ];
 </script>
 
 <template>
-  <UModal
-    :model-value="modelValue"
-    @update:model-value="emit('update:modelValue', $event)"
-    fullscreen
-    :ui="{
-      container: 'flex flex-col h-screen',
-      overlay: { background: 'bg-gray-900/95' },
-      base: 'h-screen'
-    }"
-  >
-    <div class="h-full flex flex-col">
-      <!-- Header -->
-      <div class="p-6 border-b border-gray-200 dark:border-gray-800">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold">{{ title }}</h2>
-          <UButton
-            icon="i-heroicons-x-mark"
-            color="gray"
-            variant="ghost"
-            @click="emit('update:modelValue', false)"
-          />
-        </div>
-        <p class="text-gray-600 dark:text-gray-400">{{ description }}</p>
+  <section class="max-w-7xl mx-auto px-4">
+    <!-- Loading Skeleton -->
+    <template v-if="pending">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div
+          v-for="i in 4"
+          :key="i"
+          class="aspect-[2/1] rounded-lg bg-gray-100 dark:bg-gray-800 animate-pulse"
+        />
       </div>
+    </template>
 
-      <!-- Gallery Content -->
-      <div class="flex-1 overflow-auto p-6">
-        <div class="grid grid-cols-12 gap-4 auto-rows-[200px]">
-          <!-- Highlight Image - Large Center -->
-          <div class="col-span-12 md:col-span-6 md:col-start-4 row-span-2">
-            <div class="relative h-full rounded-xl overflow-hidden group">
-              <img
-                :src="highlightImage"
-                :alt="title"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+    <!-- Research Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div
+        v-for="project in researchData.research"
+        :key="project.title"
+        class="group rounded-lg border border-gray-200 dark:border-gray-800 hover:border-primary-500 dark:hover:border-primary-500 cursor-pointer transition-all duration-300"
+      >
+        <div class="h-full flex flex-col">
+          <!-- Cover Image -->
+          <div class="h-48 overflow-hidden rounded-t-lg">
+            <img
+              :src="project.cover"
+              :alt="project.title"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+
+          <div class="p-6 flex-1 flex flex-col">
+            <!-- Title and Status in one line -->
+            <div class="flex items-center justify-between mb-3">
+              <h3
+                class="text-base font-medium line-clamp-2 group-hover:text-primary-500 transition-colors flex-1"
               >
-                <button
-                  @click="downloadImage(highlightImage)"
-                  class="absolute bottom-3 right-3 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300"
+                {{ project.title }}
+              </h3>
+              <span
+                :class="statusColors[project.status]"
+                class="text-sm font-medium ml-4"
+              >
+                {{ project.status }}
+              </span>
+            </div>
+
+            <!-- Topics -->
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <UBadge
+                v-for="topic in project.topics"
+                :key="topic"
+                color="gray"
+                variant="soft"
+                size="xs"
+              >
+                {{ topic }}
+              </UBadge>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="mt-auto space-y-3">
+              <!-- Venue -->
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                {{ project.venue }}
+              </p>
+
+              <!-- Co-authors and View Paper in one line -->
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm text-gray-500 dark:text-gray-400"
+                    >Co-authored with •●
+                  </span>
+                  <UAvatarGroup size="sm" :max="3">
+                    <UAvatar
+                      v-for="avatar in dummyAvatars"
+                      :key="avatar.alt"
+                      :src="avatar.src"
+                      :alt="avatar.alt"
+                    >
+                      <template #hover>
+                        <UTooltip :text="avatar.alt" />
+                      </template>
+                    </UAvatar>
+                  </UAvatarGroup>
+                </div>
+
+                <UButton
+                  color="primary"
+                  variant="ghost"
+                  size="xs"
+                  :to="project.paper_link"
+                  class="opacity-0 group-hover:opacity-100 transition-opacity"
                 >
-                  <UIcon
-                    name="i-heroicons-arrow-down-circle"
-                    class="w-5 h-5 text-white"
-                  />
-                </button>
+                  View Paper
+                </UButton>
               </div>
             </div>
           </div>
-
-          <!-- Surrounding Images - Different Sizes -->
-          <template v-for="(image, index) in images" :key="index">
-            <div
-              :class="[
-                'relative group rounded-xl overflow-hidden',
-                index % 3 === 0 ? 'col-span-6 md:col-span-3 row-span-2' : 
-                index % 2 === 0 ? 'col-span-6 md:col-span-3 row-span-1' : 
-                'col-span-6 md:col-span-3 row-span-1',
-                index < images.length/2 ? 'md:col-start-1' : 'md:col-start-10'
-              ]"
-            >
-              <img
-                :src="image"
-                :alt="`Gallery image ${index + 1}`"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
-              >
-                <button
-                  @click="downloadImage(image)"
-                  class="absolute bottom-3 right-3 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300"
-                >
-                  <UIcon
-                    name="i-heroicons-arrow-down-circle"
-                    class="w-5 h-5 text-white"
-                  />
-                </button>
-              </div>
-            </div>
-          </template>
         </div>
       </div>
     </div>
-  </UModal>
+  </section>
 </template>

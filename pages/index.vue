@@ -87,6 +87,7 @@
       </p> -->
     </section>
     <app-divider class="md:my-6" />
+    <!-- <Research /> -->
     <!-- Button to open gallery -->
     <!-- <UButton @click="isGalleryOpen = true"> View Event Gallery </UButton> -->
 

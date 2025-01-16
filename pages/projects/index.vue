@@ -15,6 +15,13 @@
 <!-- Projects Page -->
 <template>
   <article>
+    <h1 class="mb-4 text-3xl font-bold text-left">Research Projects</h1>
+    <p class="mb-6 text-zinc-700 dark:text-zinc-300">
+      I'm into the applications of AI in Healtchare and SpaceTech.
+    </p>
+
+    <Research />
+    <AppDivider />
     <h1 class="mb-4 text-3xl font-bold text-left">Projects</h1>
     <p class="mb-6 text-zinc-700 dark:text-zinc-300">
       Each project is a story waiting to be told.
@@ -50,6 +57,5 @@
         class="ml-1 group-hover/hover-effect:translate-x-1"
       />
     </nuxt-link>
-    <Research />
   </article>
 </template>
