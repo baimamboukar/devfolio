@@ -26,7 +26,7 @@
             <!-- Achievement Details -->
             <div class="space-y-2 mt-2">
               <h3
-                class="text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors text-ellipsis"
+                class="text-sm font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-ellipsis"
               >
                 {{ achievement.name }}
               </h3>
@@ -46,7 +46,7 @@
                 <div
                   v-for="(_, index) in achievement.gallery"
                   :key="index"
-                  class="w-1 h-1 rounded-full bg-primary-500/50"
+                  class="w-1 h-1 rounded-full bg-blue-500/50"
                 />
               </div>
             </div>

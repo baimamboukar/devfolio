@@ -24,7 +24,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div v-for="conf in conferences" :key="conf.name" class="relative group">
         <UCard
-          class="overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-primary-100 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900 hover:from-primary-100 hover:to-gray-50 dark:hover:from-primary-900 dark:hover:to-gray-900 transition-all duration-300"
+          class="overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 hover:from-blue-100 hover:to-gray-50 dark:hover:from-blue-900 dark:hover:to-gray-900 transition-all duration-300"
         >
           <!-- Top Section -->
           <div class="flex flex-col h-full">

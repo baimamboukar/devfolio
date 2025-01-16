@@ -36,7 +36,7 @@
       <div
         v-for="project in researchData.research"
         :key="project.title"
-        class="group rounded-lg border border-gray-200 dark:border-gray-800 hover:border-primary-500 dark:hover:border-primary-500 cursor-pointer transition-all duration-300"
+        class="group rounded-lg border border-gray-200 dark:border-gray-800 hover:border-blue-500 dark:hover:border-blue-500 cursor-pointer transition-all duration-300"
       >
         <div class="h-full flex flex-col">
           <!-- Cover Image -->
@@ -52,7 +52,7 @@
             <!-- Title and Status in one line -->
             <div class="flex items-center justify-between mb-3">
               <h3
-                class="text-base font-medium line-clamp-2 group-hover:text-primary-500 transition-colors flex-1"
+                class="text-base font-medium line-clamp-2 group-hover:text-blue-500 transition-colors flex-1"
               >
                 {{ project.title }}
               </h3>

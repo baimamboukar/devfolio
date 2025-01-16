@@ -4,9 +4,9 @@ export default defineNuxtConfig({
   app: {
     rootId: 'app',
     rootTag: 'body',
-    ui: {
-      global: true,
-    },
+    // ui: {
+    //   global: true,
+    // },
     routes: {
       '/blog/:id': {
         component: 'pages/blog/[id].vue',
@@ -76,6 +76,10 @@ export default defineNuxtConfig({
       { name: 'Space Grotesk', provider: 'google' },
       { name: 'carbona', provider: 'local' },
     ],
+  },
+  ui: {
+    primary: 'crimson',
+    gray: 'cool',
   },
 
   colorMode: {

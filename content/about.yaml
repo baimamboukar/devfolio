@@ -1,4 +1,4 @@
-overview: "I craft awesome softwares as a Flutter Mobile Engineer, Go Backend Builder, 2xAWS certified, Machine Learning Practionner, and Impactful OSS contributor."
+overview: "I am a master student at Carnegie Mellon University. My research and projects interests center on Space Technologies and Machine Learning applications in Earth Observation. My expertise lies in software engineering and cloud computing."
 education:
   - degree: "Master of Science in Information Technology"
     institution: "Carnegie Mellon University Africa"
@@ -24,9 +24,13 @@ experience:
   - title: "Research Assistant"
     company: "Carnegie Mellon University Africa"
     location: "Kigali, Rwanda"
-    period: "Jan 2025 - May 2025"
+    period: "Jan 2025 - Present"
     icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
     status: "Upcoming"
+    responsibilities:
+    - "Developed and optimized mobile apps for research experiments"
+    - "Implemented data pipelines for processing sensor data"
+    - "Designed and deployed RESTful APIs to AWS Cloud for ML models, eliminating model downtime and unreliability"
 
   - title: "Mobile Development Team Lead"
     company: "Caasitech Group LLC"
@@ -62,19 +66,24 @@ experience:
 
 leadership:
   - role: "Google Developer Group Organizer"
+    community: "GDG Cloud Yaounde"
     icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
     period: "2022-Present"
-  - role: "Google Developer Student Clubs Leader"
+  - role: "Google Developer Groups OnCampus Lead"
+    community: "ICT University"
     icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
     period: "2021-2023"
   - role: "Postman Student Leader"
+    community: "ICT University"
     icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
     period: "2022-2023"
   - role: "AWS Cloud Club Captain at CMU"
+    community: "Carnegie Mellon University Africa"
     icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
     period: "2024-2025"
   - role: "Cameroonian Students Representative at CMU"
-    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    community: "Carnegie Mellon University Africa"
+    icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
     period: "2024-2025"
 
 community:
@@ -223,7 +232,7 @@ achievements:
       - "imagelink2"
     
 
-  - name: "Digital Innovator Prize | YK"
+  - name: "Digital Innovator Prize"
     icon: "https://github.com/user-attachments/assets/5ac24554-c007-4c5d-bf88-67af2d612646"
     date: "December 1623, 2023"
     place: "Yaounde, Cameroon"

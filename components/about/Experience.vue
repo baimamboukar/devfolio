@@ -14,7 +14,7 @@
     <div class="grid gap-8">
       <div v-for="(exp, index) in experience" :key="index">
         <UCard
-          class="overflow-hidden hover:ring-2 hover:ring-primary-500 transition-all duration-300"
+          class="overflow-hidden hover:ring-2 hover:ring-blue-500 transition-all duration-300"
           :ui="{ body: { padding: 'p-0' } }"
         >
           <!-- Main Content -->
@@ -30,7 +30,7 @@
                 <div class="flex flex-wrap items-center justify-between gap-4">
                   <div>
                     <h3
-                      class="text-xl font-bold text-primary-600 dark:text-primary-400"
+                      class="text-xl font-bold text-blue-600 dark:text-blue-400"
                     >
                       {{ exp.title }}
                     </h3>
@@ -75,7 +75,7 @@
             >
               <UIcon
                 name="i-heroicons-check-badge"
-                class="flex-shrink-0 mt-1 text-primary-500"
+                class="flex-shrink-0 mt-1 text-blue-500"
               />
               <p class="text-gray-700 dark:text-gray-300">{{ resp }}</p>
             </div>
