@@ -69,26 +69,26 @@ export default defineNuxtConfig({
       toc: { depth: 1, searchDepth: 2 },
     },
   },
-  fonts: {
-    families: [
-      // do not resolve this font with any provider from `@nuxt/fonts`
-      { name: 'Montserrat', provider: 'google' },
-      { name: 'Raleway', provider: 'google' },
-      { name: 'Work Sans', provider: 'google' },
-      // only resolve this font with the `google` provider
-      { name: 'Space Grotesk', provider: 'google' },
 
-      // specify specific font data - this will bypass any providers
+  fonts: {
+    devtools: true,
+    families: [
+      { name: 'Space Grotesk', provider: 'google' },
+      { name: 'carbona', provider: 'local' },
     ],
   },
+
   colorMode: {
     disableTransition: false,
     preference: 'system',
   },
+
   future: {
     compatibilityVersion: 4,
   },
+
   extends: ['@nuxt/ui-pro'],
+
   modules: [
     '@nuxt/ui',
     '@nuxt/content',
@@ -98,7 +98,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     'nuxt-icon',
+    '@nuxt/fonts',
   ],
+
   icon: {
     serverBundle: 'remote',
   },
@@ -136,6 +138,11 @@ export default defineNuxtConfig({
   turnstile: {
     siteKey: '0x4AAAAAAABlDwSHN3HVmFWH',
   },
+
   experimental: { appManifest: false },
   compatibilityDate: '2025-01-09',
+
+  devtools: {
+    enabled: true,
+  },
 })
