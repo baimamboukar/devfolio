@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Space Grotesk', ...defaultTheme.fontFamily.serif],
+        sans: ['Carbona', ...defaultTheme.fontFamily.serif],
       },
       colors: {
         niagara: {
