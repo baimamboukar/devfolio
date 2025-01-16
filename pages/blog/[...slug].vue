@@ -21,7 +21,7 @@
     const data = {
       title: 'Create',
       description: 'Create IAM Users with AWS',
-      image: 'https://baimamboukar.dev/assets/images/og-image.png'
+      image: 'https://baimamboukar.dev/assets/images/baimamboukar.png'
   }
     const serverMeta = {
       ogType: "article",

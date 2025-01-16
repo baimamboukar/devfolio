@@ -1,39 +1,39 @@
 <script setup>
-definePageMeta({
-  layout: "blog-layout",
-});
+  definePageMeta({
+    layout: "blog-layout",
+  });
 
-useHead({
-  titleTemplate: "%s (LeetCode Solution) · Baimam Boukar",
-});
+  useHead({
+    titleTemplate: "%s (LeetCode Solution) · Baimam Boukar",
+  });
 
-const route = useRoute();
+  const route = useRoute();
 
-const { data } = await useAsyncData("get-leetcode-post", () =>
-  queryContent(route.path).only(["title", "description"]).findOne()
-);
+  const { data } = await useAsyncData("get-leetcode-post", () =>
+    queryContent(route.path).only(["title", "description"]).findOne()
+  );
 
-const { title: postTitle, description: postDescription } = data.value;
+  const { title: postTitle, description: postDescription } = data.value;
 
-const serverMeta = {
-  ogImage: "/og-image.png",
-  twitterImage: "/og-image.png",
-  ogType: "article",
-  ogLocale: "en_US",
-  twitterCard: "summary",
-  twitterCreator: "@baimamboukar",
-};
+  const serverMeta = {
+    ogImage: "/og-image.jpg",
+    twitterImage: "/og-image.jpg",
+    ogType: "article",
+    ogLocale: "en_US",
+    twitterCard: "summary",
+    twitterCreator: "@baimamboukar",
+  };
 
-useSeoMeta({
-  title: () => postTitle,
-  description: () => postDescription,
-  ogTitle: () => `${postTitle} (LeetCode Solution) · Baimam Boukar`,
-  twitterTitle: () => `${postTitle} (LeetCode Solution) · Baimam Boukar`,
-  ogDescription: () => postDescription,
-  twitterDescription: () => postDescription,
-  ogUrl: () => `https://baimamboukar.dev${route.path}`,
-  ...serverMeta,
-});
+  useSeoMeta({
+    title: () => postTitle,
+    description: () => postDescription,
+    ogTitle: () => `${postTitle} (LeetCode Solution) · Baimam Boukar`,
+    twitterTitle: () => `${postTitle} (LeetCode Solution) · Baimam Boukar`,
+    ogDescription: () => postDescription,
+    twitterDescription: () => postDescription,
+    ogUrl: () => `https://baimamboukar.dev${route.path}`,
+    ...serverMeta,
+  });
 </script>
 
 <template>

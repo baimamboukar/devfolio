@@ -1,27 +1,27 @@
 <script setup>
-const pageMeta = {
-  title: "Page Not Found",
-  description: "This page doesn't exist.",
-};
+  const pageMeta = {
+    title: "Page Not Found",
+    description: "This page doesn't exist.",
+  };
 
-const serverMeta = {
-  ogImage: "/og-image.png",
-  twitterImage: "/og-image.png",
-  ogType: "website",
-  ogLocale: "en_US",
-  twitterCard: "summary",
-  twitterCreator: "@baimamboukar",
-};
+  const serverMeta = {
+    ogImage: "/og-image.jpg",
+    twitterImage: "/og-image.jpg",
+    ogType: "website",
+    ogLocale: "en_US",
+    twitterCard: "summary",
+    twitterCreator: "@baimamboukar",
+  };
 
-useSeoMeta({
-  title: () => pageMeta.title,
-  description: () => pageMeta.description,
-  ogTitle: () => pageMeta.title,
-  twitterTitle: () => pageMeta.title,
-  ogDescription: () => pageMeta.description,
-  twitterDescription: () => pageMeta.description,
-  ...serverMeta,
-});
+  useSeoMeta({
+    title: () => pageMeta.title,
+    description: () => pageMeta.description,
+    ogTitle: () => pageMeta.title,
+    twitterTitle: () => pageMeta.title,
+    ogDescription: () => pageMeta.description,
+    twitterDescription: () => pageMeta.description,
+    ...serverMeta,
+  });
 </script>
 
 <template>
@@ -40,7 +40,7 @@ useSeoMeta({
 </template>
 
 <style scoped>
-#main-content.main-error {
-  @apply h-full flex flex-col items-center justify-center;
-}
+  #main-content.main-error {
+    @apply h-full flex flex-col items-center justify-center;
+  }
 </style>
