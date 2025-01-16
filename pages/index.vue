@@ -125,7 +125,7 @@
         <app-link-card
           label="Projects"
           icon="fluent-emoji:sparkles"
-          url="/bookmarks"
+          url="#"
         ></app-link-card>
         <app-link-card
           label="My Talks"

@@ -99,11 +99,13 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-icon',
   ],
+  icon: {
+    serverBundle: 'remote',
+  },
 
   routeRules: {
     '/': { prerender: true },
     '/**': { prerender: true },
-    '/bookmarks': { isr: 3600 },
   },
 
   runtimeConfig: {
