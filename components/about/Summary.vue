@@ -26,7 +26,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="items-center justify-center">
     <UPageHero
       title="Baimam Boukar JJ"
       :description="overview"
