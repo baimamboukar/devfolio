@@ -7,7 +7,7 @@
 
   // Fetch the content data from the `about.yaml` file using Nuxt Content
   const { data, pending } = await useAsyncData('about', () => queryContent('about').findOne());
-
+  const orientation = ref('horizontal');
   // Define tabs for different sections
   const tabs = [
     {
@@ -54,11 +54,16 @@
     <!-- Show skeleton while loading -->
     <template v-if="pending">
       <USkeleton class="h-32 mb-12" />
-      <USkeleton v-for="i in 8" :key="i" class="h-64 mb-12" />
+      <USkeleton v-for="i in 5" :key="i" class="h-64 mb-12" />
     </template>
 
     <template v-else>
-      <UTabs :items="tabs" variant="pills" class="gap-4 w-full">
+      <UTabs
+        :items="tabs"
+        variant="pills"
+        class="gap-4 w-full"
+        :orientation="orientation.value"
+      >
         <!-- Overview Tab -->
         <template #overview="{ item }">
           <p class="text-gray-600 dark:text-gray-400 mb-6">
