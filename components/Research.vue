@@ -6,7 +6,7 @@
   const statusColors = {
     'Ongoing': 'text-yellow-500',
     'Published': 'text-green-500',
-    'Under Review': 'text-blue-500',
+    'Under Review': 'text-sky-500',
     'Completed': 'text-purple-500',
     'In Progress': 'text-orange-500'
   };
@@ -52,7 +52,7 @@
             <!-- Title and Status in one line -->
             <div class="flex items-center justify-between mb-3">
               <h3
-                class="text-base font-medium line-clamp-2 group-hover:text-blue-500 transition-colors flex-1"
+                class="text-base font-medium line-clamp-2 group-hover:text-sky-500 transition-colors flex-1"
               >
                 {{ project.title }}
               </h3>

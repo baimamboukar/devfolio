@@ -1,17 +1,17 @@
 <script setup>
-import { OnClickOutside } from "@vueuse/components";
+  import { OnClickOutside } from "@vueuse/components";
 
-const menuToggled = ref(false);
-const toggleMenu = useToggle(menuToggled);
+  const menuToggled = ref(false);
+  const toggleMenu = useToggle(menuToggled);
 
-const navLinks = {
-  Home: "",
-  About: "about",
-  Projects: "projects",
-  //Presentations "presentations",
-  Blog: "blog",
-  Presentations: "presentations",
-};
+  const navLinks = {
+    Home: "",
+    About: "about",
+    Projects: "projects",
+    //Presentations "presentations",
+    Blog: "blog",
+    Presentations: "presentations",
+  };
 </script>
 
 <!-- Navigation: Links -->
@@ -36,7 +36,7 @@ const navLinks = {
           {{ link }}
           <Icon
             name="heroicons:chevron-right-20-solid"
-            class="ml-2 text-blue-500"
+            class="ml-2 text-sky-500"
           />
         </nuxt-link>
       </li>
@@ -52,7 +52,7 @@ const navLinks = {
     >
       <button
         @click="toggleMenu()"
-        class="flex items-center justify-center w-full h-10 px-4 py-1 font-semibold bg-blue-500 rounded-lg md:hidden hover:bg-blue-400 text-zinc-800"
+        class="flex items-center justify-center w-full h-10 px-4 py-1 font-semibold bg-sky-500 rounded-lg md:hidden hover:bg-sky-400 text-zinc-800"
         aria-label="Menu"
         title="Menu"
       >
@@ -68,26 +68,26 @@ const navLinks = {
 </template>
 
 <style scoped>
-nav {
-  transition-property: width, max-height, padding;
-  transition-duration: 150ms;
-}
+  nav {
+    transition-property: width, max-height, padding;
+    transition-duration: 150ms;
+  }
 
-ul {
-  transition-property: opacity, visibility;
-  transition-duration: 500ms;
-  transition-delay: 500ms;
-}
+  ul {
+    transition-property: opacity, visibility;
+    transition-duration: 500ms;
+    transition-delay: 500ms;
+  }
 
-nav.toggled {
-  @apply w-[calc(100%-2rem)] flex max-h-80 overflow-hidden p-3;
-}
+  nav.toggled {
+    @apply w-[calc(100%-2rem)] flex max-h-80 overflow-hidden p-3;
+  }
 
-nav.toggled > ul {
-  @apply flex visible opacity-100;
-}
+  nav.toggled > ul {
+    @apply flex visible opacity-100;
+  }
 
-nav.toggled > button {
-  @apply mt-3;
-}
+  nav.toggled > button {
+    @apply mt-3;
+  }
 </style>

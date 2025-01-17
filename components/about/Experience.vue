@@ -29,7 +29,7 @@
               <div class="flex-1">
                 <div class="flex flex-wrap items-center justify-between gap-4">
                   <div>
-                    <h3 class="text-xl font-bold text-blue-sky">
+                    <h3 class="text-xl font-bold text-sky-sky">
                       {{ exp.title }}
                     </h3>
                     <p class="text-lg font-medium">{{ exp.company }}</p>
@@ -71,10 +71,10 @@
               :key="rIndex"
               class="flex gap-3 items-start"
             >
-              <p class="flex-shrink-0 mt-1 text-blue-500">●•</p>
+              <p class="flex-shrink-0 mt-1 text-sky-500">●•</p>
               <!-- <UIcon
                 name="i-heroicons-check-badge"
-                class="flex-shrink-0 mt-1 text-blue-500"
+                class="flex-shrink-0 mt-1 text-sky-500"
               /> -->
               <p class="text-gray-700 dark:text-gray-300">{{ resp }}</p>
             </div>

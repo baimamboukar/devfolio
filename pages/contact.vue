@@ -1,62 +1,62 @@
 <script setup>
-definePageMeta({
-  title: "Contact",
-  description: "Let's talk. Send me a message using the form.",
-});
+  definePageMeta({
+    title: "Contact",
+    description: "Let's talk. Send me a message using the form.",
+  });
 
-// Turnstile States
-const turnstile = ref();
-const turnstileToken = ref("");
+  // Turnstile States
+  const turnstile = ref();
+  const turnstileToken = ref("");
 
-// Feedback card props
-const feedbackVisible = ref(false);
-const feedbackMessage = ref("");
+  // Feedback card props
+  const feedbackVisible = ref(false);
+  const feedbackMessage = ref("");
 
-// Form control states
-const senderName = ref("");
-const senderEmail = ref("");
-const senderMessage = ref("");
-const isSubmitting = ref(false);
-const isSuccessful = ref(true);
+  // Form control states
+  const senderName = ref("");
+  const senderEmail = ref("");
+  const senderMessage = ref("");
+  const isSubmitting = ref(false);
+  const isSuccessful = ref(true);
 
-const afterFormSubmit = (feedback, success) => {
-  isSubmitting.value = false;
-  isSuccessful.value = success;
-  feedbackMessage.value = feedback;
-  feedbackVisible.value = true;
-  turnstile.value?.reset();
-};
+  const afterFormSubmit = (feedback, success) => {
+    isSubmitting.value = false;
+    isSuccessful.value = success;
+    feedbackMessage.value = feedback;
+    feedbackVisible.value = true;
+    turnstile.value?.reset();
+  };
 
-async function submit(e) {
-  // Reset state
-  isSubmitting.value = true;
-  feedbackVisible.value = false;
-  feedbackMessage.value = "";
-  isSuccessful.value = true;
+  async function submit(e) {
+    // Reset state
+    isSubmitting.value = true;
+    feedbackVisible.value = false;
+    feedbackMessage.value = "";
+    isSuccessful.value = true;
 
-  // Validate required input fields
-  if (!senderName.value.trim() || !senderMessage.value.trim()) {
-    afterFormSubmit("A Required Field is Empty", false);
-    return;
-  }
+    // Validate required input fields
+    if (!senderName.value.trim() || !senderMessage.value.trim()) {
+      afterFormSubmit("A Required Field is Empty", false);
+      return;
+    }
 
-  // Attempt submission
-  $fetch("/api/submit", {
-    method: "post",
-    body: {
-      senderName: senderName.value.trim(),
-      senderEmail: senderEmail.value.trim(),
-      senderMessage: senderMessage.value.trim(),
-      turnstileToken: turnstileToken.value,
-    },
-  })
-    .then((res) => {
-      afterFormSubmit("Successfully Sent", true);
+    // Attempt submission
+    $fetch("/api/submit", {
+      method: "post",
+      body: {
+        senderName: senderName.value.trim(),
+        senderEmail: senderEmail.value.trim(),
+        senderMessage: senderMessage.value.trim(),
+        turnstileToken: turnstileToken.value,
+      },
     })
-    .catch((err) => {
-      afterFormSubmit("Error Sending Message", false);
-    });
-}
+      .then((res) => {
+        afterFormSubmit("Successfully Sent", true);
+      })
+      .catch((err) => {
+        afterFormSubmit("Error Sending Message", false);
+      });
+  }
 </script>
 
 <template>
@@ -131,7 +131,7 @@ async function submit(e) {
       </div>
 
       <button
-        class="px-4 py-2 font-medium bg-blue-500 rounded-lg w-36 text-zinc-800 focus-visible:global-focus focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-zinc-800 focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:bg-zinc-400"
+        class="px-4 py-2 font-medium bg-sky-500 rounded-lg w-36 text-zinc-800 focus-visible:global-focus focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-zinc-800 focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:bg-zinc-400"
         :disabled="isSubmitting"
       >
         <Icon v-if="isSubmitting" name="svg-spinners:3-dots-fade" />

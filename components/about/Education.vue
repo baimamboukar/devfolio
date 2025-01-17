@@ -50,7 +50,7 @@
             </div>
           </template>
           <p v-for="course in edu.courses" :key="course">
-            <span class="flex-shrink-0 mt-1 text-blue-500">●</span>
+            <span class="flex-shrink-0 mt-1 text-sky-500">●</span>
             <span class="text-sm ml-1">{{course}}</span>
           </p>
         </UCard>

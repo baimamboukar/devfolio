@@ -50,7 +50,7 @@
     <!-- Link to More Projects -->
     <!-- <nuxt-link
       to="/projects/more"
-      class="flex items-center justify-center w-24 py-2 font-semibold no-underline duration-150 bg-blue-500 rounded-md focus-visible:global-focus text-zinc-800 group/hover-effect"
+      class="flex items-center justify-center w-24 py-2 font-semibold no-underline duration-150 bg-sky-500 rounded-md focus-visible:global-focus text-zinc-800 group/hover-effect"
       >More
       <Icon
         name="heroicons:chevron-right-20-solid"

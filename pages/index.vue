@@ -110,7 +110,7 @@
           >
             <p class="text-lg font-bold">Let's Talk</p>
             <nuxt-link
-              class="px-4 py-2 bg-blue-500 rounded-lg focus-visible:outline-none text-zinc-800"
+              class="px-4 py-2 bg-sky-500 rounded-lg focus-visible:outline-none text-zinc-800"
               to="#"
               id="contact-btn"
               >Book Call</nuxt-link
@@ -156,7 +156,7 @@
         <li
           v-for="skillName in skillset.essentials"
           :key="skillName"
-          class="text-blue-500 list-inside"
+          class="text-sky-500 list-inside"
         >
           <span class="font-medium text-zinc-700 dark:text-zinc-300">{{
             skillName
@@ -174,7 +174,7 @@
         <li
           v-for="skillName in skillset.tinker"
           :key="skillName"
-          class="text-blue-500 list-inside"
+          class="text-sky-500 list-inside"
         >
           <span class="font-medium text-zinc-700 dark:text-zinc-300">{{
             skillName
@@ -192,7 +192,7 @@
           My Projects
           <Icon
             name="heroicons:chevron-right-solid"
-            class="ml-2 text-blue-500 group-hover:translate-x-1"
+            class="ml-2 text-sky-500 group-hover:translate-x-1"
           />
         </nuxt-link>
       </h2>
@@ -229,7 +229,7 @@
           My Articles
           <Icon
             name="heroicons:chevron-right-solid"
-            class="ml-2 text-blue-500 group-hover:translate-x-1"
+            class="ml-2 text-sky-500 group-hover:translate-x-1"
           />
         </nuxt-link>
       </h2>
@@ -272,7 +272,7 @@
           >
             <p class="text-lg font-bold">Let's Chat.</p>
             <nuxt-link
-              class="px-4 py-2 bg-blue-500 rounded-lg focus-visible:outline-none text-zinc-800"
+              class="px-4 py-2 bg-sky-500 rounded-lg focus-visible:outline-none text-zinc-800"
               to="/contact"
               id="contact-btn"
               >Message</nuxt-link

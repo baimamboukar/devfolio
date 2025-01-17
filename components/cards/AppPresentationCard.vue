@@ -70,7 +70,7 @@
       <div
         class="absolute top-2 right-2 p-2 bg-white/30 backdrop-blur-md rounded-lg w-10 h-10 justfy-center items-center"
       >
-        <Icon name="heroicons:arrow-up-right-20-solid" class="text-blue-500" />
+        <Icon name="heroicons:arrow-up-right-20-solid" class="text-sky-500" />
       </div>
     </div>
     <div class="flex flex-col items-start justify-center p-4">

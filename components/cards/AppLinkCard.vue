@@ -1,18 +1,18 @@
 <script setup>
-defineProps({
-  url: String,
-  label: String,
-  icon: String,
-  isExternalUrl: {
-    type: Boolean,
-    default: false,
-  },
-  downloadLabel: String,
-  isDownloadLink: {
-    type: Boolean,
-    default: false,
-  },
-});
+  defineProps({
+    url: String,
+    label: String,
+    icon: String,
+    isExternalUrl: {
+      type: Boolean,
+      default: false,
+    },
+    downloadLabel: String,
+    isDownloadLink: {
+      type: Boolean,
+      default: false,
+    },
+  });
 </script>
 
 <!-- Link: Card -->
@@ -32,14 +32,14 @@ defineProps({
       name="heroicons:arrow-up-right-20-solid"
       size="1.25rem"
       aria-label="Opens in a new tab"
-      class="absolute flex-shrink-0 text-blue-500 top-1 right-1"
+      class="absolute flex-shrink-0 text-sky-500 top-1 right-1"
     />
     <Icon
       v-show="isDownloadLink"
       name="heroicons:arrow-down-tray-20-solid"
       size="1.25rem"
       aria-label="Opens Download Modal For File"
-      class="absolute flex-shrink-0 text-blue-500 top-1 right-1"
+      class="absolute flex-shrink-0 text-sky-500 top-1 right-1"
     />
   </nuxt-link>
 </template>

@@ -76,12 +76,12 @@
           >
             <span class="inline-block mr-2 text-lg font-bold">Outlines</span>
             <Icon
-              class="text-blue-500 arrow-right group-focus-visible:global-focus rounded-full"
+              class="text-sky-500 arrow-right group-focus-visible:global-focus rounded-full"
               name="heroicons:chevron-right-20-solid"
               size="1.5rem"
             />
             <Icon
-              class="text-blue-500 arrow-down group-focus-visible:global-focus rounded-full"
+              class="text-sky-500 arrow-down group-focus-visible:global-focus rounded-full"
               name="heroicons:chevron-down-20-solid"
               size="1.5rem"
             />

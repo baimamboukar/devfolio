@@ -45,7 +45,7 @@
                 <h3 class="text-xl font-semibold">{{ hackathon.name }}</h3>
                 <div class="space-y-1 text-gray-600 dark:text-gray-400">
                   <p>Organized by {{ hackathon.by }}</p>
-                  <p class="text-blue-400">{{ hackathon.place }}</p>
+                  <p class="text-sky-400">{{ hackathon.place }}</p>
                 </div>
               </div>
               <UButton

@@ -1,26 +1,26 @@
 <script setup>
-const props = defineProps({
-  projectTitle: {
-    type: String,
-    default: "",
-  },
-  projectDescription: {
-    type: String,
-    default: "",
-  },
-  projectUrl: {
-    type: String,
-    default: "#",
-  },
-  icon: {
-    type: String,
-    default: "",
-  },
-});
+  const props = defineProps({
+    projectTitle: {
+      type: String,
+      default: "",
+    },
+    projectDescription: {
+      type: String,
+      default: "",
+    },
+    projectUrl: {
+      type: String,
+      default: "#",
+    },
+    icon: {
+      type: String,
+      default: "",
+    },
+  });
 
-const isExternalUrl = computed(() => {
-  return props.projectUrl.startsWith("https://");
-});
+  const isExternalUrl = computed(() => {
+    return props.projectUrl.startsWith("https://");
+  });
 </script>
 
 <!-- Project: Card -->
@@ -61,7 +61,7 @@ const isExternalUrl = computed(() => {
       name="heroicons:arrow-up-right-20-solid"
       size="1.25rem"
       aria-label="Opens in a new tab"
-      class="absolute flex-shrink-0 text-blue-500 top-1 right-1"
+      class="absolute flex-shrink-0 text-sky-500 top-1 right-1"
     />
   </nuxt-link>
 </template>

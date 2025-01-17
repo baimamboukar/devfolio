@@ -1,12 +1,12 @@
 <script setup>
-const props = defineProps({
-  bookmark: {
-    type: Object,
-    default(rawProps) {
-      return {};
+  const props = defineProps({
+    bookmark: {
+      type: Object,
+      default(rawProps) {
+        return {};
+      },
     },
-  },
-});
+  });
 </script>
 
 <!-- Bookmark: Card -->
@@ -34,7 +34,7 @@ const props = defineProps({
       name="heroicons:arrow-up-right-20-solid"
       size="1.25rem"
       aria-label="Opens in a new tab"
-      class="flex-shrink-0 p-1 ml-auto text-blue-500 rounded-full bg-zinc-200 dark:bg-zinc-800 w-7 h-7"
+      class="flex-shrink-0 p-1 ml-auto text-sky-500 rounded-full bg-zinc-200 dark:bg-zinc-800 w-7 h-7"
     />
   </nuxt-link>
 </template>

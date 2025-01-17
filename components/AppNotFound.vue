@@ -15,7 +15,7 @@
     </h1>
     <nuxt-link
       to="/"
-      class="flex items-center justify-center w-24 py-2 font-semibold no-underline duration-150 bg-blue-500 rounded-md focus-visible:global-focus text-zinc-800 group/hover-effect"
+      class="flex items-center justify-center w-24 py-2 font-semibold no-underline duration-150 bg-sky-500 rounded-md focus-visible:global-focus text-zinc-800 group/hover-effect"
       >Go Home</nuxt-link
     >
   </div>

@@ -1,43 +1,43 @@
 <script setup>
-definePageMeta({
-  layout: "project-layout",
-});
+  definePageMeta({
+    layout: "project-layout",
+  });
 
-useHead({
-  titleTemplate: "%s (Project) · Baimam Boukar",
-});
+  useHead({
+    titleTemplate: "%s (Project) · Baimam Boukar",
+  });
 
-const route = useRoute();
+  const route = useRoute();
 
-const { data } = await useAsyncData("get-project", () =>
-  queryContent(route.path).only(["title", "description", "image"]).findOne()
-);
+  const { data } = await useAsyncData("get-project", () =>
+    queryContent(route.path).only(["title", "description", "image"]).findOne()
+  );
 
-const {
-  title: projectTitle,
-  description: projectDescription,
-  image: projectImage,
-} = data.value;
+  const {
+    title: projectTitle,
+    description: projectDescription,
+    image: projectImage,
+  } = data.value;
 
-const serverMeta = {
-  ogType: "article",
-  ogLocale: "en_US",
-  twitterCard: "summary",
-  twitterCreator: "@baimamboukar",
-};
+  const serverMeta = {
+    ogType: "article",
+    ogLocale: "en_US",
+    twitterCard: "summary",
+    twitterCreator: "@baimamboukar",
+  };
 
-useSeoMeta({
-  title: () => projectTitle,
-  description: () => projectDescription,
-  ogTitle: () => `${projectTitle} (Project) · Baimam Boukar`,
-  twitterTitle: () => `${projectTitle} (Project) · Baimam Boukar`,
-  ogDescription: () => projectDescription,
-  twitterDescription: () => projectDescription,
-  ogImage: () => projectImage,
-  twitterImage: () => projectImage,
-  ogUrl: () => `https://baimamboukar.dev${route.path}`,
-  ...serverMeta,
-});
+  useSeoMeta({
+    title: () => projectTitle,
+    description: () => projectDescription,
+    ogTitle: () => `${projectTitle} (Project) · Baimam Boukar`,
+    twitterTitle: () => `${projectTitle} (Project) · Baimam Boukar`,
+    ogDescription: () => projectDescription,
+    twitterDescription: () => projectDescription,
+    ogImage: () => projectImage,
+    twitterImage: () => projectImage,
+    ogUrl: () => `https://baimamboukar.dev${route.path}`,
+    ...serverMeta,
+  });
 </script>
 
 <template>
@@ -54,7 +54,7 @@ useSeoMeta({
         >
         <Icon
           name="heroicons:chevron-right-20-solid"
-          class="mx-1 text-blue-500"
+          class="mx-1 text-sky-500"
         />
         <span>{{ doc.title }}</span>
       </h1>
@@ -101,7 +101,7 @@ useSeoMeta({
             :to="doc.live_url"
             title="Live Preview"
             aria-label="Live Preview"
-            class="flex items-center justify-center w-8 h-8 p-1 bg-blue-500 border-none rounded-full text-zinc-800"
+            class="flex items-center justify-center w-8 h-8 p-1 bg-sky-500 border-none rounded-full text-zinc-800"
           >
             <Icon name="heroicons:arrow-up-right-20-solid" />
           </nuxt-link>

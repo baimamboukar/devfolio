@@ -1,21 +1,21 @@
 <script setup>
-const emit = defineEmits(["closeFeedback"]);
+  const emit = defineEmits(["closeFeedback"]);
 
-const props = defineProps({
-  label: String,
-  isSuccess: Boolean,
-  visible: Boolean,
-});
+  const props = defineProps({
+    label: String,
+    isSuccess: Boolean,
+    visible: Boolean,
+  });
 
-const statusIcon = computed(() => {
-  return props.isSuccess
-    ? "heroicons:check-20-solid"
-    : "heroicons:exclamation-triangle-20-solid";
-});
+  const statusIcon = computed(() => {
+    return props.isSuccess
+      ? "heroicons:check-20-solid"
+      : "heroicons:exclamation-triangle-20-solid";
+  });
 
-const close = () => {
-  emit("closeFeedback");
-};
+  const close = () => {
+    emit("closeFeedback");
+  };
 </script>
 
 <!-- Link: Feedback Toast -->
@@ -23,7 +23,7 @@ const close = () => {
   <section
     :class="`flex items-center px-3 py-1 my-4 rounded-md text-zinc-800 text-sm ring-1 ${
       isSuccess
-        ? 'bg-blue-200 dark:bg-blue-300 ring-blue-400'
+        ? 'bg-sky-200 dark:bg-sky-300 ring-blue-400'
         : 'bg-red-200 dark:bg-red-300 ring-red-400'
     } ${
       visible
