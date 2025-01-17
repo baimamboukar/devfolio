@@ -20,7 +20,7 @@
           <!-- Main Content -->
           <div class="!p-0">
             <!-- Header with Logo and Title -->
-            <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="flex flex-col md:flex-row gap-4 items-start">
               <nuxt-img
                 :src="exp.icon"
                 :alt="exp.company"
@@ -29,9 +29,7 @@
               <div class="flex-1">
                 <div class="flex flex-wrap items-center justify-between gap-4">
                   <div>
-                    <h3
-                      class="text-xl font-bold text-blue-600 dark:text-blue-400"
-                    >
+                    <h3 class="text-xl font-bold text-blue-sky">
                       {{ exp.title }}
                     </h3>
                     <p class="text-lg font-medium">{{ exp.company }}</p>
@@ -73,10 +71,11 @@
               :key="rIndex"
               class="flex gap-3 items-start"
             >
-              <UIcon
+              <p class="flex-shrink-0 mt-1 text-blue-500">●•</p>
+              <!-- <UIcon
                 name="i-heroicons-check-badge"
                 class="flex-shrink-0 mt-1 text-blue-500"
-              />
+              /> -->
               <p class="text-gray-700 dark:text-gray-300">{{ resp }}</p>
             </div>
           </div>
