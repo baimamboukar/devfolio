@@ -18,17 +18,16 @@
         class="relative"
       >
         <!-- Dashed line connector -->
-        <div
+        <!-- <div
           v-if="index !== leadership.length - 1"
           class="absolute left-6 top-12 bottom-0 w-0.9 border-l-2 border-dashed border-gray-300 dark:border-gray-700"
-        />
+        /> -->
         <!-- Leadership Item -->
         <div class="flex items-center gap-4">
-          <UAvatar
+          <nuxt-img
             :src="leader.icon"
             :alt="leader.role"
-            size="md"
-            class="rounded-lg bg-white dark:bg-gray-800 p-1"
+            class="rounded-lg bg-white dark:bg-gray-800 p-1 h-12 w-12"
           />
           <div class="flex-1">
             <p class="text-lg">{{ leader.role }}</p>
