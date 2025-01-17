@@ -5,18 +5,34 @@ education:
     specialization: "Applied Machine Learning"
     period: "2024-2025"
     icon: "https://github.com/user-attachments/assets/b7277964-5a64-4a82-92a7-46ceb3eb1b33"
+    courses:
+      - Introduction to Machine Learning for Engineers
+      - Introduction to Probabilistic Graphical Models
+      - Machine Learning for Earth Observation
+      - Data, Inference and Applied Machine Learning
+      - Mobile Big Data Analytis and Management
   
   - degree: "Major League Hacking Fellow in Software Engineering"
     institution: "MLH Fellowship"
     specialization: "Open Source"
     period: "2023-2023"
     icon: "https://github.com/user-attachments/assets/cb1deae1-9baf-4c3f-baf8-6b158ace5a97"
+    courses:
+      - Resume Building
+      - Public Speaking
+      - Good Practices for Open Source Contributors
   
   - degree: "Bachelor of Science in Computer Science"
     institution: "ICT University"
     specialization: "Distributed Systems and Cloud Computing"
     period: "2020-2024"
     icon: "https://github.com/user-attachments/assets/5f90e9bb-9a1d-433a-81d8-c442facca063"
+    courses:
+      - Algorithms and Data Structures
+      - Object Oriented Programming In C++
+      - Distributed Systems and Cloud Computing
+      - Computational Mathematics
+      - Discrete Mathematics
 
 
 # Update experience section with corrected dates and details
@@ -67,24 +83,28 @@ experience:
 leadership:
   - role: "Google Developer Group Organizer"
     community: "GDG Cloud Yaounde"
-    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    icon: "https://github.com/user-attachments/assets/ead30d26-8ae2-4243-9ce6-a69974a9137a"
     period: "2022-Present"
   - role: "Google Developer Groups OnCampus Lead"
     community: "ICT University"
-    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    icon: "https://github.com/user-attachments/assets/a3746046-3e08-412b-bcc3-40ee0512bd67"
     period: "2021-2023"
   - role: "Postman Student Leader"
     community: "ICT University"
-    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    icon: "https://github.com/user-attachments/assets/64c9c5a1-435b-4c77-adf1-560dfa7cb318"
     period: "2022-2023"
   - role: "AWS Cloud Club Captain at CMU"
     community: "Carnegie Mellon University Africa"
-    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+    icon: "https://github.com/user-attachments/assets/a9285bd0-51d6-45b2-9406-b3edca74ad90"
     period: "2024-2025"
   - role: "Cameroonian Students Representative at CMU"
     community: "Carnegie Mellon University Africa"
     icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
     period: "2024-2025"
+  - role: "AWS Community Builder ●•Serverless"
+    community: "AWS Community"
+    icon: "https://github.com/user-attachments/assets/9f929108-f378-4b8f-b626-b7ea1024e780"
+    period: "2023-Present"
 
 community:
   - role: "AWS Community Builder"
@@ -130,24 +150,30 @@ hackathons:
   - name: "iSTAR"
     icon: "https://github.com/user-attachments/assets/ba336e49-09dd-4314-b072-0fb35ca936cd"
     date: "Nov 2024"
+    by: "Rwanda Space Agency ●•Thales Alenia Space ●• WSH"
     place: "Kigali, Rwanda"
-  - name: "Social Innovations"
+  - name: "Africa Innovators Society"
+    by: "Industry Innovation Lab"
     icon: "https://github.com/user-attachments/assets/e908e8a3-0aa4-450a-93e7-69e9dd4f5a57"
     date: "Oct 2024"
     place: "Kigali, Rwanda"
   - name: "GreenHack"
+    by: "Cameroon International Youth Summit ●• Mountain Hub"
     icon: "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
     date: "March 2024"
     place: "Dschang, Cameroon"
   - name: "ACTINSPACE"
+    by: "CNES ●• ESA ●• Aerospace Valley"
     icon: "https://github.com/user-attachments/assets/ad0a7a72-6ba0-4eda-95f2-9d78636f58b3"
     date: "Nov 2022"
     place: "Yaounde, Cameroon"
-  - name: "Hackathon PACK"
+  - name: "Hackathon PAK"
+    by: "Port Autonomous de Kribi"
     icon: "https://github.com/user-attachments/assets/30333156-5735-4fcb-ba40-2fb994b3fb21"
     date: "April 2022"
     place: "Kribi, Cameroon"
-  - name: "Democracy Studio"
+  - name: "GIS Hackathon Cameroon 2022"
+    by: "Democracy Studio ●• PNPE"
     icon: "https://github.com/user-attachments/assets/36e2ea12-e8a5-415a-98b8-983234bbb4fd"
     date: "March 2022"
     place: "Edea, Cameroon"
@@ -231,7 +257,6 @@ achievements:
       - "imagelink1"
       - "imagelink2"
     
-
   - name: "Digital Innovator Prize"
     icon: "https://github.com/user-attachments/assets/5ac24554-c007-4c5d-bf88-67af2d612646"
     date: "December 1623, 2023"
