@@ -21,11 +21,11 @@
           tinker: ["Earth Observation", "Applied Machine Learning", "HuggingFace Transformers"],
         });
 
-        // Fetch latest 2 blog posts
-        const { pending: blogsPending, data: blogPosts } = await useLazyAsyncData(
-          "featured-posts",
-          () => queryContent("/blog").sort({ published_on: -1 }).limit(4).find()
-        );
+        // // Fetch latest 2 blog posts
+        // const { pending: blogsPending, data: blogPosts } = await useLazyAsyncData(
+        //   "featured-posts",
+        //   () => queryContent("/blog").sort({ published_on: -1 }).limit(4).find()
+        // );
 
         // Fetch 2 featured projects
         const { pending: projectsPending, data: projects } = await useLazyAsyncData(
@@ -66,13 +66,12 @@
         <span id="wave">👋</span>
       </h1>
       <p class="mb-4 text-xl font-medium text-zinc-700 dark:text-zinc-300">
-        I craft
-        <span class="highlight">awesome</span> softwares as a
-        <span class="highlight">Flutter</span> Mobile Engineer,
-        <span class="highlight">Go</span> Backend Builder,
-        <span class="highlight">2xAWS</span> certified,
-        <span class="highlight">Machine Learning</span> Practionner, and
-        Impactful <span class="highlight">OSS contributor</span>.
+        I am a master student at
+        <span class="text-semi-bold !text-red-500"
+          >Carnegie Mellon University</span
+        >. My research and projects interests center on Space Technologies,
+        Machine Learning applications in Healthcare and Earth Observation. My
+        expertise lies in software engineering and cloud computing.
       </p>
       <!-- <a href="https://skillicons.dev">
         <img
@@ -221,7 +220,7 @@
       </div>
     </section>
     <!-- Latest Blog Posts -->
-    <section>
+    <!-- <section>
       <h2 class="w-auto mb-2 text-xl font-semibold group">
         <nuxt-link
           to="/blog"
@@ -258,7 +257,7 @@
           />
         </template>
       </div>
-    </section>
+    </section> -->
     <app-divider />
     <!-- Other Links -->
     <!-- <section class="mb-2 space-y-2">
