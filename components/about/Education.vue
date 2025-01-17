@@ -18,7 +18,7 @@
           class="absolute left-12 top-24 bottom-0 w-0.5 border-l-2 border-dashed border-gray-300 dark:border-gray-700"
         />
 
-        <UCard class="ml-24">
+        <UCard class="ml-24 !pt-0">
           <template #header>
             <div class="flex items-center gap-6">
               <div
@@ -37,7 +37,7 @@
                 <p class="text-base text-gray-600 dark:text-gray-400">
                   {{ edu.institution }} ●•
                   <UBadge
-                    color="niagara"
+                    color="sky"
                     variant="soft"
                     size="lg"
                     >{{ edu.period }}</UBadge
@@ -49,10 +49,10 @@
               </div>
             </div>
           </template>
-          <i
-            >Intensive 24-month master degree program in Carnegie Mellon
-            University's College of Engineering, CMU Africa.</i
-          >
+          <p v-for="course in edu.courses" :key="course">
+            <span class="flex-shrink-0 mt-1 text-blue-500">●</span>
+            <span class="text-sm ml-1">{{course}}</span>
+          </p>
         </UCard>
       </div>
     </div>
