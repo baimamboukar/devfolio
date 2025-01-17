@@ -1,52 +1,55 @@
 <script setup>
-  // Define page metadata for SEO purposes
-  definePageMeta({
-    title: "About",
-    description: "Learn more about Baimam Boukar, his interests, education, experience, and achievements.",
-  });
+    import { useBreakpoints, useWindowSize } from '@vueuse/core'
 
-  // Fetch the content data from the `about.yaml` file using Nuxt Content
-  const { data, pending } = await useAsyncData('about', () => queryContent('about').findOne());
-  const orientation = ref('horizontal');
-  // Define tabs for different sections
-  const tabs = [
-    {
-      label: 'Overview',
-      icon: 'i-heroicons-user',
-      slot: 'overview',
-      description: 'Personal information and interests'
-    },
-    {
-      label: 'Education',
-      icon: 'i-heroicons-academic-cap',
-      slot: 'education',
-      description: 'Academic background and qualifications'
-    },
-    {
-      label: 'Experience',
-      icon: 'i-heroicons-briefcase',
-      slot: 'experience',
-      description: 'Professional work experience'
-    },
-    {
-      label: 'Certifications',
-      icon: 'i-heroicons-document-check',
-      slot: 'certifications',
-      description: 'Professional certifications and badges'
-    },
-    {
-      label: 'Leadership',
-      icon: 'i-heroicons-user-group',
-      slot: 'leadership',
-      description: 'Leadership roles and responsibilities'
-    },
-    {
-      label: 'Events',
-      icon: 'i-heroicons-calendar',
-      slot: 'events',
-      description: 'Hackathons, conferences and achievements'
-    }
-  ];
+  const { width } = useWindowSize()
+    // Define page metadata for SEO purposes
+    definePageMeta({
+      title: "About",
+      description: "Learn more about Baimam Boukar, his interests, education, experience, and achievements.",
+    });
+
+    // Fetch the content data from the `about.yaml` file using Nuxt Content
+    const { data, pending } = await useAsyncData('about', () => queryContent('about').findOne());
+    const orientation = ref('horizontal');
+    // Define tabs for different sections
+    const tabs = [
+      {
+        label: 'Overview',
+        icon: 'i-heroicons-user',
+        slot: 'overview',
+        description: 'Personal information and interests'
+      },
+      {
+        label: 'Education',
+        icon: 'i-heroicons-academic-cap',
+        slot: 'education',
+        description: 'Academic background and qualifications'
+      },
+      {
+        label: 'Experience',
+        icon: 'i-heroicons-briefcase',
+        slot: 'experience',
+        description: 'Professional work experience'
+      },
+      {
+        label: 'Certifications',
+        icon: 'i-heroicons-document-check',
+        slot: 'certifications',
+        description: 'Professional certifications and badges'
+      },
+      {
+        label: 'Leadership',
+        icon: 'i-heroicons-user-group',
+        slot: 'leadership',
+        description: 'Leadership roles and responsibilities'
+      },
+      {
+        label: 'Events',
+        icon: 'i-heroicons-calendar',
+        slot: 'events',
+        description: 'Hackathons, conferences and achievements'
+      }
+    ];
 </script>
 
 <template>
@@ -61,8 +64,8 @@
       <UTabs
         :items="tabs"
         variant="pills"
-        class="gap-4 w-full"
-        :orientation="orientation.value"
+        class="text-left"
+        :orientation="width < 640 ? 'vertical' : 'horizontal'"
       >
         <!-- Overview Tab -->
         <template #overview="{ item }">
