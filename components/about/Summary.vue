@@ -12,23 +12,23 @@
     {
       label: 'Download CV',
       to: '#',
-      icon: 'i-heroicons-document-arrow-down',
-      color: 'primary',
+      size: 'md',
+      color: 'sky',
     },
-    {
-      label: 'Get in Touch',
-      to: '#',
-      color: 'gray',
-      variant: 'subtle',
-      trailingIcon: 'i-heroicons-arrow-right'
-    }
+    // {
+    //   label: 'Get in Touch',
+    //   to: '#',
+    //   color: 'gray',
+    //   variant: 'subtle',
+    //   trailingIcon: 'i-heroicons-arrow-right'
+    // }
   ]);
 </script>
 
 <template>
   <div>
     <UPageHero
-      title="Baimam Boukar"
+      title="Baimam Boukar JJ"
       :description="overview"
       headline="Software Engineer"
       orientation="horizontal"
