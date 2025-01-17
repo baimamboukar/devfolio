@@ -53,7 +53,7 @@
             <div class="mt-auto">
               <UChip
                 label="Attendee"
-                color="primary"
+                color="sky"
                 variant="solid"
                 class="text-lg"
               />
