@@ -33,4 +33,12 @@ MINESEC ![image](https://github.com/user-attachments/assets/792eab86-5fe1-4bb1-9
 
 
 GITHUB ![image](https://github.com/user-attachments/assets/19771f37-ee31-43d6-a993-29de6929379c)
+
+![image](https://github.com/user-attachments/assets/a3746046-3e08-412b-bcc3-40ee0512bd67)
+![image](https://github.com/user-attachments/assets/ead30d26-8ae2-4243-9ce6-a69974a9137a)
+![image](https://github.com/user-attachments/assets/64c9c5a1-435b-4c77-adf1-560dfa7cb318)
+![image](https://github.com/user-attachments/assets/a9285bd0-51d6-45b2-9406-b3edca74ad90)
+![image](https://github.com/user-attachments/assets/9f929108-f378-4b8f-b626-b7ea1024e780)
+
+RESUME  
 -->
