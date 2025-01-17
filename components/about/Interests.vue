@@ -18,7 +18,8 @@
         :key="interest.name"
         :title="interest.name"
         :icon="interest.icon"
-        class="cursor-pointer"
+        :ui="{ icon: { base: 'w-10 h-10 flex-shrink-0 text-sky' } }"
+        class="cursor-pointer group-hover:scale-110 transition-transform duration-300"
       />
     </UPageGrid>
   </section>
