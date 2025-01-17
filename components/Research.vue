@@ -105,7 +105,7 @@
                 </div>
 
                 <UButton
-                  color="primary"
+                  color="sky"
                   variant="ghost"
                   size="xs"
                   :to="project.paper_link"
