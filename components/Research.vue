@@ -92,7 +92,7 @@
                   </span>
                   <UAvatarGroup size="sm" :max="3">
                     <UAvatar
-                      v-for="avatar in dummyAvatars"
+                      v-for="avatar in project.avatars"
                       :key="avatar.alt"
                       :src="avatar.src"
                       :alt="avatar.alt"

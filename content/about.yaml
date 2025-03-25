@@ -11,6 +11,7 @@ education:
       - Machine Learning for Earth Observation
       - Data, Inference and Applied Machine Learning
       - Mobile Big Data Analytis and Management
+      - Applied Deep Learning
   
   - degree: "Major League Hacking Fellow in Software Engineering"
     institution: "MLH Fellowship"
@@ -18,9 +19,9 @@ education:
     period: "2023-2023"
     icon: "https://github.com/user-attachments/assets/cb1deae1-9baf-4c3f-baf8-6b158ace5a97"
     courses:
-      - Resume Building
-      - Public Speaking
       - Good Practices for Open Source Contributors
+      - Open Source Licensing
+      - GitHub Source Contributions
   
   - degree: "Bachelor of Science in Computer Science"
     institution: "ICT University"
@@ -33,6 +34,7 @@ education:
       - Distributed Systems and Cloud Computing
       - Computational Mathematics
       - Discrete Mathematics
+      - Compiler Construction
 
 
 # Update experience section with corrected dates and details
@@ -45,8 +47,7 @@ experience:
     status: "Upcoming"
     responsibilities:
     - "Developed and optimized mobile apps for research experiments"
-    - "Implemented data pipelines for processing sensor data"
-    - "Designed and deployed RESTful APIs to AWS Cloud for ML models, eliminating model downtime and unreliability"
+    - "Implemented data pipelines for processing users data"
 
   - title: "Mobile Development Team Lead"
     company: "Caasitech Group LLC"

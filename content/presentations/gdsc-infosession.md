@@ -3,8 +3,8 @@ id: gdscinfosession-2023
 title: "GDSC Info Session 2023 | ICT University"
 community: "GDSC ICTU"
 icon: "medium"
-cover: "/content/presentations/gdsc-infosession.png"
-date: "2023-22-09"
+cover: "/content/presentations/gdsc-infosessionxx.png"
+date: "2023-12-09"
 #url: "https://raw.githubusercontent.com/baimamboukar/portfolio/main/public/content/cover/nuxt-content-with-remote-markdown.png"
 head:
   meta:
