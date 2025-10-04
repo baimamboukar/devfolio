@@ -30,20 +30,53 @@
 <!-- Landing Page -->
 <template>
   <article class="[&>*]:my-4 first:[&>*]:mt-0 [&>hr]:my-6 md:[&>hr]:my-10">
-    <!-- Introduction -->
-    <section>
-      <h1 class="mb-4 text-2xl font-semibold">
-        Hi, I'm Baimam Boukar
-        <span id="wave">👋</span>
-      </h1>
-      <p class="mb-4 text-xl font-medium text-zinc-700 dark:text-zinc-300">
-        Master's student at
-        <span class="text-semi-bold !text-red-500"
-          >Carnegie Mellon University Africa</span
-        > specializing in Machine Learning applications for Space Systems and Earth Observation.
-        My research explores satellite telemetry analysis, remote sensing for socioeconomic assessment,
-        and AI-driven solutions for healthcare in resource-constrained settings.
-      </p>
+    <!-- Introduction with Photo -->
+    <section class="flex flex-col md:flex-row gap-6 items-start">
+      <!-- Photo Column -->
+      <div class="flex-shrink-0 mx-auto md:mx-0">
+        <img
+          width="180"
+          height="180"
+          src="/baimamboukar.jpeg"
+          alt="Baimam Boukar JJ"
+          class="rounded-xl border-2 border-gray-200 dark:border-zinc-700"
+        />
+      </div>
+
+      <!-- Content Column -->
+      <div class="flex-1 space-y-4">
+        <!-- Text Summary Row -->
+        <div>
+          <h1 class="mb-4 text-2xl font-semibold">
+            Hi, I'm Baimam Boukar
+            <span id="wave">👋</span>
+          </h1>
+          <p class="text-base font-medium text-zinc-700 dark:text-zinc-300">
+            Master's student at
+            <span class="text-semi-bold !text-red-500"
+              >Carnegie Mellon University Africa</span
+            > specializing in Machine Learning applications for Space Systems and Earth Observation.
+            My research explores satellite telemetry analysis, remote sensing for socioeconomic assessment,
+            and AI-driven solutions for healthcare in resource-constrained settings.
+          </p>
+        </div>
+
+        <!-- CV Download Row -->
+        <!-- <div class="pt-2">
+          <UButton
+            color="sky"
+            variant="solid"
+            size="sm"
+            icon="i-heroicons-arrow-down-tray"
+            to="/resume.pdf"
+            target="_blank"
+            external
+            class="ml-auto"
+          >
+            Download CV
+          </UButton>
+        </div> -->
+      </div>
     </section>
 
     <app-divider class="md:my-6" />

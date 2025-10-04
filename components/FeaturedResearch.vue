@@ -11,7 +11,7 @@ const featuredResearch = computed(() =>
 const statusColors = {
   'Ongoing': 'text-yellow-500',
   'Published': 'text-green-500',
-  'Under Review': 'text-sky-500',
+  'Review': 'text-sky-500',
   'Completed': 'text-purple-500',
   'In Progress': 'text-orange-500'
 };

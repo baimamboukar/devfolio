@@ -14,12 +14,6 @@
     // Define tabs for different sections
     const tabs = [
       {
-        label: 'Overview',
-        icon: 'i-heroicons-user',
-        slot: 'overview',
-        description: 'Personal information and interests'
-      },
-      {
         label: 'Education',
         icon: 'i-heroicons-academic-cap',
         slot: 'education',
@@ -67,15 +61,6 @@
         class="text-left"
         :orientation="width < 640 ? 'vertical' : 'horizontal'"
       >
-        <!-- Overview Tab -->
-        <template #overview="{ item }">
-          <p class="text-gray-600 dark:text-gray-400 mb-6">
-            {{ item.description }}
-          </p>
-          <Summary :overview="data.overview" />
-          <Interests :interests="data.interests" />
-        </template>
-
         <!-- Education Tab -->
         <template #education="{ item }">
           <p class="text-gray-600 dark:text-gray-400 mb-6">

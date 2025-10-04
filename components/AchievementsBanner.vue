@@ -4,7 +4,7 @@ const achievements = [
     text: 'Currently analyzing spacecraft telemetry for anomaly detection using causal inference methods'
   },
   {
-    text: 'Paper on thermography for breast cancer diagnosis under review at Medical AI Conference 2024'
+    text: 'Paper on thermography for breast cancer diagnosis Review at Medical AI Conference 2024'
   },
   {
     text: 'Presenting air quality disparities research at IEEE Remote Sensing Conference 2024'

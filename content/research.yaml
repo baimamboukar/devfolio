@@ -31,7 +31,7 @@ research:
     topics: ["AI", "Healthcare", "Medical Imaging"]
     supervision: "Prof. Edith Luhanga"
     contributors: ["Peace Bakare"]
-    status: "Under Review"
+    status: "Review"
     venue: "Medical AI Conference 2024"
     featured: true
     abstract: "Early detection of breast cancer is crucial for patient outcomes, particularly in resource-constrained settings. This study develops an AI-powered thermography system for breast cancer screening using deep learning approaches. Our method provides a non-invasive, cost-effective alternative to traditional screening methods, making it accessible for underserved populations."

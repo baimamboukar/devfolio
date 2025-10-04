@@ -7,7 +7,7 @@ const research = computed(() => researchData.value?.research || []);
 
 const workingPapers = computed(() =>
   research.value.filter(project =>
-    project.status === 'Ongoing' || project.status === 'In Progress' || project.status === 'Under Review'
+    project.status === 'Ongoing' || project.status === 'In Progress' || project.status === 'Review'
   )
 );
 
@@ -20,7 +20,7 @@ const conferenceProceedings = computed(() =>
 const getStatusColor = (status) => {
   const colors = {
     'Ongoing': 'bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300',
-    'Under Review': 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300',
+    'Review': 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300',
     'Published': 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300',
     'In Progress': 'bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300',
     'Completed': 'bg-gray-100 dark:bg-gray-900/30 text-gray-700 dark:text-gray-300'
