@@ -37,7 +37,7 @@
   @layer utilities {
     /* Uniform Card Style */
     .card-style {
-      @apply border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-700/50 bg-white;
+      @apply border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-700/50 bg-gray-50;
     }
 
     .global-focus {
@@ -61,11 +61,11 @@
   }
 
   body {
-    @apply w-full min-w-[20rem] md:min-h-screen px-5 md:px-4 pt-4 pb-6 max-w-7xl mx-auto bg-zinc-50 dark:bg-zinc-900 md:dark:bg-zinc-950 text-zinc-800 dark:text-zinc-100 flex items-start flex-col md:flex-row md:overflow-y-auto;
+    @apply w-full min-w-[20rem] md:min-h-screen px-5 md:px-4 pt-4 pb-6 max-w-7xl mx-auto bg-gray-50 dark:bg-zinc-900 md:dark:bg-zinc-950 text-zinc-800 dark:text-zinc-100 flex items-start flex-col md:flex-row md:overflow-y-auto;
   }
 
   main {
-    @apply w-full rounded-xl pt-6 md:px-10 py-4 pb-12 bg-transparent md:bg-zinc-50 md:dark:bg-zinc-900/40 font-normal overflow-x-visible -z-0;
+    @apply w-full rounded-xl pt-6 md:px-10 py-4 pb-12 bg-transparent md:bg-gray-50 md:dark:bg-zinc-900/40 font-normal overflow-x-visible -z-0;
   }
 
   span.highlight,

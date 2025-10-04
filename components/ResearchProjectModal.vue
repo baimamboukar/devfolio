@@ -92,9 +92,97 @@ const getProjectLinks = (project) => {
       base: 'h-screen max-h-none w-screen max-w-none m-0 rounded-none'
     }"
   >
-    <div class="h-full flex flex-col bg-white dark:bg-gray-900">
+    <div class="h-full flex flex-col bg-white dark:bg-gray-900 relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 pointer-events-none">
+        <!-- Left Side: Diagonal Hatching Pattern -->
+        <div class="absolute left-0 top-0 w-[20%] h-full">
+          <div class="w-full h-full relative">
+            <!-- Pattern Base -->
+            <div class="absolute inset-0" style="
+              background-image:
+                repeating-linear-gradient(
+                  45deg,
+                  transparent,
+                  transparent 8px,
+                  rgba(14, 165, 233, 0.08) 8px,
+                  rgba(14, 165, 233, 0.08) 9px
+                ),
+                repeating-linear-gradient(
+                  -45deg,
+                  transparent,
+                  transparent 16px,
+                  rgba(14, 165, 233, 0.06) 16px,
+                  rgba(14, 165, 233, 0.06) 17px
+                );
+            "></div>
+            <!-- Smooth Fade Overlay -->
+            <div class="absolute inset-0 dark:hidden" style="
+              background: linear-gradient(to right,
+                transparent 0%,
+                transparent 60%,
+                rgba(255, 255, 255, 0.3) 80%,
+                rgba(255, 255, 255, 0.7) 90%,
+                white 100%
+              );
+            "></div>
+            <div class="absolute inset-0 hidden dark:block" style="
+              background: linear-gradient(to right,
+                transparent 0%,
+                transparent 60%,
+                rgba(17, 24, 39, 0.3) 80%,
+                rgba(17, 24, 39, 0.7) 90%,
+                rgb(17, 24, 39) 100%
+              );
+            "></div>
+          </div>
+        </div>
+
+        <!-- Right Side: Diagonal Hatching Pattern -->
+        <div class="absolute right-0 top-0 w-[20%] h-full">
+          <div class="w-full h-full relative">
+            <!-- Pattern Base -->
+            <div class="absolute inset-0" style="
+              background-image:
+                repeating-linear-gradient(
+                  -45deg,
+                  transparent,
+                  transparent 8px,
+                  rgba(14, 165, 233, 0.08) 8px,
+                  rgba(14, 165, 233, 0.08) 9px
+                ),
+                repeating-linear-gradient(
+                  45deg,
+                  transparent,
+                  transparent 16px,
+                  rgba(14, 165, 233, 0.06) 16px,
+                  rgba(14, 165, 233, 0.06) 17px
+                );
+            "></div>
+            <!-- Smooth Fade Overlay -->
+            <div class="absolute inset-0 dark:hidden" style="
+              background: linear-gradient(to left,
+                transparent 0%,
+                transparent 60%,
+                rgba(255, 255, 255, 0.3) 80%,
+                rgba(255, 255, 255, 0.7) 90%,
+                white 100%
+              );
+            "></div>
+            <div class="absolute inset-0 hidden dark:block" style="
+              background: linear-gradient(to left,
+                transparent 0%,
+                transparent 60%,
+                rgba(17, 24, 39, 0.3) 80%,
+                rgba(17, 24, 39, 0.7) 90%,
+                rgb(17, 24, 39) 100%
+              );
+            "></div>
+          </div>
+        </div>
+      </div>
       <!-- Header -->
-      <div class="border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex-shrink-0">
+      <div class="border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex-shrink-0 relative z-10">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-3">
             <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Research Project</h2>
@@ -116,7 +204,7 @@ const getProjectLinks = (project) => {
       </div>
 
       <!-- Content -->
-      <div class="flex-1 overflow-y-auto">
+      <div class="flex-1 overflow-y-auto relative z-10">
         <div class="max-w-4xl mx-auto px-6 py-8">
           <!-- Project Title -->
           <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6 leading-tight">

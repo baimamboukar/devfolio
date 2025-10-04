@@ -39,18 +39,22 @@ const handleProjectClick = (project) => {
 
 <template>
   <section class="mt-8">
-    <h2 class="w-auto mb-4 text-xl font-semibold group">
-      <nuxt-link
+    <!-- Section Header -->
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-xl font-bold">Featured Research</h2>
+
+      <UButton
+        color="sky"
+        variant="ghost"
+        size="xs"
         to="/research"
-        class="flex items-center w-full py-2 rounded-lg focus-visible:global-focus"
       >
-        Featured Research
-        <Icon
-          name="heroicons:chevron-right-solid"
-          class="ml-2 text-sky-500 group-hover:translate-x-1"
-        />
-      </nuxt-link>
-    </h2>
+        View All
+        <template #trailing>
+          <UIcon name="i-heroicons-arrow-right" />
+        </template>
+      </UButton>
+    </div>
     <p class="mb-6 text-zinc-700 dark:text-zinc-300">
       Highlights from my research portfolio spanning remote sensing, AI for healthcare, and space systems.
     </p>

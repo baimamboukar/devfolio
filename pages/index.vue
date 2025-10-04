@@ -48,6 +48,9 @@
 
     <app-divider class="md:my-6" />
 
+    <!-- Recent Achievements Banner -->
+    <AchievementsBanner />
+
     <!-- News/Updates Section -->
     <News :limit="4" @show-all="isNewsModalOpen = true" />
 
@@ -108,8 +111,9 @@
     </section>
 
     <app-divider class="md:my-6" />
-    <!-- Research Interests -->
-    <ResearchInterests />
+    <!-- Research Map -->
+    <ResearchMap />
+    <app-divider class="md:my-6" />
     <!-- Featured Research -->
     <FeaturedResearch />
     <!-- Latest Blog Posts -->
