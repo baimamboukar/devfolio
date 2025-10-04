@@ -5,9 +5,15 @@ research:
     paper_link: "#"
     topics: ["Air Quality", "Remote Sensing", "Google Earth Engine"]
     supervision: "Prof. Emily Aiken"
-    contributors: ["Kamikazi Raissa", "Bertin", "Evelyne"]
+    contributors: ["Kamikazi Raissa", "Bertin Nsanzuwera", "Evelyne Uwimana"]
     status: "Ongoing"
-    venue: "IEEE Conference 2024"
+    venue: "IEEE International Conference on Remote Sensing 2024"
+    featured: true
+    abstract: "This study investigates socioeconomic disparities in air quality across Rwanda using Sentinel-5P TROPOMI satellite data processed through Google Earth Engine. We develop novel methodologies to correlate atmospheric pollutant concentrations with demographic and economic indicators, revealing significant patterns in environmental justice. Our analysis demonstrates how satellite-based monitoring can inform policy decisions for equitable environmental health outcomes."
+    links:
+      preprint: "https://arxiv.org/abs/example"
+      code: "https://github.com/baimamboukar/rwanda-air-quality"
+      data: "https://github.com/baimamboukar/rwanda-air-quality-data"
 
   - title: "Improving Contrail Prediction Models for African Airspace: A Focus on Data Augmentation and Feature Engineering"
     cover: "/content/cover/iam-users.png"
@@ -16,7 +22,8 @@ research:
     supervision: "Prof. Moise Busogi"
     contributors: ["Alice Mugengano", "Jonathan Kayizzi"]
     status: "Ongoing"
-    venue: "Environmental Science Journal"
+    venue: "Environmental Science & Technology Journal"
+    abstract: "Aircraft contrails significantly impact climate through their radiative forcing effects. This research addresses the limited availability of contrail prediction models for African airspace by developing enhanced machine learning approaches with novel data augmentation techniques. We leverage satellite imagery and meteorological data to improve prediction accuracy for African flight corridors."
 
   - title: "Thermography for Breast Cancer Diagnosis using AI"
     cover: "/content/cover/iam-users.png"
@@ -24,9 +31,12 @@ research:
     topics: ["AI", "Healthcare", "Medical Imaging"]
     supervision: "Prof. Edith Luhanga"
     contributors: ["Peace Bakare"]
-    avatars: ["https://github.com/user-attachments/assets/57d35394-df5f-4949-ab25-a1ba2ca2e293"]
     status: "Under Review"
     venue: "Medical AI Conference 2024"
+    featured: true
+    abstract: "Early detection of breast cancer is crucial for patient outcomes, particularly in resource-constrained settings. This study develops an AI-powered thermography system for breast cancer screening using deep learning approaches. Our method provides a non-invasive, cost-effective alternative to traditional screening methods, making it accessible for underserved populations."
+    links:
+      preprint: "https://arxiv.org/abs/example-thermography"
 
   - title: "Causal Structure Analysis for Telemetry Anomaly Detection in Spacecraft Systems"
     cover: "/content/cover/iam-users.png"
@@ -36,6 +46,8 @@ research:
     contributors: ["Kip Koech"]
     status: "Ongoing"
     venue: "International Astronautical Congress 2025"
+    featured: true
+    abstract: "Spacecraft telemetry anomaly detection is critical for mission success and safety. This research applies causal inference methods to understand the underlying causal structure in spacecraft telemetry data. We develop novel graphical models that can identify root causes of anomalies, enabling more effective predictive maintenance and mission planning strategies."
 
   - title: "Towards the Africa we want: What is the role of space technology in achieving the African Union Agenda 2063?"
     cover: "/content/cover/iam-users.png"
@@ -45,3 +57,4 @@ research:
     contributors: ["Manyara Baraka", "Kip Koech"]
     status: "In Progress"
     venue: "Newspace Africa Conference 2026"
+    abstract: "The African Union's Agenda 2063 outlines ambitious goals for continental transformation. This policy analysis examines how space technology can accelerate progress toward these objectives, focusing on applications in agriculture, telecommunications, climate monitoring, and governance. We provide recommendations for space policy frameworks that align with Africa's development priorities."

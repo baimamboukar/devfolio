@@ -6,11 +6,13 @@ education:
     period: "2024-2025"
     icon: "https://github.com/user-attachments/assets/b7277964-5a64-4a82-92a7-46ceb3eb1b33"
     courses:
-      - Introduction to Machine Learning for Engineers
+      - Introduction To Machine Learning for Engineers
+      - Introduction To Deep Learning
       - Introduction to Probabilistic Graphical Models
-      - Machine Learning for Earth Observation
+      - Machine Learning For Earth Observation
       - Data, Inference and Applied Machine Learning
       - Mobile Big Data Analytis and Management
+      - Data Structures and Algorithms For Engineers
       - Applied Deep Learning
   
   - degree: "Major League Hacking Fellow in Software Engineering"

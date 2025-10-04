@@ -1,0 +1,70 @@
+updates:
+  - date: "2025-01-15"
+    title: "New working paper on targeting aid at scale"
+    description: "Comparing the cost-efficiency of algorithmic, survey-based, and community-based targeting methods in Bangladesh."
+    type: "publication"
+    link: "#"
+    tags: ["Machine Learning", "Development Economics", "Bangladesh"]
+
+  - date: "2024-12-20"
+    title: "Presented research at NeurIPS 2024 Workshop"
+    description: "Showcased our work on using satellite imagery and deep learning for poverty mapping in Sub-Saharan Africa."
+    type: "conference"
+    link: "#"
+    tags: ["Remote Sensing", "Deep Learning", "Poverty Mapping"]
+
+  - date: "2024-11-10"
+    title: "Awarded NASA Space Apps Challenge Regional Winner"
+    description: "Led a team developing an AI-powered system for detecting and predicting wildfire spread using satellite data."
+    type: "award"
+    link: "#"
+    tags: ["NASA", "Earth Observation", "AI"]
+
+  - date: "2024-10-15"
+    title: "Started collaboration with Rwanda Space Agency"
+    description: "Initiated research partnership on developing smallsat telemetry anomaly detection systems using causal inference."
+    type: "collaboration"
+    link: "#"
+    tags: ["Space Technology", "Rwanda", "Telemetry"]
+
+  - date: "2024-09-01"
+    title: "Joined CMU Africa as Graduate Researcher"
+    description: "Beginning Master's research focusing on ML applications in space systems and Earth observation."
+    type: "position"
+    link: "#"
+    tags: ["CMU", "Research", "Machine Learning"]
+
+  - date: "2024-08-20"
+    title: "Paper accepted at IEEE IGARSS 2024"
+    description: "Our paper on 'Mapping Socioeconomic Air Quality Disparities in Rwanda Using Sentinel-5P TROPOMI Data' was accepted."
+    type: "publication"
+    link: "#"
+    tags: ["Air Quality", "Remote Sensing", "Rwanda"]
+
+  - date: "2024-07-15"
+    title: "Completed AWS Solutions Architect Certification"
+    description: "Successfully obtained AWS Solutions Architect Associate certification, expanding cloud architecture expertise."
+    type: "certification"
+    link: "#"
+    tags: ["AWS", "Cloud Computing", "Certification"]
+
+  - date: "2024-06-10"
+    title: "Released open-source contrail detection toolkit"
+    description: "Published Python package for detecting aircraft contrails in GOES-16 satellite imagery for climate research."
+    type: "opensource"
+    link: "https://github.com/baimamboukar/contrail-detection"
+    tags: ["Climate", "Open Source", "Aviation"]
+
+  - date: "2024-05-20"
+    title: "Guest lecture at University of Yaoundé"
+    description: "Delivered talk on 'Machine Learning for Earth Observation: Applications in African Context' to computer science students."
+    type: "talk"
+    link: "#"
+    tags: ["Teaching", "Earth Observation", "Africa"]
+
+  - date: "2024-04-12"
+    title: "Won Falling Walls Lab Cameroon"
+    description: "Pitched innovative solution for using thermography and AI for accessible breast cancer screening in rural areas."
+    type: "award"
+    link: "#"
+    tags: ["Healthcare", "AI", "Innovation"]

@@ -1,25 +1,24 @@
 <script setup>
-// Dark theme attributes
-const isDark = useDark();
-const toggle = () => !isDark;
+const { $colorMode } = useNuxtApp();
+
+const toggleTheme = () => {
+  $colorMode.preference = $colorMode.preference === 'dark' ? 'light' : 'dark';
+};
+
+const isDark = computed(() => $colorMode.preference === 'dark');
 </script>
 
 <!-- Theme Toggle -->
 <template>
-  <label
-    class="flex h-6 w-10 p-[.125rem] items-center cursor-pointer rounded-full bg-zinc-200 dark:bg-zinc-700 border border-zinc-300 dark:border-zinc-600 text-zinc-700 [&:has(:focus-visible)]:outline-none [&:has(:focus-visible)]:ring-2 [&:has(:focus-visible)]:ring-blue-500 [&:has(:focus-visible)]:ring-opacity-50 [&:has(:focus-visible)]:ring-offset-0"
-    title="Toggle Theme"
-    aria-label="Toggle Website Theme"
+  <button
+    @click="toggleTheme"
+    class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 focus:outline-none transition-colors duration-200"
+    :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+    :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
   >
-    <input type="checkbox" class="peer sr-only" v-model="isDark" />
-    <span
-      class="h-5 w-5 p-1 flex items-center justify-center rounded-full text-center bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 peer-checked:translate-x-3/4 text-xs shadow cursor-pointer"
-      @click="toggle()"
-    >
-      <Icon
-        name="heroicons:moon-20-solid"
-        class="text-zinc-500 dark:text-zinc-100"
-      />
-    </span>
-  </label>
+    <Icon
+      :name="isDark ? 'heroicons:sun-20-solid' : 'heroicons:moon-20-solid'"
+      class="w-4 h-4"
+    />
+  </button>
 </template>

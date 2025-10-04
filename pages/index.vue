@@ -2,7 +2,7 @@
         definePageMeta({
           title: "Baimam Boukar Jean Jacques",
           description:
-            "I craft awesome softwares as a Flutter Mobile Engineer, Go Backend Builder, 2xAWS Certified, Machine Learning Practionner, and Impactful OSS contributor.",
+            "Graduate Researcher at CMU Africa | Machine Learning for Space Systems & Earth Observation | 2xAWS Certified | Open Source Contributor",
         });
 
         useHead({
@@ -16,10 +16,6 @@
           twitterTitle: () => route.meta.title,
         });
 
-        const skillset = ref({
-          essentials: ["Flutter", "Dart", "Nuxt", "Go", "AWS", "Python"],
-          tinker: ["Earth Observation", "Applied Machine Learning", "HuggingFace Transformers"],
-        });
 
         // // Fetch latest 2 blog posts
         // const { pending: blogsPending, data: blogPosts } = await useLazyAsyncData(
@@ -27,33 +23,8 @@
         //   () => queryContent("/blog").sort({ published_on: -1 }).limit(4).find()
         // );
 
-        // Fetch 2 featured projects
-        const { pending: projectsPending, data: projects } = await useLazyAsyncData(
-          "featured-projects",
-          () => queryContent("/projects").limit(4).find()
-        );
-  const isGalleryOpen = ref(false);
-
-  const galleryData = {
-    title: "Flutter Forward Extended Cameroon",
-    description: "A vibrant community event bringing together Flutter developers for learning, sharing, and networking. Experience highlights from workshops, presentations, and collaborative sessions.",
-    highlightImage: "https://github.com/user-attachments/assets/21035f17-4e63-408c-ad08-9cdc47c218aa",
-    images: [
-       "https://github.com/user-attachments/assets/a920ed50-5994-42c5-8318-0c5e6e5c1c7c",
-      "https://github.com/user-attachments/assets/aeeabf7a-4cb6-4992-bb05-365f1e01517e",
-      "https://github.com/user-attachments/assets/9a0c0ef8-9a30-4500-aa1c-18772efe27a8",
-       "https://github.com/user-attachments/assets/a920ed50-5994-42c5-8318-0c5e6e5c1c7c",
-      "https://github.com/user-attachments/assets/aeeabf7a-4cb6-4992-bb05-365f1e01517e",
-      "https://github.com/user-attachments/assets/9a0c0ef8-9a30-4500-aa1c-18772efe27a8",
-
-      "https://github.com/user-attachments/assets/a920ed50-5994-42c5-8318-0c5e6e5c1c7c",
-      "https://github.com/user-attachments/assets/aeeabf7a-4cb6-4992-bb05-365f1e01517e",
-      "https://github.com/user-attachments/assets/9a0c0ef8-9a30-4500-aa1c-18772efe27a8",
-      "https://github.com/user-attachments/assets/a920ed50-5994-42c5-8318-0c5e6e5c1c7c",
-      "https://github.com/user-attachments/assets/aeeabf7a-4cb6-4992-bb05-365f1e01517e",
-      "https://github.com/user-attachments/assets/9a0c0ef8-9a30-4500-aa1c-18772efe27a8"
-    ]
-  };
+  // News modal state
+  const isNewsModalOpen = ref(false);
 </script>
 
 <!-- Landing Page -->
@@ -66,159 +37,81 @@
         <span id="wave">👋</span>
       </h1>
       <p class="mb-4 text-xl font-medium text-zinc-700 dark:text-zinc-300">
-        I am a master student at
+        Master's student at
         <span class="text-semi-bold !text-red-500"
-          >Carnegie Mellon University</span
-        >. My research and projects interests center on Space Technologies,
-        Machine Learning applications in Healthcare and Earth Observation. My
-        expertise lies in software engineering and cloud computing.
+          >Carnegie Mellon University Africa</span
+        > specializing in Machine Learning applications for Space Systems and Earth Observation.
+        My research explores satellite telemetry analysis, remote sensing for socioeconomic assessment,
+        and AI-driven solutions for healthcare in resource-constrained settings.
       </p>
-      <!-- <a href="https://skillicons.dev">
-        <img
-          src="https://skillicons.dev/icons?i=flutter,nuxtjs,vercel,githubactions,firebase,golang,flask,docker,gcp,aws&perline=8"
-          alt="Skill Icons"
-        />
-      </a> -->
-      <!-- <p class="my-2 text-zinc-700 dark:text-zinc-300">
-        I am
-        <span class="subtle-highlight">currently seeking opportunities</span>
-        to share my passion and expertise.
-      </p> -->
     </section>
-    <app-divider class="md:my-6" />
-    <!-- <Research /> -->
-    <!-- Button to open gallery -->
-    <!-- <UButton @click="isGalleryOpen = true"> View Event Gallery </UButton> -->
 
-    <!-- Gallery Component -->
-    <AppGallery
-      v-model="isGalleryOpen"
-      :title="galleryData.title"
-      :description="galleryData.description"
-      :highlight-image="galleryData.highlightImage"
-      :images="galleryData.images"
-    />
+    <app-divider class="md:my-6" />
+
+    <!-- News/Updates Section -->
+    <News :limit="4" @show-all="isNewsModalOpen = true" />
+
+    <!-- News Modal -->
+    <NewsModal v-model="isNewsModalOpen" />
+
+    <app-divider class="md:my-6" />
+
+    <!-- Quick Links Grid -->
     <section class="mb-2 space-y-2">
       <div
         class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:grid-flow-col gap-2 lg:[&_:first-child]:row-span-2 [&_:first-child]:col-span-2 lg:[&_:first-child]:col-span-1"
       >
+        <!-- Book Call Card -->
         <div
-          class="flex items-center justify-center p-[1px] overflow-hidden font-medium shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:bg-gradient-to-b before:from-blue-500 before:to-lime-400 rounded-[calc(.375rem+1px)] dark:before:opacity-60 focus-within:ring-2 ring-offset-0 focus-within:ring-blue-400 focus-within:ring-opacity-75"
+          class="flex items-center justify-center p-[1px] overflow-hidden font-medium shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:bg-gradient-to-b before:from-sky-500 before:to-blue-600 rounded-[calc(.375rem+1px)] dark:before:opacity-70 focus-within:ring-2 ring-offset-0 focus-within:ring-sky-400 focus-within:ring-opacity-75"
         >
           <div
-            class="flex flex-col items-center justify-center w-full h-full gap-6 p-4 bg-white rounded-md dark:bg-zinc-800"
+            class="flex flex-col items-center justify-center w-full h-full gap-6 p-6 bg-white rounded-md dark:bg-zinc-800"
           >
-            <p class="text-lg font-bold">Let's Talk</p>
+            <div class="text-center">
+              <p class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Let's Connect</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Schedule a conversation</p>
+            </div>
             <nuxt-link
-              class="px-4 py-2 bg-sky-500 rounded-lg focus-visible:outline-none text-zinc-800"
-              to="#"
+              class="px-6 py-3 bg-sky-500 hover:bg-sky-600 rounded-lg focus-visible:outline-none text-white font-medium transition-colors duration-200"
+              to="https://calendly.com/baimamboukar"
+              target="_blank"
+              external
               id="contact-btn"
               >Book Call</nuxt-link
             >
           </div>
         </div>
+
         <app-link-card
-          label="LeetCode"
-          icon="fluent-emoji:teacup-without-handle"
-          url="/leetcode"
-        ></app-link-card>
-        <app-link-card
-          label="Projects"
-          icon="fluent-emoji:sparkles"
-          url="#"
+          label="Research"
+          icon="fluent-emoji:scientist"
+          url="/research"
         ></app-link-card>
         <app-link-card
           label="My Talks"
           icon="fluent-emoji:laptop"
           :is-external-url="true"
-          url="#"
+          url="/presentations"
         ></app-link-card>
         <app-link-card
-          label="My Streaks"
-          icon="fluent-emoji:fire"
-          :is-external-url="true"
-          url="#"
+          label="Projects"
+          icon="fluent-emoji:sparkles"
+          url="/projects"
+        ></app-link-card>
+        <app-link-card
+          label="Blog"
+          icon="fluent-emoji:writing-hand"
+          url="/blog"
         ></app-link-card>
       </div>
     </section>
+
     <app-divider class="md:my-6" />
-    <!-- Skills -->
-    <section>
-      <h2 class="py-2 mb-1 text-xl font-semibold">Skills</h2>
-      <!-- Primary Tools -->
-      <p class="mb-3 text-zinc-700 dark:text-zinc-300">
-        My specialty is <span class="subtle-highlight">solving problems</span>,
-        and my toolbox includes:
-      </p>
-      <ul
-        class="grid w-full grid-flow-col-dense grid-rows-3 p-0 pl-2 mb-3 list-disc gap-y-2 lg:w-3/4"
-      >
-        <li
-          v-for="skillName in skillset.essentials"
-          :key="skillName"
-          class="text-sky-500 list-inside"
-        >
-          <span class="font-medium text-zinc-700 dark:text-zinc-300">{{
-            skillName
-          }}</span>
-        </li>
-      </ul>
-      <!-- Secondary Tools -->
-      <p class="mb-3 text-zinc-700 dark:text-zinc-300">
-        I'm
-        <span class="subtle-highlight">always learning</span> and exploring:
-      </p>
-      <ul
-        class="grid w-full grid-flow-col-dense grid-rows-2 p-0 pl-2 mb-3 list-disc gap-y-2 lg:w-3/4"
-      >
-        <li
-          v-for="skillName in skillset.tinker"
-          :key="skillName"
-          class="text-sky-500 list-inside"
-        >
-          <span class="font-medium text-zinc-700 dark:text-zinc-300">{{
-            skillName
-          }}</span>
-        </li>
-      </ul>
-    </section>
-    <!-- Projects -->
-    <section>
-      <h2 class="w-auto mb-2 text-xl font-semibold group">
-        <nuxt-link
-          to="/projects"
-          class="flex items-center w-full py-2 rounded-lg focus-visible:global-focus"
-        >
-          My Projects
-          <Icon
-            name="heroicons:chevron-right-solid"
-            class="ml-2 text-sky-500 group-hover:translate-x-1"
-          />
-        </nuxt-link>
-      </h2>
-      <p class="mb-4 text-zinc-700 dark:text-zinc-300">
-        I often work on personnal projects on my spare time. My projects span a
-        diverse range of technologies and domains.
-      </p>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2">
-        <template v-if="projectsPending">
-          <app-project-skeleton
-            v-for="skeletonId in generateKeys(4)"
-            :key="skeletonId"
-          />
-        </template>
-        <template v-else>
-          <app-project-card
-            v-for="project in projects"
-            :key="project.title"
-            :icon="project.icon"
-            :project-title="project.title"
-            :project-description="project.description"
-            :project-url="project._path"
-          />
-        </template>
-      </div>
-    </section>
+    <!-- Research Interests -->
+    <ResearchInterests />
+    <!-- Featured Research -->
+    <FeaturedResearch />
     <!-- Latest Blog Posts -->
     <!-- <section>
       <h2 class="w-auto mb-2 text-xl font-semibold group">

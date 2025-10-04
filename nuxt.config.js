@@ -84,7 +84,7 @@ export default defineNuxtConfig({
 
   colorMode: {
     disableTransition: false,
-    preference: 'system',
+    preference: 'light',
   },
 
   future: {

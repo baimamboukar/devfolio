@@ -1,14 +1,13 @@
 <script setup>
   const profiles = {
     GitHub: "https://github.com/baimamboukar",
-    X: "https://twitter.com/baimamboukar",
     LinkedIn: "https://linkedin.com/in/baimamboukar",
-    Instagram: "https://instagram.com/baimamboukar",
-    Medium: "https://baimamboukar.medium.com",
+    GoogleScholar: "https://scholar.google.com/citations?user=YOUR_ID",
     HuggingFace: "https://huggingface.co/baimamboukar",
+    Kaggle: "https://www.kaggle.com/baimamboukar",
+    X: "https://twitter.com/baimamboukar",
     Credly: "https://www.credly.com/users/baimamboukar",
-    StackOverflow:
-      "https://stackoverflow.com/users/15155605/baimam-boukar-jean-jacques",
+    Instagram: "https://instagram.com/baimamboukar",
   };
 </script>
 
@@ -43,12 +42,18 @@
         :key="name"
         class="focus-visible:global-focus icon-link"
         :to="profileUrl"
-        :title="name"
-        :aria-label="`Link to My ${name} Profile`"
+        :title="name === 'GoogleScholar' ? 'Google Scholar' : name"
+        :aria-label="`Link to My ${name === 'GoogleScholar' ? 'Google Scholar' : name} Profile`"
         target="_blank"
         external
       >
-        <Icon :name="`simple-icons:${name.toLowerCase()}`" />
+        <Icon
+          :name="
+            name === 'GoogleScholar' ? 'academicons:google-scholar' :
+            name === 'Kaggle' ? 'cib:kaggle' :
+            `simple-icons:${name.toLowerCase()}`
+          "
+        />
       </nuxt-link>
     </div>
   </div>
