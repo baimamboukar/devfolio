@@ -10,7 +10,7 @@
 
     // Fetch the content data from the `about.yaml` file using Nuxt Content
     const { data, pending } = await useAsyncData('about', () => queryContent('about').findOne());
-    const orientation = ref('horizontal');
+
     // Define tabs for different sections
     const tabs = [
       {
@@ -26,10 +26,10 @@
         description: 'Professional work experience'
       },
       {
-        label: 'Certifications',
-        icon: 'i-heroicons-document-check',
-        slot: 'certifications',
-        description: 'Professional certifications and badges'
+        label: 'Credentials',
+        icon: 'i-heroicons-check-badge',
+        slot: 'credentials',
+        description: 'Professional certifications and achievements'
       },
       {
         label: 'Leadership',
@@ -77,12 +77,29 @@
           <Experience :experience="data.experience" />
         </template>
 
-        <!-- Certifications Tab -->
-        <template #certifications="{ item }">
+        <!-- Credentials Tab -->
+        <template #credentials="{ item }">
           <p class="text-gray-600 dark:text-gray-400 mb-6">
             {{ item.description }}
           </p>
-          <Certifications :certifications="data.certifications" />
+
+          <!-- Modern Two-Section Layout -->
+          <div class="space-y-6">
+            <!-- Certifications Section -->
+            <div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Certifications</p>
+              <Certifications :certifications="data.certifications" />
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-200 dark:border-zinc-700"></div>
+
+            <!-- Achievements Section -->
+            <div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Achievements</p>
+              <AchievementsExpandable :achievements="data.achievements" />
+            </div>
+          </div>
         </template>
 
         <!-- Leadership Tab -->
