@@ -1,6 +1,7 @@
 ---
 id: djabbama-code-oss-talk
 title: "Build Your Career with a Community Driven Approach"
+category: "community"
 community: "GDNC"
 icon: "github"
 cover: "/content/presentations/oss-talk-gdnc.png"

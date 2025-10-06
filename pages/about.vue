@@ -92,7 +92,7 @@
             </div>
 
             <!-- Divider -->
-            <div class="border-t border-gray-200 dark:border-zinc-700"></div>
+            <AppDivider />
 
             <!-- Achievements Section -->
             <div>

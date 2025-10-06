@@ -2,6 +2,7 @@
 id: flutter-io-2022
 title: "What's New in Flutter 3.0 | Google I/O Extended 2022"
 community: "GDG On Campus"
+category: "community"
 icon: "github"
 cover: "/content/presentations/flutter-io-2022.jpg"
 date: "2024-06-23"

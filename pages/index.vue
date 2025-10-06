@@ -23,6 +23,15 @@
         //   () => queryContent("/blog").sort({ published_on: -1 }).limit(4).find()
         // );
 
+        // Fetch featured projects
+        const { pending: projectsPending, data: featuredProjects } = await useLazyAsyncData(
+          "featured-projects-homepage",
+          () => queryContent("/projects")
+            .where({ title: { $ne: "More" } })
+            .limit(4)
+            .find()
+        );
+
   // News modal state
   const isNewsModalOpen = ref(false);
 </script>
@@ -149,6 +158,50 @@
     <app-divider class="md:my-6" />
     <!-- Featured Research -->
     <FeaturedResearch />
+
+    <app-divider class="md:my-6" />
+
+    <!-- Featured Projects -->
+    <section class="mb-8">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-xl font-bold">Featured Projects</h2>
+
+        <UButton
+          color="sky"
+          variant="ghost"
+          size="xs"
+          to="/projects"
+        >
+          View All
+          <template #trailing>
+            <UIcon name="i-heroicons-arrow-right" />
+          </template>
+        </UButton>
+      </div>
+      <p class="mb-6 text-zinc-700 dark:text-zinc-300">
+        A showcase of my favorite projects spanning mobile apps, web applications, and open-source contributions.
+      </p>
+
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <template v-if="projectsPending">
+          <app-project-skeleton
+            v-for="skeletonId in generateKeys(4)"
+            :key="skeletonId"
+          />
+        </template>
+        <template v-else>
+          <app-project-card
+            v-for="project in featuredProjects"
+            :key="project.title"
+            :icon="project.icon"
+            :project-title="project.title"
+            :project-description="project.description"
+            :project-url="project._path"
+          />
+        </template>
+      </div>
+    </section>
+
     <!-- Latest Blog Posts -->
     <!-- <section>
       <h2 class="w-auto mb-2 text-xl font-semibold group">

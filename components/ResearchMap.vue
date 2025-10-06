@@ -1,4 +1,12 @@
 <script setup>
+// Define props to control display options
+const props = defineProps({
+  showExploringApplications: {
+    type: Boolean,
+    default: false
+  }
+});
+
 const selectedDomain = ref(null);
 
 const researchDomains = [
@@ -105,8 +113,8 @@ const handleDomainClick = (domain) => {
       </div>
     </div>
 
-    <!-- Also Exploring Applications -->
-    <div class="mt-8 pt-6 border-t border-gray-200 dark:border-zinc-800">
+    <!-- Also Exploring Applications (optional) -->
+    <div v-if="showExploringApplications" class="mt-8 pt-6 border-t border-gray-200 dark:border-zinc-800">
       <h3 class="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-3">Also exploring applications in:</h3>
       <div class="flex flex-wrap gap-3">
         <div class="flex items-center text-sm px-3 py-2 bg-gray-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded-md">

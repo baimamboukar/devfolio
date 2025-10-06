@@ -2,6 +2,7 @@
 id: air-quality-monitoring-whs
 title: "Quality Monitoring System with Sentinel 5-Precursor TROPOMI data"
 community: "Westwelle Startup Haus"
+category: "academic"
 icon: "github"
 cover: "/content/presentations/air-quality-whs.jpg"
 date: "2024-11-26"

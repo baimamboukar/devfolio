@@ -96,33 +96,98 @@ const filteredGroupedNews = computed(() => {
   <UModal
     :model-value="modelValue"
     @update:model-value="emit('update:modelValue', $event)"
+    fullscreen
     :ui="{
-      container: 'flex min-h-full items-center justify-center text-center p-4',
-      base: 'relative text-left overflow-hidden flex flex-col',
-      width: 'w-[80vw]',
-      height: 'h-[80vh]'
+      container: 'flex flex-col h-screen',
+      overlay: { background: 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm' },
+      base: 'h-screen max-h-none w-screen max-w-none m-0 rounded-none'
     }"
   >
-    <UCard class="h-full flex flex-col">
+    <div class="h-full flex flex-col bg-white dark:bg-gray-900 relative overflow-hidden">
+      <!-- Background Pattern - Elegant Dotted Grid -->
+      <div class="absolute inset-0 pointer-events-none">
+        <!-- Left Side: Subtle Dotted Grid -->
+        <div class="absolute left-0 top-0 w-[20%] h-full">
+          <div class="w-full h-full relative">
+            <!-- Dotted Grid Pattern -->
+            <div class="absolute inset-0" style="
+              background-image: radial-gradient(circle, rgba(14, 165, 233, 0.15) 1px, transparent 1px);
+              background-size: 24px 24px;
+            "></div>
+            <!-- Smooth Fade Overlay -->
+            <div class="absolute inset-0 dark:hidden" style="
+              background: linear-gradient(to right,
+                transparent 0%,
+                transparent 60%,
+                rgba(255, 255, 255, 0.3) 80%,
+                rgba(255, 255, 255, 0.7) 90%,
+                white 100%
+              );
+            "></div>
+            <div class="absolute inset-0 hidden dark:block" style="
+              background: linear-gradient(to right,
+                transparent 0%,
+                transparent 60%,
+                rgba(17, 24, 39, 0.3) 80%,
+                rgba(17, 24, 39, 0.7) 90%,
+                rgb(17, 24, 39) 100%
+              );
+            "></div>
+          </div>
+        </div>
+
+        <!-- Right Side: Complementary Grid Lines -->
+        <div class="absolute right-0 top-0 w-[20%] h-full">
+          <div class="w-full h-full relative">
+            <!-- Grid Lines Pattern -->
+            <div class="absolute inset-0" style="
+              background-image:
+                linear-gradient(rgba(14, 165, 233, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(14, 165, 233, 0.08) 1px, transparent 1px);
+              background-size: 32px 32px;
+            "></div>
+            <!-- Smooth Fade Overlay -->
+            <div class="absolute inset-0 dark:hidden" style="
+              background: linear-gradient(to left,
+                transparent 0%,
+                transparent 60%,
+                rgba(255, 255, 255, 0.3) 80%,
+                rgba(255, 255, 255, 0.7) 90%,
+                white 100%
+              );
+            "></div>
+            <div class="absolute inset-0 hidden dark:block" style="
+              background: linear-gradient(to left,
+                transparent 0%,
+                transparent 60%,
+                rgba(17, 24, 39, 0.3) 80%,
+                rgba(17, 24, 39, 0.7) 90%,
+                rgb(17, 24, 39) 100%
+              );
+            "></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Header -->
-      <template #header>
-        <div class="flex items-center justify-between">
+      <div class="border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex-shrink-0 relative z-10">
+        <div class="flex items-center justify-between mb-4">
           <div>
-            <h2 class="text-2xl font-bold">All Updates & News</h2>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">All Updates & News</h2>
             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
               A comprehensive timeline of research, publications, and achievements
             </p>
           </div>
           <UButton
+            icon="i-heroicons-x-mark"
             color="gray"
             variant="ghost"
-            icon="i-heroicons-x-mark"
             @click="emit('update:modelValue', false)"
           />
         </div>
 
         <!-- Filter Tabs -->
-        <div class="mt-4 flex gap-2 overflow-x-auto pb-2">
+        <div class="flex justify-center gap-2 overflow-x-auto pb-2">
           <UButton
             v-for="filter in filterTypes"
             :key="filter.value"
@@ -134,10 +199,11 @@ const filteredGroupedNews = computed(() => {
             {{ filter.label }}
           </UButton>
         </div>
-      </template>
+      </div>
 
       <!-- Content -->
-      <div class="flex-1 overflow-y-auto">
+      <div class="flex-1 overflow-y-auto relative z-10">
+        <div class="max-w-4xl mx-auto px-6 py-8">
         <div v-if="Object.keys(filteredGroupedNews).length === 0" class="text-center py-12">
           <UIcon name="i-heroicons-inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4" />
           <p class="text-gray-500 dark:text-gray-400">No updates found for this filter</p>
@@ -225,7 +291,8 @@ const filteredGroupedNews = computed(() => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </UCard>
+    </div>
   </UModal>
 </template>

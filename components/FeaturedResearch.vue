@@ -102,7 +102,7 @@ const handleProjectClick = (project) => {
               <UBadge
                 v-for="topic in project.topics.slice(0, 3)"
                 :key="topic"
-                color="gray"
+                color="sky"
                 variant="soft"
                 size="xs"
               >

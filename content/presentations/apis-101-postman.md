@@ -2,6 +2,7 @@
 id: apis-101-postman
 title: "APIs 101 With Postman"
 community: "Postman Student Clubs"
+category: "workshop"
 icon: "postman"
 cover: "/content/presentations/apis-101-postman.jpg"
 date: "2023-02-06"

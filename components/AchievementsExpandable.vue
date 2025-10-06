@@ -28,18 +28,24 @@ const toggleExpanded = (index) => {
       >
         <!-- Achievement Image/Icon -->
         <div class="flex-shrink-0">
-          <div
-            v-if="achievement.icon"
-            class="w-12 h-12 rounded-lg bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900/30 dark:to-blue-900/30 flex items-center justify-center"
-          >
-            <Icon :name="achievement.icon || 'i-heroicons-trophy'" class="w-6 h-6 text-sky-600 dark:text-sky-400" />
-          </div>
+          <img
+            v-if="achievement.icon && (achievement.icon.startsWith('http') || achievement.icon.startsWith('/'))"
+            :src="achievement.icon"
+            :alt="achievement.title || achievement.name"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
           <img
             v-else-if="achievement.image"
             :src="achievement.image"
-            :alt="achievement.title"
+            :alt="achievement.title || achievement.name"
             class="w-12 h-12 rounded-lg object-cover"
           />
+          <div
+            v-else-if="achievement.icon && !achievement.icon.startsWith('http') && !achievement.icon.startsWith('/')"
+            class="w-12 h-12 rounded-lg bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900/30 dark:to-blue-900/30 flex items-center justify-center"
+          >
+            <Icon :name="achievement.icon" class="w-6 h-6 text-sky-600 dark:text-sky-400" />
+          </div>
           <div
             v-else
             class="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 flex items-center justify-center"
@@ -51,11 +57,12 @@ const toggleExpanded = (index) => {
         <!-- Title and Brief Info -->
         <div class="flex-1 min-w-0">
           <h4 class="font-medium text-zinc-900 dark:text-zinc-100 mb-1">
-            {{ achievement.title }}
+            {{ achievement.title || achievement.name }}
           </h4>
           <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
             <span v-if="achievement.organization">{{ achievement.organization }}</span>
-            <span v-if="achievement.year" class="text-xs">{{ achievement.year }}</span>
+            <span v-if="achievement.place">{{ achievement.place }}</span>
+            <span v-if="achievement.year || achievement.date" class="text-xs">{{ achievement.year || achievement.date }}</span>
           </div>
         </div>
 

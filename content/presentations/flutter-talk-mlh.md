@@ -1,6 +1,7 @@
 ---
 id: flutter-talk-mlh
 title: "Mobile App Development With Flutter and Dart | MLH Fellowship 23.SUM.B"
+category: "community"
 community: "MLH Fellowship"
 icon: "github"
 cover: "/content/presentations/flutter-talk-mlh.jpg"

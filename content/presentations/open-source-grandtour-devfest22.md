@@ -1,6 +1,7 @@
 ---
 id: open-source-grandtour-devfest22
 title: "Open Source Grand Tour | DevFest 2022"
+category: "community"
 community: "ACTINSPACE 2022"
 icon: "github"
 cover: "/content/presentations/open-source-grandtour-devfest22.jpg"
