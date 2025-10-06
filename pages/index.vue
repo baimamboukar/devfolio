@@ -1,19 +1,35 @@
 <script setup>
+        // Static page meta (definePageMeta doesn't support async)
         definePageMeta({
           title: "Baimam Boukar Jean Jacques",
-          description:
-            "Graduate Researcher at CMU Africa | Machine Learning for Space Systems & Earth Observation | 2xAWS Certified | Open Source Contributor",
+          description: "Graduate Researcher at CMU Africa | Machine Learning for Space Systems & Earth Observation | 2xAWS Certified | Open Source Contributor",
         });
 
+        // Load centralized configuration
+        const { config: siteConfig } = await useSiteConfig();
+        const { content: homepageContent } = await useHomepageContent();
+        const { getMessage } = await useUIMessages();
+
+        // Dynamic head configuration
         useHead({
-          titleTemplate: "Baimam Boukar JJ",
+          titleTemplate: siteConfig?.seo.title_template || "Baimam Boukar JJ",
+          title: siteConfig?.personal.name || "Baimam Boukar Jean Jacques",
+          meta: [
+            {
+              name: 'description',
+              content: siteConfig?.personal.tagline || "Graduate Researcher at CMU Africa | Machine Learning for Space Systems & Earth Observation | 2xAWS Certified | Open Source Contributor"
+            }
+          ]
         });
 
         const route = useRoute();
 
         useSeoMeta({
-          ogTitle: () => route.meta.title,
-          twitterTitle: () => route.meta.title,
+          ogTitle: () => siteConfig?.personal.name || route.meta.title,
+          twitterTitle: () => siteConfig?.personal.name || route.meta.title,
+          ogDescription: () => siteConfig?.personal.tagline,
+          twitterDescription: () => siteConfig?.personal.tagline,
+          twitterCreator: () => siteConfig?.seo.twitter_creator,
         });
 
 
@@ -23,17 +39,28 @@
         //   () => queryContent("/blog").sort({ published_on: -1 }).limit(4).find()
         // );
 
-        // Fetch featured projects
+        // Fetch featured projects (using configured limit)
+        const projectsLimit = siteConfig?.featured.projects_count || 4;
         const { pending: projectsPending, data: featuredProjects } = await useLazyAsyncData(
           "featured-projects-homepage",
           () => queryContent("/projects")
             .where({ title: { $ne: "More" } })
-            .limit(4)
+            .limit(projectsLimit)
             .find()
         );
 
   // News modal state
   const isNewsModalOpen = ref(false);
+
+  // Debug function for development
+  const { refreshAllConfigs } = useConfig();
+  const testConfigRefresh = async () => {
+    console.log('🧪 Testing config refresh...');
+    await refreshAllConfigs();
+    // Force reactivity update
+    await nextTick();
+    console.log('🧪 Config refresh completed, page should update');
+  };
 </script>
 
 <!-- Landing Page -->
@@ -46,8 +73,8 @@
         <img
           width="180"
           height="180"
-          src="/baimamboukar.jpeg"
-          alt="Baimam Boukar JJ"
+          :src="siteConfig?.personal.photo || '/baimamboukar.jpeg'"
+          :alt="siteConfig?.personal.name || 'Baimam Boukar JJ'"
           class="rounded-xl border-2 border-gray-200 dark:border-zinc-700"
         />
       </div>
@@ -57,16 +84,11 @@
         <!-- Text Summary Row -->
         <div>
           <h1 class="mb-4 text-2xl font-semibold">
-            Hi, I'm Baimam Boukar
-            <span id="wave">👋</span>
+            {{ homepageContent?.hero.greeting || "Hi, I'm Baimam Boukar" }}
+            <span id="wave">{{ homepageContent?.hero.emoji || "👋" }}</span>
           </h1>
           <p class="text-base font-medium text-zinc-700 dark:text-zinc-300">
-            Master's student at
-            <span class="text-semi-bold !text-red-500"
-              >Carnegie Mellon University Africa</span
-            > specializing in Machine Learning applications for Space Systems and Earth Observation.
-            My research explores satellite telemetry analysis, remote sensing for socioeconomic assessment,
-            and AI-driven solutions for healthcare in resource-constrained settings.
+            {{ homepageContent?.hero.introduction || "Master's student at Carnegie Mellon University Africa specializing in Machine Learning applications for Space Systems and Earth Observation. My research explores satellite telemetry analysis, remote sensing for socioeconomic assessment, and AI-driven solutions for healthcare in resource-constrained settings." }}
           </p>
         </div>
 
@@ -89,6 +111,19 @@
     </section>
 
     <app-divider class="md:my-6" />
+
+    <!-- Debug: Config Refresh Button (remove in production) -->
+    <div v-if="$dev" class="mb-4 p-4 bg-yellow-100 dark:bg-yellow-900/20 rounded-lg border border-yellow-300 dark:border-yellow-700">
+      <p class="text-sm text-yellow-800 dark:text-yellow-200 mb-2">
+        🧪 Development Debug: Test config refresh from GitHub Gists
+      </p>
+      <button
+        @click="testConfigRefresh"
+        class="px-3 py-1 bg-yellow-500 hover:bg-yellow-600 text-white text-sm rounded transition-colors"
+      >
+        Refresh Config from Gists
+      </button>
+    </div>
 
     <!-- Recent Achievements Banner -->
     <AchievementsBanner />
@@ -114,40 +149,36 @@
             class="flex flex-col items-center justify-center w-full h-full gap-6 p-6 bg-white rounded-md dark:bg-zinc-800"
           >
             <div class="text-center">
-              <p class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Let's Connect</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Schedule a conversation</p>
+              <p class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                {{ homepageContent?.quick_links.book_call.title || "Let's Connect" }}
+              </p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                {{ homepageContent?.quick_links.book_call.subtitle || "Schedule a conversation" }}
+              </p>
             </div>
             <nuxt-link
               class="px-6 py-3 bg-sky-500 hover:bg-sky-600 rounded-lg focus-visible:outline-none text-white font-medium transition-colors duration-200"
-              to="https://calendly.com/baimamboukar"
+              :to="homepageContent?.quick_links.book_call.url || 'https://calendly.com/baimamboukar'"
               target="_blank"
               external
               id="contact-btn"
-              >Book Call</nuxt-link
+              >{{ homepageContent?.quick_links.book_call.button_text || "Book Call" }}</nuxt-link
             >
           </div>
         </div>
 
         <app-link-card
-          label="Research"
-          icon="fluent-emoji:scientist"
-          url="/research"
-        ></app-link-card>
-        <app-link-card
-          label="My Talks"
-          icon="fluent-emoji:laptop"
-          :is-external-url="true"
-          url="/presentations"
-        ></app-link-card>
-        <app-link-card
-          label="Projects"
-          icon="fluent-emoji:sparkles"
-          url="/projects"
-        ></app-link-card>
-        <app-link-card
-          label="Blog"
-          icon="fluent-emoji:writing-hand"
-          url="/blog"
+          v-for="link in homepageContent?.quick_links.links || [
+            { label: 'Research', icon: 'fluent-emoji:scientist', url: '/research' },
+            { label: 'My Talks', icon: 'fluent-emoji:laptop', url: '/presentations', external: true },
+            { label: 'Projects', icon: 'fluent-emoji:sparkles', url: '/projects' },
+            { label: 'Blog', icon: 'fluent-emoji:writing-hand', url: '/blog' }
+          ]"
+          :key="link.label"
+          :label="link.label"
+          :icon="link.icon"
+          :url="link.url"
+          :is-external-url="link.external || false"
         ></app-link-card>
       </div>
     </section>
@@ -163,7 +194,7 @@
 
     <!-- Featured Projects -->
     <section class="mb-8">
-      <div class="flex items-center justify-between mb-2">
+      <div class="flex items-center justify-between mb-4">
         <h2 class="text-xl font-bold">Featured Projects</h2>
 
         <UButton

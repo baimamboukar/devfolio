@@ -23,6 +23,9 @@ importers:
       '@nuxt/ui-pro':
         specifier: ^1.6.0
         version: 1.6.0(axios@1.7.9)(change-case@5.4.4)(focus-trap@7.6.4)(magicast@0.3.5)(rollup@4.30.1)(typescript@5.7.3)(vite@6.0.7(@types/node@22.10.5)(jiti@2.4.2)(terser@5.37.0)(tsx@4.19.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))
+      '@types/js-yaml':
+        specifier: ^4.0.9
+        version: 4.0.9
       '@vueuse/components':
         specifier: ^12.3.0
         version: 12.4.0(typescript@5.7.3)
@@ -30,6 +33,9 @@ importers:
         specifier: ^1.7.9
         version: 1.7.9
       date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
+      js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
       resend:
@@ -1300,6 +1306,9 @@ packages:
 
   '@types/http-proxy@1.17.15':
     resolution: {integrity: sha512-25g5atgiVNTIv0LBDTg1H74Hvayx0ajtJPLLcYE3whFv75J0pWNtOBzaXJQgDTmrX1bx5U9YC2w/n65BN1HwRQ==}
+
+  '@types/js-yaml@4.0.9':
+    resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -6756,6 +6765,8 @@ snapshots:
   '@types/http-proxy@1.17.15':
     dependencies:
       '@types/node': 22.10.5
+
+  '@types/js-yaml@4.0.9': {}
 
   '@types/json-schema@7.0.15': {}
 
