@@ -1,56 +1,99 @@
 
 research:
   - title: "Mapping Socioeconomic Air Quality Disparities In Rwanda Using Sentinel-5P TROPOMI Data In Google Earth Engine"
-    cover: "/content/cover/iam-users.png"
+    cover: "https://raw.githubusercontent.com/baimamboukar/air-quality-socioeconomic-analysis-research/refs/heads/main/results/figures/distribution%20in%202025.png"
     paper_link: "#"
-    topics: ["Air Quality", "Remote Sensing", "Google Earth Engine"]
+    topics: ["Air Quality", "Remote Sensing", "Google EE"]
     supervision: "Prof. Emily Aiken"
-    contributors: ["Kamikazi Raissa", "Bertin Nsanzuwera", "Evelyne Uwimana"]
-    status: "Ongoing"
-    venue: "IEEE International Conference on Remote Sensing 2024"
-    featured: true
+    contributors: ["Kamikazi Raissa", "Bertin Ndahayo", "Evelyne Umubyeyi"]
+    status: "Published"
+    venue: "IEEE MIGARS 2025"
+    featured: false
     abstract: "This study investigates socioeconomic disparities in air quality across Rwanda using Sentinel-5P TROPOMI satellite data processed through Google Earth Engine. We develop novel methodologies to correlate atmospheric pollutant concentrations with demographic and economic indicators, revealing significant patterns in environmental justice. Our analysis demonstrates how satellite-based monitoring can inform policy decisions for equitable environmental health outcomes."
-    links:
+    links: 
       preprint: "https://arxiv.org/abs/example"
-      code: "https://github.com/baimamboukar/rwanda-air-quality"
-      data: "https://github.com/baimamboukar/rwanda-air-quality-data"
+      code: "https://github.com/baimamboukar/air-quality-socioeconomic-analysis-research"
+      data: "https://github.com/baimamboukar/air-quality-socioeconomic-analysis-research"
 
-  - title: "Improving Contrail Prediction Models for African Airspace: A Focus on Data Augmentation and Feature Engineering"
-    cover: "/content/cover/iam-users.png"
+  - title: "Explainable Deep-Learning Based Potentially Hazardous Asteroids Classification Using Graph Neural Networks"
+    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499631459-7cb32488-e761-4366-8a5b-ca90951e7132.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251010/us-east-1/s3/aws4_request&X-Amz-Date=20251010T014952Z&X-Amz-Expires=300&X-Amz-Signature=4bff8163802d390bf82beaa1fba52c8057be0c9bf5326cea5fd0626dac4d7101&X-Amz-SignedHeaders=host"
+    paper_link: "https://arxiv.org/html/2504.18605v1"
+    topics: ["Space", "AI", "Astrophysics"]
+    supervision: "Prof. Worrel"
+    contributors: []
+    featured: true
+    status: "Published"
+    venue: "Harvard AstroAI Workshop 2025."
+    abstract: "Classifying Potentially Hazardous Asteroids (PHAs) is crucial for planetary defense. While the official designation relies on simple metrics (Earth MOID and Absolute Magnitude H), we explore if complex dynamical relationships offer a robust, interpretable hazard assessment framework. We introduce a Graph Neural Network (GNN) approach that models asteroids as nodes defined by 11 orbital and physical features. Edges are defined using the Tisserand parameter relative to Jupiter (TJ) as a proxy for dynamical similarity, allowing the GNN to capture latent relationships among asteroid groups. Using the NASA/JPL Small-Body Database dataset, the model achieves an overall accuracy of 99% and an AUC of 0.99."
+    links: 
+      preprint: "https://arxiv.org/html/2504.18605v1"
+      code: "https://github.com/baimamboukar/hazardous-asteroid-classification"
+      data: "https://github.com/baimamboukar/hazardous-asteroid-classification"
+
+
+  - title: "Computer Vision-based Calibration of Visual Landing Aids Using Autonomous Drones (PAPI Case Study)"
+    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499633238-35689499-1df4-4e1f-a694-a030161e9ea6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251010/us-east-1/s3/aws4_request&X-Amz-Date=20251010T015435Z&X-Amz-Expires=300&X-Amz-Signature=3f485e99ddd30fee1a2b1ce87006328a74e96c4c91141b16a3875484a6ea5c40&X-Amz-SignedHeaders=host"
+    paper_link: "https://arxiv.org/html/2504.18605v1"
+    topics: ["Space", "AI", "Astrophysics"]
+    supervision: "Prof. Moise Busogi"
+    contributors: ["Alice Mugengano", "Jonathan Kayizzi", "Richard Muhirwa"]
+    status: "Review"
+    featured: true
+    venue: "IEEE Aerospace Conference 2026."
+    abstract: "This research presents a vision-based approach to autonomous drone navigation and landing trajectory optimization, demonstrated for the calibration of Precision Approach Path Indicators (PAPI). Traditional calibration methods require specialized aircraft equipped with photometric equipment, resulting in high operational costs ($15,000-25,000 per calibration), runway disruptions, and significant carbon emissions. Our proposed system leverages computer vision and machine learning to detect and classify PAPI light configurations under diverse environmental conditions. A convolutional neural network, trained on the LARD dataset comprising over 17,000 real and synthetic aerial runway images, enables accurate pattern recognition. This is integrated with a trajectory generation algorithm that aligns drone flight paths to evaluate and verify standard approach angles. The system achieves a modal classification accuracy of 97% in detecting PAPI light patterns and a fivefold improvement in angular measurement precision (±0.01° vs. ±0.05°)."
+    links: 
+      preprint: "https://arxiv.org/"
+      code: "https://github.com/baimamboukar/"
+      data: "https://github.com/baimamboukar/"
+
+
+  - title: "Humidity Inference with Geographic Features and Machine Learning for Enhanced Contrail Prediction for African Airspace"
+    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499628852-b2c66a21-0b7b-4702-8dea-36e737490111.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251010/us-east-1/s3/aws4_request&X-Amz-Date=20251010T015109Z&X-Amz-Expires=300&X-Amz-Signature=afc6f96d2d6e5ab523c7dfb64cb785b43e7c924d128c1523c3220056f82c8a0f&X-Amz-SignedHeaders=host"
     paper_link: "#"
     topics: ["Remote Sensing", "Aviation", "Contrails"]
     supervision: "Prof. Moise Busogi"
     contributors: ["Alice Mugengano", "Jonathan Kayizzi"]
-    status: "Ongoing"
-    venue: "Environmental Science & Technology Journal"
-    abstract: "Aircraft contrails significantly impact climate through their radiative forcing effects. This research addresses the limited availability of contrail prediction models for African airspace by developing enhanced machine learning approaches with novel data augmentation techniques. We leverage satellite imagery and meteorological data to improve prediction accuracy for African flight corridors."
+    status: "Published"
+    featured: true
+    venue: "IEEE MIGARS 2025"
+    abstract: "Air travel's 3.8% yearly growth amplifies aviation's impact, with contrails causing about 4% of global warming. In Africa, sparse meteorological data and coarse ERA5 resolution underpredict contrails in cities like Nairobi and Lagos. This study uses a Random Forest model within PyContrails to infer upper-tropospheric humidity (RHi) from water proximity, forest density, and topography. Using global datasets, it achieves an R2 of 0.59 identifying water proximity as the main driver. African cities show only 32 contrail segments versus 450 in Europe, underscoring the model's potential to refine predictions and reduce aviation's non-CO₂ climate effects."
+    links: 
+      preprint: "https://arxiv.org/"
+      code: "https://github.com/JonahKayizzi/Environment-Impact-Assessment-of-Aircraft-Contrails"
+      data: "https://github.com/JonahKayizzi/Environment-Impact-Assessment-of-Aircraft-Contrails"
 
   - title: "Thermography for Breast Cancer Diagnosis using AI"
-    cover: "/content/cover/iam-users.png"
+    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499625992-2d6be334-cb3b-4bea-ab39-169d29551015.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251010/us-east-1/s3/aws4_request&X-Amz-Date=20251010T015227Z&X-Amz-Expires=300&X-Amz-Signature=e354779a36768ab63db9691d0f47437db7e52206494062315ccbad8d4ac067ac&X-Amz-SignedHeaders=host"
     paper_link: "#"
     topics: ["AI", "Healthcare", "Medical Imaging"]
     supervision: "Prof. Edith Luhanga"
-    contributors: ["Peace Bakare"]
-    status: "Review"
-    venue: "Medical AI Conference 2024"
-    featured: true
+    contributors: ["Peace Bakare", "Lucie Niyomutoni"]
+    status: "Ongoing"
+    venue: ""
+    featured: false
     abstract: "Early detection of breast cancer is crucial for patient outcomes, particularly in resource-constrained settings. This study develops an AI-powered thermography system for breast cancer screening using deep learning approaches. Our method provides a non-invasive, cost-effective alternative to traditional screening methods, making it accessible for underserved populations."
     links:
-      preprint: "https://arxiv.org/abs/example-thermography"
+      preprint: "https://arxiv.org/"
+      code: "https://github.com/baimamboukar"
+      data: "https://github.com/baimamboukar"
 
   - title: "Causal Structure Analysis for Telemetry Anomaly Detection in Spacecraft Systems"
-    cover: "/content/cover/iam-users.png"
+    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499624201-53b83299-ad18-4f09-958a-deadf878006f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251010/us-east-1/s3/aws4_request&X-Amz-Date=20251010T010945Z&X-Amz-Expires=300&X-Amz-Signature=ea5e86ba26355e9295563a9976df8a5a5727f9ec9f3c6919dc60c2f0ebe2e851&X-Amz-SignedHeaders=host"
     paper_link: "#"
     topics: ["Satellites Operations", "Telemetry", "Graphical Models"]
     supervision: "Prof. Assane Gueye"
     contributors: ["Kip Koech"]
     status: "Ongoing"
-    venue: "International Astronautical Congress 2025"
-    featured: true
-    abstract: "Spacecraft telemetry anomaly detection is critical for mission success and safety. This research applies causal inference methods to understand the underlying causal structure in spacecraft telemetry data. We develop novel graphical models that can identify root causes of anomalies, enabling more effective predictive maintenance and mission planning strategies."
+    venue: "10th TTC International Workshop"
+    featured: false
+    abstract: "Spacecraft telemetry anomaly detection is critical for mission success and safety. This research applies causal inference methods to understand the underlying causal structure in spacecraft telemetry data. We developed graphical models that can identify root causes of anomalies, enabling more effective predictive maintenance and mission planning strategies."
+    links:
+      preprint: "https://arxiv.org/"
+      code: "https://github.com/baimamboukar/causual-structure-discovery-spacecraft-telemetry"
+      data: "https://github.com/baimamboukar/causual-structure-discovery-spacecraft-telemetry"
 
   - title: "Towards the Africa we want: What is the role of space technology in achieving the African Union Agenda 2063?"
-    cover: "/content/cover/iam-users.png"
+    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499639440-59b9ae28-e3ba-4825-81aa-5a5015a4b20a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251010/us-east-1/s3/aws4_request&X-Amz-Date=20251010T015753Z&X-Amz-Expires=300&X-Amz-Signature=661fa685675df831770551d40229c39d2670b7fda393df92a1fd07a04bf8cb57&X-Amz-SignedHeaders=host"
     paper_link: "#"
     topics: ["African Union", "Satellites Technology", "Space Policy"]
     supervision: "Prof. Moise Busogi"

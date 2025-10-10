@@ -2,7 +2,7 @@
         // Static page meta (definePageMeta doesn't support async)
         definePageMeta({
           title: "Baimam Boukar Jean Jacques",
-          description: "Graduate Researcher at CMU Africa | Machine Learning for Space Systems & Earth Observation | 2xAWS Certified | Open Source Contributor",
+          description: "Graduate Researcher, CMU Africa. Interrested in Interdisciplinary research at the intersection AI and Space Exploration.",
         });
 
         // Load centralized configuration
@@ -17,7 +17,7 @@
           meta: [
             {
               name: 'description',
-              content: siteConfig?.personal.tagline || "Graduate Researcher at CMU Africa | Machine Learning for Space Systems & Earth Observation | 2xAWS Certified | Open Source Contributor"
+              content: 'Graduate Researcher, CMU Africa. Interrested in Interdisciplinary research at the intersection AI and Space Exploration.'
             }
           ]
         });
@@ -88,7 +88,7 @@
             <span id="wave">{{ homepageContent?.hero.emoji || "👋" }}</span>
           </h1>
           <p class="text-base font-medium text-zinc-700 dark:text-zinc-300">
-            {{ homepageContent?.hero.introduction || "Master's student at Carnegie Mellon University Africa specializing in Machine Learning applications for Space Systems and Earth Observation. My research explores satellite telemetry analysis, remote sensing for socioeconomic assessment, and AI-driven solutions for healthcare in resource-constrained settings." }}
+            {{ homepageContent?.hero.introduction || "I am a Master student In IT, Applied Machine Learning at Carnegie Mellon University. My research and projects interests center on Earth Observation, and Artificial Intelligence applications in Astronomy, Space Missions Design and Space Operations. My expertise lies in Machine Learning and Software Engineering." }}
           </p>
         </div>
 

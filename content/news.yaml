@@ -1,70 +1,73 @@
 updates:
-  - date: "2025-01-15"
-    title: "New working paper on targeting aid at scale"
-    description: "Comparing the cost-efficiency of algorithmic, survey-based, and community-based targeting methods in Bangladesh."
-    type: "publication"
+  - date: "2025-06-01"
+    title: "Joined IBM as a Research Scientist Intern"
+    description: "I started an Internship on AI Resarch at IBM Research, Kenya Lab. Beautiful things ahead 🫴🏾❤️‍🔥."
+    type: "status"
     link: "#"
-    tags: ["Machine Learning", "Development Economics", "Bangladesh"]
+    tags: ["Internship", "IBM", "AI"]
 
-  - date: "2024-12-20"
-    title: "Presented research at NeurIPS 2024 Workshop"
-    description: "Showcased our work on using satellite imagery and deep learning for poverty mapping in Sub-Saharan Africa."
+  - date: "2025-07-04"
+    title: "Attending the African Aviation Summit 2025"
+    description: "Attended the Africa Aviation Summit 2025. Presented a Poster, Connected with Aerospace Engineers and Researchers. Witnessed (live) the launch of futuristic air-mobility technologies In Rwanda, Kigali. "
     type: "conference"
     link: "#"
-    tags: ["Remote Sensing", "Deep Learning", "Poverty Mapping"]
+    tags: ["Aerospace", "Research", "Poster"]
 
-  - date: "2024-11-10"
-    title: "Awarded NASA Space Apps Challenge Regional Winner"
-    description: "Led a team developing an AI-powered system for detecting and predicting wildfire spread using satellite data."
-    type: "award"
+  - date: "2025-05-04"
+    title: "Presented a talk about Geospatial AI"
+    description: "Invited by the Gaston-Berger University Computer Science club, In Senegal, I talked about Geospatial AI, and the opportunities behind it, as it links to the new Segenal's Saltellite: GAINDESAT-1"
+    type: "talk"
     link: "#"
-    tags: ["NASA", "Earth Observation", "AI"]
+    tags: ["Space", "Geospatial", "AI"]
 
-  - date: "2024-10-15"
-    title: "Started collaboration with Rwanda Space Agency"
-    description: "Initiated research partnership on developing smallsat telemetry anomaly detection systems using causal inference."
-    type: "collaboration"
+  - date: "2025-06-30"
+    title: "Presented a Talk on Open Source"
+    description: "Invited by the Techies Haven community, I shared my Open Source contributions experience. The story of how I built my profile as a Software Engineer. I also shared my experience working with G-Research as a Open Source Engineer Intern, during MLH Fellowship 3034"
+    type: "talk"
     link: "#"
-    tags: ["Space Technology", "Rwanda", "Telemetry"]
+    tags: ["Open Source", "Internship", "Community"]
 
   - date: "2024-09-01"
-    title: "Joined CMU Africa as Graduate Researcher"
-    description: "Beginning Master's research focusing on ML applications in space systems and Earth observation."
+    title: "Joined CyLab Africa as a Research Assistant"
+    description: "Joined Upanzi/CyLab DPI/DPG team as a Research Assistant."
     type: "position"
     link: "#"
     tags: ["CMU", "Research", "Machine Learning"]
 
-  - date: "2024-08-20"
-    title: "Paper accepted at IEEE IGARSS 2024"
-    description: "Our paper on 'Mapping Socioeconomic Air Quality Disparities in Rwanda Using Sentinel-5P TROPOMI Data' was accepted."
+  - date: "2025-07-01"
+    title: "Two papers accepted at IEEE MIGARS 2025"
+    description: "Our paper on 'Mapping Socioeconomic Air Quality Disparities in Rwanda Using Sentinel-5P TROPOMI Data' and 'Tropospheric level humidity Inference using Geographical features for contrails prediction In African Airspace' were accepted."
     type: "publication"
     link: "#"
-    tags: ["Air Quality", "Remote Sensing", "Rwanda"]
+    tags: ["Air Quality", "Remote Sensing", "Earth Observation"]
 
-  - date: "2024-07-15"
-    title: "Completed AWS Solutions Architect Certification"
-    description: "Successfully obtained AWS Solutions Architect Associate certification, expanding cloud architecture expertise."
-    type: "certification"
+
+  - date: "2025-05-20"
+    title: "Paper accepter at Harvard AstroAI Workshop"
+    description: "My manuscript on Deep Learning based Potentially Hazardous Asteroids Classification using Graph Neural Networks"
+    type: "conference"
     link: "#"
-    tags: ["AWS", "Cloud Computing", "Certification"]
-
-  - date: "2024-06-10"
-    title: "Released open-source contrail detection toolkit"
-    description: "Published Python package for detecting aircraft contrails in GOES-16 satellite imagery for climate research."
-    type: "opensource"
-    link: "https://github.com/baimamboukar/contrail-detection"
-    tags: ["Climate", "Open Source", "Aviation"]
-
-  - date: "2024-05-20"
-    title: "Guest lecture at University of Yaoundé"
-    description: "Delivered talk on 'Machine Learning for Earth Observation: Applications in African Context' to computer science students."
-    type: "talk"
-    link: "#"
-    tags: ["Teaching", "Earth Observation", "Africa"]
+    tags: ["Asteroids", "Space", "AI"]
 
   - date: "2024-04-12"
     title: "Won Falling Walls Lab Cameroon"
-    description: "Pitched innovative solution for using thermography and AI for accessible breast cancer screening in rural areas."
+    description: "My team pitched our Intellibra solution: Using AI-assisted thermography device for accessible breast cancer screening in low-resource settings. Our team will be representing Cameroon at International Finals"
     type: "award"
     link: "#"
     tags: ["Healthcare", "AI", "Innovation"]
+  
+  - date: "2022-06-11"
+    title: "Won ActInSpace Cameroon 2022"
+    description: "We participated to the 2022's ActInSpace Hackathon. Despite being the youngests in the competition, we emerged as winner with our AI solution for flight path optimization to reduce aviation's climate impact."
+    type: "award"
+    link: "https://www.cameroon-tribune.cm/article.html/55710/fr.html/anzia-juvis-mbarika-un-genie-lassaut-de-la-pollution"
+    tags: ["Space", "AI", "Innovation"]
+
+
+    
+  - date: "2024-03-07"
+    title: "Won Accelerate Africa 2022's Contest"
+    description: "We participated to the 2022's ActInSpace Hackathon. Despite being the youngests in the competition, we emerged as winner with our AI solution for flight path optimization to reduce aviation's climate impact."
+    type: "award"
+    link: "https://tribunedelinfo.com/concours-accelarate-africa-lingeniosite-de-ict-university-au-sommet/"
+    tags: ["Space", "AI", "Innovation"]

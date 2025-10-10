@@ -1,4 +1,6 @@
 overview: "I am a master student at Carnegie Mellon University. My research and projects interests center on Space Technologies and Machine Learning applications in Earth Observation. My expertise lies in software engineering and cloud computing."
+
+
 education:
   - degree: "Master of Science in Information Technology"
     institution: "Carnegie Mellon University Africa"
@@ -25,11 +27,24 @@ education:
       - Open Source Licensing
       - GitHub Source Contributions
   
+  
+  - degree: "Introduction To Space Missions Design"
+    institution: "NMD Ltd x ICT University"
+    specialization: "Concurrent Engineering for Space Missions"
+    period: "2022-2022"
+    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499584602-4bb15dac-d095-4ecf-80f8-1af447ecf1eb.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251009/us-east-1/s3/aws4_request&X-Amz-Date=20251009T222835Z&X-Amz-Expires=300&X-Amz-Signature=1b3010eacfa02b700bef3ac26d33ec62ba62d3381510acb0b6009a86e98b0e91&X-Amz-SignedHeaders=host"
+    courses:
+      - Satellites Orbits
+      - Space Missions Design
+      - Satellites Orbits
+      - Attitude Determination Control Systems (ADCS)
+      - Concurrent Engineering with European Space Agency OSS Softwares
+      
   - degree: "Bachelor of Science in Computer Science"
     institution: "ICT University"
     specialization: "Distributed Systems and Cloud Computing"
     period: "2020-2024"
-    icon: "https://github.com/user-attachments/assets/5f90e9bb-9a1d-433a-81d8-c442facca063"
+    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499586491-5903a464-f03d-4153-be48-4ab513b3c3ce.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251009/us-east-1/s3/aws4_request&X-Amz-Date=20251009T223431Z&X-Amz-Expires=300&X-Amz-Signature=dc2ec53a40e4ccdfce2ef90613b838dcab2a7d1723d0b6902f587c57431e5ce2&X-Amz-SignedHeaders=host"
     courses:
       - Algorithms and Data Structures
       - Object Oriented Programming In C++
@@ -41,15 +56,27 @@ education:
 
 # Update experience section with corrected dates and details
 experience:
+  
+  - title: "Research Scientist Intern"
+    company: "IBM Research"
+    location: "Nairobi, Kenya"
+    period: "June 2025 - September 2025"
+    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499577233-e55db71c-b37e-49c7-a8ad-7a070909a661.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251009T221147Z&X-Amz-Expires=300&X-Amz-Signature=51d21d96084bf9565c0242666f13ad87d82fef1acccc22be75490e15e2b165b2&X-Amz-SignedHeaders=host"
+    status: "past"
+    responsibilities:
+    - "Accelerated algorithmic efficiency and robustness of IBM Deepscanner by optimising core algorithms and implementing reproducibility frameworks to support precise detection of neural nodes responsible for hallucination and toxicity in the activation space of LLMs"
+    - "Enhanced IBM DeepScanner's modularity and scalability by architecting a plug-and-play codebase enabling rapid and reproducible large-scale experiments both locally and in cloud environments and making it three times more faster."
+    - "Extending DeepScanner to handle anomalous patterns retrieval tasks in large vector databases and with a unified architecture for scalable experimentation across multiple data and model types."
+
   - title: "Research Assistant"
     company: "Carnegie Mellon University Africa"
     location: "Kigali, Rwanda"
-    period: "Jan 2025 - Present"
+    period: "Jan 2025 - June 2025"
     icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
     status: "Upcoming"
     responsibilities:
-    - "Developed and optimized mobile apps for research experiments"
-    - "Implemented data pipelines for processing users data"
+    - "Engineered open-source mobile software solutions to demonstrate practical applications for laboratory research projects."
+    - "Enforced best open-science practices in code quality, for reproducibility and transparency."
 
   - title: "Mobile Development Team Lead"
     company: "Caasitech Group LLC"
