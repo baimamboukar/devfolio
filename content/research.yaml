@@ -11,7 +11,7 @@ research:
     featured: false
     abstract: "This study investigates socioeconomic disparities in air quality across Rwanda using Sentinel-5P TROPOMI satellite data processed through Google Earth Engine. We develop novel methodologies to correlate atmospheric pollutant concentrations with demographic and economic indicators, revealing significant patterns in environmental justice. Our analysis demonstrates how satellite-based monitoring can inform policy decisions for equitable environmental health outcomes."
     links: 
-      preprint: "https://arxiv.org/abs/example"
+      preprint: "https://arxiv.org/"
       code: "https://github.com/baimamboukar/air-quality-socioeconomic-analysis-research"
       data: "https://github.com/baimamboukar/air-quality-socioeconomic-analysis-research"
 

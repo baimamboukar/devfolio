@@ -6,7 +6,6 @@ tags:
   - Space
   - NASA
   - SpaceX
-  - Astronomy
 live_url: "https://cosmosense.baimamboukar.dev"
 source_url: "https://github.com/baimamboukar/cosmosense"
 image: "https://github.com/baimamboukar/cosmosense/blob/main/assets/images/comso.png?raw=true"
