@@ -30,7 +30,12 @@ CAMPAIN ![image](https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8
 
 
 MINESEC ![image](https://github.com/user-attachments/assets/792eab86-5fe1-4bb1-95ae-c0fbce35c9ee)
+INTELIBRA <img width="1138" height="370" alt="image" src="https://github.com/user-attachments/assets/50fccf04-724f-4ad7-b708-24bf212855c7" />
+ICON <img width="126" height="101" alt="image" src="https://github.com/user-attachments/assets/8ebe3ca7-e96c-42c2-b67a-856f8a5323ef" />
+
+
 
 
 GITHUB ![image](https://github.com/user-attachments/assets/19771f37-ee31-43d6-a993-29de6929379c)
 -->
+
