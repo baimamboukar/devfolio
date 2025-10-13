@@ -185,8 +185,8 @@
 
     <app-divider class="md:my-6" />
     <!-- Research Map -->
-    <ResearchMap />
-    <app-divider class="md:my-6" />
+    <!-- <ResearchMap />
+    <app-divider class="md:my-6" /> -->
     <!-- Featured Research -->
     <FeaturedResearch />
 

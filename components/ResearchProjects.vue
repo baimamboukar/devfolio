@@ -5,35 +5,14 @@ const { data: researchData } = await useAsyncData('research', () => queryContent
 
 const research = computed(() => researchData.value?.research || []);
 
-const workingPapers = computed(() =>
-  research.value.filter(project =>
-    project.status === 'Ongoing' || project.status === 'In Progress' || project.status === 'Review'
-  )
-);
-
-const conferenceProceedings = computed(() =>
-  research.value.filter(project =>
-    project.status === 'Published' || project.status === 'Completed'
-  )
-);
-
 // Lazy loading state
-const workingPapersDisplayCount = ref(3);
-const proceedingsDisplayCount = ref(3);
+const displayCount = ref(6);
 const itemsPerLoad = 3;
 
-// Computed arrays for display (moved to after filter logic)
-
-// Load more functions
-const loadMoreWorkingPapers = () => {
-  workingPapersDisplayCount.value += itemsPerLoad;
+// Load more function
+const loadMore = () => {
+  displayCount.value += itemsPerLoad;
 };
-
-const loadMoreProceedings = () => {
-  proceedingsDisplayCount.value += itemsPerLoad;
-};
-
-// Check if there are more items to load (moved to after filter logic)
 
 const getStatusColor = (status) => {
   const colors = {
@@ -72,11 +51,6 @@ const displayMode = ref('list'); // 'list' or 'grid'
 // Always show search bar
 const showSearchBar = computed(() => true);
 
-// Toggle display mode
-const toggleDisplayMode = () => {
-  displayMode.value = displayMode.value === 'list' ? 'grid' : 'list';
-};
-
 // Get unique domains from all research papers
 const availableDomains = computed(() => {
   const domains = new Set();
@@ -88,9 +62,9 @@ const availableDomains = computed(() => {
   return Array.from(domains).sort();
 });
 
-// Filter functions
-const filteredWorkingPapers = computed(() => {
-  let filtered = workingPapers.value;
+// Filter function for all projects
+const filteredProjects = computed(() => {
+  let filtered = research.value;
 
   // Apply search query filter
   if (searchQuery.value.trim()) {
@@ -118,51 +92,14 @@ const filteredWorkingPapers = computed(() => {
   return filtered;
 });
 
-const filteredConferenceProceedings = computed(() => {
-  let filtered = conferenceProceedings.value;
-
-  // Apply search query filter
-  if (searchQuery.value.trim()) {
-    const query = searchQuery.value.toLowerCase();
-    filtered = filtered.filter(project =>
-      project.title.toLowerCase().includes(query) ||
-      (project.contributors && project.contributors.some(c => c.toLowerCase().includes(query))) ||
-      project.venue.toLowerCase().includes(query) ||
-      (project.topics && project.topics.some(t => t.toLowerCase().includes(query)))
-    );
-  }
-
-  // Apply status filter
-  if (selectedStatus.value !== 'all') {
-    filtered = filtered.filter(project => project.status === selectedStatus.value);
-  }
-
-  // Apply domain filter
-  if (selectedDomain.value !== 'all') {
-    filtered = filtered.filter(project =>
-      project.topics && project.topics.includes(selectedDomain.value)
-    );
-  }
-
-  return filtered;
-});
-
-// Update displayed papers to use filtered results
-const displayedWorkingPapers = computed(() =>
-  filteredWorkingPapers.value.slice(0, workingPapersDisplayCount.value)
+// Update displayed projects to use filtered results
+const displayedProjects = computed(() =>
+  filteredProjects.value.slice(0, displayCount.value)
 );
 
-const displayedProceedings = computed(() =>
-  filteredConferenceProceedings.value.slice(0, proceedingsDisplayCount.value)
-);
-
-// Update "has more" checks to use filtered results
-const hasMoreWorkingPapers = computed(() =>
-  workingPapersDisplayCount.value < filteredWorkingPapers.value.length
-);
-
-const hasMoreProceedings = computed(() =>
-  proceedingsDisplayCount.value < filteredConferenceProceedings.value.length
+// Update "has more" check to use filtered results
+const hasMore = computed(() =>
+  displayCount.value < filteredProjects.value.length
 );
 
 // Clear filters function
@@ -285,18 +222,18 @@ const getGradientColors = (topic) => {
 
         <!-- Results Count -->
         <div v-if="searchQuery || selectedStatus !== 'all' || selectedDomain !== 'all'" class="mt-3 text-xs text-gray-500 dark:text-gray-400">
-          Found {{ filteredWorkingPapers.length + filteredConferenceProceedings.length }} papers
+          Found {{ filteredProjects.length }} papers
         </div>
       </div>
     </Transition>
 
-    <!-- Working Papers Section -->
-    <div v-if="filteredWorkingPapers.length > 0">
+    <!-- All Research Projects Section -->
+    <div v-if="filteredProjects.length > 0">
       <!-- List View -->
       <div v-if="displayMode === 'list'" class="space-y-4">
         <TransitionGroup name="paper" tag="div" class="space-y-4">
           <div
-            v-for="project in displayedWorkingPapers"
+            v-for="project in displayedProjects"
             :key="project.title"
             @click="handleProjectClick(project)"
             class="cursor-pointer group relative p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-sky-400 dark:hover:border-sky-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
@@ -360,7 +297,7 @@ const getGradientColors = (topic) => {
       <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <TransitionGroup name="paper" tag="div" class="contents">
           <div
-            v-for="project in displayedWorkingPapers"
+            v-for="project in displayedProjects"
             :key="project.title"
             @click="handleProjectClick(project)"
             class="group rounded-lg border border-gray-200 dark:border-gray-800 hover:border-sky-500 dark:hover:border-sky-500 cursor-pointer transition-all duration-300"
@@ -427,171 +364,21 @@ const getGradientColors = (topic) => {
         </TransitionGroup>
       </div>
 
-      <!-- Load More Button for Working Papers -->
-      <div v-if="hasMoreWorkingPapers" class="text-center mt-6">
+      <!-- Load More Button -->
+      <div v-if="hasMore" class="text-center mt-6">
         <button
-          @click="loadMoreWorkingPapers"
+          @click="loadMore"
           class="inline-flex items-center px-4 py-2 bg-sky-50 dark:bg-sky-900/20 hover:bg-sky-100 dark:hover:bg-sky-900/30 text-sky-700 dark:text-sky-300 rounded-lg transition-colors duration-200"
         >
           <Icon name="i-heroicons-plus" class="w-4 h-4 mr-2" />
-          Load {{ Math.min(itemsPerLoad, filteredWorkingPapers.length - workingPapersDisplayCount) }} More
+          Load {{ Math.min(itemsPerLoad, filteredProjects.length - displayCount) }} More
         </button>
       </div>
     </div>
 
-    <!-- Conference Proceedings Section -->
-    <div v-if="filteredConferenceProceedings.length > 0">
-      <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Conference Proceedings</h3>
-
-      <!-- List View -->
-      <div v-if="displayMode === 'list'" class="space-y-4">
-        <TransitionGroup name="paper" tag="div" class="space-y-4">
-          <div
-            v-for="project in displayedProceedings"
-            :key="project.title"
-            @click="handleProjectClick(project)"
-            class="cursor-pointer group relative p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-sky-400 dark:hover:border-sky-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-          >
-            <div class="flex gap-8">
-              <!-- Image Space -->
-              <div class="w-32 h-32 bg-gray-100 dark:bg-gray-700 rounded-lg flex-shrink-0 flex items-center justify-center">
-                <img
-                  v-if="project.cover"
-                  :src="project.cover"
-                  :alt="project.title"
-                  class="w-full h-full object-cover rounded-lg"
-                />
-                <UIcon v-else name="i-heroicons-document-text" class="w-10 h-10 text-gray-400" />
-              </div>
-
-              <!-- Content -->
-              <div class="flex-1 min-w-0">
-                <!-- Title -->
-                <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-sky-600 dark:group-hover:text-sky-400 leading-tight mb-2">
-                  {{ project.title }}
-                </h4>
-
-                <!-- Authors -->
-                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                  <span class="font-medium">Baimam Boukar JJ</span><span v-if="project.contributors">, {{ project.contributors.join(', ') }}</span>
-                </p>
-
-                <!-- Venue -->
-                <p class="text-sm text-gray-500 dark:text-gray-500 mb-3">
-                  {{ project.venue }}
-                </p>
-
-                <!-- Topics + Status -->
-                <div class="flex flex-wrap gap-1.5">
-                  <UBadge
-                    v-for="topic in project.topics"
-                    :key="topic"
-                    color="sky"
-                    variant="soft"
-                    size="xs"
-                  >
-                    {{ topic }}
-                  </UBadge>
-                  <!-- Status badge -->
-                  <UBadge
-                    :class="getStatusColor(project.status)"
-                    variant="soft"
-                    size="xs"
-                  >
-                    {{ getStatusText(project.status) }}
-                  </UBadge>
-                </div>
-              </div>
-            </div>
-          </div>
-        </TransitionGroup>
-      </div>
-
-      <!-- Grid View -->
-      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <TransitionGroup name="paper" tag="div" class="contents">
-          <div
-            v-for="project in displayedProceedings"
-            :key="project.title"
-            @click="handleProjectClick(project)"
-            class="group rounded-lg border border-gray-200 dark:border-gray-800 hover:border-sky-500 dark:hover:border-sky-500 cursor-pointer transition-all duration-300"
-          >
-            <div class="h-full flex flex-col">
-              <!-- Gradient Background -->
-              <div
-                class="h-32 overflow-hidden rounded-t-lg relative flex items-center justify-center transition-all duration-300 group-hover:opacity-90"
-                :style="{
-                  background: `linear-gradient(135deg, ${getGradientColors(project.topics[0]).start} 0%, ${getGradientColors(project.topics[0]).end} 100%)`
-                }"
-              >
-                <div class="absolute inset-0 bg-black bg-opacity-10"></div>
-                <div class="text-white text-opacity-20 font-light text-sm p-2 text-center">
-                  {{ project.title }}
-                </div>
-              </div>
-
-              <div class="p-4 flex-1 flex flex-col">
-                <!-- Venue -->
-                <div class="mb-2">
-                  <p class="text-xs text-gray-600 dark:text-gray-400">
-                    {{ project.venue }}
-                  </p>
-                </div>
-
-                <!-- Title -->
-                <h3 class="text-sm font-medium line-clamp-2 group-hover:text-sky-500 transition-colors mb-3">
-                  {{ project.title }}
-                </h3>
-
-                <!-- Topics + Status -->
-                <div class="flex flex-wrap gap-1 mb-4">
-                  <UBadge
-                    v-for="topic in project.topics.slice(0, 3)"
-                    :key="topic"
-                    color="sky"
-                    variant="soft"
-                    size="xs"
-                  >
-                    {{ topic }}
-                  </UBadge>
-                  <!-- Status badge -->
-                  <UBadge
-                    :class="getStatusColor(project.status)"
-                    variant="soft"
-                    size="xs"
-                  >
-                    {{ getStatusText(project.status) }}
-                  </UBadge>
-                </div>
-
-                <!-- Co-authored with -->
-                <div class="mt-auto">
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs text-gray-500 dark:text-gray-400">
-                      Co-authored with {{ project.contributors?.join(', ') || 'team members' }}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </TransitionGroup>
-      </div>
-
-      <!-- Load More Button for Proceedings -->
-      <div v-if="hasMoreProceedings" class="text-center mt-6">
-        <button
-          @click="loadMoreProceedings"
-          class="inline-flex items-center px-4 py-2 bg-sky-50 dark:bg-sky-900/20 hover:bg-sky-100 dark:hover:bg-sky-900/30 text-sky-700 dark:text-sky-300 rounded-lg transition-colors duration-200"
-        >
-          <Icon name="i-heroicons-plus" class="w-4 h-4 mr-2" />
-          Load {{ Math.min(itemsPerLoad, filteredConferenceProceedings.length - proceedingsDisplayCount) }} More
-        </button>
-      </div>
-    </div>
 
     <!-- Empty State -->
-    <div v-if="filteredWorkingPapers.length === 0 && filteredConferenceProceedings.length === 0" class="text-center py-8">
+    <div v-if="filteredProjects.length === 0" class="text-center py-8">
       <p class="text-gray-500 dark:text-gray-400">
         {{ (searchQuery || selectedStatus !== 'all' || selectedDomain !== 'all') ? 'No papers match your filters.' : 'No research projects found.' }}
       </p>

@@ -69,7 +69,7 @@ experience:
     - "Extending DeepScanner to handle anomalous patterns retrieval tasks in large vector databases and with a unified architecture for scalable experimentation across multiple data and model types."
 
   - title: "Research Assistant"
-    company: "Carnegie Mellon University Africa"
+    company: "CyLab, Carnegie Mellon University Africa"
     location: "Kigali, Rwanda"
     period: "Jan 2025 - June 2025"
     icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
@@ -88,6 +88,18 @@ experience:
       - "Automated the deployment process to the Apple Store and Play Store"
       - "Implemented unit tests to ensure code quality, resulting in a 60% reduction in post-release bugs"
       - "Implemented observability strategies to understand post-deployment software usage and collect analytics data"
+
+  - title: "CoFounder and Solution Architect"
+    company: "Anora"
+    location: "Cameroon, Yaounde"
+    period: "January 2024 - Present"
+    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499798909-67332cf5-3586-4b8e-a934-3d48c61617ac.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251010/us-east-1/s3/aws4_request&X-Amz-Date=20251010T095201Z&X-Amz-Expires=300&X-Amz-Signature=6049a5e8b5f5f7581187c61f95ff78a9e883f025b8c56288949fe803f8896532&X-Amz-SignedHeaders=host"
+    status: "present"
+    responsibilities:
+    - "Accelerated algorithmic efficiency and robustness of IBM Deepscanner by optimising core algorithms and implementing reproducibility frameworks to support precise detection of neural nodes responsible for hallucination and toxicity in the activation space of LLMs"
+    - "Enhanced IBM DeepScanner's modularity and scalability by architecting a plug-and-play codebase enabling rapid and reproducible large-scale experiments both locally and in cloud environments and making it three times more faster."
+    - "Extending DeepScanner to handle anomalous patterns retrieval tasks in large vector databases and with a unified architecture for scalable experimentation across multiple data and model types."
+    
 
   - title: "Software Engineering MLH Fellow"
     company: "G-Research"

@@ -20,6 +20,13 @@
       "liveUrl": "https://github.com/baimamboukar/card_game",
       "icon": "databricks",
       "visual": true
+    },
+    {
+      "name": "BlackMoon",
+      "description": "Black Jack game in C++ OOP",
+      "liveUrl": "https://github.com/baimamboukar/card_game",
+      "icon": "databricks",
+      "visual": true
     }
 
     
