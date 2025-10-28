@@ -1,35 +1,37 @@
 <script setup>
 const primaryInterests = [
   {
-    name: "Space Systems",
-    icon: "i-heroicons-globe-alt",
-    description: "Satellite telemetry & anomaly detection",
+    name: "Foundation Models",
+    icon: "i-heroicons-cpu-chip",
+    description: "Understanding LLM limitations and developing improvements for information retrieval",
     pattern: "dots"
   },
   {
-    name: "Earth Observation",
-    icon: "i-heroicons-eye",
-    description: "Remote sensing & environmental monitoring",
+    name: "Information Retrieval",
+    icon: "i-heroicons-magnifying-glass",
+    description: "Novel retrieval methods using anomalous pattern detection in vector databases",
     pattern: "grid"
   },
   {
-    name: "Remote Sensing",
-    icon: "i-heroicons-radio",
-    description: "Satellite imagery analysis",
+    name: "Earth Observation",
+    icon: "i-heroicons-globe-americas",
+    description: "ML applications for environmental monitoring and climate research",
     pattern: "waves"
   },
   {
-    name: "Causal Inference",
-    icon: "i-heroicons-arrows-right-left",
-    description: "Understanding cause-effect relationships",
+    name: "Brain-Computer Interfaces",
+    icon: "i-heroicons-bolt",
+    description: "Zero-shot neural priors for cross-subject EEG decoding",
     pattern: "lines"
   }
 ];
 
 const secondaryInterests = [
   { name: "Healthcare AI", icon: "i-heroicons-heart" },
-  { name: "Development Economics", icon: "i-heroicons-chart-bar" },
-  { name: "Climate Science", icon: "i-heroicons-cloud" }
+  { name: "Space Systems", icon: "i-heroicons-rocket-launch" },
+  { name: "Computational Psychiatry", icon: "i-heroicons-brain" },
+  { name: "Computer Vision", icon: "i-heroicons-camera" },
+  { name: "Anomaly Detection", icon: "i-heroicons-exclamation-triangle" }
 ];
 </script>
 
@@ -40,7 +42,7 @@ const secondaryInterests = [
     <!-- Primary Research Areas - Visual Cards -->
     <div class="mb-6">
       <p class="mb-4 text-zinc-700 dark:text-zinc-300">
-        My research focuses on <span class="subtle-highlight">applying machine learning to real-world challenges</span>:
+        My research focuses on <span class="subtle-highlight">understanding and improving Foundation Models</span> and their applications:
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">

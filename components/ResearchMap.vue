@@ -11,27 +11,27 @@ const selectedDomain = ref(null);
 
 const researchDomains = [
   {
-    id: 'ml',
-    title: 'Machine Learning',
-    icon: 'heroicons:cpu-chip-20-solid',
-    topics: ['Information Retrieval', 'Large Language Models', 'Efficient Deep Learning'],
-    description: 'Advancing core ML techniques for scalable and efficient AI systems',
+    id: 'foundation',
+    title: 'Foundation Models & Information Retrieval',
+    icon: 'eos-icons:neural-network',
+    topics: ['Large Language Models', 'Anomalous Pattern Detection', 'Vector Databases', 'Multi-Query Retrieval', 'LLM Internal Representations'],
+    description: 'Understanding LLM limitations and developing novel retrieval methods using anomalous pattern detection',
     gradient: 'bg-gradient-to-br from-sky-400 to-blue-500'
   },
   {
-    id: 'neuro',
-    title: 'AI for Neuroscience',
-    icon: 'fa6-solid:brain',
-    topics: ['Neural Signal Processing', 'Brain-Computer Interfaces', 'Cognitive Modeling'],
-    description: 'Applying AI to understand and interface with neural systems',
+    id: 'space',
+    title: 'Space Missions & Exploration',
+    icon: 'gis:satellite-earth',
+    topics: ['Spacecraft Telemetry', 'Anomaly Detection', 'Mission Operations', 'Satellite Systems', 'Space Policy', 'African Space Programs'],
+    description: 'Developing AI systems for spacecraft monitoring, mission planning, and space exploration technologies',
     gradient: 'bg-gradient-to-br from-purple-400 to-indigo-500'
   },
   {
-    id: 'space',
-    title: 'AI for Space Systems & EO',
-    icon: 'fa6-solid:satellite',
-    topics: ['Spacecraft Telemetry', 'Anomaly Detection', 'Satellite Operations', 'Remote Sensing', 'Climate Monitoring', 'Socioeconomic Assessment'],
-    description: 'Machine learning for spacecraft monitoring and Earth observation applications',
+    id: 'applications',
+    title: 'High-Impact Applications',
+    icon: 'heroicons:globe-europe-africa',
+    topics: ['Earth Observation', 'Healthcare AI', 'Brain-Computer Interfaces', 'Climate Monitoring', 'Medical Imaging', 'EEG Decoding'],
+    description: 'Applying Foundation Models to real-world challenges in Earth observation, healthcare, and neuroscience',
     gradient: 'bg-gradient-to-br from-indigo-400 to-blue-600'
   }
 ];
@@ -45,7 +45,7 @@ const handleDomainClick = (domain) => {
   <section class="mt-8">
     <h2 class="mb-4 text-xl font-semibold">Research Focus</h2>
     <p class="mb-6 text-zinc-700 dark:text-zinc-300">
-      Exploring the intersection of machine learning theory and applied AI across multiple domains.
+      Understanding the fundamental capabilities and limitations of Foundation Models and their applications across high-impact domains.
     </p>
 
     <!-- Minimal List Design -->
@@ -93,9 +93,6 @@ const handleDomainClick = (domain) => {
           leave-to-class="opacity-0 -translate-y-2"
         >
           <div v-if="selectedDomain?.id === domain.id" class="ml-14 mb-3 mt-1">
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-3">
-              {{ domain.description }}
-            </p>
             <div class="flex flex-wrap gap-2">
               <span
                 v-for="topic in domain.topics"
@@ -119,15 +116,15 @@ const handleDomainClick = (domain) => {
       <div class="flex flex-wrap gap-3">
         <div class="flex items-center text-sm px-3 py-2 bg-gray-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded-md">
           <Icon name="heroicons:heart-20-solid" class="w-4 h-4 mr-2 text-zinc-500 dark:text-zinc-400" />
-          Healthcare Accessibility
+          Breast Cancer Screening
         </div>
         <div class="flex items-center text-sm px-3 py-2 bg-gray-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded-md">
           <Icon name="heroicons:beaker-20-solid" class="w-4 h-4 mr-2 text-zinc-500 dark:text-zinc-400" />
-          Scientific Computing
+          Spacecraft Telemetry
         </div>
         <div class="flex items-center text-sm px-3 py-2 bg-gray-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded-md">
           <Icon name="heroicons:cog-6-tooth-20-solid" class="w-4 h-4 mr-2 text-zinc-500 dark:text-zinc-400" />
-          Autonomous Systems
+          Computer Vision Systems
         </div>
       </div>
     </div>

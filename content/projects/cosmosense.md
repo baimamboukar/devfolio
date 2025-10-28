@@ -10,7 +10,7 @@ live_url: "https://cosmosense.baimamboukar.dev"
 source_url: "https://github.com/baimamboukar/cosmosense"
 image: "https://github.com/baimamboukar/cosmosense/blob/main/assets/images/comso.png?raw=true"
 icon: "https://github.com/baimamboukar/cosmosense/blob/main/icon.png?raw=true"
-
+featured: true
 # Project Details
 status: "Live"
 role: "Full Stack Developer"

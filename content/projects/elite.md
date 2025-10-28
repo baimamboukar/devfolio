@@ -14,18 +14,17 @@ icon: "https://github.com/baimamboukar/elite/blob/main/android/app/src/main/res/
 ---
 
 ## What
-This application is designed to educate and inspire users about the mysteries and beauty of outer space. With this app, users can explore and learn about the solar system, galaxies, and other celestial bodies in an interactive and immersive way, it updates users daily with the NASA astronomic picture of the day and help user stays synched with different spaceX's space missions
+Elite is a comprehensive mobile application for Cameroonian football enthusiasts, providing real-time updates, match schedules, and team statistics for the Elite One and Elite Two championships.
 
 ## Why
-
-I have used several form endpoint tools to handle form submissions for my portfolio and side-projects. Even though these tools are convenient to set up and use, they are not customizable to developer needs. I built Formend to meet such needs.
+Following Cameroonian football leagues can be challenging due to fragmented information sources and lack of dedicated platforms. Elite bridges this gap by centralizing all league information in one user-friendly mobile application.
 
 ## How
-
-I used Flask serverless functions as a backend framework and Postgres as a database. A form submission to any allowed endpoint on Formend is stored to a database table dynamically created for that endpoint. After the form data is stored, an email notification with the form body is sent to a pre-configured address. The project is powered by the Vercel platform.
+Developed with Flutter for seamless cross-platform performance, Elite aggregates data from multiple sources to provide live scores, team standings, player statistics, and match highlights. Firebase powers the real-time data synchronization and push notifications.
 
 ## Tech Stack
-
-- **Framework**: `Flutter | Dart | Flask`
-- **Database**: `Firebase`
-- **Deployment**: `Vercel`
+- **Framework**: `Flutter | Dart`
+- **Database**: `Firebase Firestore`
+- **Real-time Updates**: `Firebase Realtime Database`
+- **Authentication**: `Firebase Auth`
+- **Deployment**: `Google Play | App Store`

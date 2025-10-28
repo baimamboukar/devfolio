@@ -44,7 +44,10 @@
         const { pending: projectsPending, data: featuredProjects } = await useLazyAsyncData(
           "featured-projects-homepage",
           () => queryContent("/projects")
-            .where({ title: { $ne: "More" } })
+            .where({
+              title: { $ne: "More" },
+              featured: true
+            })
             .limit(projectsLimit)
             .find()
         );
@@ -55,11 +58,9 @@
   // Debug function for development
   const { refreshAllConfigs } = useConfig();
   const testConfigRefresh = async () => {
-    console.log('🧪 Testing config refresh...');
     await refreshAllConfigs();
     // Force reactivity update
     await nextTick();
-    console.log('🧪 Config refresh completed, page should update');
   };
 </script>
 
@@ -232,7 +233,10 @@
         </template>
       </div>
     </section>
-
+<AppDivider/>
+<a>
+    <img src="https://skillicons.dev/icons?i=flutter,python,nuxtjs,vuejs,githubactions,firebase,golang,flask,postman,docker,kubernetes,prometheus,tensorflow,gcp,aws,github,raspberrypi,pytorch,sklearn&perline=19" alt="Skill Icons">
+  </a>
     <!-- Latest Blog Posts -->
     <!-- <section>
       <h2 class="w-auto mb-2 text-xl font-semibold group">

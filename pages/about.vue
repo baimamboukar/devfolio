@@ -15,31 +15,31 @@
     const tabs = [
       {
         label: 'Education',
-        icon: 'i-heroicons-academic-cap',
+        icon: 'arcticons:china-university-mooc',
         slot: 'education',
         description: 'Academic background and qualifications'
       },
       {
         label: 'Experience',
-        icon: 'i-heroicons-briefcase',
+        icon: 'hugeicons:new-job',
         slot: 'experience',
         description: 'Professional work experience'
       },
       {
         label: 'Credentials',
-        icon: 'i-heroicons-check-badge',
+        icon: 'heroicons:check-badge',
         slot: 'credentials',
         description: 'Professional certifications and achievements'
       },
       {
         label: 'Leadership',
-        icon: 'i-heroicons-user-group',
+        icon: 'material-symbols-light:social-leaderboard-outline-rounded',
         slot: 'leadership',
         description: 'Leadership roles and responsibilities'
       },
       {
         label: 'Events',
-        icon: 'i-heroicons-calendar',
+        icon: 'heroicons:calendar',
         slot: 'events',
         description: 'Hackathons, conferences and achievements'
       }
@@ -118,7 +118,6 @@
           <div class="space-y-12">
             <Conferences :conferences="data.conferences" />
             <Hackathons :hackathons="data.hackathons" />
-            <Achievements :achievements="data.achievements" />
           </div>
         </template>
       </UTabs>

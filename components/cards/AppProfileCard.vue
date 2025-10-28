@@ -1,14 +1,46 @@
 <script setup>
-  const profiles = {
-    GitHub: "https://github.com/baimamboukar",
-    LinkedIn: "https://linkedin.com/in/baimamboukar",
-    GoogleScholar: "https://scholar.google.com/citations?user=YOUR_ID",
-    HuggingFace: "https://huggingface.co/baimamboukar",
-    Kaggle: "https://www.kaggle.com/baimamboukar",
-    X: "https://twitter.com/baimamboukar",
-    Credly: "https://www.credly.com/users/baimamboukar",
-    Instagram: "https://instagram.com/baimamboukar",
-  };
+  const profiles = [
+    {
+      name: "GitHub",
+      icon: "simple-icons:github",
+      url: "https://github.com/baimamboukar"
+    },
+    {
+      name: "LinkedIn",
+      icon: "simple-icons:linkedin",
+      url: "https://linkedin.com/in/baimamboukar"
+    },
+    {
+      name: "Google Scholar",
+      icon: "fa7-brands:google-scholar",
+      url: "https://scholar.google.com/citations?user=YOUR_ID"
+    },
+    {
+      name: "HuggingFace",
+      icon: "simple-icons:huggingface",
+      url: "https://huggingface.co/baimamboukar"
+    },
+    {
+      name: "Kaggle",
+      icon: "cib:kaggle",
+      url: "https://www.kaggle.com/baimamboukar"
+    },
+    {
+      name: "X",
+      icon: "simple-icons:x",
+      url: "https://twitter.com/baimamboukar"
+    },
+    {
+      name: "Credly",
+      icon: "simple-icons:credly",
+      url: "https://www.credly.com/users/baimamboukar"
+    },
+    {
+      name: "Instagram",
+      icon: "simple-icons:instagram",
+      url: "https://instagram.com/baimamboukar"
+    }
+  ];
 </script>
 
 <!-- Profile card: Profile Picture, Name, Title + Social Profiles -->
@@ -38,22 +70,16 @@
       class="flex items-center justify-center w-full h-8 text-zinc-900 dark:text-zinc-200"
     >
       <nuxt-link
-        v-for="(profileUrl, name) in profiles"
-        :key="name"
+        v-for="profile in profiles"
+        :key="profile.name"
         class="focus-visible:global-focus icon-link"
-        :to="profileUrl"
-        :title="name === 'GoogleScholar' ? 'Google Scholar' : name"
-        :aria-label="`Link to My ${name === 'GoogleScholar' ? 'Google Scholar' : name} Profile`"
+        :to="profile.url"
+        :title="profile.name"
+        :aria-label="`Link to My ${profile.name} Profile`"
         target="_blank"
         external
       >
-        <Icon
-          :name="
-            name === 'GoogleScholar' ? 'academicons:google-scholar' :
-            name === 'Kaggle' ? 'cib:kaggle' :
-            `simple-icons:${name.toLowerCase()}`
-          "
-        />
+        <Icon :name="profile.icon" />
       </nuxt-link>
     </div>
   </div>

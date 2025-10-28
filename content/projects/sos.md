@@ -1,31 +1,27 @@
 ---
-title: Elite
-description: Stay sync with Cameroonian Football Events ✨
+title: SOSbyCaasitech
+description: Stay Safe, Stay Connected.
 tags:
   - Flutter
-  - Football
-  - EliteOne
-  - Cameroon
-  - Firebase
+  - Safety
+  - Emergency
 live_url: "https://elite.baimamboukar.dev"
 source_url: "https://github.com/baimamboukar/elite"
 image: "https://github.com/baimamboukar/elite/assets/49169158/96bbd34e-62f2-42cc-ac77-c6b685ad7af1"
-icon: "https://github.com/baimamboukar/elite/blob/main/android/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true"
+icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/506432492-0113c6ab-3489-4d8a-970f-9f251d23d316.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251028/us-east-1/s3/aws4_request&X-Amz-Date=20251028T080957Z&X-Amz-Expires=300&X-Amz-Signature=08c3876118bd98f2768c518954107216dc40649b3a509d6b98e5d828ff69378c&X-Amz-SignedHeaders=host"
 ---
-
 ## What
-This application is designed to educate and inspire users about the mysteries and beauty of outer space. With this app, users can explore and learn about the solar system, galaxies, and other celestial bodies in an interactive and immersive way, it updates users daily with the NASA astronomic picture of the day and help user stays synched with different spaceX's space missions
+SOSbyCaasitech is an emergency response mobile application that connects users with immediate help during critical situations, featuring one-tap SOS alerts, location sharing, and direct communication with emergency services.
 
 ## Why
-
-I have used several form endpoint tools to handle form submissions for my portfolio and side-projects. Even though these tools are convenient to set up and use, they are not customizable to developer needs. I built Formend to meet such needs.
+In emergency situations, every second counts. Traditional emergency response systems can be slow and require multiple steps. SOSbyCaasitech simplifies this process with instant alerts, automatic location tracking, and pre-configured emergency contacts.
 
 ## How
-
-I used Flask serverless functions as a backend framework and Postgres as a database. A form submission to any allowed endpoint on Formend is stored to a database table dynamically created for that endpoint. After the form data is stored, an email notification with the form body is sent to a pre-configured address. The project is powered by the Vercel platform.
+Developed with Flutter for rapid deployment across platforms, the app uses real-time location services, push notifications, and secure communication channels. Firebase handles user data, emergency contact management, and real-time message delivery to ensure help arrives quickly.
 
 ## Tech Stack
-
-- **Framework**: `Flutter | Dart | Flask`
-- **Database**: `Firebase`
-- **Deployment**: `Vercel`
+- **Framework**: `Flutter | Dart`
+- **Location Services**: `Google Maps API`
+- **Database**: `Firebase Firestore`
+- **Real-time Communication**: `WebRTC | Firebase`
+- **Deployment**: `Google Play | App Store`

@@ -13,9 +13,10 @@ definePageMeta({
         Research
       </h1>
       <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-        My academic research focuses on applying machine learning and remote sensing technologies
-        to address critical challenges in environmental monitoring, healthcare, and space systems.
-        Below you'll find my current working papers and published conference proceedings.
+        My core research interest is in Deep Learning, particularly the fundamental capabilities of Foundation Models.
+        I aim to understand the limitations of Large Language Models (LLMs), especially in information retrieval and
+        long-context execution, and develop methods for their improvement. At the application level, I leverage these
+        techniques in high-impact, interdisciplinary domains like Earth Observation, Healthcare, and Space Research and Exploration.
       </p>
     </div>
 

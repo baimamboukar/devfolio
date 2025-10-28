@@ -61,12 +61,17 @@ experience:
     company: "IBM Research"
     location: "Nairobi, Kenya"
     period: "June 2025 - September 2025"
-    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499577233-e55db71c-b37e-49c7-a8ad-7a070909a661.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251009T221147Z&X-Amz-Expires=300&X-Amz-Signature=51d21d96084bf9565c0242666f13ad87d82fef1acccc22be75490e15e2b165b2&X-Amz-SignedHeaders=host"
+    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/506458249-9b63d7d2-b7e3-48cb-ae84-f9c44f16fa71.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251028/us-east-1/s3/aws4_request&X-Amz-Date=20251028T091226Z&X-Amz-Expires=300&X-Amz-Signature=58207ca8454c1a0311b11f93a2d17d20b7c987d0f5d77c5cbef6ddea8fcadcf5&X-Amz-SignedHeaders=host"
     status: "past"
+    tags:
+      - "LLMs"
+      - "Information Retrieval"
+      - "HuggingFace"
+      - "PyTorch"
     responsibilities:
-    - "Accelerated algorithmic efficiency and robustness of IBM Deepscanner by optimising core algorithms and implementing reproducibility frameworks to support precise detection of neural nodes responsible for hallucination and toxicity in the activation space of LLMs"
-    - "Enhanced IBM DeepScanner's modularity and scalability by architecting a plug-and-play codebase enabling rapid and reproducible large-scale experiments both locally and in cloud environments and making it three times more faster."
-    - "Extending DeepScanner to handle anomalous patterns retrieval tasks in large vector databases and with a unified architecture for scalable experimentation across multiple data and model types."
+    - "Contributed to IBM DeepScanner, a weakly supervised method for identifying anomalous patterns (hallucinations, toxicity) within internal activations of LLMs including Llama3, Granite, Mistral and Gemma"
+    - "Architected a modular, scalable, and reproducible workflow for large-scale embedding extraction and analysis both locally and in IBM cluster environments, improving efficiency by 3x"
+    - "Extended the methodology into a novel dense vector retrieval framework, reframing anomalous pattern detection as a retrieval problem, leading to a paper submission at AAAI 2026"
 
   - title: "Research Assistant"
     company: "CyLab, Carnegie Mellon University Africa"
@@ -74,9 +79,15 @@ experience:
     period: "Jan 2025 - June 2025"
     icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
     status: "Upcoming"
+    tags:
+      - "GitHub"
+      - "DPGs/DPIs"
+      - "Open Source"
+      - "Flutter"
     responsibilities:
-    - "Engineered open-source mobile software solutions to demonstrate practical applications for laboratory research projects."
-    - "Enforced best open-science practices in code quality, for reproducibility and transparency."
+    - "Engineered open-source mobile software solutions to demonstrate practical applications for laboratory research projects"
+    - "Enforced best open-science practices in code quality, for reproducibility and transparency"
+    - "Conducted regular code-reviews with research associates, which ensured code changes are stable before merge"
 
   - title: "Mobile Development Team Lead"
     company: "Caasitech Group LLC"
@@ -90,15 +101,21 @@ experience:
       - "Implemented observability strategies to understand post-deployment software usage and collect analytics data"
 
   - title: "CoFounder and Solution Architect"
-    company: "Anora"
+    company: "Anora Breast Cancer Research Foundation"
     location: "Cameroon, Yaounde"
     period: "January 2024 - Present"
-    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499798909-67332cf5-3586-4b8e-a934-3d48c61617ac.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251010/us-east-1/s3/aws4_request&X-Amz-Date=20251010T095201Z&X-Amz-Expires=300&X-Amz-Signature=6049a5e8b5f5f7581187c61f95ff78a9e883f025b8c56288949fe803f8896532&X-Amz-SignedHeaders=host"
+    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/506455939-22c201fa-7183-4ddd-83e1-c46fe0832cce.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251028/us-east-1/s3/aws4_request&X-Amz-Date=20251028T090715Z&X-Amz-Expires=300&X-Amz-Signature=8928b97f186f3e71dd9dbe7d45f4d9a228ed9694c847362cd7ee5f326e5387c7&X-Amz-SignedHeaders=host"
     status: "present"
+    tags:
+      - "Breast Cancer"
+      - "Deep Learning"
+      - "Thermography"
+      - "Ultrasound"
+      - "VLMs"
     responsibilities:
-    - "Accelerated algorithmic efficiency and robustness of IBM Deepscanner by optimising core algorithms and implementing reproducibility frameworks to support precise detection of neural nodes responsible for hallucination and toxicity in the activation space of LLMs"
-    - "Enhanced IBM DeepScanner's modularity and scalability by architecting a plug-and-play codebase enabling rapid and reproducible large-scale experiments both locally and in cloud environments and making it three times more faster."
-    - "Extending DeepScanner to handle anomalous patterns retrieval tasks in large vector databases and with a unified architecture for scalable experimentation across multiple data and model types."
+    - "Leading efforts to make breast cancer screening affordable and accessible for women in sub-Saharan Africa through AI-powered thermal imaging analysis"
+    - "Fine-tuning the PaliGemma foundation model for analyzing thermal images for malignancy classification on portable, offline screening devices"
+    - "Architecting the technical infrastructure for deploying machine learning models in resource-constrained environments with limited connectivity"
     
 
   - title: "Software Engineering MLH Fellow"
@@ -186,6 +203,18 @@ certifications:
     badge: "https://github.com/user-attachments/assets/e4443381-f5dc-49c6-8c88-c7027ae6606f"
   - name: "AWS Cloud Practitioner"
     badge: "https://github.com/user-attachments/assets/ff52fb0b-394e-43bf-b1b9-840b87227e22"
+  - name: "IBM Internship Program"
+    badge: "https://github.com/user-attachments/assets/5c903639-dfc6-4fa5-a851-298a0418a384"
+  - name: "AWS Cloud Captain"
+    badge: "https://github.com/user-attachments/assets/16ea75f2-1129-4830-9540-ee53ac9df797"
+  - name: "AWS Cloud Captain Bronze"
+    badge: "https://github.com/user-attachments/assets/d7de6e91-72e2-409e-b02e-363064025c9c"
+  - name: "AWS Cloud Captain Silver"
+    badge: "https://github.com/user-attachments/assets/ad569cfe-b656-47d9-8025-cac035fd1927"
+  - name: "Postman Student Leader"
+    badge: "https://github.com/user-attachments/assets/7b7f1b9c-2642-48af-820e-1c2190e3cc70"
+  - name: "Postman Student Expert"
+    badge: "https://github.com/user-attachments/assets/6372db25-921e-4880-96b1-8959e2a004b0"
 
 
 hackathons:
@@ -298,7 +327,7 @@ achievements:
     gallery:
       - "imagelink1"
       - "imagelink2"
-    
+
   - name: "Digital Innovator Prize"
     icon: "https://github.com/user-attachments/assets/5ac24554-c007-4c5d-bf88-67af2d612646"
     date: "December 1623, 2023"

@@ -126,15 +126,15 @@ const extractSkills = (responsibilities) => {
                       <span>{{ exp.period }}</span>
                     </div>
 
-                    <!-- Skills/Tech Stack (if detected) -->
-                    <div v-if="extractSkills(exp.responsibilities).length > 0" class="mt-auto">
+                    <!-- Skills/Tech Stack - Use tags if available, otherwise extract from responsibilities -->
+                    <div v-if="exp.tags?.length > 0 || extractSkills(exp.responsibilities).length > 0" class="mt-auto">
                       <div class="flex flex-wrap gap-2">
                         <span
-                          v-for="skill in extractSkills(exp.responsibilities)"
-                          :key="skill"
+                          v-for="tag in (exp.tags || extractSkills(exp.responsibilities))"
+                          :key="tag"
                           class="px-2 py-1 text-xs font-medium bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 rounded-full"
                         >
-                          {{ skill }}
+                          {{ tag }}
                         </span>
                       </div>
                     </div>
@@ -219,15 +219,15 @@ const extractSkills = (responsibilities) => {
                 </button>
               </div>
 
-              <!-- Skills/Tech Stack -->
-              <div v-if="extractSkills(selectedExperience?.responsibilities).length > 0" class="mt-4">
+              <!-- Skills/Tech Stack - Use tags if available, otherwise extract from responsibilities -->
+              <div v-if="selectedExperience?.tags?.length > 0 || extractSkills(selectedExperience?.responsibilities).length > 0" class="mt-4">
                 <div class="flex flex-wrap gap-2">
                   <span
-                    v-for="skill in extractSkills(selectedExperience?.responsibilities)"
-                    :key="skill"
+                    v-for="tag in (selectedExperience?.tags || extractSkills(selectedExperience?.responsibilities))"
+                    :key="tag"
                     class="px-3 py-1 text-sm font-medium bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 rounded-full"
                   >
-                    {{ skill }}
+                    {{ tag }}
                   </span>
                 </div>
               </div>

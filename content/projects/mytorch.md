@@ -12,6 +12,7 @@ live_url: "https://github.com/baimamboukar/MyTorch"
 source_url: "https://github.com/baimamboukar/MyTorch"
 image: "https://github.com/baimamboukar/cosmosense/blob/main/assets/images/comso.png?raw=true"
 icon: "pytorch"
+featured: true
 
 # Project Details
 status: "Dev"
