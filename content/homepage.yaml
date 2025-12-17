@@ -1,0 +1,24 @@
+hero:
+  greeting: "Hi, I'm Baimam Boukar"
+  emoji: "👋"
+  introduction: "I am a graduate student pursuing a Master of Science in Information Technology, Applied Machine Learning at Carnegie Mellon University Africa. My research and projects interests center on Earth Observation, and Artificial Intelligence applications in Astronomy, Space Missions Design and Space Operations. My expertise lies in Machine Learning and Software Engineering, and I am continuously building skills around space missions design."
+quick_links:
+  book_call:
+    title: "Let's Connect"
+    subtitle: "Schedule a conversation"
+    button_text: "Book Call"
+    url: "https://calendly.com/baimamboukar"
+  links:
+    - label: "Research"
+      icon: "fluent-emoji:scientist"
+      url: "/research"
+    - label: "My Talks"
+      icon: "fluent-emoji:laptop"
+      url: "/presentations"
+      external: true
+    - label: "Projects"
+      icon: "fluent-emoji:sparkles"
+      url: "/projects"
+    - label: "Blog"
+      icon: "fluent-emoji:writing-hand"
+      url: "/blog"

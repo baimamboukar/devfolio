@@ -28,16 +28,24 @@ const toggleExpanded = (index) => {
       >
         <!-- Achievement Image/Icon -->
         <div class="flex-shrink-0">
-          <img
+          <NuxtImg
             v-if="achievement.icon && (achievement.icon.startsWith('http') || achievement.icon.startsWith('/'))"
             :src="achievement.icon"
             :alt="achievement.title || achievement.name"
+            width="48"
+            height="48"
+            format="webp"
+            loading="lazy"
             class="w-12 h-12 rounded-lg object-cover"
           />
-          <img
+          <NuxtImg
             v-else-if="achievement.image"
             :src="achievement.image"
             :alt="achievement.title || achievement.name"
+            width="48"
+            height="48"
+            format="webp"
+            loading="lazy"
             class="w-12 h-12 rounded-lg object-cover"
           />
           <div

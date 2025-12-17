@@ -61,7 +61,7 @@ experience:
     company: "IBM Research"
     location: "Nairobi, Kenya"
     period: "June 2025 - September 2025"
-    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/506458249-9b63d7d2-b7e3-48cb-ae84-f9c44f16fa71.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251028/us-east-1/s3/aws4_request&X-Amz-Date=20251028T091226Z&X-Amz-Expires=300&X-Amz-Signature=58207ca8454c1a0311b11f93a2d17d20b7c987d0f5d77c5cbef6ddea8fcadcf5&X-Amz-SignedHeaders=host"
+    icon: "https://github.com/user-attachments/assets/17709c98-69fc-4b3d-bd9a-eac7a24f7a8e"
     status: "past"
     tags:
       - "LLMs"
@@ -104,7 +104,7 @@ experience:
     company: "Anora Breast Cancer Research Foundation"
     location: "Cameroon, Yaounde"
     period: "January 2024 - Present"
-    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/506455939-22c201fa-7183-4ddd-83e1-c46fe0832cce.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251028/us-east-1/s3/aws4_request&X-Amz-Date=20251028T090715Z&X-Amz-Expires=300&X-Amz-Signature=8928b97f186f3e71dd9dbe7d45f4d9a228ed9694c847362cd7ee5f326e5387c7&X-Amz-SignedHeaders=host"
+    icon: "/anora-logo.jpeg"
     status: "present"
     tags:
       - "Breast Cancer"
@@ -140,19 +140,32 @@ experience:
       - "Speeded up the development process by implementing reusable components in a clean architecture"
 
 leadership:
-  - role: "Google Developer Group Organizer"
-    community: "GDG Cloud Yaounde"
+  - role: "Reviewer"
+    community: "Applied Machine Learning Days (AMLD) 2026"
+    icon: "/amld-africa.jpeg"
+    period: "2026"
+
+  - role: "Reviewer (Machine Learning)"
+    community: "Journal of Geophysical Research (JGR)"
+    icon: "/jgr.webp"
+    period: "2024-Present"
+
+  - role: "Co-organizer"
+    community: "Google Developer Group Cloud Yaounde"
     icon: "https://github.com/user-attachments/assets/ead30d26-8ae2-4243-9ce6-a69974a9137a"
     period: "2022-Present"
-  - role: "Google Developer Groups OnCampus Lead"
+
+  - role: "Google Developer Student Clubs Lead"
     community: "ICT University"
     icon: "https://github.com/user-attachments/assets/a3746046-3e08-412b-bcc3-40ee0512bd67"
     period: "2021-2023"
+
   - role: "Postman Student Leader"
     community: "ICT University"
     icon: "https://github.com/user-attachments/assets/64c9c5a1-435b-4c77-adf1-560dfa7cb318"
     period: "2022-2023"
-  - role: "AWS Cloud Club Captain at CMU"
+
+  - role: "AWS Cloud Club Captain"
     community: "Carnegie Mellon University Africa"
     icon: "https://github.com/user-attachments/assets/a9285bd0-51d6-45b2-9406-b3edca74ad90"
     period: "2024-2025"
@@ -160,25 +173,12 @@ leadership:
     community: "Carnegie Mellon University Africa"
     icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
     period: "2024-2025"
-  - role: "AWS Community Builder ●•Serverless"
+  - role: "AWS Community Builder ●•Serverless Computing Track"
     community: "AWS Community"
     icon: "https://github.com/user-attachments/assets/9f929108-f378-4b8f-b626-b7ea1024e780"
     period: "2023-Present"
 
-community:
-  - role: "AWS Community Builder"
-    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
-    period: "2023-Present"
-  - role: "Open-Source Contributor at MboaLab"
-    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
-    period: "2022-Present"
-  - role: "AWS Labs"
-    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
-    period: "2023-Present"
-  - role: "Rwandan Space Agency Outreach Event Volunteer"
-    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
-    period: "2024-Present"
-
+community: [] # Cleared as all covered by leadership now
 
 
 interests:
@@ -313,55 +313,47 @@ conferences:
 
 
 achievements:
-  - name: "Prix D'excellence MINSEEC"
-    icon: "https://github.com/user-attachments/assets/792eab86-5fe1-4bb1-95ae-c0fbce35c9ee"
-    date: "October 15, 2017"
-    place: "Yaounde, Palais des Sports"
-    gallery:
-      - "imagelink1"
-      - "imagelink2"
-  - name: "Prix D'excellence MINESEC"
-    icon: "https://github.com/user-attachments/assets/792eab86-5fe1-4bb1-95ae-c0fbce35c9ee"
-    date: "November 23, 2019"
-    place: "Maroua, Domayo"
-    gallery:
-      - "imagelink1"
-      - "imagelink2"
-
-  - name: "Digital Innovator Prize"
-    icon: "https://github.com/user-attachments/assets/5ac24554-c007-4c5d-bf88-67af2d612646"
-    date: "December 1623, 2023"
-    place: "Yaounde, Cameroon"
-    gallery:
-      - "imagelink1"
-      - "imagelink2"
-  - name: "Falling Walls Labs Cameroon Winner"
-    icon: "https://github.com/user-attachments/assets/51fc2684-8b40-4b88-b726-ed8c851ad007"
-    date: "October, 2024"
-    place: "Yaounde, Cameroon"
-    gallery:
-      - "imagelink1"
-      - "imagelink2"
-  - name: "AIM Congress Central Africa Winner"
-    icon: "https://github.com/user-attachments/assets/76d57800-6267-4487-ab3a-f69ca7797850"
-    date: "March, 2024"
-    place: "Maroua, Domayo"
-    gallery:
-      - "imagelink1"
-      - "imagelink2"
-  - name: "Cameroon's TOP Open Source Contributor"
-    icon: "https://github.com/user-attachments/assets/19771f37-ee31-43d6-a993-29de6929379c"
-    date: "Feb 2022 - Apr 2023"
-    place: "Github"
-    gallery:
-      - "imagelink1"
-      - "imagelink2"
-      - "imagelink2"
-
-  - name: "Excellence Fellowship"
-    icon: "https://github.com/user-attachments/assets/5f90e9bb-9a1d-433a-81d8-c442facca063"
+  - name: "Presidential Special Prize for Technology Innovation"
+    icon: "i-heroicons-award"
+    date: "April 2025"
+    place: "Cameroon"
+    gallery: []
+  
+  - name: "ICT University Fellowship of Excellence"
+    icon: "https://github.com/user-attachments/assets/5f90e9bb-9a1d-433a-81d8-c442facca063" # Reusing existing icon
     date: "July 2023"
     place: "ICT University"
-    gallery:
-      - "imagelink1"
-      - "imagelink2"
+    description: "Top <1% students"
+    gallery: []
+
+  - name: "Falling Walls Labs National Winner"
+    icon: "https://github.com/user-attachments/assets/51fc2684-8b40-4b88-b726-ed8c851ad007"
+    date: "Nov 2024"
+    place: "Berlin, Germany"
+    gallery: []
+
+  - name: "ACTINSPACE National Winner"
+    icon: "i-heroicons-rocket-launch"
+    date: "Nov 2022"
+    place: "European Space Agency"
+    description: "Space competition by the European Space Agency (Team)"
+    gallery: []
+
+  - name: "Top Open Source Contributor in Cameroon"
+    icon: "https://github.com/user-attachments/assets/19771f37-ee31-43d6-a993-29de6929379c"
+    date: "2021-2023"
+    place: "Github Rankings"
+    gallery: []
+  
+  - name: "National Excellence Awards"
+    icon: "https://github.com/user-attachments/assets/792eab86-5fe1-4bb1-95ae-c0fbce35c9ee" # Reusing existing icon
+    date: "2017, 2019"
+    place: "Cameroon"
+    description: "1st Regional, and 7th/9th In BEPC, and Probatoire National Exams"
+    gallery: []
+
+# Removed old 'Prix D'excellence MINSEEC' and 'Digital Innovator Prize', 'AIM Congress Central Africa Winner'
+memberships:
+  - name: "IEEE (GRSS, AESS, Computer Society, MTTS)"
+  - name: "Black In AI"
+  - name: "AIAA"

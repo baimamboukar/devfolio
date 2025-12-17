@@ -15,21 +15,26 @@
       icon: "fa7-brands:google-scholar",
       url: "https://scholar.google.com/citations?user=YOUR_ID"
     },
+    // {
+    //   name: "HuggingFace",
+    //   icon: "simple-icons:huggingface",
+    //   url: "https://huggingface.co/baimamboukar"
+    // },
     {
-      name: "HuggingFace",
-      icon: "simple-icons:huggingface",
-      url: "https://huggingface.co/baimamboukar"
+      name: "StackOverflow",
+      icon: "simple-icons:stackoverflow",
+      url: "https://stackoverflow.com/users/15155605/baimam-boukar-jean-jacques"
     },
     {
       name: "Kaggle",
       icon: "cib:kaggle",
       url: "https://www.kaggle.com/baimamboukar"
     },
-    {
-      name: "X",
-      icon: "simple-icons:x",
-      url: "https://twitter.com/baimamboukar"
-    },
+    // {
+    //   name: "X",
+    //   icon: "simple-icons:x",
+    //   url: "https://twitter.com/baimamboukar"
+    // },
     {
       name: "Credly",
       icon: "simple-icons:credly",
@@ -55,7 +60,7 @@
       loading="lazy"
       width="112"
       height="112"
-      src="/baimamboukar.jpeg"
+      src="/self.jpg"
       alt="Profile Picture"
       class="text-center border rounded-full w-28 border-zinc-200 dark:border-zinc-800"
     />
@@ -63,8 +68,8 @@
       Baimam Boukar JJ
     </h2>
 
-    <h2 class="text-lg font-medium md:text-xl text-zinc-700 dark:text-zinc-400">
-      Designed for Failure
+    <h2 class="font-xs md:text-smtext-xs font-semi-bold text-sky-600 dark:text-sky-400">
+      <a href="https://medium.com/@helmi.confo/design-for-failure-building-systems-that-continue-to-work-when-things-go-wrong-22e57e623aab" target="_blank" rel="noopener noreferrer">Designed for Failure</a>
     </h2>
     <div
       class="flex items-center justify-center w-full h-8 text-zinc-900 dark:text-zinc-200"

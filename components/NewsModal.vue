@@ -173,7 +173,7 @@ const filteredGroupedNews = computed(() => {
       <div class="border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex-shrink-0 relative z-10">
         <div class="flex items-center justify-between mb-4">
           <div>
-            <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">All Updates & News</h2>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">All Updates and News</h2>
             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
               A comprehensive timeline of research, publications, and achievements
             </p>

@@ -1,26 +1,38 @@
 
 research:
   - title: "Zero-Shot Neural Priors for Generalizable Cross-Subject and Cross-Task EEG Decoding"
-    cover: "https://github.com/user-attachments/assets/b2c66a21-0b7b-4702-8dea-36e737490111"
+    cover: "/eeg-decoding.png"
     paper_link: "#"
     topics: ["EEG", "Brain-Computer Interfaces", "Zero-Shot Learning", "Neural Decoding"]
     supervision: "Carnegie Mellon University"
-    contributors: ["Brandone Fonya", "Nchofon Tagha Ghogomu", "Pauline Nyaboe", "Kipngeno Koech"]
-    status: "Ongoing"
-    venue: "NeurIPS 2026"
+    contributors:
+      - name: "Brandone Fonya"
+        affiliation: "Carnegie Mellon University Africa"
+      - name: "Nchofon Tagha Ghogomu"
+        affiliation: "Carnegie Mellon University Africa"
+      - name: "Pauline Nyaboe"
+        affiliation: "Carnegie Mellon University Africa"
+    status: "Submitted"
+    venue: "Medical Imaging with Deep Learning (MIDL) 2026"
     featured: true
-    abstract: "The development of generalizable electroencephalography (EEG) decoding models is a crucial step toward robust brain-computer interfaces and objective neural biomarkers for mental health. EEG decoding has historically been constrained by the lack of scalable models that generalize across individuals and cognitive tasks. Our project is motivated by the desire to address this gap by developing a zero-shot learning approach for cross-subject EEG decoding. We aim to build a large pre-trained model that captures domain- and subject-invariant neural representations to enable behavioral prediction, leveraging the large-scale Healthy Brain Network (HBN) dataset. Our work contributes to the growing effort to establish EEG as a robust tool for objective neuroscience and computational psychiatry, with potential applications in the development of EEG-based biomarkers for mental health, clinical assessment and adaptive brain-computer interfaces."
+    abstract: "The development of generalizable electroencephalography (EEG) decoding models is essential for robust brain-computer interfaces (BCI) and objective neural biomarkers in mental health. Conventional approaches have been hindered by poor cross-subject and cross-task generalization, owing to high inter-subject variability and non-stationary neural signals. We address this challenge with a zero-shot cross-subject decoding framework on the large-scale Healthy Brain Network dataset,benchmarking a convolutional neural network baseline, a hybrid LSTM, and a Transformer-based foundation model. To adapt the Transformer for regression while averting catastrophic forgetting, we propose a novel progressive unfreezing strategy. The baseline yielded an nRMSE of 0.9991, whereas our fine-tuned Transformer achieved 0.9799 on unseen subjects.This work establishes scalable, calibration-free EEG decoding for computational psychiatry and behavioral prediction."
     links:
       preprint: "https://arxiv.org/"
       code: "https://github.com/baimamboukar/"
       data: "https://github.com/baimamboukar/"
 
   - title: "Retrieval with Multiple Query Vectors through Anomalous Pattern Detection"
-    cover: "https://github.com/user-attachments/assets/53b83299-ad18-4f09-958a-deadf878006f"
+    cover: "/retrieval.png"
     paper_link: "#"
     topics: ["Information Retrieval", "DeepScan", "LLMs Embeddings", "Anomalous Pattern"]
     supervision: "Skyler Speakman"
-    contributors: ["Allassan Nken, Miriam Rateike, Celia Cintas"]
+    contributors:
+      - name: "Allassan Nken"
+        affiliation: "IBM Research Africa"
+      - name: "Miriam Rateike"
+        affiliation: "IBM Research Africa"
+      - name: "Celia Cintas"
+        affiliation: "IBM Research Africa"
     status: "Review"
     venue: "AAAI 2026 Workshop on New Frontiers In Information Retrieval"
     featured: true
@@ -34,8 +46,14 @@ research:
     cover: "https://raw.githubusercontent.com/baimamboukar/air-quality-socioeconomic-analysis-research/refs/heads/main/results/figures/distribution%20in%202025.png"
     paper_link: "#"
     topics: ["Air Quality", "Remote Sensing", "Google EE"]
-    supervision: "Prof. Emily Aiken"
-    contributors: ["Kamikazi Raissa", "Bertin Ndahayo", "Evelyne Umubyeyi"]
+    supervision: " Emily Aiken"
+    contributors:
+      - name: "Kamikazi Raissa"
+        affiliation: "Carnegie Mellon University Africa"
+      - name: "Bertin Ndahayo"
+        affiliation: "Carnegie Mellon University Africa"
+      - name: "Evelyne Umubyeyi"
+        affiliation: "Carnegie Mellon University Africa"
     status: "Published"
     venue: "IEEE MIGARS 2025"
     featured: false
@@ -46,11 +64,13 @@ research:
       data: "https://github.com/baimamboukar/air-quality-socioeconomic-analysis-research"
 
   - title: "Explainable Deep-Learning Based Potentially Hazardous Asteroids Classification Using Graph Neural Networks"
-    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499631459-7cb32488-e761-4366-8a5b-ca90951e7132.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251028/us-east-1/s3/aws4_request&X-Amz-Date=20251028T135747Z&X-Amz-Expires=300&X-Amz-Signature=c1a7e2c3b03b83907158075460f41f96ea7b8f9278cb5dd8730257397eb0b91e&X-Amz-SignedHeaders=host"
+    cover: "/asteroids.png"
     paper_link: "https://arxiv.org/html/2504.18605v1"
     topics: ["Space", "AI", "Astrophysics"]
-    supervision: "Prof. Clarence Worrel"
-    contributors: ["Prof. Clarence Worrel"]
+    supervision: " Clarence Worrel"
+    contributors:
+      - name: "Clarence Worrel"
+        affiliation: "Carnegie Mellon University Africa"
     featured: true
     status: "Presented"
     venue: "Harvard AstroAI Workshop 2025."
@@ -62,15 +82,21 @@ research:
 
 
   - title: "Computer Vision-based Calibration of Visual Landing Aids Using Autonomous Drones (PAPI Case Study)"
-    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499633238-35689499-1df4-4e1f-a694-a030161e9ea6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251028/us-east-1/s3/aws4_request&X-Amz-Date=20251028T135819Z&X-Amz-Expires=300&X-Amz-Signature=7e7fea25699e13f714cdafbb9712e82401be98cd0719f3f1c97f856eb84137e6&X-Amz-SignedHeaders=host"
+    cover: "/calibration.png"
     paper_link: "https://arxiv.org/html/2504.1`8605v1"
     topics: ["Computer Vision", "AI", "Aerospace"]
-    supervision: "Prof. Moise Busogi"
-    contributors: ["Alice Mugengano", "Jonathan Kayizzi", "Richard Muhirwa"]
+    supervision: " Moise Busogi"
+    contributors:
+      - name: "Alice Mugengano"
+        affiliation: "Carnegie Mellon University Africa"
+      - name: "Jonathan Kayizzi"
+        affiliation: "Carnegie Mellon University Africa"
+      - name: "Richard Muhirwa"
+        affiliation: "Carnegie Mellon University Africa"
     status: "Review"
     featured: true
     venue: "IEEE Aerospace Conference 2026."
-    abstract: "This research presents a vision-based approach to autonomous drone navigation and landing trajectory optimization, demonstrated for the calibration of Precision Approach Path Indicators (PAPI). Traditional calibration methods require specialized aircraft equipped with photometric equipment, resulting in high operational costs ($15,000-25,000 per calibration), runway disruptions, and significant carbon emissions. Our proposed system leverages computer vision and machine learning to detect and classify PAPI light configurations under diverse environmental conditions. A convolutional neural network, trained on the LARD dataset comprising over 17,000 real and synthetic aerial runway images, enables accurate pattern recognition. This is integrated with a trajectory generation algorithm that aligns drone flight paths to evaluate and verify standard approach angles. The system achieves a modal classification accuracy of 97% in detecting PAPI light patterns and a fivefold improvement in angular measurement precision (±0.01° vs. ±0.05°)."
+    abstract: "This research presents a vision-based approach to autonomous drone navigation and landing trajectory optimization, demonstrated for the calibration of Precision Approach Path Indicators (PAPI). Traditional calibration methods require specialized aircraft equipped with photometric equipment, resulting in high operational costs (5,000-25,000 per calibration), runway disruptions, and significant carbon emissions. Our proposed system leverages computer vision and machine learning to detect and classify PAPI light configurations under diverse environmental conditions. A convolutional neural network, trained on the LARD dataset comprising over 17,000 real and synthetic aerial runway images, enables accurate pattern recognition. This is integrated with a trajectory generation algorithm that aligns drone flight paths to evaluate and verify standard approach angles. The system achieves a modal classification accuracy of 97% in detecting PAPI light patterns and a fivefold improvement in angular measurement precision (±0.01° vs. ±0.05°)."
     links: 
       preprint: "https://arxiv.org/"
       code: "https://github.com/baimamboukar/"
@@ -78,11 +104,15 @@ research:
 
 
   - title: "Humidity Inference with Geographic Features and Machine Learning for Enhanced Contrail Prediction for African Airspace"
-    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499628852-b2c66a21-0b7b-4702-8dea-36e737490111.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251028/us-east-1/s3/aws4_request&X-Amz-Date=20251028T135835Z&X-Amz-Expires=300&X-Amz-Signature=3f2ba96dd44d54b8aad96f53ba2f8751248c7a69d0a6239352cd53d45349452a&X-Amz-SignedHeaders=host"
+    cover: "/contrails.png"
     paper_link: "#"
     topics: ["AI", "Aviation", "Contrails"]
-    supervision: "Prof. Moise Busogi"
-    contributors: ["Alice Mugengano", "Jonathan Kayizzi"]
+    supervision: " Moise Busogi"
+    contributors:
+      - name: "Alice Mugengano"
+        affiliation: "Carnegie Mellon University Africa"
+      - name: "Jonathan Kayizzi"
+        affiliation: "Carnegie Mellon University Africa"
     status: "Published"
     featured: true
     venue: "IEEE MIGARS 2025"
@@ -93,11 +123,15 @@ research:
       data: "https://github.com/JonahKayizzi/Environment-Impact-Assessment-of-Aircraft-Contrails"
 
   - title: "Thermography for Breast Cancer Diagnosis using AI"
-    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499625992-2d6be334-cb3b-4bea-ab39-169d29551015.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251028/us-east-1/s3/aws4_request&X-Amz-Date=20251028T135852Z&X-Amz-Expires=300&X-Amz-Signature=118d8af90c3c4714bf7e10680f9daf090b5d6be4049d4ffe2534e9f6ed7c22ac&X-Amz-SignedHeaders=host"
+    cover: "https://placehold.co/600x400?text=Breast+Cancer+AI"
     paper_link: "#"
     topics: ["AI", "Healthcare", "Medical Imaging"]
-    supervision: "Prof. Edith Luhanga"
-    contributors: ["Peace Bakare", "Lucie Niyomutoni"]
+    supervision: " Edith Luhanga"
+    contributors:
+      - name: "Peace Bakare"
+        affiliation: "Carnegie Mellon University Africa"
+      - name: "Lucie Niyomutoni"
+        affiliation: "Carnegie Mellon University Africa"
     status: "Ongoing"
     venue: ""
     featured: false
@@ -108,11 +142,13 @@ research:
       data: "https://github.com/baimamboukar"
 
   - title: "Causal Structure Analysis for Telemetry Anomaly Detection in Spacecraft Systems"
-    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499624201-53b83299-ad18-4f09-958a-deadf878006f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251028/us-east-1/s3/aws4_request&X-Amz-Date=20251028T135909Z&X-Amz-Expires=300&X-Amz-Signature=4d7e853ba66774e5e5a655ef97f1e57e31091bf7fa6cf4f5ae0f780bd76baafc&X-Amz-SignedHeaders=host"
+    cover: "/telemetry.png"
     paper_link: "#"
     topics: ["Satellites Operations", "Telemetry", "Graphical Models"]
-    supervision: "Prof. Assane Gueye"
-    contributors: ["Kip Koech"]
+    supervision: " Assane Gueye"
+    contributors:
+      - name: "Kip Koech"
+        affiliation: "Carnegie Mellon University Africa"
     status: "Ongoing"
     venue: "10th TTC International Workshop"
     featured: false
@@ -123,11 +159,15 @@ research:
       data: "https://github.com/baimamboukar/causual-structure-discovery-spacecraft-telemetry"
 
   - title: "Towards the Africa we want: What is the role of space technology in achieving the African Union Agenda 2063?"
-    cover: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499639440-59b9ae28-e3ba-4825-81aa-5a5015a4b20a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251028/us-east-1/s3/aws4_request&X-Amz-Date=20251028T135927Z&X-Amz-Expires=300&X-Amz-Signature=5a9b5c64a23db20c8b9105325d72a5fd7a0547790234d074c0a96c9e8f8825e3&X-Amz-SignedHeaders=host"
+    cover: "https://placehold.co/600x400?text=Space+Policy"
     paper_link: "#"
     topics: ["African Union", "Satellites", "AfSA"]
     supervision: ""
-    contributors: ["Manyara Baraka", "Kip Koech"]
+    contributors:
+      - name: "Manyara Baraka"
+        affiliation: "Carnegie Mellon University Africa"
+      - name: "Kip Koech"
+        affiliation: "Carnegie Mellon University Africa"
     status: "In Progress"
     venue: "Newspace Africa Conference 2026"
     abstract: "The African Union's Agenda 2063 outlines ambitious goals for continental transformation. This policy analysis examines how space technology can accelerate progress toward these objectives, focusing on applications in agriculture, telecommunications, climate monitoring, and governance. We provide recommendations for space policy frameworks that align with Africa's development priorities."

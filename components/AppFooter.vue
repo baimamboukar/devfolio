@@ -4,7 +4,7 @@
     <p
       class="flex items-center text-base font-medium text-zinc-400 dark:text-zinc-500"
     >
-      Built from scratch with:
+      Built from scratch with
       <nuxt-link
         class="icon-link focus-visible:global-focus text-[#00DC82]"
         to="https://nuxt.com/"

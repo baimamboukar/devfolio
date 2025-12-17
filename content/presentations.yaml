@@ -3,7 +3,7 @@ description: "Discover my different talks and interventions at Tech events"
 
 presentations:
   - title: "Rwanda's Single Sign-On (SSO) Platform"
-    event: "Practicum Presentation"
+    event: "Practicum"
     date: "2025-12-04"
     cover: "/content/presentations/sso-presentation.png"
     type: "Talk"
@@ -27,25 +27,25 @@ presentations:
     type: "Pitch"
 
   - title: "Quand les satellites rencontrent l'IA"
-    event: "Université Gaston Berger | Senégal"
+    event: "UGB Senégal"
     date: "2025-05-04"
     cover: "/content/presentations/geospatial-talk.png"
     type: "Talk"
 
   - title: "Zero-shot Neural Priors for EEG Decoding"
-    event: "NeuroTech Workshop"
+    event: "IDL"
     date: "2025-12-05"
     cover: "/content/presentations/eeg-presentation.png"
     type: "Talk"
 
   - title: "Humidity Inference with Geographic Features and Machine Learning"
-    event: "9th Africa Aviation Summit"
+    event: "Aviation Summit"
     date: "2025-09-06"
     cover: "/content/presentations/contrails-poster.png"
     type: "Poster"
 
   - title: "Aviation and Space Club Presentation"
-    event: "Call with ANSYS"
+    event: "ANSYS"
     date: "2025-06-18"
     cover: "/content/presentations/asac-presentation.png"
     type: "Talk"
@@ -63,7 +63,7 @@ presentations:
     type: "academic"
 
   - title: "Satellite Connectivity: The Key to Africa's Digital Transformation?"
-    event: "CMU Africa | ICT Seminar"
+    event: "ICT Seminar"
     date: "2024-09-13"
     cover: "/content/presentations/satellite-connectivity.jpg"
     type: "Talk"

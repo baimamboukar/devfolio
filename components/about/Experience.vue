@@ -99,11 +99,15 @@ const extractSkills = (responsibilities) => {
                 <div class="flex items-stretch gap-6 min-h-[120px]">
                   <!-- Company Logo - Much Bigger -->
                   <div class="relative group/logo flex-shrink-0 flex items-center">
-                    <div class="w-28 h-28 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-800 dark:to-zinc-900 p-4 shadow-sm group-hover/logo:shadow-md transition-all duration-300">
-                      <img
+                    <div class="w-28 h-28 rounded-xl bg-white dark:bg-zinc-800 shadow-sm group-hover/logo:shadow-md transition-all duration-300 overflow-hidden">
+                      <NuxtImg
                         :src="exp.icon"
                         :alt="exp.company"
-                        class="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover/logo:scale-105"
+                        width="112"
+                        height="112"
+                        format="webp"
+                        loading="lazy"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover/logo:scale-105"
                       />
                     </div>
                     <!-- Subtle glow effect on logo hover -->
@@ -187,9 +191,13 @@ const extractSkills = (responsibilities) => {
                 <div class="flex items-center gap-4">
                   <!-- Company Logo -->
                   <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-800 dark:to-zinc-900 p-3 shadow-sm">
-                    <img
+                    <NuxtImg
                       :src="selectedExperience?.icon"
                       :alt="selectedExperience?.company"
+                      width="64"
+                      height="64"
+                      format="webp"
+                      loading="lazy"
                       class="w-full h-full object-contain rounded-lg"
                     />
                   </div>
@@ -236,7 +244,7 @@ const extractSkills = (responsibilities) => {
             <!-- Modal Content -->
             <div class="p-6 overflow-y-auto max-h-[calc(90vh-200px)]">
               <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
-                Key Responsibilities & Achievements
+                Responsibilities and Achievements
               </h3>
 
               <div class="space-y-4">

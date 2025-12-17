@@ -1,4 +1,11 @@
 updates:
+  - date: "2025-08-15"
+    title: "Paper on AI Thermography accepted at MedAI 2024"
+    description: "Our comprehensive review on AI-assisted thermography for early breast cancer detection has been accepted for presentation."
+    type: "publication"
+    link: "https://doi.org/10.1000/medical-ai-2024"
+    tags: ["Healthcare", "AI", "Thermography"]
+
   - date: "2025-06-01"
     title: "Joined IBM as a Research Scientist Intern"
     description: "I started an Internship on AI Resarch at IBM Research, Kenya Lab. Beautiful things ahead 🫴🏾❤️‍🔥."

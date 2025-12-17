@@ -1,0 +1,55 @@
+# Portfolio Site Configuration
+# This file contains all site-wide settings, SEO metadata, and personal information
+
+# Personal Information
+personal:
+  name: "Baimam Boukar Jean Jacques"
+  title: "Graduate Researcher at CMU Africa"
+  tagline: "Machine Learning for Space Systems & Earth Observation | 2xAWS Certified | Open Source Contributor"
+  photo: "/baimamboukar.jpeg"
+  location: "Kigali, Rwanda"
+  university: "Carnegie Mellon University Africa"
+  specialization: "Machine Learning applications for Space Systems and Earth Observation"
+
+# SEO Configuration
+seo:
+  title_template: "Baimam Boukar JJ"
+  default_title: "Baimam Boukar Jean Jacques"
+  description: "Graduate Researcher at CMU Africa | Machine Learning for Space Systems & Earth Observation | 2xAWS Certified | Open Source Contributor"
+  keywords: ["machine learning", "space systems", "earth observation", "remote sensing", "software engineering", "open source"]
+  author: "Baimam Boukar Jean Jacques"
+  og_type: "website"
+  twitter_card: "summary_large_image"
+  twitter_creator: "@baimamboukar"
+
+# Site Configuration
+site:
+  name: "Baimam Boukar Portfolio"
+  url: "https://baimamboukar.dev"
+  logo: "/baimamboukar.jpeg"
+  favicon: "/favicon.ico"
+  language: "en"
+  locale: "en_US"
+  theme_color: "#0ea5e9" # sky-500
+  
+# Contact Information
+contact:
+  email: "baimamboukar@gmail.com"
+  calendly: "https://calendly.com/baimamboukar"
+  github: "baimamboukar"
+  twitter: "baimamboukarr"
+  linkedin: "baimamboukar"
+
+# Featured Content Limits
+featured:
+  projects_count: 4
+  research_count: 3
+  news_count: 4
+  presentations_count: 6
+
+# External Data Sources
+data_sources:
+  about: "content/about.yaml"
+  research: "content/research.yaml"
+  news: "content/news.yaml"
+  projects_more: "content/projects/more.json"

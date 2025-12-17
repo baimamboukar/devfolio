@@ -32,15 +32,13 @@
     <div
       class="w-12 h-12 flex items-center justify-center rounded-2xl shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:rounded-[calc(.75rem+1px)] before:bg-gradient-to-b before:from-blue-500 before:to-lime-400"
     >
-      <template v-if="icon.startsWith('https://')">
-        <nuxt-img
-          preload
-          placeholder
+      <template v-if="icon.startsWith('https://') || icon.startsWith('/')">
+        <img
           width="40"
           height="40"
           :src="icon"
           :alt="`Project Logo for ${projectTitle}`"
-          class="w-full h-full p-2 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl"
+          class="w-full h-full p-2 bg-zinc-100 dark:bg-zinc-600 opacity-95 dark:opacity-90 rounded-xl object-contain"
         />
       </template>
       <template v-else>

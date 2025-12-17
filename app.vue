@@ -10,20 +10,23 @@
 </script>
 
 <template>
-  <!-- Skip Navigation Link -->
-  <a
-    href="#main-content"
-    class="flex items-center justify-center bg-sky-600 h-8 absolute top-0 left-1/2 -translate-x-1/2 py-2 px-4 rounded-md mx-auto z-50 transform duration-300 -translate-y-[125%] opacity-0 focus-visible:translate-y-2 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-opacity-50 text-zinc-100"
-    >Skip to Main Content</a
-  >
+  <!-- Main Layout Container -->
+  <div class="w-[80%] md:w-[92%] mx-auto min-w-[20rem] md:min-h-screen pt-4 pb-6 flex items-start flex-col md:flex-row">
+    <!-- Skip Navigation Link -->
+    <a
+      href="#main-content"
+      class="flex items-center justify-center bg-sky-600 h-8 absolute top-0 left-1/2 -translate-x-1/2 py-2 px-4 rounded-md mx-auto z-50 transform duration-300 -translate-y-[125%] opacity-0 focus-visible:translate-y-2 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-opacity-50 text-zinc-100"
+      >Skip to Main Content</a
+    >
 
-  <!-- Sidebar -->
-  <app-side-bar />
+    <!-- Sidebar -->
+    <app-side-bar />
 
-  <!-- Main Content -->
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+    <!-- Main Content -->
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 
   <!-- Mobile Navigation -->
   <app-nav
@@ -32,6 +35,8 @@
 </template>
 
 <style>
+  @tailwind base;
+  @tailwind components;
   @tailwind utilities;
 
   @layer utilities {
@@ -61,7 +66,8 @@
   }
 
   body {
-    @apply w-full min-w-[20rem] md:min-h-screen px-5 md:px-4 pt-4 pb-6 max-w-7xl mx-auto bg-gray-50 dark:bg-zinc-900 md:dark:bg-zinc-950 text-zinc-800 dark:text-zinc-100 flex items-start flex-col md:flex-row md:overflow-y-auto;
+    /* Keep background and text colors on body */
+    @apply bg-gray-50 dark:bg-zinc-900 md:dark:bg-zinc-950 text-zinc-800 dark:text-zinc-100 md:overflow-y-auto;
   }
 
   main {

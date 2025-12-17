@@ -109,9 +109,13 @@ const formatDate = (dateString) => {
 
             <!-- Certificate Badge Image -->
             <div class="relative">
-              <img
+              <NuxtImg
                 :src="cert.badge"
                 :alt="cert.name"
+                width="96"
+                height="96"
+                format="webp"
+                loading="lazy"
                 class="w-24 h-24 mx-auto object-contain transition-transform duration-300"
                 :class="[
                   hoveredIndex === index && 'scale-110 rotate-3'

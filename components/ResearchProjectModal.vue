@@ -230,17 +230,17 @@ const getProjectLinks = (project) => {
                 </div>
                 <div
                   v-for="contributor in project.contributors"
-                  :key="contributor"
+                  :key="contributor.name"
                   class="flex items-center gap-3"
                 >
                   <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
                     <span class="text-sm font-semibold text-gray-600 dark:text-gray-400">
-                      {{ contributor.split(' ').map(n => n[0]).join('') }}
+                      {{ contributor.name.split(' ').map(n => n[0]).join('') }}
                     </span>
                   </div>
                   <div>
-                    <p class="font-medium text-gray-900 dark:text-gray-100">{{ contributor }}</p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Co-author</p>
+                    <p class="font-medium text-gray-900 dark:text-gray-100">{{ contributor.name }}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ contributor.affiliation }}</p>
                   </div>
                 </div>
               </div>

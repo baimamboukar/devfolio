@@ -4,42 +4,40 @@
     description: "Discover my different talks and interventions at Tech events",
   });
 
-  // Fetch all featured projects
-  const { pending, data: allPresentations } = await useLazyAsyncData(
-    "talks",
-    () =>
-      queryContent("/presentations")
-       .sort({ date: -1 }) // Sort by date in descending order
-        // .where({ title: { $ne: "More" } })
-        .find()
+  // Fetch all presentations from YAML
+  const { pending, data: presentationsData } = await useLazyAsyncData(
+    "talks-yaml",
+    () => queryContent("presentations").findOne()
   );
+
+  // Sort by date descending
+  const allPresentations = computed(() => {
+    const list = presentationsData.value?.presentations || [];
+    return [...list].sort((a, b) => new Date(b.date) - new Date(a.date));
+  });
 
   // Search and Filter state
   const searchQuery = ref('');
-  const selectedCommunity = ref('all');
-  const selectedCategory = ref('all');
+  const selectedEvent = ref('all'); // previously community
+  const selectedType = ref('all');  // previously category
 
-  // Extract unique communities and categories
-  const availableCommunities = computed(() => {
+  // Extract unique events and types
+  const availableEvents = computed(() => {
     if (!allPresentations.value) return [];
-    const communities = new Set();
-    allPresentations.value.forEach(presentation => {
-      if (presentation.community) {
-        communities.add(presentation.community);
-      }
+    const events = new Set();
+    allPresentations.value.forEach(p => {
+      if (p.event) events.add(p.event);
     });
-    return Array.from(communities).sort();
+    return Array.from(events).sort();
   });
 
-  const availableCategories = computed(() => {
+  const availableTypes = computed(() => {
     if (!allPresentations.value) return [];
-    const categories = new Set();
-    allPresentations.value.forEach(presentation => {
-      if (presentation.category) {
-        categories.add(presentation.category);
-      }
+    const types = new Set();
+    allPresentations.value.forEach(p => {
+      if (p.type) types.add(p.type);
     });
-    return Array.from(categories).sort();
+    return Array.from(types).sort();
   });
 
   // Filtered presentations
@@ -51,24 +49,20 @@
     // Search filter
     if (searchQuery.value.trim()) {
       const query = searchQuery.value.toLowerCase();
-      filtered = filtered.filter(presentation =>
-        presentation.title.toLowerCase().includes(query) ||
-        presentation.community.toLowerCase().includes(query)
+      filtered = filtered.filter(p =>
+        p.title.toLowerCase().includes(query) ||
+        p.event.toLowerCase().includes(query)
       );
     }
 
-    // Community filter
-    if (selectedCommunity.value !== 'all') {
-      filtered = filtered.filter(presentation =>
-        presentation.community === selectedCommunity.value
-      );
+    // Event filter
+    if (selectedEvent.value !== 'all') {
+      filtered = filtered.filter(p => p.event === selectedEvent.value);
     }
 
-    // Category filter
-    if (selectedCategory.value !== 'all') {
-      filtered = filtered.filter(presentation =>
-        presentation.category === selectedCategory.value
-      );
+    // Type filter
+    if (selectedType.value !== 'all') {
+      filtered = filtered.filter(p => p.type === selectedType.value);
     }
 
     return filtered;
@@ -80,7 +74,7 @@
   const displayedCount = ref(initialLoadCount);
 
   // Reset displayed count when filters change
-  watch([searchQuery, selectedCommunity, selectedCategory], () => {
+  watch([searchQuery, selectedEvent, selectedType], () => {
     displayedCount.value = initialLoadCount;
   });
 
@@ -107,8 +101,8 @@
   // Reset filters
   const resetFilters = () => {
     searchQuery.value = '';
-    selectedCommunity.value = 'all';
-    selectedCategory.value = 'all';
+    selectedEvent.value = 'all';
+    selectedType.value = 'all';
   };
 
   // Group presentations by year for dividers
@@ -162,12 +156,12 @@
         <!-- Community Filter -->
         <div class="min-w-48">
           <select
-            v-model="selectedCommunity"
+            v-model="selectedEvent"
             class="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-sky-500 focus:border-transparent"
           >
             <option value="all">All Communities</option>
-            <option v-for="community in availableCommunities" :key="community" :value="community">
-              {{ community }}
+            <option v-for="event in availableEvents" :key="event" :value="event">
+              {{ event }}
             </option>
           </select>
         </div>
@@ -175,19 +169,19 @@
         <!-- Category Filter -->
         <div class="min-w-48">
           <select
-            v-model="selectedCategory"
+            v-model="selectedType"
             class="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-sky-500 focus:border-transparent"
           >
             <option value="all">All Categories</option>
-            <option value="academic">Academic</option>
-            <option value="community">Community</option>
-            <option value="workshop">Workshop</option>
+            <option v-for="type in availableTypes" :key="type" :value="type">
+              {{ type }}
+            </option>
           </select>
         </div>
 
         <!-- Reset Button -->
         <button
-          v-if="searchQuery || selectedCommunity !== 'all' || selectedCategory !== 'all'"
+          v-if="searchQuery || selectedEvent !== 'all' || selectedType !== 'all'"
           @click="resetFilters"
           class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors whitespace-nowrap"
         >
@@ -207,7 +201,7 @@
       </template>
       <template v-else>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-auto gap-y-10">
-          <template v-for="item in presentationsWithDividers" :key="item.type === 'divider' ? `divider-${item.year}` : item.data.id">
+          <template v-for="item in presentationsWithDividers" :key="item.type === 'divider' ? `divider-${item.year}` : item.data.title">
             <!-- Year Divider -->
             <div v-if="item.type === 'divider'" class="col-span-full">
               <app-divider class="my-8" />
@@ -217,11 +211,11 @@
             <app-presentation-card
               v-else
               :cover="item.data.cover"
-              :icon="item.data.icon"
+              :icon="item.data.type"
               :presentation-title="item.data.title"
-              :presentation-community="item.data.community"
+              :presentation-community="item.data.event"
               :presentation-date="item.data.date"
-              :presentation-url="item.data.url"
+              :presentation-url="item.data.slides || item.data.video || '#'"
             />
           </template>
         </div>
@@ -244,7 +238,7 @@
       <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">No presentations found</h3>
       <p class="text-gray-600 dark:text-gray-400 mb-4">Try adjusting your search or filter criteria.</p>
       <button
-        v-if="searchQuery || selectedCommunity !== 'all' || selectedCategory !== 'all'"
+        v-if="searchQuery || selectedEvent !== 'all' || selectedType !== 'all'"
         @click="resetFilters"
         class="inline-flex items-center px-4 py-2 bg-sky-50 dark:bg-sky-900/20 hover:bg-sky-100 dark:hover:bg-sky-900/30 text-sky-700 dark:text-sky-300 rounded-lg transition-colors duration-200"
       >

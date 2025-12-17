@@ -89,7 +89,7 @@
             <span id="wave">{{ homepageContent?.hero.emoji || "👋" }}</span>
           </h1>
           <p class="text-base font-medium text-zinc-700 dark:text-zinc-300">
-            {{ homepageContent?.hero.introduction || "I am a Master student In IT, Applied Machine Learning at Carnegie Mellon University. My research and projects interests center on Earth Observation, and Artificial Intelligence applications in Astronomy, Space Missions Design and Space Operations. My expertise lies in Machine Learning and Software Engineering." }}
+            {{ homepageContent?.hero.introduction || "I am a graduate student pursuing a Master of Science in Information Technology, Applied Machine Learning at Carnegie Mellon University Africa. My research and projects interests center on Earth Observation, and Artificial Intelligence applications in Astronomy, Space Missions Design and Space Operations. My expertise lies in Machine Learning and Software Engineering, and I am continuously building skills around space missions design." }}
           </p>
         </div>
 

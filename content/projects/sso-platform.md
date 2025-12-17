@@ -1,7 +1,7 @@
 ---
-title: Rwanda's Single Sign-On (SSO) system
+title: Rwanda's SSO 	system
 description: Centralized IAM system for government digital services in Rwanda.
-tags:
+tags:	
   - Keycloak
   - FastAPI
   - Next.js

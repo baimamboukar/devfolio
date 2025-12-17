@@ -12,7 +12,7 @@ const selectedDomain = ref(null);
 const researchDomains = [
   {
     id: 'foundation',
-    title: 'Foundation Models & Information Retrieval',
+    title: 'Foundation Models and Information Retrieval',
     icon: 'eos-icons:neural-network',
     topics: ['Large Language Models', 'Anomalous Pattern Detection', 'Vector Databases', 'Multi-Query Retrieval', 'LLM Internal Representations'],
     description: 'Understanding LLM limitations and developing novel retrieval methods using anomalous pattern detection',
@@ -20,7 +20,7 @@ const researchDomains = [
   },
   {
     id: 'space',
-    title: 'Space Missions & Exploration',
+    title: 'Space Missions and Exploration',
     icon: 'gis:satellite-earth',
     topics: ['Spacecraft Telemetry', 'Anomaly Detection', 'Mission Operations', 'Satellite Systems', 'Space Policy', 'African Space Programs'],
     description: 'Developing AI systems for spacecraft monitoring, mission planning, and space exploration technologies',

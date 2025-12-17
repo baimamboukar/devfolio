@@ -1,344 +1,223 @@
 <script setup>
-        // Static page meta (definePageMeta doesn't support async)
-        definePageMeta({
-          title: "Baimam Boukar Jean Jacques",
-          description: "Graduate Researcher, CMU Africa. Interrested in Interdisciplinary research at the intersection AI and Space Exploration.",
-        });
+// Static page meta
+definePageMeta({
+  title: "Baimam Boukar Jean Jacques",
+  description: "Graduate Researcher, CMU Africa. Interrested in Interdisciplinary research at the intersection AI and Space Exploration.",
+});
 
-        // Load centralized configuration
-        const { config: siteConfig } = await useSiteConfig();
-        const { content: homepageContent } = await useHomepageContent();
-        const { getMessage } = await useUIMessages();
+// Load centralized configuration
+const { config: siteConfig } = await useSiteConfig();
+const { content: homepageContent } = await useHomepageContent();
+const { getMessage } = await useUIMessages();
 
-        // Dynamic head configuration
-        useHead({
-          titleTemplate: siteConfig?.seo.title_template || "Baimam Boukar JJ",
-          title: siteConfig?.personal.name || "Baimam Boukar Jean Jacques",
-          meta: [
-            {
-              name: 'description',
-              content: 'Graduate Researcher, CMU Africa. Interrested in Interdisciplinary research at the intersection AI and Space Exploration.'
-            }
-          ]
-        });
+// Dynamic head configuration (SEO)
+useHead({
+  titleTemplate: siteConfig?.seo.title_template || "Baimam Boukar JJ",
+  title: siteConfig?.personal.name || "Baimam Boukar Jean Jacques",
+  meta: [
+    {
+      name: 'description',
+      content: 'Graduate Researcher, CMU Africa. Interrested in Interdisciplinary research at the intersection AI and Space Exploration.'
+    }
+  ]
+});
 
-        const route = useRoute();
+const route = useRoute();
 
-        useSeoMeta({
-          ogTitle: () => siteConfig?.personal.name || route.meta.title,
-          twitterTitle: () => siteConfig?.personal.name || route.meta.title,
-          ogDescription: () => siteConfig?.personal.tagline,
-          twitterDescription: () => siteConfig?.personal.tagline,
-          twitterCreator: () => siteConfig?.seo.twitter_creator,
-        });
+useSeoMeta({
+  ogTitle: () => siteConfig?.personal.name || route.meta.title,
+  twitterTitle: () => siteConfig?.personal.name || route.meta.title,
+  ogDescription: () => siteConfig?.personal.tagline,
+  twitterDescription: () => siteConfig?.personal.tagline,
+  twitterCreator: () => siteConfig?.seo.twitter_creator,
+});
 
+// Fetch featured projects (limit 5)
+const { data: featuredProjects } = await useLazyAsyncData(
+  "homex-projects",
+  () => queryContent("/projects")
+    .where({ title: { $ne: "More" }, featured: true })
+    .limit(5)
+    .find()
+);
 
-        // // Fetch latest 2 blog posts
-        // const { pending: blogsPending, data: blogPosts } = await useLazyAsyncData(
-        //   "featured-posts",
-        //   () => queryContent("/blog").sort({ published_on: -1 }).limit(4).find()
-        // );
+// Fetch featured research (limit 3)
+const { data: featuredResearchData } = await useLazyAsyncData(
+  "homex-research",
+  () => queryContent("/research").findOne()
+);
+const featuredResearch = computed(() => {
+  return featuredResearchData.value?.research?.filter(r => r.featured).slice(0, 3) || [];
+});
 
-        // Fetch featured projects (using configured limit)
-        const projectsLimit = siteConfig?.featured.projects_count || 4;
-        const { pending: projectsPending, data: featuredProjects } = await useLazyAsyncData(
-          "featured-projects-homepage",
-          () => queryContent("/projects")
-            .where({
-              title: { $ne: "More" },
-              featured: true
-            })
-            .limit(projectsLimit)
-            .find()
-        );
+// Tech Stack Data
+const techStack = [
+  { name: 'Python', icon: 'logos:python' },
+  { name: 'NumPy', icon: 'logos:numpy' },
+  { name: 'PyTorch', icon: 'logos:pytorch-icon' },
+  { name: 'TensorFlow', icon: 'logos:tensorflow' },
+  { name: 'CUDA', icon: 'simple-icons:nvidia' },
+  { name: 'FastAPI', icon: 'simple-icons:fastapi' },
+  { name: 'Vue', icon: 'logos:vue' },
+  { name: 'Nuxt', icon: 'logos:nuxt-icon' },
+  { name: 'Flutter', icon: 'logos:flutter' },
+  { name: 'Dart', icon: 'logos:dart' },
+  { name: 'Go', icon: 'logos:go' },
+  { name: 'Google Cloud', icon: 'logos:google-cloud' },
+  { name: 'AWS', icon: 'logos:aws' },
+  { name: 'Docker', icon: 'logos:docker-icon' },
+  { name: 'K8s', icon: 'logos:kubernetes' },
+  { name: 'GitHub', icon: 'simple-icons:github' },
+  { name: 'GitHub Actions', icon: 'logos:github-actions' },
+  { name: 'Hugging Face', icon: 'simple-icons:huggingface' },
+  // { name: 'Kaggle', icon: 'simple-icons:kaggle' },
+  { name: 'Linux', icon: 'logos:linux-tux' },
+  { name: 'Google Play', icon: 'simple-icons:googleplay' },
+  // { name: 'LaTeX', icon: 'file-icons:latex' },
+  { name: 'Overleaf', icon: 'simple-icons:overleaf' },
+];
 
-  // News modal state
-  const isNewsModalOpen = ref(false);
-
-  // Debug function for development
-  const { refreshAllConfigs } = useConfig();
-  const testConfigRefresh = async () => {
-    await refreshAllConfigs();
-    // Force reactivity update
-    await nextTick();
-  };
+// Debug function for development
 </script>
 
-<!-- Landing Page -->
 <template>
-  <article class="[&>*]:my-4 first:[&>*]:mt-0 [&>hr]:my-6 md:[&>hr]:my-10">
-    <!-- Introduction with Photo -->
-    <section class="flex flex-col md:flex-row gap-6 items-start">
-      <!-- Photo Column -->
-      <div class="flex-shrink-0 mx-auto md:mx-0">
-        <img
-          width="180"
-          height="180"
-          :src="siteConfig?.personal.photo || '/baimamboukar.jpeg'"
-          :alt="siteConfig?.personal.name || 'Baimam Boukar JJ'"
-          class="rounded-xl border-2 border-gray-200 dark:border-zinc-700"
-        />
-      </div>
+  <div class="space-y-16 py-8">
+    
+    <!-- 1. Hero Section: 2-Column Layout -->
+    <section class="max-w-5xl mx-auto px-4">
+      <div class="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
+        
+        <!-- Text Column (Left) -->
+        <div class="flex-1 space-y-6 text-center md:text-left">
+          <div>
+            <h1 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
+              {{ homepageContent?.hero.greeting || "Hi, I'm Baimam Boukar" }}
+              <span class="inline-block ml-1 origin-[70%_70%] animate-[10s_ease_2s_infinite_wave] hover:animate-[1.5s_ease_hoverwave]">{{ homepageContent?.hero.emoji || "👋" }}</span>
+            </h1>
+          </div>
 
-      <!-- Content Column -->
-      <div class="flex-1 space-y-4">
-        <!-- Text Summary Row -->
-        <div>
-          <h1 class="mb-4 text-2xl font-semibold">
-            {{ homepageContent?.hero.greeting || "Hi, I'm Baimam Boukar" }}
-            <span id="wave">{{ homepageContent?.hero.emoji || "👋" }}</span>
-          </h1>
-          <p class="text-base font-medium text-zinc-700 dark:text-zinc-300">
-            {{ homepageContent?.hero.introduction || "I am a Master student In IT, Applied Machine Learning at Carnegie Mellon University. My research and projects interests center on Earth Observation, and Artificial Intelligence applications in Astronomy, Space Missions Design and Space Operations. My expertise lies in Machine Learning and Software Engineering." }}
+          <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl mx-auto md:mx-0 text-justify">
+            {{ homepageContent?.hero.introduction }}
           </p>
         </div>
 
-        <!-- CV Download Row -->
-        <!-- <div class="pt-2">
-          <UButton
-            color="sky"
-            variant="solid"
-            size="sm"
-            icon="i-heroicons-arrow-down-tray"
-            to="/resume.pdf"
-            target="_blank"
-            external
-            class="ml-auto"
-          >
-            Download CV
-          </UButton>
-        </div> -->
+        <!-- Image Column (Right) -->
+        <div class="flex-shrink-0 w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 relative">
+          <img
+            :src="siteConfig?.personal.photo || '/self.jpg'"
+            alt="Profile"
+            class="w-full h-full object-cover rounded-2xl shadow-xl rotate-3 hover:rotate-0 transition-transform duration-500"
+          />
+          <!-- Decorative element behind -->
+          <div class="absolute inset-0 bg-sky-100 dark:bg-sky-900/30 rounded-2xl -z-10 -rotate-6 scale-95"></div>
+        </div>
+
       </div>
     </section>
 
-    <app-divider class="md:my-6" />
+    <AppDivider />
 
-    <!-- Debug: Config Refresh Button (remove in production) -->
-    <div v-if="$dev" class="mb-4 p-4 bg-yellow-100 dark:bg-yellow-900/20 rounded-lg border border-yellow-300 dark:border-yellow-700">
-      <p class="text-sm text-yellow-800 dark:text-yellow-200 mb-2">
-        🧪 Development Debug: Test config refresh from GitHub Gists
-      </p>
-      <button
-        @click="testConfigRefresh"
-        class="px-3 py-1 bg-yellow-500 hover:bg-yellow-600 text-white text-sm rounded transition-colors"
-      >
-        Refresh Config from Gists
-      </button>
-    </div>
+    <section class="max-w-5xl mx-auto px-4 mb-2">
+      <!-- Latest Update Ticker -->
+      <NewsTicker />
+    </section>
 
-    <!-- Recent Achievements Banner -->
-    <AchievementsBanner />
+    <AppDivider />
 
-    <!-- News/Updates Section -->
-    <News :limit="4" @show-all="isNewsModalOpen = true" />
+    <!-- 2. Research Interests -->
+    <ResearchInterests />
 
-    <!-- News Modal -->
-    <NewsModal v-model="isNewsModalOpen" />
+    <AppDivider />
 
-    <app-divider class="md:my-6" />
+    <!-- 3. Selected Work: Split Columns with Vertical Divider -->
+    <section>
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold">Selected Work</h2>
+        <UButton to="/research" variant="ghost" color="gray">View All <span aria-hidden="true">&rarr;</span></UButton>
+      </div>
 
-    <!-- Quick Links Grid -->
-    <section class="mb-2 space-y-2">
-      <div
-        class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:grid-flow-col gap-2 lg:[&_:first-child]:row-span-2 [&_:first-child]:col-span-2 lg:[&_:first-child]:col-span-1"
-      >
-        <!-- Book Call Card -->
-        <div
-          class="flex items-center justify-center p-[1px] overflow-hidden font-medium shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:bg-gradient-to-b before:from-sky-500 before:to-blue-600 rounded-[calc(.375rem+1px)] dark:before:opacity-70 focus-within:ring-2 ring-offset-0 focus-within:ring-sky-400 focus-within:ring-opacity-75"
-        >
-          <div
-            class="flex flex-col items-center justify-center w-full h-full gap-6 p-6 bg-white rounded-md dark:bg-zinc-800"
-          >
-            <div class="text-center">
-              <p class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
-                {{ homepageContent?.quick_links.book_call.title || "Let's Connect" }}
-              </p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">
-                {{ homepageContent?.quick_links.book_call.subtitle || "Schedule a conversation" }}
-              </p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
+        
+        <!-- Projects Column -->
+        <div class="space-y-6">
+          <h3 class="text-sm font-bold capitalize tracking-wider text-sky-600 dark:text-sky-400">
+             Featured Projects
+          </h3>
+          <div class="grid grid-cols-1 gap-4">
+            <div v-for="project in featuredProjects" :key="project.title">
+              <AppProjectCard
+                :project-title="project.title"
+                :project-description="project.description"
+                :icon="project.icon"
+                :project-url="project._path"
+              />
             </div>
-            <nuxt-link
-              class="px-6 py-3 bg-sky-500 hover:bg-sky-600 rounded-lg focus-visible:outline-none text-white font-medium transition-colors duration-200"
-              :to="homepageContent?.quick_links.book_call.url || 'https://calendly.com/baimamboukar'"
-              target="_blank"
-              external
-              id="contact-btn"
-              >{{ homepageContent?.quick_links.book_call.button_text || "Book Call" }}</nuxt-link
-            >
           </div>
         </div>
 
-        <app-link-card
-          v-for="link in homepageContent?.quick_links.links || [
-            { label: 'Research', icon: 'fluent-emoji:scientist', url: '/research' },
-            { label: 'My Talks', icon: 'fluent-emoji:laptop', url: '/presentations', external: true },
-            { label: 'Projects', icon: 'fluent-emoji:sparkles', url: '/projects' },
-            { label: 'Blog', icon: 'fluent-emoji:writing-hand', url: '/blog' }
-          ]"
-          :key="link.label"
-          :label="link.label"
-          :icon="link.icon"
-          :url="link.url"
-          :is-external-url="link.external || false"
-        ></app-link-card>
+        <!-- Vertical Divider (Visible on LG screens) -->
+        <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 dark:via-zinc-700 to-transparent"></div>
+
+        <!-- Research Column -->
+        <div class="space-y-6 lg:pl-8">
+          <h3 class="text-sm font-bold capitalize tracking-wider text-sky-600 dark:text-sky-400">
+             Recent Research
+          </h3>
+          <div class="space-y-4">
+            <NuxtLink 
+              v-for="paper in featuredResearch" 
+              :key="paper.title"
+              :to="'/research/' + slugify(paper.title)" 
+              class="block group"
+            >
+              <div class="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-xl p-5 hover:border-sky-400 dark:hover:border-sky-500 transition-all hover:shadow-sm">
+                <div class="flex items-start justify-between mb-2">
+                  <UBadge color="gray" variant="soft" size="xs">{{ paper.venue }}</UBadge>
+                  <UIcon name="i-heroicons-arrow-right" class="w-4 h-4 text-gray-400 group-hover:text-sky-500 transition-colors opacity-0 group-hover:opacity-100" />
+                </div>
+                <h4 class="font-bold text-base mb-2 group-hover:text-sky-600 transition-colors line-clamp-2">
+                  {{ paper.title }}
+                </h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                  {{ paper.abstract }}
+                </p>
+              </div>
+            </NuxtLink>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <app-divider class="md:my-6" />
-    <!-- Research Map -->
-    <!-- <ResearchMap />
-    <app-divider class="md:my-6" /> -->
-    <!-- Featured Research -->
-    <FeaturedResearch />
-
-    <app-divider class="md:my-6" />
-
-    <!-- Featured Projects -->
-    <section class="mb-8">
-      <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-bold">Featured Projects</h2>
-
-        <UButton
-          color="sky"
-          variant="ghost"
-          size="xs"
-          to="/projects"
-        >
-          View All
-          <template #trailing>
-            <UIcon name="i-heroicons-arrow-right" />
-          </template>
-        </UButton>
-      </div>
-      <p class="mb-6 text-zinc-700 dark:text-zinc-300">
-        A showcase of my favorite projects spanning mobile apps, web applications, and open-source contributions.
-      </p>
-
-      <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <template v-if="projectsPending">
-          <app-project-skeleton
-            v-for="skeletonId in generateKeys(4)"
-            :key="skeletonId"
-          />
-        </template>
-        <template v-else>
-          <app-project-card
-            v-for="project in featuredProjects"
-            :key="project.title"
-            :icon="project.icon"
-            :project-title="project.title"
-            :project-description="project.description"
-            :project-url="project._path"
-          />
-        </template>
-      </div>
-    </section>
-<AppDivider/>
-<a>
-    <img src="https://skillicons.dev/icons?i=flutter,python,nuxtjs,vuejs,githubactions,firebase,golang,flask,postman,docker,kubernetes,prometheus,tensorflow,gcp,aws,github,raspberrypi,pytorch,sklearn&perline=19" alt="Skill Icons">
-  </a>
-    <!-- Latest Blog Posts -->
-    <!-- <section>
-      <h2 class="w-auto mb-2 text-xl font-semibold group">
-        <nuxt-link
-          to="/blog"
-          class="flex items-center w-full py-2 rounded-lg focus-visible:global-focus"
-        >
-          My Articles
-          <Icon
-            name="heroicons:chevron-right-solid"
-            class="ml-2 text-sky-500 group-hover:translate-x-1"
-          />
-        </nuxt-link>
+    <!-- 4. Technologies and Tools -->
+    <section>
+      <h2 class="text-2xl font-bold mb-6">
+        Technologies and Tools
       </h2>
-      <p class="mb-4 text-zinc-700 dark:text-zinc-300">
-        I love sharing my knowledge via blog posts and articles. I write about
-        Go, AWS, Flutter, Nuxt, Google Cloud and other cool stuff.
-      </p>
-      <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <template v-if="blogsPending">
-          <app-blog-skeleton
-            v-for="skeletonId in generateKeys(2)"
-            :key="skeletonId"
-          />
-        </template>
-        <template v-else>
-          <app-blog-card
-            v-for="blogPost in blogPosts"
-            :key="blogPost._id"
-            :tags="blogPost.tags"
-            :blog-title="blogPost.title"
-            :title="blogPost.title"
-            :url="blogPost._path"
-            :pub-date="blogPost.published_on"
-            :cover-image="blogPost.image"
-          />
-        </template>
-      </div>
-    </section> -->
-    <app-divider />
-    <!-- Other Links -->
-    <!-- <section class="mb-2 space-y-2">
-      <div
-        class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:grid-flow-col gap-2 lg:[&_:first-child]:row-span-2 [&_:first-child]:col-span-2 lg:[&_:first-child]:col-span-1"
-      >
-        <div
-          class="flex items-center justify-center p-[1px] overflow-hidden font-medium shrink-0 relative -z-0 before:content-[''] before:absolute before:-inset-[1px] before:-z-10 before:bg-gradient-to-b before:from-blue-500 before:to-lime-400 rounded-[calc(.375rem+1px)] dark:before:opacity-60 focus-within:ring-2 ring-offset-0 focus-within:ring-blue-400 focus-within:ring-opacity-75"
+      <div class="flex flex-wrap gap-6 justify-start">
+        <div 
+          v-for="tech in techStack" 
+          :key="tech.name"
+          class="flex flex-col items-center gap-2 group"
         >
-          <div
-            class="flex flex-col items-center justify-center w-full h-full gap-6 p-4 bg-white rounded-md dark:bg-zinc-800"
-          >
-            <p class="text-lg font-bold">Let's Chat.</p>
-            <nuxt-link
-              class="px-4 py-2 bg-sky-500 rounded-lg focus-visible:outline-none text-zinc-800"
-              to="/contact"
-              id="contact-btn"
-              >Message</nuxt-link
-            >
+          <div class="w-12 h-12 flex items-center justify-center bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-gray-200 dark:border-zinc-700 group-hover:scale-110 transition-transform">
+            <Icon :name="tech.icon" class="w-6 h-6" />
           </div>
+          <span class="text-[10px] font-medium text-gray-500 group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors">
+            {{ tech.name }}
+          </span>
         </div>
-        <app-link-card
-          label="LeetCode"
-          icon="fluent-emoji:teacup-without-handle"
-          url="/leetcode"
-        ></app-link-card>
-        <app-link-card
-          label="Bookmarks"
-          icon="fluent-emoji:bookmark"
-          url="/bookmarks"
-        ></app-link-card>
-        <app-link-card
-          label="Second Brain"
-          icon="fluent-emoji:brain"
-          :is-external-url="true"
-          url="https://github.com/baimamboukar/notes"
-        ></app-link-card>
-        <app-link-card
-          label="Photography"
-          icon="fluent-emoji:camera"
-          :is-external-url="true"
-          url="https://unsplash.com/@baimamboukar"
-        ></app-link-card>
       </div>
-    </section> -->
-    <app-footer />
-  </article>
+    </section>
+
+    <AppDivider />
+    
+    <!-- Footer -->
+    <AppFooter />
+  </div>
 </template>
 
 <style scoped>
-  #contact-btn {
-    animation: 1500ms linear 2000ms infinite pulse;
-  }
-
-  @keyframes pulse {
-    0% {
-      box-shadow: #4ade80 0 0 0 0;
-    }
-    50% {
-      box-shadow: #4ade8000 0 0 0 0.5rem;
-    }
-  }
-
   #wave {
     @apply inline-block ml-1 origin-[70%_70%] animate-[10s_ease_2s_infinite_wave] hover:animate-[1.5s_ease_hoverwave];
   }

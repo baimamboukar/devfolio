@@ -2,8 +2,6 @@ import tailwindTypography from '@tailwindcss/typography'
 
 export default defineNuxtConfig({
   app: {
-    rootId: 'app',
-    rootTag: 'body',
     // ui: {
     //   global: true,
     // },

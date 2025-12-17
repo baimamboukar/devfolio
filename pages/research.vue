@@ -13,19 +13,21 @@ definePageMeta({
         Research
       </h1>
       <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-        My core research interest is in Deep Learning, particularly the fundamental capabilities of Foundation Models.
-        I aim to understand the limitations of Large Language Models (LLMs), especially in information retrieval and
-        long-context execution, and develop methods for their improvement. At the application level, I leverage these
-        techniques in high-impact, interdisciplinary domains like Earth Observation, Healthcare, and Space Research and Exploration.
+        My research focuses on understanding and improving Foundation Models and their applications in various high-impact domains, including Space, Healthcare, and Earth Observation.
       </p>
     </div>
 
-<!-- Research Focus Areas -->
+    <!-- Research Focus Areas -->
+    <!--
     <div class="mb-8">
       <ResearchMap />
     </div>
+    -->
 
     <!-- Research Section -->
     <ResearchSection />
+
+    <!-- Nested Route (Modal) -->
+    <NuxtPage :transition="false" />
   </div>
 </template>

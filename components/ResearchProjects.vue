@@ -1,5 +1,5 @@
 <script setup>
-const emit = defineEmits(['open-project']);
+import { slugify } from '~/utils/slugify';
 
 const { data: researchData } = await useAsyncData('research', () => queryContent('research').findOne());
 
@@ -34,10 +34,6 @@ const getStatusText = (status) => {
     'Completed': 'Completed'
   };
   return statusMap[status] || status;
-};
-
-const handleProjectClick = (project) => {
-  emit('open-project', project);
 };
 
 // Search and filter state
@@ -232,11 +228,11 @@ const getGradientColors = (topic) => {
       <!-- List View -->
       <div v-if="displayMode === 'list'" class="space-y-4">
         <TransitionGroup name="paper" tag="div" class="space-y-4">
-          <div
+          <NuxtLink
             v-for="project in displayedProjects"
             :key="project.title"
-            @click="handleProjectClick(project)"
-            class="cursor-pointer group relative p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-sky-400 dark:hover:border-sky-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            :to="'/research/' + slugify(project.title)"
+            class="block cursor-pointer group relative p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-sky-400 dark:hover:border-sky-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
           >
             <div class="flex gap-8">
               <!-- Image Space -->
@@ -259,7 +255,7 @@ const getGradientColors = (topic) => {
 
                 <!-- Authors -->
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                  <span class="font-medium">Baimam Boukar JJ</span><span v-if="project.contributors">, {{ project.contributors.join(', ') }}</span>
+                  <span class="font-medium">Baimam Boukar JJ</span><span v-if="project.contributors">, {{ project.contributors.map(c => c.name).join(', ') }}</span>
                 </p>
 
                 <!-- Venue -->
@@ -289,18 +285,18 @@ const getGradientColors = (topic) => {
                 </div>
               </div>
             </div>
-          </div>
+          </NuxtLink>
         </TransitionGroup>
       </div>
 
       <!-- Grid View -->
       <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <TransitionGroup name="paper" tag="div" class="contents">
-          <div
+          <NuxtLink
             v-for="project in displayedProjects"
             :key="project.title"
-            @click="handleProjectClick(project)"
-            class="group rounded-lg border border-gray-200 dark:border-gray-800 hover:border-sky-500 dark:hover:border-sky-500 cursor-pointer transition-all duration-300"
+            :to="'/research/' + slugify(project.title)"
+            class="block group rounded-lg border border-gray-200 dark:border-gray-800 hover:border-sky-500 dark:hover:border-sky-500 cursor-pointer transition-all duration-300"
           >
             <div class="h-full flex flex-col">
               <!-- Gradient Background -->
@@ -354,13 +350,13 @@ const getGradientColors = (topic) => {
                 <div class="mt-auto">
                   <div class="flex items-center gap-2">
                     <span class="text-xs text-gray-500 dark:text-gray-400">
-                      Co-authored with {{ project.contributors?.join(', ') || 'team members' }}
+                      Co-authored with {{ project.contributors?.map(c => c.name).join(', ') || 'team members' }}
                     </span>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </NuxtLink>
         </TransitionGroup>
       </div>
 
