@@ -30,6 +30,11 @@ useSeoMeta({
             <Experience :experience="data.experience" />
         </template>
 
+        <!-- AI Safety Engagement -->
+        <template v-else-if="tab === 'safety'">
+            <SafetyEngagement :engagement="data.safety_engagement" />
+        </template>
+
         <!-- Credentials -->
         <template v-else-if="tab === 'credentials'">
             <div class="space-y-12">
@@ -56,14 +61,7 @@ useSeoMeta({
             <Leadership :leadership="data.leadership" />
         </template>
 
-        <!-- Events -->
-        <template v-else-if="tab === 'events'">
-            <Events 
-              :conferences="data.conferences" 
-              :hackathons="data.hackathons" 
-            />
-        </template>
-        
+                
         <!-- 404 for unknown tab -->
         <div v-else class="text-center py-12">
             <p class="text-gray-500">Section not found.</p>

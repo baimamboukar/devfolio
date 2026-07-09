@@ -1,6 +1,6 @@
 ---
 title: MyTorch
-description: A PyTorch Inspired Custom Mini Deep Learning Library Implemented From Scratch
+description: A foundational deep learning library built from first principles in Python
 tags:
   - Neural Networks
   - Deep Learning
@@ -15,7 +15,7 @@ live_url: "https://github.com/baimamboukar/MyTorch"
 source_url: "https://github.com/baimamboukar/MyTorch"
 image: "https://github.com/baimamboukar/cosmosense/blob/main/assets/images/comso.png?raw=true"
 icon: "pytorch"
-featured: true
+featured: false
 
 # Project Details
 status: "Active Development"

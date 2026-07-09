@@ -11,27 +11,27 @@ const selectedDomain = ref(null);
 
 const researchDomains = [
   {
-    id: 'foundation',
-    title: 'Foundation Models and Information Retrieval',
+    id: 'interpretability',
+    title: 'Mechanistic Interpretability',
     icon: 'eos-icons:neural-network',
-    topics: ['Large Language Models', 'Anomalous Pattern Detection', 'Vector Databases', 'Multi-Query Retrieval', 'LLM Internal Representations'],
-    description: 'Understanding LLM limitations and developing novel retrieval methods using anomalous pattern detection',
+    topics: ['Internal Representations', 'Sparse Autoencoders', 'Activation Probing', 'Activation Patching', 'Generalization of Methods'],
+    description: 'Understanding internal model representations, and studying why interpretability methods fail to generalize across models and tasks',
     gradient: 'bg-gradient-to-br from-sky-400 to-blue-500'
   },
   {
-    id: 'space',
-    title: 'Space Missions and Exploration',
-    icon: 'gis:satellite-earth',
-    topics: ['Spacecraft Telemetry', 'Anomaly Detection', 'Mission Operations', 'Satellite Systems', 'Space Policy', 'African Space Programs'],
-    description: 'Developing AI systems for spacecraft monitoring, mission planning, and space exploration technologies',
+    id: 'alignment',
+    title: 'Deceptive Alignment & Model Behavior',
+    icon: 'heroicons:eye',
+    topics: ['Deception Detection', 'Situational Awareness', 'White-box Control', 'Model Steering', 'Science of Evals'],
+    description: 'Detecting and analyzing deception, misalignment, and emergent behaviors in large language models',
     gradient: 'bg-gradient-to-br from-purple-400 to-indigo-500'
   },
   {
-    id: 'applications',
-    title: 'High-Impact Applications',
-    icon: 'heroicons:globe-europe-africa',
-    topics: ['Earth Observation', 'Healthcare AI', 'Brain-Computer Interfaces', 'Climate Monitoring', 'Medical Imaging', 'EEG Decoding'],
-    description: 'Applying Foundation Models to real-world challenges in Earth observation, healthcare, and neuroscience',
+    id: 'infrastructure',
+    title: 'Research Engineering & Infrastructure',
+    icon: 'heroicons:wrench-screwdriver',
+    topics: ['Distributed Training', 'Open Science', 'Reproducibility Pipelines', 'High-Performance Computing', 'Custom DL Libraries'],
+    description: 'Building robust, scalable infrastructure for distributed machine learning experiments and open-source research tools',
     gradient: 'bg-gradient-to-br from-indigo-400 to-blue-600'
   }
 ];
@@ -45,7 +45,7 @@ const handleDomainClick = (domain) => {
   <section class="mt-8">
     <h2 class="mb-4 text-xl font-semibold">Research Focus</h2>
     <p class="mb-6 text-zinc-700 dark:text-zinc-300">
-      Understanding the fundamental capabilities and limitations of Foundation Models and their applications across high-impact domains.
+      Building reliable tools to understand, verify, and control large language models.
     </p>
 
     <!-- Minimal List Design -->

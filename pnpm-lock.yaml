@@ -8,15 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@fontsource/arsenal':
-        specifier: ^5.1.1
-        version: 5.1.1
-      '@fontsource/roboto-mono':
-        specifier: ^5.1.1
-        version: 5.1.1
-      '@fontsource/space-grotesk':
-        specifier: ^5.1.1
-        version: 5.1.1
+      '@fontsource/inter':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/jetbrains-mono':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@nuxt/ui':
         specifier: ^2.20.0
         version: 2.20.0(axios@1.7.9)(change-case@5.4.4)(focus-trap@7.6.4)(magicast@0.3.5)(rollup@4.30.1)(typescript@5.7.3)(vite@6.0.7(@types/node@22.10.5)(jiti@2.4.2)(terser@5.37.0)(tsx@4.19.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))
@@ -38,9 +35,18 @@ importers:
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
+      leaflet:
+        specifier: ^1.9.4
+        version: 1.9.4
       resend:
         specifier: ^4.0.1
         version: 4.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      vue-leaflet:
+        specifier: ^0.1.0
+        version: 0.1.0
+      vue-virtual-scroller:
+        specifier: ^1.1.2
+        version: 1.1.2(vue@3.5.13(typescript@5.7.3))
     devDependencies:
       '@iconify-json/fluent-emoji':
         specifier: ^1.2.2
@@ -693,14 +699,11 @@ packages:
     resolution: {integrity: sha512-OIHZrb2ImZ7XG85HXOONLcJWGosv7sIvM2ifAPQVhg9Lv7qdmMBNVaai4QTdyuaqbKM5eO6sLSQOYI7wEQeCJQ==}
     engines: {node: '>=14'}
 
-  '@fontsource/arsenal@5.1.1':
-    resolution: {integrity: sha512-icml75b+BxpQemAgYAc+WJES2saksxQRBFusXzzgPJ8G7XMuOyNheQG3ydoObcVLl6eWSBLeq+sq5fjuaBDD9A==}
+  '@fontsource/inter@5.2.8':
+    resolution: {integrity: sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg==}
 
-  '@fontsource/roboto-mono@5.1.1':
-    resolution: {integrity: sha512-3Uwg4ZsoYlqzpGgPQn5bpBjCBX7HISbEmbycmrdyzK/dcMChlsmf0VGBjSs2AZV+UK7kLCUFYnCakXYz6VTIUA==}
-
-  '@fontsource/space-grotesk@5.1.1':
-    resolution: {integrity: sha512-6uOS8WhMEl6lbykGvkSjxRLs/1lDvfSKyXAau7ONVPzUYBmB1E+JQ3C0du7NDp75xUZ+330xPc9/ep8uFgIXBg==}
+  '@fontsource/jetbrains-mono@5.2.8':
+    resolution: {integrity: sha512-6w8/SG4kqvIMu7xd7wt6x3idn1Qux3p9N62s6G3rfldOUYHpWcc2FKrqf+Vo44jRvqWj2oAtTHrZXEP23oSKwQ==}
 
   '@headlessui/tailwindcss@0.2.1':
     resolution: {integrity: sha512-2+5+NZ+RzMyrVeCZOxdbvkUSssSxGvcUxphkIfSVLpRiKsj+/63T2TOL9dBYMXVfj/CGr6hMxSRInzXv6YY7sA==}
@@ -3120,6 +3123,9 @@ packages:
   leac@0.6.0:
     resolution: {integrity: sha512-y+SqErxb8h7nE/fiEX07jsbuhrpO9lL8eca7/Y1nuWV2moNlXhyd59iDGcRf6moVyDMbmTNzL40SUyrFU/yDpg==}
 
+  leaflet@1.9.4:
+    resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
+
   lilconfig@3.1.3:
     resolution: {integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==}
     engines: {node: '>=14'}
@@ -4221,6 +4227,9 @@ packages:
     resolution: {integrity: sha512-Gf9qqc58SpCA/xdziiHz35F4GNIWYWZrEshUc/G/r5BnLph6xpKuLeoJoQuj5WfBIx/eQLf+hmVPYHaxJu7V2g==}
     engines: {node: '>= 10.13.0'}
 
+  scrollparent@2.1.0:
+    resolution: {integrity: sha512-bnnvJL28/Rtz/kz2+4wpBjHzWoEzXhVg/TE8BeVGJHUqE8THNIRnDxDWMktwM+qahvlRdvlLdsQfYe+cuqfZeA==}
+
   scule@1.3.0:
     resolution: {integrity: sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==}
 
@@ -4997,10 +5006,26 @@ packages:
     peerDependencies:
       vue: ^3.4.37
 
+  vue-leaflet@0.1.0:
+    resolution: {integrity: sha512-J2QxmQSbmnpM/Ng+C8vxowXcWp/IEe99r87psHyWYpBz2nbxkQAeYXW7WFcgzV4O7d7Vm4a1GcqKzrU9DeDpBA==}
+
+  vue-observe-visibility@0.4.6:
+    resolution: {integrity: sha512-xo0CEVdkjSjhJoDdLSvoZoQrw/H2BlzB5jrCBKGZNXN2zdZgMuZ9BKrxXDjNP2AxlcCoKc8OahI3F3r3JGLv2Q==}
+
+  vue-resize@0.4.5:
+    resolution: {integrity: sha512-bhP7MlgJQ8TIkZJXAfDf78uJO+mEI3CaLABLjv0WNzr4CcGRGPIAItyWYnP6LsPA4Oq0WE+suidNs6dgpO4RHg==}
+    peerDependencies:
+      vue: ^2.3.0
+
   vue-router@4.5.0:
     resolution: {integrity: sha512-HDuk+PuH5monfNuY+ct49mNmkCRK4xJAV9Ts4z9UFc4rzdDnxQLyCMGGc8pKhZhHTVzfanpNwB/lwqevcBwI4w==}
     peerDependencies:
       vue: ^3.2.0
+
+  vue-virtual-scroller@1.1.2:
+    resolution: {integrity: sha512-SkUyc7QHCJFB5h1Fya7LxVizlVzOZZuFVipBGHYoTK8dwLs08bIz/tclvRApYhksaJIm/nn51inzO2UjpGJPMQ==}
+    peerDependencies:
+      vue: ^2.6.11
 
   vue3-smooth-dnd@0.0.6:
     resolution: {integrity: sha512-CH9ZZhEfE7qU1ef2rlfgBG+nZtQX8PnWlspB2HDDz1uVGU7fXM0Pr65DftBMz4X81S+edw2H+ZFG6Dyb5J81KA==}
@@ -5591,11 +5616,9 @@ snapshots:
   '@fastify/accept-negotiator@1.1.0':
     optional: true
 
-  '@fontsource/arsenal@5.1.1': {}
+  '@fontsource/inter@5.2.8': {}
 
-  '@fontsource/roboto-mono@5.1.1': {}
-
-  '@fontsource/space-grotesk@5.1.1': {}
+  '@fontsource/jetbrains-mono@5.2.8': {}
 
   '@headlessui/tailwindcss@0.2.1(tailwindcss@3.4.17)':
     dependencies:
@@ -8972,6 +8995,8 @@ snapshots:
 
   leac@0.6.0: {}
 
+  leaflet@1.9.4: {}
+
   lilconfig@3.1.3: {}
 
   lines-and-columns@1.2.4: {}
@@ -10509,6 +10534,8 @@ snapshots:
       ajv-formats: 2.1.1(ajv@8.17.1)
       ajv-keywords: 5.1.0(ajv@8.17.1)
 
+  scrollparent@2.1.0: {}
+
   scule@1.3.0: {}
 
   selderee@0.11.0:
@@ -11378,10 +11405,25 @@ snapshots:
     dependencies:
       vue: 3.5.13(typescript@5.7.3)
 
+  vue-leaflet@0.1.0: {}
+
+  vue-observe-visibility@0.4.6: {}
+
+  vue-resize@0.4.5(vue@3.5.13(typescript@5.7.3)):
+    dependencies:
+      vue: 3.5.13(typescript@5.7.3)
+
   vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)):
     dependencies:
       '@vue/devtools-api': 6.6.4
       vue: 3.5.13(typescript@5.7.3)
+
+  vue-virtual-scroller@1.1.2(vue@3.5.13(typescript@5.7.3)):
+    dependencies:
+      scrollparent: 2.1.0
+      vue: 3.5.13(typescript@5.7.3)
+      vue-observe-visibility: 0.4.6
+      vue-resize: 0.4.5(vue@3.5.13(typescript@5.7.3))
 
   vue3-smooth-dnd@0.0.6(vue@3.5.13(typescript@5.7.3)):
     dependencies:

@@ -24,9 +24,8 @@
     "nuxt-icon": "^0.6.10"
   },
   "dependencies": {
-    "@fontsource/arsenal": "^5.1.1",
-    "@fontsource/roboto-mono": "^5.1.1",
-    "@fontsource/space-grotesk": "^5.1.1",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
     "@nuxt/ui": "^2.20.0",
     "@nuxt/ui-pro": "^1.6.0",
     "@types/js-yaml": "^4.0.9",
@@ -34,6 +33,14 @@
     "axios": "^1.7.9",
     "date-fns": "^4.1.0",
     "js-yaml": "^4.1.0",
-    "resend": "^4.0.1"
+    "leaflet": "^1.9.4",
+    "resend": "^4.0.1",
+    "vue-leaflet": "^0.1.0",
+    "vue-virtual-scroller": "^1.1.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
   }
 }

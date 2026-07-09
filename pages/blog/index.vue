@@ -2,8 +2,26 @@
     definePageMeta({
       title: "Blog",
       description:
-        "Discover my awesome contents about software development, philosophy, and more. I write about Go, AWS, Flutter, Nuxt, Machine Learning and other cool stuff.",
+        "Writing on AI safety, mechanistic interpretability, and machine learning — plus software engineering articles.",
     });
+
+    // Posts published off-Medium (LessWrong, etc.)
+    const externalPosts = [
+      {
+        _id: 'matryoshka-saes-lesswrong',
+        _path: '/blog/matryoshka-saes-lesswrong',
+        title: 'How Matryoshka Sparse AutoEncoders Recover Feature Hierarchies That Vanilla SAEs Lose',
+        link: 'https://www.lesswrong.com/posts/EpLj8FTBdGvt44TTF/how-matryoshka-sparse-autoencoders-recover-feature',
+        description: 'A guided replication of Matryoshka SAEs: how nested dictionaries organize features hierarchically and avoid the feature-absorption failure mode of vanilla sparse autoencoders. Published on LessWrong.',
+        tags: ['Mechanistic Interpretability', 'Sparse Autoencoders', 'LessWrong'],
+        image: '/matryoshka-saes-cover.png',
+        cover_image: '/matryoshka-saes-cover.png',
+        canonical_url: 'https://www.lesswrong.com/posts/EpLj8FTBdGvt44TTF/how-matryoshka-sparse-autoencoders-recover-feature',
+        published: true,
+        published_on: '2026-06-15',
+        body: 'A guided replication of Matryoshka Sparse AutoEncoders, reproducing the core results on synthetic hierarchies and at LLM scale, and showing how nested dictionaries avoid feature absorption. Read the full writeup on LessWrong.',
+      },
+    ];
 
     const searchQuery = ref('')
     const selectedTags = ref([])
@@ -16,9 +34,14 @@
 
     const { pending, data: posts } = await useLazyAsyncData("all-posts", async () => {
       const medium_feeds_url = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@baimamboukar";
-      const response = await $fetch(medium_feeds_url);
+      let response = { items: [] };
+      try {
+        response = await $fetch(medium_feeds_url);
+      } catch {
+        // Medium feed unavailable — still show external posts
+      }
 
-      return response.items.map(post => {
+      const mediumPosts = response.items.map(post => {
         // Clean the HTML content
         const cleanContent = post.content
           .replace(/<figure>.*?<\/figure>/g, '')
@@ -52,7 +75,10 @@
           published_on: post.pubDate.split(" ")[0],
           body: cleanContent
         }
-      }).sort((a, b) => new Date(b.published_on) - new Date(a.published_on));
+      });
+
+      return [...externalPosts, ...mediumPosts]
+        .sort((a, b) => new Date(b.published_on) - new Date(a.published_on));
     });
 
     const allTags = computed(() => {
@@ -116,9 +142,8 @@
   <article class="max-w-7xl mx-auto px-4">
     <h1 class="mb-4 text-3xl font-bold text-left">Blog</h1>
     <p class="mb-6 text-zinc-700 dark:text-zinc-300">
-      Discover my awesome contents about software development, philosophy, and
-      more. I write about Go, AWS, Flutter, Nuxt, Google Cloud and other cool
-      stuff.
+      Writing on AI safety and mechanistic interpretability — replications,
+      research notes, and the occasional software engineering deep-dive.
     </p>
 
     <!-- Search and Filter Section -->

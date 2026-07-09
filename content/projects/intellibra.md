@@ -1,18 +1,17 @@
 ---
 title: Intellibra
-description: Portable Kit for Breast Cancer Screening
+description: AI-powered thermography system for breast cancer screening
 tags:
-  - Breast Cancer
-  - Awareness
-  - Thermography
-  - Medical Imaging
-  - AI
   - Vision-Language Models
+  - Edge AI
+  - Deep Learning
+  - Medical Imaging
+  - Python
 live_url: "https://intellibra.org"
 source_url: "https://anora.solutions"
 image: "https://github.com/baimamboukar/cosmosense/blob/main/assets/images/comso.png?raw=true"
 icon: "/anora-logo.jpeg"
-featured: false
+featured: true
 
 # Project Details
 status: "Live"

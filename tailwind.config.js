@@ -4,9 +4,42 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Carbona', ...defaultTheme.fontFamily.serif],
+        // TWEAK PANEL: body font flows through --font-body so preflight follows it too
+        sans: ['var(--font-body)', 'Inter', ...defaultTheme.fontFamily.sans],
+        mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
+      },
+      maxWidth: {
+        'site': '1100px',
       },
       colors: {
+        // TWEAK PANEL: sky/blue resolve through CSS vars so the panel can retheme live.
+        // When a color is chosen, revert these to static Tailwind palettes and delete the panel.
+        sky: {
+          50: 'rgb(var(--primary-50) / <alpha-value>)',
+          100: 'rgb(var(--primary-100) / <alpha-value>)',
+          200: 'rgb(var(--primary-200) / <alpha-value>)',
+          300: 'rgb(var(--primary-300) / <alpha-value>)',
+          400: 'rgb(var(--primary-400) / <alpha-value>)',
+          500: 'rgb(var(--primary-500) / <alpha-value>)',
+          600: 'rgb(var(--primary-600) / <alpha-value>)',
+          700: 'rgb(var(--primary-700) / <alpha-value>)',
+          800: 'rgb(var(--primary-800) / <alpha-value>)',
+          900: 'rgb(var(--primary-900) / <alpha-value>)',
+          950: 'rgb(var(--primary-950) / <alpha-value>)',
+        },
+        blue: {
+          50: 'rgb(var(--primary-50) / <alpha-value>)',
+          100: 'rgb(var(--primary-100) / <alpha-value>)',
+          200: 'rgb(var(--primary-200) / <alpha-value>)',
+          300: 'rgb(var(--primary-300) / <alpha-value>)',
+          400: 'rgb(var(--primary-400) / <alpha-value>)',
+          500: 'rgb(var(--primary-500) / <alpha-value>)',
+          600: 'rgb(var(--primary-600) / <alpha-value>)',
+          700: 'rgb(var(--primary-700) / <alpha-value>)',
+          800: 'rgb(var(--primary-800) / <alpha-value>)',
+          900: 'rgb(var(--primary-900) / <alpha-value>)',
+          950: 'rgb(var(--primary-950) / <alpha-value>)',
+        },
         niagara: {
           50: '#f1fcf9',
           100: '#d0f7ee',

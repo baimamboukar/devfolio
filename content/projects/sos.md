@@ -9,7 +9,7 @@ live_url: "https://elite.baimamboukar.dev"
 source_url: "https://github.com/baimamboukar/elite"
 image: "https://github.com/baimamboukar/elite/assets/49169158/96bbd34e-62f2-42cc-ac77-c6b685ad7af1"
 icon: "/sos-logo.jpeg"
-featured: true
+featured: false
 ---
 ## What
 

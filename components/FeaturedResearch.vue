@@ -56,7 +56,7 @@ const handleProjectClick = (project) => {
       </UButton>
     </div>
     <p class="mb-6 text-zinc-700 dark:text-zinc-300">
-      Highlights from my research portfolio spanning remote sensing, AI for healthcare, and space systems.
+      Highlights from my research on interpretability, AI safety, and reliable machine learning.
     </p>
 
     <!-- Featured Research Grid using Research.vue structure -->

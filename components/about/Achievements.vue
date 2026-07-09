@@ -18,10 +18,10 @@
         >
           <div class="p-2 text-center rounded-lg">
             <!-- Achievement Icon/Image -->
-            <nuxt-img
+            <img
               :src="achievement.icon"
               :alt="achievement.name"
-              class="w-15 h-15 object-cover mx-auto group-hover:scale-105 transition-transform duration-300 rounded-lg"
+              class="w-16 h-16 object-cover mx-auto group-hover:scale-105 transition-transform duration-300 rounded-lg"
             />
             <!-- Achievement Details -->
             <div class="space-y-2 mt-2">

@@ -1,8 +1,8 @@
 <script setup>
-definePageMeta({
-  title: "Research",
-  description: "Academic research projects, publications, and scholarly work by Baimam Boukar JJ at Carnegie Mellon University Africa.",
-});
+  definePageMeta({
+    title: "Research",
+    description: "Academic research projects, publications, and scholarly work by Baimam Boukar JJ at Carnegie Mellon University Africa.",
+  });
 </script>
 
 <template>
@@ -13,7 +13,10 @@ definePageMeta({
         Research
       </h1>
       <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-        My research focuses on understanding and improving Foundation Models and their applications in various high-impact domains, including Space, Healthcare, and Earth Observation.
+        My research focuses on mechanistic interpretability and AI alignment.
+        I study why interpretability methods fail to generalize across models
+        and tasks, and build reliable tools to detect deception and
+        misalignment inside large language models.
       </p>
     </div>
 

@@ -23,6 +23,12 @@ const tabs = [
     description: 'Professional work experience'
   },
   {
+    label: 'AI Safety',
+    icon: 'heroicons:shield-check',
+    to: '/about/safety',
+    description: 'AI safety research engagement and training'
+  },
+  {
     label: 'Credentials',
     icon: 'heroicons:check-badge',
     to: '/about/credentials',
@@ -34,12 +40,7 @@ const tabs = [
     to: '/about/leadership',
     description: 'Leadership roles and responsibilities'
   },
-  {
-    label: 'Events',
-    icon: 'heroicons:calendar',
-    to: '/about/events',
-    description: 'Hackathons, conferences and achievements'
-  }
+
 ];
 
 // Helper to determine if a tab is active

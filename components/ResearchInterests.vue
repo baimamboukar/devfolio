@@ -1,42 +1,38 @@
 <script setup>
 const domains = [
   {
-    name: "Foundation Models",
-    icon: "i-heroicons-cpu-chip",
-    description: "Understanding LLM limitations and developing improvements."
+    name: "Mechanistic Interpretability",
+    icon: "i-ph-microscope",
+    description: "Understanding internal model representations, and studying why interpretability methods often fail to generalize."
   },
   {
-    name: "AI for Space Systems",
-    icon: "i-simple-icons-spacex",
-    description: "Autonomous operations, mission planning, and anomaly detection for spacecraft."
+    name: "Deceptive Alignment and Situational Awareness",
+    icon: "i-heroicons-eye",
+    description: "Detecting and analyzing deception, misalignment, and emergent behaviors inside large language models."
   },
   {
-    name: "Information Retrieval",
-    icon: "i-heroicons-magnifying-glass",
-    description: "Advanced retrieval architectures and long-context execution."
+    name: "White-box Control",
+    icon: "i-heroicons-adjustments-horizontal",
+    description: "Building reliable activation-level tools — probes, steering, and patching — to monitor and control model behavior."
   },
   {
-    name: "Geospatial AI",
-    icon: "i-heroicons-globe-americas",
-    description: "Deep learning for Earth observation, remote sensing, and environmental monitoring."
+    name: "Science of Evals",
+    icon: "i-heroicons-beaker",
+    description: "Evaluation methodologies for emergent capabilities in LLMs, with norm-matched controls."
   }
 ];
 </script>
 
 <template>
   <section class="mb-8">
-    <h2 class="text-xl font-bold mb-4">Research Domains</h2>
+    <h2 class="text-xl font-bold mb-4">Research Focus</h2>
 
     <div class="mb-6">
-      <!-- <p class="mb-4 text-zinc-700 dark:text-zinc-300">
-        My research focuses on <span class="subtle-highlight">understanding and improving Foundation Models</span> and their applications in high-impact domains:
-      </p> -->
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div
           v-for="domain in domains"
           :key="domain.name"
-          class="group relative overflow-hidden bg-white dark:bg-zinc-800/50 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-sky-400 dark:hover:border-sky-500 transition-all duration-300"
+          class="group relative overflow-hidden bg-white dark:bg-zinc-800/50 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-sky-400 dark:hover:border-sky-500 transition-all duration-300 cursor-pointer"
         >
           <!-- Background Pattern (Unified Fading Grid) -->
           <div class="absolute inset-0 opacity-[0.08] dark:opacity-[0.15] pointer-events-none">
@@ -73,7 +69,7 @@ const domains = [
     linear-gradient(currentColor 1px, transparent 1px),
     linear-gradient(90deg, currentColor 1px, transparent 1px);
   background-size: 12px 12px; /* Smaller squares */
-  color: rgb(14 165 233); /* Sky-500 */
+  color: rgb(var(--primary-500)); /* follows tweak-panel primary */
 }
 
 /* Fading Mask: Opaque on Right -> Transparent on Left */

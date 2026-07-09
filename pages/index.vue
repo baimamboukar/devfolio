@@ -2,7 +2,7 @@
 // Static page meta
 definePageMeta({
   title: "Baimam Boukar Jean Jacques",
-  description: "Graduate Researcher, CMU Africa. Interrested in Interdisciplinary research at the intersection AI and Space Exploration.",
+  description: "AI Safety Researcher working on mechanistic interpretability and AI alignment. Research Assistant at Jinesis AI Lab, University of Toronto. Carnegie Mellon University alum.",
 });
 
 // Load centralized configuration
@@ -17,7 +17,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Graduate Researcher, CMU Africa. Interrested in Interdisciplinary research at the intersection AI and Space Exploration.'
+      content: 'AI Safety Researcher working on mechanistic interpretability and AI alignment. Research Assistant at Jinesis AI Lab, University of Toronto. Carnegie Mellon University alum.'
     }
   ]
 });
@@ -50,32 +50,14 @@ const featuredResearch = computed(() => {
   return featuredResearchData.value?.research?.filter(r => r.featured).slice(0, 3) || [];
 });
 
-// Tech Stack Data
-const techStack = [
-  { name: 'Python', icon: 'logos:python' },
-  { name: 'NumPy', icon: 'logos:numpy' },
-  { name: 'PyTorch', icon: 'logos:pytorch-icon' },
-  { name: 'TensorFlow', icon: 'logos:tensorflow' },
-  { name: 'CUDA', icon: 'simple-icons:nvidia' },
-  { name: 'FastAPI', icon: 'simple-icons:fastapi' },
-  { name: 'Vue', icon: 'logos:vue' },
-  { name: 'Nuxt', icon: 'logos:nuxt-icon' },
-  { name: 'Flutter', icon: 'logos:flutter' },
-  { name: 'Dart', icon: 'logos:dart' },
-  { name: 'Go', icon: 'logos:go' },
-  { name: 'Google Cloud', icon: 'logos:google-cloud' },
-  { name: 'AWS', icon: 'logos:aws' },
-  { name: 'Docker', icon: 'logos:docker-icon' },
-  { name: 'K8s', icon: 'logos:kubernetes' },
-  { name: 'GitHub', icon: 'simple-icons:github' },
-  { name: 'GitHub Actions', icon: 'logos:github-actions' },
-  { name: 'Hugging Face', icon: 'simple-icons:huggingface' },
-  // { name: 'Kaggle', icon: 'simple-icons:kaggle' },
-  { name: 'Linux', icon: 'logos:linux-tux' },
-  { name: 'Google Play', icon: 'simple-icons:googleplay' },
-  // { name: 'LaTeX', icon: 'file-icons:latex' },
-  { name: 'Overleaf', icon: 'simple-icons:overleaf' },
-];
+// Abbreviate co-author names for the citation-style publication list
+const coAuthors = (paper) =>
+  (paper.contributors || [])
+    .map((c) => {
+      const parts = c.name.trim().split(/\s+/);
+      return parts.length > 1 ? `${parts[0][0]}. ${parts.slice(1).join(' ')}` : parts[0];
+    })
+    .join(', ');
 
 // Debug function for development
 </script>
@@ -96,7 +78,7 @@ const techStack = [
             </h1>
           </div>
 
-          <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl mx-auto md:mx-0 text-justify">
+          <p class="hero-intro text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl mx-auto md:mx-0 text-justify">
             {{ homepageContent?.hero.introduction }}
           </p>
         </div>
@@ -158,30 +140,29 @@ const techStack = [
         <!-- Vertical Divider (Visible on LG screens) -->
         <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 dark:via-zinc-700 to-transparent"></div>
 
-        <!-- Research Column -->
+        <!-- Publications Column (citation style) -->
         <div class="space-y-6 lg:pl-8">
           <h3 class="text-sm font-bold capitalize tracking-wider text-sky-600 dark:text-sky-400">
-             Recent Research
+             Selected Publications
           </h3>
-          <div class="space-y-4">
-            <NuxtLink 
-              v-for="paper in featuredResearch" 
+          <div class="divide-y divide-gray-100 dark:divide-zinc-800">
+            <NuxtLink
+              v-for="paper in featuredResearch"
               :key="paper.title"
-              :to="'/research/' + slugify(paper.title)" 
-              class="block group"
+              :to="'/research/' + slugify(paper.title)"
+              class="block group py-4 first:pt-0"
             >
-              <div class="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-xl p-5 hover:border-sky-400 dark:hover:border-sky-500 transition-all hover:shadow-sm">
-                <div class="flex items-start justify-between mb-2">
-                  <UBadge color="gray" variant="soft" size="xs">{{ paper.venue }}</UBadge>
-                  <UIcon name="i-heroicons-arrow-right" class="w-4 h-4 text-gray-400 group-hover:text-sky-500 transition-colors opacity-0 group-hover:opacity-100" />
-                </div>
-                <h4 class="font-bold text-base mb-2 group-hover:text-sky-600 transition-colors line-clamp-2">
-                  {{ paper.title }}
-                </h4>
-                <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
-                  {{ paper.abstract }}
-                </p>
-              </div>
+              <h4 class="font-semibold text-base leading-snug mb-1.5 group-hover:text-sky-600 transition-colors">
+                {{ paper.title }}
+              </h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-1.5">
+                <span class="font-medium text-gray-800 dark:text-gray-200">Baimam Boukar</span><span v-if="coAuthors(paper)" class="text-gray-500 dark:text-gray-400"> · with {{ coAuthors(paper) }}</span>
+              </p>
+              <p class="text-xs text-gray-500 dark:text-gray-500">
+                <span class="italic">{{ paper.venue }}</span>
+                <span class="mx-1.5 text-gray-300 dark:text-zinc-700">•</span>
+                <span class="text-sky-600 dark:text-sky-400 font-medium">{{ paper.status }}</span>
+              </p>
             </NuxtLink>
           </div>
         </div>
@@ -189,29 +170,6 @@ const techStack = [
       </div>
     </section>
 
-    <!-- 4. Technologies and Tools -->
-    <section>
-      <h2 class="text-2xl font-bold mb-6">
-        Technologies and Tools
-      </h2>
-      <div class="flex flex-wrap gap-6 justify-start">
-        <div 
-          v-for="tech in techStack" 
-          :key="tech.name"
-          class="flex flex-col items-center gap-2 group"
-        >
-          <div class="w-12 h-12 flex items-center justify-center bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-gray-200 dark:border-zinc-700 group-hover:scale-110 transition-transform">
-            <Icon :name="tech.icon" class="w-6 h-6" />
-          </div>
-          <span class="text-[10px] font-medium text-gray-500 group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors">
-            {{ tech.name }}
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <AppDivider />
-    
     <!-- Footer -->
     <AppFooter />
   </div>

@@ -1,7 +1,7 @@
 ---
-title: Rwanda's SSO 	system
-description: Centralized IAM system for government digital services in Rwanda.
-tags:	
+title: Rwanda National SSO
+description: A sovereign micro services based Single Sign-On system for RISA.
+tags:
   - Keycloak
   - FastAPI
   - Next.js
@@ -14,7 +14,7 @@ live_url: "#"
 source_url: "#"
 image: "/sso-cover.png"
 icon: "/sso.png"
-featured: true
+featured: false
 
 # Project Details
 status: "Proof-of-Concept"

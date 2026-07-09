@@ -52,7 +52,6 @@
   const imageVisible = ref(false);
 
   const handleImageError = (event) => {
-    console.log('Image failed to load:', props.cover);
     // You could set a fallback image here if needed
     // event.target.src = '/fallback-image.jpg';
   };

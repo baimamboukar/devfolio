@@ -1,12 +1,11 @@
-overview: "I am a master student at Carnegie Mellon University. My research and projects interests center on Space Technologies and Machine Learning applications in Earth Observation. My expertise lies in software engineering and cloud computing."
-
+overview: 'I am an AI safety researcher and a recent master graduate from Carnegie Mellon University. I am broadly interested in making AI go well. My work focuses on mechanistic interpretability and the science of evals for emergent capabilities in LLMs — currently exploring why interpretability techniques often fail to generalize. I am also interested in AI sentience, particularly the question of moral and mind attribution in LLMs. My background in software engineering grounds my research in rigorous, reproducible experimentation.'
 
 education:
-  - degree: "Master of Science in Information Technology"
-    institution: "Carnegie Mellon University Africa"
-    specialization: "Applied Machine Learning"
-    period: "2024-2025"
-    icon: "https://github.com/user-attachments/assets/b7277964-5a64-4a82-92a7-46ceb3eb1b33"
+  - degree: 'Master of Science in Information Technology'
+    institution: 'Carnegie Mellon University Africa'
+    specialization: 'Applied Machine Learning'
+    period: '2024-2026'
+    icon: '/icons/cmu-africa.png'
     courses:
       - Introduction To Machine Learning for Engineers
       - Introduction To Deep Learning
@@ -16,35 +15,34 @@ education:
       - Mobile Big Data Analytis and Management
       - Data Structures and Algorithms For Engineers
       - Applied Deep Learning
-  
-  - degree: "Major League Hacking Fellow in Software Engineering"
-    institution: "MLH Fellowship"
-    specialization: "Open Source"
-    period: "2023-2023"
-    icon: "https://github.com/user-attachments/assets/cb1deae1-9baf-4c3f-baf8-6b158ace5a97"
+
+  - degree: 'Major League Hacking Fellow in Software Engineering'
+    institution: 'MLH Fellowship'
+    specialization: 'Open Source'
+    period: '2023-2023'
+    icon: '/icons/mlh.png'
     courses:
       - Good Practices for Open Source Contributors
       - Open Source Licensing
       - GitHub Source Contributions
-  
-  
-  - degree: "Introduction To Space Missions Design"
-    institution: "NMD LTD and ICT University"
-    specialization: "Concurrent Engineering for Space Missions"
-    period: "2022-2022"
-    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499584602-4bb15dac-d095-4ecf-80f8-1af447ecf1eb.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251009/us-east-1/s3/aws4_request&X-Amz-Date=20251009T222835Z&X-Amz-Expires=300&X-Amz-Signature=1b3010eacfa02b700bef3ac26d33ec62ba62d3381510acb0b6009a86e98b0e91&X-Amz-SignedHeaders=host"
+
+  - degree: 'Introduction To Space Missions Design'
+    institution: 'NMD LTD and ICT University'
+    specialization: 'Concurrent Engineering for Space Missions'
+    period: '2022-2022'
+    icon: '/icons/ict-university.png'
     courses:
       - Satellites Orbits
       - Space Missions Design
       - Satellites Orbits
       - Attitude Determination Control Systems (ADCS)
       - Concurrent Engineering with European Space Agency OSS Softwares
-      
-  - degree: "Bachelor of Science in Computer Science"
-    institution: "ICT University"
-    specialization: "Distributed Systems and Cloud Computing"
-    period: "2020-2024"
-    icon: "https://github-production-user-asset-6210df.s3.amazonaws.com/49169158/499586491-5903a464-f03d-4153-be48-4ab513b3c3ce.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20251009/us-east-1/s3/aws4_request&X-Amz-Date=20251009T223431Z&X-Amz-Expires=300&X-Amz-Signature=dc2ec53a40e4ccdfce2ef90613b838dcab2a7d1723d0b6902f587c57431e5ce2&X-Amz-SignedHeaders=host"
+
+  - degree: 'Bachelor of Science in Computer Science'
+    institution: 'ICT University'
+    specialization: 'Distributed Systems and Cloud Computing'
+    period: '2020-2024'
+    icon: '/icons/ict-university.png'
     courses:
       - Algorithms and Data Structures
       - Object Oriented Programming In C++
@@ -53,307 +51,268 @@ education:
       - Discrete Mathematics
       - Compiler Construction
 
-
 # Update experience section with corrected dates and details
 experience:
-  
-  - title: "Research Scientist Intern"
-    company: "IBM Research"
-    location: "Nairobi, Kenya"
-    period: "June 2025 - September 2025"
-    icon: "https://github.com/user-attachments/assets/17709c98-69fc-4b3d-bd9a-eac7a24f7a8e"
-    status: "past"
+  - title: 'Research Assistant, Mechanistic Interpretability'
+    company: 'Jinesis AI Lab, University of Toronto'
+    location: 'Toronto, Remote'
+    period: 'June 2026 - Present'
+    icon: '/icons/uoft.png'
+    status: 'Present'
     tags:
-      - "LLMs"
-      - "Information Retrieval"
-      - "HuggingFace"
-      - "PyTorch"
+      - 'Mechanistic Interpretability'
+      - 'AI Safety'
+      - 'LLMs'
+      - 'PyTorch'
     responsibilities:
-    - "Contributed to IBM DeepScanner, a weakly supervised method for identifying anomalous patterns (hallucinations, toxicity) within internal activations of LLMs including Llama3, Granite, Mistral and Gemma"
-    - "Architected a modular, scalable, and reproducible workflow for large-scale embedding extraction and analysis both locally and in IBM cluster environments, improving efficiency by 3x"
-    - "Extended the methodology into a novel dense vector retrieval framework, reframing anomalous pattern detection as a retrieval problem, leading to a paper submission at AAAI 2026"
+      - 'Conducting research on the generalizability of mechanistic interpretability techniques across models and tasks'
+      - 'Investigating why methods like probing, sparse autoencoders, and activation patching fail to transfer to new models and settings'
 
-  - title: "Research Assistant"
-    company: "CyLab, Carnegie Mellon University Africa"
-    location: "Kigali, Rwanda"
-    period: "Jan 2025 - June 2025"
-    icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
-    status: "Upcoming"
+  - title: 'Teaching Assistant (18-786 | Intro to Deep Learning)'
+    company: 'Carnegie Mellon University'
+    location: 'Kigali, Rwanda'
+    period: 'Jan 2026 - May 2026'
+    icon: '/cmu-logo.png'
+    status: 'past'
     tags:
-      - "GitHub"
-      - "DPGs/DPIs"
-      - "Open Source"
-      - "Flutter"
+      - 'Deep Learning'
+      - 'Teaching'
+      - 'PyTorch'
+      - 'Neural Networks'
     responsibilities:
-    - "Engineered open-source mobile software solutions to demonstrate practical applications for laboratory research projects"
-    - "Enforced best open-science practices in code quality, for reproducibility and transparency"
-    - "Conducted regular code-reviews with research associates, which ensured code changes are stable before merge"
+      - "Mentoring master's students on fundamental and advanced deep learning concepts, including CNNs, RNNs, and Transformers"
+      - 'Designing and grading coding assignments and projects focused on practical implementation of neural networks using PyTorch'
+      - 'Holding office hours to provide technical support and clarify complex theoretical concepts'
 
-  - title: "Mobile Development Team Lead"
-    company: "Caasitech Group LLC"
-    location: "Yaounde, Cameroon"
-    period: "April 2023 - June 2024"
-    icon: "https://github.com/user-attachments/assets/19d6cd68-1b39-454a-85e6-03c4d8048f0e"
-    responsibilities:
-      - "Developed and maintained mobile applications by ensuring seamless integration and optimal performance across Android and iOS platforms (EcoCaasitech, SOS Cameroon)"
-      - "Automated the deployment process to the Apple Store and Play Store"
-      - "Implemented unit tests to ensure code quality, resulting in a 60% reduction in post-release bugs"
-      - "Implemented observability strategies to understand post-deployment software usage and collect analytics data"
-
-  - title: "CoFounder and Solution Architect"
-    company: "Anora Breast Cancer Research Foundation"
-    location: "Cameroon, Yaounde"
-    period: "January 2024 - Present"
-    icon: "/anora-logo.jpeg"
-    status: "present"
+  - title: 'Research Scientist Intern'
+    company: 'IBM Research'
+    location: 'Nairobi, Kenya'
+    period: 'June 2025 - September 2025'
+    icon: '/icons/ibm.png'
+    status: 'past'
     tags:
-      - "Breast Cancer"
-      - "Deep Learning"
-      - "Thermography"
-      - "Ultrasound"
-      - "VLMs"
+      - 'LLMs'
+      - 'Information Retrieval'
+      - 'HuggingFace'
+      - 'PyTorch'
     responsibilities:
-    - "Leading efforts to make breast cancer screening affordable and accessible for women in sub-Saharan Africa through AI-powered thermal imaging analysis"
-    - "Fine-tuning the PaliGemma foundation model for analyzing thermal images for malignancy classification on portable, offline screening devices"
-    - "Architecting the technical infrastructure for deploying machine learning models in resource-constrained environments with limited connectivity"
-    
+      - 'Contributed to IBM DeepScanner, a weakly supervised method for identifying anomalous patterns (hallucinations, toxicity) within internal activations of LLMs including Llama3, Granite, Mistral and Gemma'
+      - 'Architected a modular, scalable, and reproducible workflow for large-scale embedding extraction and analysis both locally and in IBM cluster environments, improving efficiency by 3x'
+      - 'Extended the methodology into a novel dense vector retrieval framework, reframing anomalous pattern detection as a retrieval problem, leading to a paper submission at AAAI 2026'
 
-  - title: "Software Engineering MLH Fellow"
-    company: "G-Research"
-    location: "Remote, London"
-    period: "May 2022 - September 2022"
-    icon: "https://github.com/user-attachments/assets/261d7f72-f4f4-43c5-be89-d37151e98d9e"
+  - title: 'Research Assistant'
+    company: 'CyLab, Carnegie Mellon University Africa'
+    location: 'Kigali, Rwanda'
+    period: 'Jan 2025 - June 2025'
+    icon: '/icons/cmu-cylab.png'
+    status: 'past'
+    tags:
+      - 'GitHub'
+      - 'DPGs/DPIs'
+      - 'Open Source'
+      - 'Flutter'
     responsibilities:
-      - "Contributed to open-source software projects focused on performance benchmarking and automation for .NET ecosystem components"
-      - "Automated benchmarks data processing with CI/CD workflows and reduced manual processing by 90%"
-      - "Automated performance testing and deployment workflows with GitHub Actions which reduced manual processes time by 60%"
+      - 'Engineered open-source mobile software solutions to demonstrate practical applications for laboratory research projects'
+      - 'Enforced best open-science practices in code quality, for reproducibility and transparency'
+      - 'Conducted regular code-reviews with research associates, which ensured code changes are stable before merge'
 
-  - title: "Flutter Mobile Developer"
-    company: "Enchird Technologies"
-    location: "Yaounde, Cameroon"
-    period: "May 2022 - September 2022"
-    icon: "https://github.com/user-attachments/assets/824403e9-c11e-43f3-bb6e-9a17b9f050eb"
+  - title: 'Mobile Development Team Lead'
+    company: 'Caasitech Group LLC'
+    location: 'Yaounde, Cameroon'
+    period: 'April 2023 - June 2024'
+    icon: '/icons/caasitech.png'
     responsibilities:
-      - "Responsible for building and integrating mobile applications with complex backends to ensure a smooth seamless user experience"
+      - 'Developed and maintained mobile applications by ensuring seamless integration and optimal performance across Android and iOS platforms (EcoCaasitech, SOS Cameroon)'
+      - 'Automated the deployment process to the Apple Store and Play Store'
+      - 'Implemented unit tests to ensure code quality, resulting in a 60% reduction in post-release bugs'
+      - 'Implemented observability strategies to understand post-deployment software usage and collect analytics data'
+
+  - title: 'CoFounder and Solution Architect'
+    company: 'Anora Breast Cancer Research Foundation'
+    location: 'Cameroon, Yaounde'
+    period: 'January 2024 - Present'
+    icon: '/anora-logo.jpeg'
+    status: 'present'
+    tags:
+      - 'Breast Cancer'
+      - 'Deep Learning'
+      - 'Thermography'
+      - 'Ultrasound'
+      - 'VLMs'
+    responsibilities:
+      - 'Leading efforts to make breast cancer screening affordable and accessible for women in sub-Saharan Africa through AI-powered thermal imaging analysis'
+      - 'Fine-tuning the PaliGemma foundation model for analyzing thermal images for malignancy classification on portable, offline screening devices'
+      - 'Architecting the technical infrastructure for deploying machine learning models in resource-constrained environments with limited connectivity'
+
+  - title: 'Software Engineering MLH Fellow'
+    company: 'G-Research'
+    location: 'Remote, London'
+    period: 'May 2022 - September 2022'
+    icon: '/icons/gresearch.png'
+    responsibilities:
+      - 'Contributed to open-source software projects focused on performance benchmarking and automation for .NET ecosystem components'
+      - 'Automated benchmarks data processing with CI/CD workflows and reduced manual processing by 90%'
+      - 'Automated performance testing and deployment workflows with GitHub Actions which reduced manual processes time by 60%'
+
+  - title: 'Flutter Mobile Developer'
+    company: 'Enchird Technologies'
+    location: 'Yaounde, Cameroon'
+    period: 'May 2022 - September 2022'
+    icon: '/icons/enchird.png'
+    responsibilities:
+      - 'Responsible for building and integrating mobile applications with complex backends to ensure a smooth seamless user experience'
       - "Integrated pixel-perfect UI designs, improving the app's visual consistency and user satisfaction"
-      - "Connected mobile apps with robust backends HTTP REST APIs"
-      - "Speeded up the development process by implementing reusable components in a clean architecture"
+      - 'Connected mobile apps with robust backends HTTP REST APIs'
+      - 'Speeded up the development process by implementing reusable components in a clean architecture'
+
+safety_engagement:
+  - title: 'Research Assistant — Jinesis AI Lab, University of Toronto'
+    icon: 'heroicons:magnifying-glass'
+    period: 'June 2026 - Present'
+    description: 'Researching the generalizability of mechanistic interpretability techniques: when do results established on one model transfer to other models, tasks, and settings?'
+    link: ''
+
+  - title: 'BlueDot Impact — Technical AI Safety Project Sprint (Mentee)'
+    icon: 'heroicons:eye'
+    period: 'March 2026 - June 2026'
+    description: 'Selected for hands-on mechanistic interpretability research under expert mentorship, probing for deceptive alignment in LLMs. Grew into my ongoing Mechanistic Audit of Deception Detection project.'
+    link: 'https://github.com/baimamboukar/mechanistic-audit-of-deception-detection-in-llms'
+
+  - title: 'BlueDot Impact — Technical AI Safety Course'
+    icon: 'heroicons:academic-cap'
+    period: 'February 2026 - April 2026'
+    description: 'Intensive training on core safety topics: frontier-lab safety policies, emergent capabilities, model evaluations, and techniques for training safer systems.'
+    link: ''
+
+  - title: 'IBM Research — DeepScanner Internship'
+    icon: 'heroicons:cpu-chip'
+    period: 'June 2025 - September 2025'
+    description: 'Co-designed and developed IBM DeepScanner, a mechanistic interpretability tool detecting anomalous patterns (hallucinations, toxicity) in LLM activations using non-parametric scan statistics.'
+    link: ''
+
+  - title: 'Paper Replications'
+    icon: 'heroicons:document-duplicate'
+    period: 'Ongoing'
+    description: "Replicated recent work on deceptive alignment and circuit analysis, including Apollo Research's probes, the LIAR bench, and Matryoshka Sparse Autoencoders (documented in a public LessWrong writeup)."
+    link: 'https://www.lesswrong.com/posts/EpLj8FTBdGvt44TTF/how-matryoshka-sparse-autoencoders-recover-feature'
+
+  - title: 'Technical Literature Reviews'
+    icon: 'heroicons:book-open'
+    period: 'Ongoing'
+    description: 'In-depth reviews of monosemanticity, probing classifiers, Sparse Autoencoders, Representation Engineering, and the trade-offs between mechanistic interpretability and other safety approaches.'
+    link: ''
 
 leadership:
-  - role: "Reviewer"
-    community: "Applied Machine Learning Days (AMLD) 2026"
-    icon: "/amld-africa.jpeg"
-    period: "2026"
+  - role: 'Reviewer'
+    community: 'Applied Machine Learning Days (AMLD) 2026'
+    icon: '/amld-africa.jpeg'
+    period: '2026'
 
-  - role: "Reviewer (Machine Learning)"
-    community: "Journal of Geophysical Research (JGR)"
-    icon: "/jgr.webp"
-    period: "2024-Present"
+  - role: 'Reviewer (Machine Learning)'
+    community: 'Journal of Geophysical Research (JGR)'
+    icon: '/jgr.webp'
+    period: '2024-Present'
 
-  - role: "Co-organizer"
-    community: "Google Developer Group Cloud Yaounde"
-    icon: "https://github.com/user-attachments/assets/ead30d26-8ae2-4243-9ce6-a69974a9137a"
-    period: "2022-Present"
+  - role: 'Co-organizer'
+    community: 'Google Developer Group Cloud Yaounde'
+    icon: '/icons/gdg.png'
+    period: '2022-Present'
 
-  - role: "Google Developer Student Clubs Lead"
-    community: "ICT University"
-    icon: "https://github.com/user-attachments/assets/a3746046-3e08-412b-bcc3-40ee0512bd67"
-    period: "2021-2023"
+  - role: 'Google Developer Student Clubs Lead'
+    community: 'ICT University'
+    icon: '/icons/gdsc.png'
+    period: '2021-2023'
 
-  - role: "Postman Student Leader"
-    community: "ICT University"
-    icon: "https://github.com/user-attachments/assets/64c9c5a1-435b-4c77-adf1-560dfa7cb318"
-    period: "2022-2023"
+  - role: 'Postman Student Leader'
+    community: 'ICT University'
+    icon: '/icons/postman.png'
+    period: '2022-2023'
 
-  - role: "AWS Cloud Club Captain"
-    community: "Carnegie Mellon University Africa"
-    icon: "https://github.com/user-attachments/assets/a9285bd0-51d6-45b2-9406-b3edca74ad90"
-    period: "2024-2025"
-  - role: "Cameroonian Students Representative at CMU"
-    community: "Carnegie Mellon University Africa"
-    icon: "https://github.com/user-attachments/assets/9170c3cb-46b8-4208-a7e0-72b59ebca7c5"
-    period: "2024-2025"
-  - role: "AWS Community Builder ●•Serverless Computing Track"
-    community: "AWS Community"
-    icon: "https://github.com/user-attachments/assets/9f929108-f378-4b8f-b626-b7ea1024e780"
-    period: "2023-Present"
+  - role: 'AWS Cloud Club Captain'
+    community: 'Carnegie Mellon University Africa'
+    icon: '/icons/aws-club.png'
+    period: '2024-2025'
+  - role: 'Cameroonian Students Representative at CMU'
+    community: 'Carnegie Mellon University Africa'
+    icon: '/icons/cmu-cylab.png'
+    period: '2024-2025'
+  - role: 'AWS Community Builder ●•Serverless Computing Track'
+    community: 'AWS Community'
+    icon: '/icons/aws-cb.png'
+    period: '2023-Present'
 
 community: [] # Cleared as all covered by leadership now
 
-
 interests:
-  - name: "Machine Learning"
-    icon: "i-heroicons-cpu-chip"
-  - name: "Space Missions"
-    icon: "i-heroicons-globe-americas"
-  - name: "Earth Observation"
-    icon: "i-heroicons-globe-alt"
+  - name: 'Mechanistic Interpretability'
+    icon: 'i-heroicons-cpu-chip'
+  - name: 'AI Alignment & Safety'
+    icon: 'i-heroicons-shield-check'
+  - name: 'Science of Evals'
+    icon: 'i-heroicons-beaker'
 
-# Update certifications section
+# Trimmed to the strongest four for a research-focused profile
 certifications:
-  - name: "NASA Open Science"
-    badge: "https://github.com/user-attachments/assets/8829d089-810c-4013-b490-58e6ba7f2b1b"
-  - name: "GitHub Foundations"
-    badge: "https://github.com/user-attachments/assets/172f3c7a-2577-496c-8c12-4e652a622f78"
-  - name: "Open Source Contributor"
-    badge: "https://github.com/user-attachments/assets/c42f9e11-ffdd-428d-8bd6-e592844365c9"
-  - name: "Google Project Management"
-    badge: "https://github.com/user-attachments/assets/39fe19f2-3ad1-4c4a-b8bf-b06687944c1c"
-  - name: "Open Source Licensing"
-    badge: "https://github.com/user-attachments/assets/e4443381-f5dc-49c6-8c88-c7027ae6606f"
-  - name: "AWS Cloud Practitioner"
-    badge: "https://github.com/user-attachments/assets/ff52fb0b-394e-43bf-b1b9-840b87227e22"
-  - name: "IBM Internship Program"
-    badge: "https://github.com/user-attachments/assets/5c903639-dfc6-4fa5-a851-298a0418a384"
-  - name: "AWS Cloud Captain"
-    badge: "https://github.com/user-attachments/assets/16ea75f2-1129-4830-9540-ee53ac9df797"
-  - name: "AWS Cloud Captain Bronze"
-    badge: "https://github.com/user-attachments/assets/d7de6e91-72e2-409e-b02e-363064025c9c"
-  - name: "AWS Cloud Captain Silver"
-    badge: "https://github.com/user-attachments/assets/ad569cfe-b656-47d9-8025-cac035fd1927"
-  - name: "Postman Student Leader"
-    badge: "https://github.com/user-attachments/assets/7b7f1b9c-2642-48af-820e-1c2190e3cc70"
-  - name: "Postman Student Expert"
-    badge: "https://github.com/user-attachments/assets/6372db25-921e-4880-96b1-8959e2a004b0"
+  - name: 'NASA Open Science'
+    badge: '/icons/nasa-open-science.png'
+  - name: 'IBM Internship Program'
+    badge: '/icons/ibm-internship.png'
+  - name: 'AWS Cloud Practitioner'
+    badge: '/icons/aws-cp.png'
+  - name: 'GitHub Foundations'
+    badge: '/icons/github-foundations.png'
 
-
-hackathons:
-  - name: "iSTAR"
-    icon: "https://github.com/user-attachments/assets/ba336e49-09dd-4314-b072-0fb35ca936cd"
-    date: "Nov 2024"
-    by: "Rwanda Space Agency ●•Thales Alenia Space ●• WSH"
-    place: "Kigali, Rwanda"
-  - name: "Africa Innovators Society"
-    by: "Industry Innovation Lab"
-    icon: "https://github.com/user-attachments/assets/e908e8a3-0aa4-450a-93e7-69e9dd4f5a57"
-    date: "Oct 2024"
-    place: "Kigali, Rwanda"
-  - name: "GreenHack"
-    by: "Cameroon International Youth Summit ●• Mountain Hub"
-    icon: "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
-    date: "March 2024"
-    place: "Dschang, Cameroon"
-  - name: "ACTINSPACE"
-    by: "CNES ●• ESA ●• Aerospace Valley"
-    icon: "https://github.com/user-attachments/assets/ad0a7a72-6ba0-4eda-95f2-9d78636f58b3"
-    date: "Nov 2022"
-    place: "Yaounde, Cameroon"
-  - name: "Hackathon PAK"
-    by: "Port Autonomous de Kribi"
-    icon: "https://github.com/user-attachments/assets/30333156-5735-4fcb-ba40-2fb994b3fb21"
-    date: "April 2022"
-    place: "Kribi, Cameroon"
-  - name: "GIS Hackathon Cameroon 2022"
-    by: "Democracy Studio ●• PNPE"
-    icon: "https://github.com/user-attachments/assets/36e2ea12-e8a5-415a-98b8-983234bbb4fd"
-    date: "March 2022"
-    place: "Edea, Cameroon"
-
-
-conferences:
-  - name: "Digital Skills Campaign"
-    icon: "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
-    date: "July 2022"
-    place: "Starland Yaounde"
-    country: "Cameroon"
-    description: "A groundbreaking initiative focused on empowering African youth with essential digital skills for the modern workforce."
-    highlightImage: "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
-    images:
-      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
-      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
-      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
-      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
-      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
-      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
-
-  - name: "CITS"
-    icon: "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
-    date: "October 2024"
-    place: "Palais des Congres Yaounde"
-    country: "Cameroon"
-    description: "Cameroon Information Technology Summit - The premier tech conference bringing together industry leaders and innovators from across Central Africa."
-    highlightImage: "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
-    images:
-      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
-      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
-      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
-      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
-      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
-      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
-
-  - name: "GSMA Mobile"
-    icon: "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
-    date: "February 2025"
-    place: "KCC Kigali"
-    country: "Rwanda"
-    description: "The largest mobile industry gathering in Africa, showcasing the latest innovations in mobile technology and digital transformation."
-    highlightImage: "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
-    images:
-      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
-      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
-      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
-      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
-      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
-      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
-
-  - name: "Flutter Forward"
-    icon: "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
-    date: "January 2023"
-    place: "Radisson Blu Nairobi"
-    country: "Kenya"
-    description: "An immersive Flutter development conference featuring hands-on workshops, technical sessions, and networking with the Flutter community."
-    highlightImage: "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
-    images:
-      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
-      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
-      - "https://github.com/user-attachments/assets/021b45cf-ea55-45b8-afdb-e6ba7223dc2c"
-      - "https://github.com/user-attachments/assets/6cb097a7-0bfb-400a-8f4b-34c1a6766977"
-      - "https://github.com/user-attachments/assets/de36cdd9-0a49-4dde-9b45-fd287cc6063e"
-      - "https://github.com/user-attachments/assets/c80a7027-32cd-46e3-8d7d-6c07bb2bf04b"
 
 
 achievements:
-  - name: "Presidential Special Prize for Technology Innovation"
-    icon: "i-heroicons-award"
-    date: "April 2025"
-    place: "Cameroon"
-    gallery: []
-  
-  - name: "ICT University Fellowship of Excellence"
-    icon: "https://github.com/user-attachments/assets/5f90e9bb-9a1d-433a-81d8-c442facca063" # Reusing existing icon
-    date: "July 2023"
-    place: "ICT University"
-    description: "Top <1% students"
+  - name: "Cameroon Social Entrepreneurship Prize — 1st Place (Intellibra)"
+    icon: '/anora-logo.jpeg'
+    date: 'July 2026'
+    place: 'Cameroon'
+    description: 'Our AI-powered breast cancer screening project Intellibra won first place'
     gallery: []
 
-  - name: "Falling Walls Labs National Winner"
-    icon: "https://github.com/user-attachments/assets/51fc2684-8b40-4b88-b726-ed8c851ad007"
-    date: "Nov 2024"
-    place: "Berlin, Germany"
+  - name: 'Presidential Special Prize for Technology Innovation'
+    icon: '/ict-week.jpeg'
+    date: 'April 2025'
+    place: 'Cameroon'
     gallery: []
 
-  - name: "ACTINSPACE National Winner"
-    icon: "i-heroicons-rocket-launch"
-    date: "Nov 2022"
-    place: "European Space Agency"
-    description: "Space competition by the European Space Agency (Team)"
+  - name: 'ICT University Fellowship of Excellence'
+    icon: '/icons/ict-university.png' # Reusing existing icon
+    date: 'July 2023'
+    place: 'ICT University'
+    description: 'Top <1% students'
     gallery: []
 
-  - name: "Top Open Source Contributor in Cameroon"
-    icon: "https://github.com/user-attachments/assets/19771f37-ee31-43d6-a993-29de6929379c"
-    date: "2021-2023"
-    place: "Github Rankings"
+  - name: 'Falling Walls Labs National Winner'
+    icon: '/icons/falling-walls.png'
+    date: 'Nov 2024'
+    place: 'Berlin, Germany'
     gallery: []
-  
-  - name: "National Excellence Awards"
-    icon: "https://github.com/user-attachments/assets/792eab86-5fe1-4bb1-95ae-c0fbce35c9ee" # Reusing existing icon
-    date: "2017, 2019"
-    place: "Cameroon"
-    description: "1st Regional, and 7th/9th In BEPC, and Probatoire National Exams"
+
+  - name: 'ACTINSPACE National Winner'
+    icon: '/actinspace.png'
+    date: 'Nov 2022'
+    place: 'European Space Agency'
+    description: 'Space competition by the European Space Agency (Team)'
+    gallery: []
+
+  - name: 'Top Open Source Contributor in Cameroon'
+    icon: '/icons/oss-contributor.png'
+    date: '2021-2023'
+    place: 'Github Rankings'
+    gallery: []
+
+  - name: 'National Excellence Awards'
+    icon: '/icons/excellence.png' # Reusing existing icon
+    date: '2017, 2019'
+    place: 'Cameroon'
+    description: '1st Regional, and 7th/9th In BEPC, and Probatoire National Exams'
     gallery: []
 
 # Removed old 'Prix D'excellence MINSEEC' and 'Digital Innovator Prize', 'AIM Congress Central Africa Winner'
 memberships:
-  - name: "IEEE (GRSS, AESS, Computer Society, MTTS)"
-  - name: "Black In AI"
-  - name: "AIAA"
+  - name: 'IEEE (GRSS, AESS, Computer Society, MTTS)'
+  - name: 'Black In AI'
+  - name: 'AIAA'

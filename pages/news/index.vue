@@ -90,7 +90,20 @@ const filteredGroupedNews = computed(() => {
 </script>
 
 <template>
-  <div class="max-w-3xl mx-auto px-4 py-12">
+  <div class="max-w-3xl mx-auto px-4 py-12 relative">
+    <!-- Close Button (Top-Right) -->
+    <div class="absolute top-4 right-4 sm:fixed sm:top-8 sm:right-8 z-50">
+      <UButton
+        icon="i-heroicons-x-mark"
+        color="gray"
+        variant="ghost"
+        to="/"
+        size="lg"
+        class="rounded-full bg-white/50 dark:bg-zinc-900/50 backdrop-blur-md shadow-sm border border-gray-200 dark:border-zinc-800"
+        aria-label="Back to home"
+      />
+    </div>
+
     <!-- Header -->
     <div class="mb-10 text-center">
       <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">
