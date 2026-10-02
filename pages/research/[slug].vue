@@ -29,6 +29,10 @@ useSeoMeta({
   ogImage: () => project.value?.cover,
 });
 
+const projectAuthors = computed(() => project.value?.authors?.length
+  ? project.value.authors
+  : [{ name: 'Baimam Boukar Jean Jacques' }, ...(project.value?.contributors || [])]);
+
 // JSON-LD Schema
 useHead(() => {
   if (!project.value) return {};
@@ -43,11 +47,12 @@ useHead(() => {
           headline: project.value.title,
           image: project.value.cover,
           abstract: project.value.abstract,
-          author: {
+          author: projectAuthors.value.map(author => ({
             '@type': 'Person',
-            name: 'Baimam Boukar JJ'
-          },
-          datePublished: project.value.date || '2024',
+            name: author.name,
+            ...(author.affiliation ? { affiliation: { '@type': 'Organization', name: author.affiliation } } : {})
+          })),
+          ...(project.value.date ? { datePublished: project.value.date } : {}),
         })
       }
     ]

@@ -3,22 +3,22 @@ const domains = [
   {
     name: "Mechanistic Interpretability",
     icon: "i-ph-microscope",
-    description: "Understanding internal model representations, and studying why interpretability methods often fail to generalize."
+    description: "When probing findings remain reliable across changes in models, layers, tasks, and data."
   },
   {
-    name: "Deceptive Alignment and Situational Awareness",
+    name: "Reliable Monitoring",
     icon: "i-heroicons-eye",
-    description: "Detecting and analyzing deception, misalignment, and emergent behaviors inside large language models."
+    description: "Separating predictive accuracy from evidence about effective behavioral intervention."
   },
   {
-    name: "White-box Control",
+    name: "Activation-Level Interventions",
     icon: "i-heroicons-adjustments-horizontal",
-    description: "Building reliable activation-level tools — probes, steering, and patching — to monitor and control model behavior."
+    description: "Testing steering directions and layers while preserving unrelated capabilities."
   },
   {
-    name: "Science of Evals",
+    name: "Controlled Evaluation",
     icon: "i-heroicons-beaker",
-    description: "Evaluation methodologies for emergent capabilities in LLMs, with norm-matched controls."
+    description: "Reproduction, held-out tests, and explicit operating thresholds under distribution shift."
   }
 ];
 </script>

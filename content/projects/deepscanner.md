@@ -1,48 +1,42 @@
 ---
 title: IBM DeepScanner
-description: A scalable framework for detecting anomalies in LLM activations
+description: Research infrastructure for analyzing anomalous patterns in LLM activations
 tags:
   - Python
   - PyTorch
   - Ray
   - IBM Cloud
   - LLMs
-live_url: "#"
-source_url: "#"
-image: "https://placehold.co/600x400?text=IBM+DeepScanner"
-icon: "/icons/ibm.png"
-featured: true
-# Project Details
-status: "Internal Tool"
-role: "Research Engineer"
-
-# About the Project
+live_url: '#'
+source_url: '#'
+image: https://placehold.co/600x400?text=IBM+DeepScanner
+icon: /icons/ibm.png
+featured: false
+status: Internal Tool
+role: AI Research Scientist Intern
 about:
-  - "DeepScanner is a scalable infrastructure designed to reverse-engineer foundation models by analyzing their internal activation states. It enables researchers to detect anomalous patterns—such as hallucinations or toxic outputs—before they manifest in the generated text."
-  - "I engineered the distributed workflow for this framework, optimizing the pipeline to run parallel experiments on the IBM Cloud Cognitive Cluster. This significantly reduced the time required to analyze large-scale models like Llama 3 and Granite."
-  - "The system supports modular probing of different model layers and integrates seamlessly with existing training pipelines, making it a critical tool for AI safety and interpretability research."
-
-# Stack
+  - >-
+    DeepScanner applies non-parametric subset-scanning methods to internal neural-network representations to study
+    anomalous behavior, distribution shifts, and representation structure.
+  - >-
+    At IBM Research, I improved the codebase, implemented and ran experiments, and contributed to infrastructure for
+    activation-space analysis across local and distributed GPU environments.
+  - The work also contributed to research on retrieving from a vector database using multiple query vectors.
 stack:
-  - "Python"
-  - "PyTorch"
-  - "Ray (Distributed Computing)"
-  - "IBM Cloud Cognitive Cluster"
-  - "Hugging Face Transformers"
-  - "Weights & Biases"
-
-# Milestones
+  - Python
+  - PyTorch
+  - Ray (Distributed Computing)
+  - IBM Cloud Cognitive Cluster
+  - Hugging Face Transformers
+  - Weights & Biases
 milestones:
-  - title: "Architecture Design"
-    date: "June 2025"
-    description: "Designed the modular architecture for extracting and analyzing model activations"
-  - title: "Distributed Pipeline"
-    date: "July 2025"
-    description: "Implemented Ray-based distributed processing to handle large-scale model data"
-  - title: "Optimization"
-    date: "August 2025"
-    description: "Optimized data loading and tensor processing, achieving a 3x speedup in analysis time"
-  - title: "Paper Submission"
-    date: "August 2025"
-    description: "Results contributed to a paper submission at AAAI 2026"
+  - title: Research Infrastructure
+    date: June - September 2025
+    description: Improved and used modular workflows for activation extraction, scanning, and reproducible large-scale experiments
+  - title: Workshop Publication
+    date: '2026'
+    description: >-
+      Contributed to Retrieval With Multiple Query Vectors Through Anomalous Pattern Detection, a paper at the AAAI
+      Workshop on Frontiers in Information Retrieval
+period: June 2025 - September 2025
 ---

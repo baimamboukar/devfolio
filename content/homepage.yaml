@@ -1,24 +1,27 @@
 hero:
-  greeting: "Hi, I'm Baimam Boukar"
-  emoji: '👋'
-  introduction: "I am a researcher working on mechanistic interpretability and AI alignment. I study why current interpretability methods fail to generalize, and build more reliable tools to understand and control large language models. I recently completed my master's in Applied Machine Learning at Carnegie Mellon University, and I am currently a Research Assistant at Jinesis AI Lab, University of Toronto, working on the generalizability of mechanistic interpretability techniques."
+  greeting: Hi, I'm Baimam Boukar
+  emoji: 👋
+  introduction: >-
+    I study when interpretability methods generalize and when internal model signals can guide reliable interventions.
+    My work focuses on activation probes, steering, and evaluation across models, tasks, and distribution shifts.
 quick_links:
   book_call:
-    title: "Let's Connect"
-    subtitle: 'Schedule a conversation'
-    button_text: 'Book Call'
-    url: 'https://calendly.com/baimamboukar'
+    title: Let's Connect
+    subtitle: Schedule a conversation
+    button_text: Book Call
+    url: https://calendly.com/baimamboukar
   links:
-    - label: 'Research'
-      icon: 'fluent-emoji:scientist'
-      url: '/research'
-    - label: 'My Talks'
-      icon: 'fluent-emoji:laptop'
-      url: '/presentations'
+    - label: Research
+      icon: fluent-emoji:scientist
+      url: /research
+    - label: My Talks
+      icon: fluent-emoji:laptop
+      url: /presentations
       external: true
-    - label: 'Projects'
-      icon: 'fluent-emoji:sparkles'
-      url: '/projects'
-    - label: 'Blog'
-      icon: 'fluent-emoji:writing-hand'
-      url: '/blog'
+    - label: Projects
+      icon: fluent-emoji:sparkles
+      url: /projects
+    - label: Blog
+      icon: fluent-emoji:writing-hand
+      url: /blog
+title: Homepage

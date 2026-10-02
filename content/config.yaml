@@ -1,64 +1,52 @@
-# Portfolio Site Configuration
-# This file contains all site-wide settings, SEO metadata, and personal information
-
-# Personal Information
 personal:
-  name: 'Baimam Boukar Jean Jacques'
-  title: 'AI Safety Researcher'
-  tagline: 'Mechanistic Interpretability & AI Alignment | Research Assistant at Jinesis AI Lab, University of Toronto | CMU Alum'
-  photo: '/baimamboukar.jpeg'
-  location: 'Kigali, Rwanda'
-  university: 'Carnegie Mellon University (MSc, 2026)'
-  specialization: 'Mechanistic Interpretability and AI Alignment'
-
-# SEO Configuration
+  name: Baimam Boukar Jean Jacques
+  title: Mechanistic Interpretability & AI Safety
+  tagline: Generalization, reliable monitoring, and activation-level interventions
+  photo: /baimamboukar.jpeg
+  location: Kigali, Rwanda
+  university: Carnegie Mellon University (MSc, 2026)
+  specialization: Mechanistic Interpretability and AI Safety
 seo:
-  title_template: 'Baimam Boukar JJ'
-  default_title: 'Baimam Boukar Jean Jacques'
-  description: 'AI Safety Researcher | Mechanistic Interpretability & AI Alignment | Research Assistant at Jinesis AI Lab, University of Toronto | Carnegie Mellon University Alum'
+  title_template: Baimam Boukar JJ
+  default_title: Baimam Boukar Jean Jacques
+  description: >-
+    Baimam Boukar researches when activation probes generalize and when internal model signals guide reliable
+    interventions across models, tasks, and distribution shifts.
   keywords:
-    [
-      'AI safety',
-      'mechanistic interpretability',
-      'AI alignment',
-      'deception detection',
-      'large language models',
-      'interpretability research',
-    ]
-  author: 'Baimam Boukar Jean Jacques'
-  og_type: 'website'
-  twitter_card: 'summary_large_image'
+    - mechanistic interpretability
+    - AI safety
+    - generalization
+    - activation probes
+    - activation steering
+    - causal interventions
+    - model evaluation
+  author: Baimam Boukar Jean Jacques
+  og_type: website
+  twitter_card: summary_large_image
   twitter_creator: '@baimamboukar'
-
-# Site Configuration
 site:
-  name: 'Baimam Boukar Portfolio'
-  url: 'https://baimamboukar.dev'
-  logo: '/baimamboukar.jpeg'
-  favicon: '/favicon.ico'
-  language: 'en'
-  locale: 'en_US'
-  theme_color: '#0ea5e9' # sky-500
-
-# Contact Information
+  name: Baimam Boukar Portfolio
+  url: https://baimamboukar.dev
+  logo: /baimamboukar.jpeg
+  favicon: /favicon.ico
+  language: en
+  locale: en_US
+  theme_color: '#ef4444'
 contact:
-  email: 'baimamboukar@gmail.com'
-  calendly: 'https://scheduler.zoom.us/baimam-boukar-jean-jacques/call'
-  github: 'baimamboukar'
-  twitter: 'baimamboukarr'
-  linkedin: 'baimamboukar'
-  medium: 'baimamboukar'
-
-# Featured Content Limits
+  email: baimamboukar@gmail.com
+  calendly: https://scheduler.zoom.us/baimam-boukar-jean-jacques/call
+  github: baimamboukar
+  twitter: baimamboukarr
+  linkedin: baimamboukar
+  medium: baimamboukar
 featured:
   projects_count: 4
   research_count: 3
   news_count: 4
   presentations_count: 6
-
-# External Data Sources
 data_sources:
-  about: 'content/about.yaml'
-  research: 'content/research.yaml'
-  news: 'content/news.yaml'
-  projects_more: 'content/projects/more.json'
+  about: content/about.yaml
+  research: content/research.yaml
+  news: content/news.yaml
+  projects_more: content/projects/more.json
+title: Config

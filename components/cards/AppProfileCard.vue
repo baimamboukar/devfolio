@@ -71,7 +71,7 @@
     <h2
       class="font-xs md:text-smtext-xs font-semi-bold text-sky-600 dark:text-sky-400"
     >
-      Building Verifiable Models
+      Mechanistic Interpretability &amp; AI Safety
     </h2>
     <div
       class="flex items-center justify-center w-full h-8 text-zinc-900 dark:text-zinc-200"

@@ -47,6 +47,10 @@ const displayMode = ref('list'); // 'list' or 'grid'
 // Always show search bar
 const showSearchBar = computed(() => true);
 
+const getProjectAuthors = (project) => project.authors?.length
+  ? project.authors
+  : [{ name: 'Baimam Boukar Jean Jacques' }, ...(project.contributors || [])];
+
 // Get unique domains from all research papers
 const availableDomains = computed(() => {
   const domains = new Set();
@@ -67,7 +71,7 @@ const filteredProjects = computed(() => {
     const query = searchQuery.value.toLowerCase();
     filtered = filtered.filter(project =>
       project.title.toLowerCase().includes(query) ||
-      (project.contributors && project.contributors.some(c => c.toLowerCase().includes(query))) ||
+      getProjectAuthors(project).some(author => author.name.toLowerCase().includes(query)) ||
       project.venue.toLowerCase().includes(query) ||
       (project.topics && project.topics.some(t => t.toLowerCase().includes(query)))
     );
@@ -255,7 +259,7 @@ const getGradientColors = (topic) => {
 
                 <!-- Authors -->
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                  <span class="font-medium">Baimam Boukar JJ</span><span v-if="project.contributors">, {{ project.contributors.map(c => c.name).join(', ') }}</span>
+                  <span class="font-medium">{{ getProjectAuthors(project)[0].name }}</span><span v-if="getProjectAuthors(project).length > 1">, {{ getProjectAuthors(project).slice(1).map(author => author.name).join(', ') }}</span>
                 </p>
 
                 <!-- Venue -->
@@ -350,7 +354,7 @@ const getGradientColors = (topic) => {
                 <div class="mt-auto">
                   <div class="flex items-center gap-2">
                     <span class="text-xs text-gray-500 dark:text-gray-400">
-                      Co-authored with {{ project.contributors?.map(c => c.name).join(', ') || 'team members' }}
+                      Authors: {{ getProjectAuthors(project).map(author => author.name).join(', ') }}
                     </span>
                   </div>
                 </div>

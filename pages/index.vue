@@ -50,14 +50,9 @@ const featuredResearch = computed(() => {
   return featuredResearchData.value?.research?.filter(r => r.featured).slice(0, 3) || [];
 });
 
-// Abbreviate co-author names for the citation-style publication list
-const coAuthors = (paper) =>
-  (paper.contributors || [])
-    .map((c) => {
-      const parts = c.name.trim().split(/\s+/);
-      return parts.length > 1 ? `${parts[0][0]}. ${parts.slice(1).join(' ')}` : parts[0];
-    })
-    .join(', ');
+const publicationAuthors = (paper) => paper.authors?.length
+  ? paper.authors
+  : [{ name: 'Baimam Boukar Jean Jacques' }, ...(paper.contributors || [])];
 
 // Debug function for development
 </script>
@@ -143,7 +138,7 @@ const coAuthors = (paper) =>
         <!-- Publications Column (citation style) -->
         <div class="space-y-6 lg:pl-8">
           <h3 class="text-sm font-bold capitalize tracking-wider text-sky-600 dark:text-sky-400">
-             Selected Publications
+             Selected Research
           </h3>
           <div class="divide-y divide-gray-100 dark:divide-zinc-800">
             <NuxtLink
@@ -156,7 +151,7 @@ const coAuthors = (paper) =>
                 {{ paper.title }}
               </h4>
               <p class="text-sm text-gray-600 dark:text-gray-400 mb-1.5">
-                <span class="font-medium text-gray-800 dark:text-gray-200">Baimam Boukar</span><span v-if="coAuthors(paper)" class="text-gray-500 dark:text-gray-400"> · with {{ coAuthors(paper) }}</span>
+                <span class="font-medium text-gray-800 dark:text-gray-200">{{ publicationAuthors(paper)[0].name }}</span><span v-if="publicationAuthors(paper).length > 1" class="text-gray-500 dark:text-gray-400">, {{ publicationAuthors(paper).slice(1).map(author => author.name).join(', ') }}</span>
               </p>
               <p class="text-xs text-gray-500 dark:text-gray-500">
                 <span class="italic">{{ paper.venue }}</span>
