@@ -1,7 +1,7 @@
 <script setup>
   definePageMeta({
     title: "Research",
-    description: "Academic research projects, publications, and scholarly work by Baimam Boukar JJ at Carnegie Mellon University Africa.",
+    description: "Mechanistic interpretability and AI safety research by Baimam Boukar Jean Jacques.",
   });
 </script>
 
@@ -13,10 +13,9 @@
         Research
       </h1>
       <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-        My research focuses on mechanistic interpretability and AI alignment.
-        I study why interpretability methods fail to generalize across models
-        and tasks, and build reliable tools to detect deception and
-        misalignment inside large language models.
+        I study the generalization and reliability of activation probes and interventions.
+        My work combines reproduction, controlled experiments, and held-out evaluation
+        across models, tasks, and distribution shifts.
       </p>
     </div>
 

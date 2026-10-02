@@ -1,32 +1,41 @@
 ---
-title: Mechanistic Audit of Deception Detection in LLMs
-description: Do interpretability methods actually localize deception? A model-agnostic audit
+title: 'Selection Regret: Auditing Deception Probes as Intervention Selectors'
+description: Testing whether accurate deception probes can select useful interventions
 tags:
-  - Interpretability
+  - Mechanistic Interpretability
   - Linear Probing
-  - Activation Patching
-  - Steering
+  - Activation Steering
+  - Behavioral Evaluation
   - AI Safety
-live_url: "https://github.com/baimamboukar/mechanistic-audit-of-deception-detection-in-llms"
-source_url: "https://github.com/baimamboukar/mechanistic-audit-of-deception-detection-in-llms"
-image: "https://placehold.co/600x400?text=Deception+Audit"
-icon: "pytorch"
+live_url: ''
+source_url: https://github.com/baimamboukar/mechanistic-audit-of-deception-detection-in-llms
+image: https://placehold.co/600x400?text=Deception+Audit
+icon: pytorch
 featured: true
-# Project Details
-status: "Active Research"
-period: "March 2026 - Present"
-role: "Researcher (BlueDot Technical AI Safety Sprint)"
-
-# About the Project
+status: Under Review
+period: '2026'
+role: Lead Researcher
 about:
-  - "A mechanistic audit of whether popular interpretability methods actually localize deception in large language models. I built a model-agnostic interpretability pipeline — activation extraction, linear probing, activation patching, and steering — and ran multi-seed experiments across four open-weights models spanning 2B to 32B parameters."
-  - "The project introduces a selection-regret evaluation with norm-matched controls. Current results show that high probe AUROC fails to localize effective steering: the layers where deception is most linearly decodable are not the layers where interventions most change deceptive behavior."
-  - "This work started as a BlueDot Impact Technical AI Safety Project Sprint under expert mentorship, probing for deceptive alignment in LLMs, and continues as an independent research project."
-
-# Stack
+  - >-
+    We investigate whether internal signals that detect deception also guide effective behavioral
+    interventions. The audit evaluates linear deception probes across four instruction-tuned language models
+    using controlled, task-defined deceptive decisions.
+  - >-
+    At each transformer block, we compare a probe-weight steering direction with a contrastive direction built
+    from honest-minus-deceptive activations. Intervention layers and strengths are selected on held-out
+    validation scenarios and evaluated on untouched test groups under explicit limits on capability loss.
+  - >-
+    Selection regret measures useful intervention benefit forgone when a probe-guided selection misses a
+    better feasible intervention. Accurate detection and effective intervention require separate evidence:
+    predictive performance does not consistently identify useful steering directions or layers.
+  - >-
+    I led the experimental design, implementation, and empirical evaluation, built the main research workflow,
+    ran most experiments, and coordinated the analysis. This work began through the BlueDot Technical AI
+    Safety Project Sprint.
 stack:
-  - "PyTorch"
-  - "TransformerLens"
-  - "Linear Probes"
-  - "Activation Patching & Steering"
+  - Python
+  - PyTorch
+  - Linear Probes
+  - Activation Steering
+  - Held-out Behavioral Evaluation
 ---

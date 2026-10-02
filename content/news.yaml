@@ -1,147 +1,292 @@
 updates:
-  - date: '2026-06-15'
-    title: 'Published a LessWrong writeup on Matryoshka SAEs'
-    description: 'I documented my replication and cross-model extension of Matryoshka Sparse AutoEncoders — how nested dictionaries recover feature hierarchies that vanilla SAEs lose.'
-    type: 'publication'
-    link: 'https://www.lesswrong.com/posts/EpLj8FTBdGvt44TTF/how-matryoshka-sparse-autoencoders-recover-feature'
-    tags: ['Mechanistic Interpretability', 'SAEs', 'LessWrong']
-
+  - date: '2026-09-20'
+    title: Spoke at Ctrl+Alt+Échec
+    description: I joined AfriTechElles as a speaker for Ctrl+Alt+Échec, a discussion on learning from setbacks in tech.
+    type: talk
+    tags:
+      - Speaking
+      - AfriTechElles
+      - Community
+    link: >-
+      https://fr.linkedin.com/posts/afritechelles_afritechelles-ctrlalt%C3%A9chec-femmesentech-activity-7507779794508484608-PQX3
+  - date: '2026-07-25'
+    title: Panelist at AI & Youth Futures Action Week
+    description: >-
+      I joined Encode Africa’s panel on balancing AI innovation and responsibility in African youth-led
+      technologies.
+    type: talk
+    tags:
+      - AI Safety
+      - Responsible AI
+      - Speaking
+    link: https://luma.com/coy2pnph
+  - date: '2026-07-23'
+    title: Updated EEG decoding preprint
+    description: A revised version of our work on zero-shot cross-subject EEG decoding is available on arXiv.
+    type: publication
+    tags:
+      - EEG
+      - Research
+      - Preprint
+    link: https://arxiv.org/abs/2606.23706v2
+  - date: '2026-07-13'
+    title: Updated multi-query retrieval preprint
+    description: A revised version of our paper on retrieval through anomalous pattern detection is available on arXiv.
+    type: publication
+    tags:
+      - Information Retrieval
+      - Research
+      - Preprint
+    link: https://arxiv.org/abs/2605.01965v2
   - date: '2026-07-09'
-    title: "Intellibra won Cameroon's Social Entrepreneurship Prize (1st Place)"
-    description: 'Our project Intellibra — an AI-powered thermography device for accessible breast cancer screening — won first place at the Cameroon Social Entrepreneurship Prize.'
-    type: 'award'
+    title: Intellibra won Cameroon's Social Entrepreneurship Prize (1st Place)
+    description: >-
+      Our project Intellibra — an AI-powered thermography device for accessible breast cancer screening — won
+      first place at the Cameroon Social Entrepreneurship Prize.
+    type: award
     link: '#'
-    tags: ['Intellibra', 'Award', 'Healthcare AI']
-
+    tags:
+      - Intellibra
+      - Award
+      - Healthcare AI
+  - date: '2026-07-03'
+    title: ANORA selected for the 2026 Futurize Incubator
+    description: >-
+      Our team at ANORA, which is developing IntelliBra, was selected for Futurize's 2026 incubator cohort for
+      African healthcare ventures.
+    type: milestone
+    tags:
+      - ANORA
+      - IntelliBra
+      - HealthTech
+    link: https://www.futurize.studio/futurize-incubator-cohort-2026
+  - date: '2026-06-15'
+    title: Published a LessWrong writeup on Matryoshka SAEs
+    description: >-
+      I documented toy feature-hierarchy and TinyStories reconstruction–sparsity experiments for Matryoshka
+      Sparse Autoencoders.
+    type: publication
+    link: https://www.lesswrong.com/posts/EpLj8FTBdGvt44TTF/how-matryoshka-sparse-autoencoders-recover-feature
+    tags:
+      - Mechanistic Interpretability
+      - SAEs
+      - LessWrong
   - date: '2026-06-01'
-    title: 'Joined Jinesis AI Lab at the University of Toronto'
-    description: 'I started as a Research Assistant in Mechanistic Interpretability, researching the generalizability of interpretability techniques across models and tasks.'
-    type: 'position'
+    title: Joined Jinesis AI Lab at the University of Toronto
+    description: >-
+      I started as a Research Assistant in Mechanistic Interpretability, researching the generalizability of
+      interpretability techniques across models and tasks.
+    type: position
     link: '#'
-    tags: ['Mechanistic Interpretability', 'AI Safety', 'Research']
-
+    tags:
+      - Mechanistic Interpretability
+      - AI Safety
+      - Research
   - date: '2026-05-15'
-    title: 'Graduated from Carnegie Mellon University'
-    description: "I earned my Master's degree in Applied Machine Learning from Carnegie Mellon University. Grateful for an incredible journey — onward to AI safety research."
-    type: 'milestone'
+    title: Graduated from Carnegie Mellon University
+    description: >-
+      I earned my MSc in Information Technology, specializing in Applied Machine Learning, from Carnegie
+      Mellon University Africa.
+    type: milestone
     link: '#'
-    tags: ['CMU', 'Graduation', 'Machine Learning']
-
+    tags:
+      - CMU
+      - Graduation
+      - Machine Learning
   - date: '2026-02-16'
-    title: 'Joined BlueDot Training Cohort on Technical AI Alignment'
-    description: 'An intensive training program focused on technical AI alignment. I am excited to be part of the Feb 2026 cohort and to deepen my understanding of these critical topics.'
-    type: 'training'
+    title: Joined BlueDot Training Cohort on Technical AI Alignment
+    description: >-
+      An intensive training program focused on technical AI alignment. I am excited to be part of the Feb 2026
+      cohort and to deepen my understanding of these critical topics.
+    type: training
     link: '#'
-    tags: ['Alignment', 'Safety', 'Interpretability']
-
-  - date: '2026-01-12'
-    title: 'Paper on Adaptive LSA submitted to IJIM'
-    description: 'Our work "An Adaptive Latent Semantic Analysis Framework for Binary Text Classification" has been submitted to the International Journal of Information Management.'
-    type: 'publication'
-    link: '#'
-    tags: ['NLP', 'LSA', 'Interpretability']
-
+    tags:
+      - Alignment
+      - Safety
+      - Interpretability
   - date: '2026-02-03'
-    title: 'Featured on CMU Africa Website'
-    description: 'Shared my internship experience at IBM Research and how CMU Africa prepared me for the role.'
-    type: 'media'
-    link: 'https://www.africa.engineering.cmu.edu/news/2026/02/03-jacques.html'
-    tags: ['CMU', 'Internship', 'IBM']
-
+    title: Featured on CMU Africa Website
+    description: Shared my internship experience at IBM Research and how CMU Africa prepared me for the role.
+    type: media
+    link: https://www.africa.engineering.cmu.edu/news/2026/02/03-jacques.html
+    tags:
+      - CMU
+      - Internship
+      - IBM
+  - date: '2026-01-20'
+    title: Retrieval work presented at an AAAI 2026 workshop
+    description: >-
+      Our non-archival paper "Retrieval with Multiple Query Vectors through Anomalous Pattern Detection" was
+      presented at the AAAI 2026 Workshop on New Frontiers in Information Retrieval.
+    type: presentation
+    link: https://arxiv.org/abs/2605.01965v1
+    tags:
+      - Information Retrieval
+      - LLMs
+      - AAAI Workshop
   - date: '2026-01-12'
-    title: 'Started as Graduate Teaching Assistant'
-    description: 'Excited to guide students through the "Introduction to Deep Learning" (18-786) course at Carnegie Mellon University.'
-    type: 'position'
+    title: Paper on Adaptive LSA submitted to IJIM
+    description: >-
+      Our work "An Adaptive Latent Semantic Analysis Framework for Binary Text Classification" has been
+      submitted to the International Journal of Information Management.
+    type: publication
     link: '#'
-    tags: ['Teaching', 'Deep Learning', 'CMU']
-
-  - date: '2025-07-01'
-    title: 'Serving as Reviewer for JGR'
-    description: 'Honored to serve as a reviewer (Machine Learning and Code) for the Journal of Geophysical Research (JGR).'
-    type: 'service'
+    tags:
+      - NLP
+      - LSA
+      - Interpretability
+  - date: '2026-01-12'
+    title: Started as Graduate Teaching Assistant
+    description: >-
+      Excited to guide students through the "Introduction to Deep Learning" (18-786) course at Carnegie Mellon
+      University.
+    type: position
     link: '#'
-    tags: ['Reviewer', 'JGR', 'Research']
-
+    tags:
+      - Teaching
+      - Deep Learning
+      - CMU
   - date: '2025-12-11'
-    title: 'Paper on Zero-Shot EEG Decoding submitted at MIDL 2026'
-    description: 'Our work on "Zero-Shot Neural Priors for Generalizable Cross-Subject and Cross-Task EEG Decoding" has been submitted at the Medical Imaging with Deep Learning (MIDL) 2026 conference.'
-    type: 'publication'
+    title: Paper on Zero-Shot EEG Decoding submitted at MIDL 2026
+    description: >-
+      Our work on "Zero-Shot Neural Priors for Generalizable Cross-Subject and Cross-Task EEG Decoding" has
+      been submitted at the Medical Imaging with Deep Learning (MIDL) 2026 conference.
+    type: publication
     link: '#'
-    tags: ['EEG', 'Deep Learning', 'MIDL']
-
-  - date: '2025-08-15'
-    title: 'Retrieval paper accepted at AAAI 2026'
-    description: 'Our paper "Retrieval with Multiple Query Vectors through Anomalous Pattern Detection" has been accepted at the AAAI Conference on Artificial Intelligence 2026.'
-    type: 'publication'
-    link: '#'
-    tags: ['Information Retrieval', 'LLMs', 'AAAI']
-
-  - date: '2025-06-01'
-    title: 'Joined IBM as a Research Scientist Intern'
-    description: 'I started an Internship on AI Resarch at IBM Research, Kenya Lab. Beautiful things ahead 🫴🏾❤️‍🔥.'
-    type: 'status'
-    link: '#'
-    tags: ['Internship', 'IBM', 'AI']
-
+    tags:
+      - EEG
+      - Deep Learning
+      - MIDL
   - date: '2025-09-04'
-    title: 'Attending the 9th African Aviation Summit 2025'
-    description: 'Attended the Africa Aviation Summit 2025. Presented a Poster, Connected with Aerospace Engineers and Researchers. Witnessed (live) the launch of futuristic air-mobility technologies In Rwanda, Kigali. '
-    type: 'conference'
+    title: Attending the 9th African Aviation Summit 2025
+    description: >-
+      Attended the Africa Aviation Summit 2025. Presented a Poster, Connected with Aerospace Engineers and
+      Researchers. Witnessed (live) the launch of futuristic air-mobility technologies In Rwanda, Kigali.
+    type: conference
     link: '#'
-    tags: ['Aerospace', 'Research', 'Poster']
-
-  - date: '2025-05-04'
-    title: 'Presented a talk about Geospatial AI'
-    description: "Invited by the Gaston-Berger University Computer Science club, In Senegal, I talked about Geospatial AI, and the opportunities behind it, as it links to the new Segenal's Saltellite: GAINDESAT-1"
-    type: 'talk'
-    link: '#'
-    tags: ['Space', 'Geospatial', 'AI']
-
-  - date: '2025-06-30'
-    title: 'Presented a Talk on Open Source'
-    description: 'Invited by the Techies Haven community, I shared my Open Source contributions experience. The story of how I built my profile as a Software Engineer. I also shared my experience working with G-Research as a Open Source Engineer Intern, during MLH Fellowship 3034'
-    type: 'talk'
-    link: '#'
-    tags: ['Open Source', 'Internship', 'Community']
-
-  - date: '2024-09-01'
-    title: 'Joined CyLab Africa as a Research Assistant'
-    description: 'Joined Upanzi/CyLab DPI/DPG team as a Research Assistant.'
-    type: 'position'
-    link: '#'
-    tags: ['CMU', 'Research', 'Machine Learning']
-
+    tags:
+      - Aerospace
+      - Research
+      - Poster
   - date: '2025-07-01'
-    title: 'Two papers accepted at IEEE MIGARS 2025'
-    description: "Our paper on 'Mapping Socioeconomic Air Quality Disparities in Rwanda Using Sentinel-5P TROPOMI Data' and 'Tropospheric level humidity Inference using Geographical features for contrails prediction In African Airspace' were accepted."
-    type: 'publication'
+    title: Serving as Reviewer for JGR
+    description: >-
+      Honored to serve as a reviewer (Machine Learning and Code) for the Journal of Geophysical Research
+      (JGR).
+    type: service
     link: '#'
-    tags: ['Air Quality', 'Remote Sensing', 'Earth Observation']
-
+    tags:
+      - Reviewer
+      - JGR
+      - Research
+  - date: '2025-07-01'
+    title: Two papers accepted at IEEE MIGARS 2025
+    description: >-
+      Our paper on 'Mapping Socioeconomic Air Quality Disparities in Rwanda Using Sentinel-5P TROPOMI Data'
+      and 'Tropospheric level humidity Inference using Geographical features for contrails prediction In
+      African Airspace' were accepted.
+    type: publication
+    link: '#'
+    tags:
+      - Air Quality
+      - Remote Sensing
+      - Earth Observation
+  - date: '2025-06-30'
+    title: Presented a Talk on Open Source
+    description: >-
+      Invited by the Techies Haven community, I shared my Open Source contributions experience. The story of
+      how I built my profile as a Software Engineer. I also shared my experience working with G-Research as a
+      Open Source Engineer Intern, during MLH Fellowship 3034
+    type: talk
+    link: '#'
+    tags:
+      - Open Source
+      - Internship
+      - Community
+  - date: '2025-06-01'
+    title: Joined IBM as a Research Scientist Intern
+    description: I started an Internship on AI Resarch at IBM Research, Kenya Lab. Beautiful things ahead 🫴🏾❤️‍🔥.
+    type: status
+    link: '#'
+    tags:
+      - Internship
+      - IBM
+      - AI
   - date: '2025-05-20'
-    title: 'Paper accepter at Harvard AstroAI Workshop'
-    description: 'My manuscript on Deep Learning based Potentially Hazardous Asteroids Classification using Graph Neural Networks'
-    type: 'conference'
+    title: Paper accepter at Harvard AstroAI Workshop
+    description: >-
+      My manuscript on Deep Learning based Potentially Hazardous Asteroids Classification using Graph Neural
+      Networks
+    type: conference
     link: '#'
-    tags: ['Asteroids', 'Space', 'AI']
-
+    tags:
+      - Asteroids
+      - Space
+      - AI
+  - date: '2025-05-04'
+    title: Presented a talk about Geospatial AI
+    description: >-
+      Invited by the Gaston-Berger University Computer Science club, In Senegal, I talked about Geospatial AI,
+      and the opportunities behind it, as it links to the new Segenal's Saltellite: GAINDESAT-1
+    type: talk
+    link: '#'
+    tags:
+      - Space
+      - Geospatial
+      - AI
+  - date: '2025-04-30'
+    title: Co-inventor listed in OAPI patent bulletin
+    description: >-
+      OAPI’s April 2025 patent bulletin lists me as a co-inventor of a portable breast cancer detection device
+      (publication No. 21836).
+    type: milestone
+    tags:
+      - Patent
+      - Research
+      - HealthTech
+    link: https://www.oapi.int/wp-content/uploads/2025/04/BOPI_03_BR_2025.pdf#page=18
+  - date: '2024-09-01'
+    title: Joined CyLab Africa as a Research Assistant
+    description: Joined Upanzi/CyLab DPI/DPG team as a Research Assistant.
+    type: position
+    link: '#'
+    tags:
+      - CMU
+      - Research
+      - Machine Learning
   - date: '2024-04-12'
-    title: 'Won Falling Walls Lab Cameroon'
-    description: 'My team pitched our Intellibra solution: Using AI-assisted thermography device for accessible breast cancer screening in low-resource settings. Our team will be representing Cameroon at International Finals'
-    type: 'award'
+    title: Won Falling Walls Lab Cameroon
+    description: >-
+      My team pitched our Intellibra solution: Using AI-assisted thermography device for accessible breast
+      cancer screening in low-resource settings. Our team will be representing Cameroon at International
+      Finals
+    type: award
     link: '#'
-    tags: ['Healthcare', 'AI', 'Innovation']
-
-  - date: '2022-06-11'
-    title: 'Won ActInSpace Cameroon 2022'
-    description: "We participated to the 2022's ActInSpace Hackathon. Despite being the youngests in the competition, we emerged as winner with our AI solution for flight path optimization to reduce aviation's climate impact."
-    type: 'award'
-    link: 'https://www.cameroon-tribune.cm/article.html/55710/fr.html/anzia-juvis-mbarika-un-genie-lassaut-de-la-pollution'
-    tags: ['Space', 'AI', 'Innovation']
-
+    tags:
+      - Healthcare
+      - AI
+      - Innovation
   - date: '2024-03-07'
-    title: "Won Accelerate Africa 2022's Contest"
-    description: "We participated to the 2022's ActInSpace Hackathon. Despite being the youngests in the competition, we emerged as winner with our AI solution for flight path optimization to reduce aviation's climate impact."
-    type: 'award'
-    link: 'https://tribunedelinfo.com/concours-accelarate-africa-lingeniosite-de-ict-university-au-sommet/'
-    tags: ['Space', 'AI', 'Innovation']
+    title: Won Accelerate Africa 2022's Contest
+    description: >-
+      We participated to the 2022's ActInSpace Hackathon. Despite being the youngests in the competition, we
+      emerged as winner with our AI solution for flight path optimization to reduce aviation's climate impact.
+    type: award
+    link: https://tribunedelinfo.com/concours-accelarate-africa-lingeniosite-de-ict-university-au-sommet/
+    tags:
+      - Space
+      - AI
+      - Innovation
+  - date: '2022-06-11'
+    title: Won ActInSpace Cameroon 2022
+    description: >-
+      We participated to the 2022's ActInSpace Hackathon. Despite being the youngests in the competition, we
+      emerged as winner with our AI solution for flight path optimization to reduce aviation's climate impact.
+    type: award
+    link: >-
+      https://www.cameroon-tribune.cm/article.html/55710/fr.html/anzia-juvis-mbarika-un-genie-lassaut-de-la-pollution
+    tags:
+      - Space
+      - AI
+      - Innovation
+title: News

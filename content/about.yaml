@@ -1,11 +1,9 @@
-overview: 'I am an AI safety researcher and a recent master graduate from Carnegie Mellon University. I am broadly interested in making AI go well. My work focuses on mechanistic interpretability and the science of evals for emergent capabilities in LLMs — currently exploring why interpretability techniques often fail to generalize. I am also interested in AI sentience, particularly the question of moral and mind attribution in LLMs. My background in software engineering grounds my research in rigorous, reproducible experimentation.'
-
 education:
-  - degree: 'Master of Science in Information Technology'
-    institution: 'Carnegie Mellon University Africa'
-    specialization: 'Applied Machine Learning'
-    period: '2024-2026'
-    icon: '/icons/cmu-africa.png'
+  - degree: Master of Science in Information Technology
+    institution: Carnegie Mellon University Africa
+    specialization: Applied Machine Learning
+    period: 2024-2026
+    icon: /icons/cmu-africa.png
     courses:
       - Introduction To Machine Learning for Engineers
       - Introduction To Deep Learning
@@ -15,34 +13,31 @@ education:
       - Mobile Big Data Analytis and Management
       - Data Structures and Algorithms For Engineers
       - Applied Deep Learning
-
-  - degree: 'Major League Hacking Fellow in Software Engineering'
-    institution: 'MLH Fellowship'
-    specialization: 'Open Source'
-    period: '2023-2023'
-    icon: '/icons/mlh.png'
+  - degree: Major League Hacking Fellow in Software Engineering
+    institution: MLH Fellowship
+    specialization: Open Source
+    period: 2023-2023
+    icon: /icons/mlh.png
     courses:
       - Good Practices for Open Source Contributors
       - Open Source Licensing
       - GitHub Source Contributions
-
-  - degree: 'Introduction To Space Missions Design'
-    institution: 'NMD LTD and ICT University'
-    specialization: 'Concurrent Engineering for Space Missions'
-    period: '2022-2022'
-    icon: '/icons/ict-university.png'
+  - degree: Introduction To Space Missions Design
+    institution: NMD LTD and ICT University
+    specialization: Concurrent Engineering for Space Missions
+    period: 2022-2022
+    icon: /icons/ict-university.png
     courses:
       - Satellites Orbits
       - Space Missions Design
       - Satellites Orbits
       - Attitude Determination Control Systems (ADCS)
       - Concurrent Engineering with European Space Agency OSS Softwares
-
-  - degree: 'Bachelor of Science in Computer Science'
-    institution: 'ICT University'
-    specialization: 'Distributed Systems and Cloud Computing'
-    period: '2020-2024'
-    icon: '/icons/ict-university.png'
+  - degree: Bachelor of Science in Computer Science
+    institution: ICT University
+    specialization: Distributed Systems and Cloud Computing
+    period: 2020-2024
+    icon: /icons/ict-university.png
     courses:
       - Algorithms and Data Structures
       - Object Oriented Programming In C++
@@ -50,269 +45,302 @@ education:
       - Computational Mathematics
       - Discrete Mathematics
       - Compiler Construction
-
-# Update experience section with corrected dates and details
 experience:
-  - title: 'Research Assistant, Mechanistic Interpretability'
-    company: 'Jinesis AI Lab, University of Toronto'
-    location: 'Toronto, Remote'
-    period: 'June 2026 - Present'
-    icon: '/icons/uoft.png'
-    status: 'Present'
+  - title: Research Assistant, Mechanistic Interpretability
+    company: Jinesis AI Lab, University of Toronto
+    location: Toronto, Remote
+    period: June 2026 - Present
+    icon: /icons/uoft.png
+    status: Present
     tags:
-      - 'Mechanistic Interpretability'
-      - 'AI Safety'
-      - 'LLMs'
-      - 'PyTorch'
+      - Mechanistic Interpretability
+      - Activation Probes
+      - Generalization
+      - AI Safety
     responsibilities:
-      - 'Conducting research on the generalizability of mechanistic interpretability techniques across models and tasks'
-      - 'Investigating why methods like probing, sparse autoencoders, and activation patching fail to transfer to new models and settings'
-
-  - title: 'Teaching Assistant (18-786 | Intro to Deep Learning)'
-    company: 'Carnegie Mellon University'
-    location: 'Kigali, Rwanda'
-    period: 'Jan 2026 - May 2026'
-    icon: '/cmu-logo.png'
-    status: 'past'
+      - >-
+        Study when activation-probing results survive changes in model, layer, dataset, and data-generation setting,
+        supervised by Prof. Zhijing Jin
+      - >-
+        Replicate and extend probing methods, examining how response generation, activation-site selection, probe
+        design, and operating thresholds affect cross-model conclusions
+      - >-
+        Implement model experiments, analyze cross-model results, and investigate variation across models and evaluation
+        conditions
+  - title: Research Fellow
+    company: Sentient Futures Project Incubator
+    location: Remote
+    period: September 2026 - Present
+    icon: /favicon.png
+    status: Present
     tags:
-      - 'Deep Learning'
-      - 'Teaching'
-      - 'PyTorch'
-      - 'Neural Networks'
+      - LLM Safety
+      - Epistemic Sycophancy
+      - Behavioral Evaluation
     responsibilities:
-      - "Mentoring master's students on fundamental and advanced deep learning concepts, including CNNs, RNNs, and Transformers"
-      - 'Designing and grading coding assignments and projects focused on practical implementation of neural networks using PyTorch'
-      - 'Holding office hours to provide technical support and clarify complex theoretical concepts'
-
-  - title: 'Research Scientist Intern'
-    company: 'IBM Research'
-    location: 'Nairobi, Kenya'
-    period: 'June 2025 - September 2025'
-    icon: '/icons/ibm.png'
-    status: 'past'
+      - Study when conversational language models reinforce ungrounded beliefs as user cues become more indirect
+      - >-
+        Develop a benchmark across autonomy, belonging, and safety needs that separates epistemic sycophancy from
+        affective support
+  - title: Graduate Teaching Assistant, Introduction to Deep Learning
+    company: Carnegie Mellon University Africa
+    location: Kigali, Rwanda
+    period: Jan 2026 - May 2026
+    icon: /cmu-logo.png
+    status: past
     tags:
-      - 'LLMs'
-      - 'Information Retrieval'
-      - 'HuggingFace'
-      - 'PyTorch'
+      - Deep Learning
+      - Teaching
+      - PyTorch
+      - Neural Networks
     responsibilities:
-      - 'Contributed to IBM DeepScanner, a weakly supervised method for identifying anomalous patterns (hallucinations, toxicity) within internal activations of LLMs including Llama3, Granite, Mistral and Gemma'
-      - 'Architected a modular, scalable, and reproducible workflow for large-scale embedding extraction and analysis both locally and in IBM cluster environments, improving efficiency by 3x'
-      - 'Extended the methodology into a novel dense vector retrieval framework, reframing anomalous pattern detection as a retrieval problem, leading to a paper submission at AAAI 2026'
-
-  - title: 'Research Assistant'
-    company: 'CyLab, Carnegie Mellon University Africa'
-    location: 'Kigali, Rwanda'
-    period: 'Jan 2025 - June 2025'
-    icon: '/icons/cmu-cylab.png'
-    status: 'past'
+      - >-
+        Led technical tutorials and supported graduate projects on LSTMs, GRUs, Transformers, Vision Transformers, GANs,
+        fine-tuning, and RLHF
+      - Graded assignments and provided implementation feedback
+  - title: AI Research Scientist Intern
+    company: IBM Research
+    location: Nairobi, Kenya
+    period: June 2025 - September 2025
+    icon: /icons/ibm.png
+    status: past
     tags:
-      - 'GitHub'
-      - 'DPGs/DPIs'
-      - 'Open Source'
-      - 'Flutter'
+      - Mechanistic Interpretability
+      - NPSS
+      - PyTorch
+      - Distributed GPU Systems
     responsibilities:
-      - 'Engineered open-source mobile software solutions to demonstrate practical applications for laboratory research projects'
-      - 'Enforced best open-science practices in code quality, for reproducibility and transparency'
-      - 'Conducted regular code-reviews with research associates, which ensured code changes are stable before merge'
-
-  - title: 'Mobile Development Team Lead'
-    company: 'Caasitech Group LLC'
-    location: 'Yaounde, Cameroon'
-    period: 'April 2023 - June 2024'
-    icon: '/icons/caasitech.png'
-    responsibilities:
-      - 'Developed and maintained mobile applications by ensuring seamless integration and optimal performance across Android and iOS platforms (EcoCaasitech, SOS Cameroon)'
-      - 'Automated the deployment process to the Apple Store and Play Store'
-      - 'Implemented unit tests to ensure code quality, resulting in a 60% reduction in post-release bugs'
-      - 'Implemented observability strategies to understand post-deployment software usage and collect analytics data'
-
-  - title: 'CoFounder and Solution Architect'
-    company: 'Anora Breast Cancer Research Foundation'
-    location: 'Cameroon, Yaounde'
-    period: 'January 2024 - Present'
-    icon: '/anora-logo.jpeg'
-    status: 'present'
+      - >-
+        Contributed to IBM DeepScanner, a mechanistic-interpretability framework for identifying anomalous patterns in
+        language-model activations using non-parametric scan statistics
+      - >-
+        Improved the codebase and built a modular workflow for activation-space experiments across local and distributed
+        GPU environments
+      - Extended the work into retrieval using multiple query vectors
+  - title: Research Assistant
+    company: CyLab, Carnegie Mellon University Africa
+    location: Kigali, Rwanda
+    period: Jan 2025 - May 2025
+    icon: /icons/cmu-cylab.png
+    status: past
     tags:
-      - 'Breast Cancer'
-      - 'Deep Learning'
-      - 'Thermography'
-      - 'Ultrasound'
-      - 'VLMs'
+      - GitHub
+      - DPGs/DPIs
+      - Open Source
+      - Flutter
     responsibilities:
-      - 'Leading efforts to make breast cancer screening affordable and accessible for women in sub-Saharan Africa through AI-powered thermal imaging analysis'
-      - 'Fine-tuning the PaliGemma foundation model for analyzing thermal images for malignancy classification on portable, offline screening devices'
-      - 'Architecting the technical infrastructure for deploying machine learning models in resource-constrained environments with limited connectivity'
-
-  - title: 'Software Engineering MLH Fellow'
-    company: 'G-Research'
-    location: 'Remote, London'
-    period: 'May 2022 - September 2022'
-    icon: '/icons/gresearch.png'
+      - >-
+        Developed two open-source payment applications and a reusable Flutter plugin supporting Digital Public Goods
+        research and MojaLoop interoperability
+      - >-
+        Conducted bi-weekly code reviews and improved architecture, documentation, and reproducibility in research
+        codebases aligned with Open Science practices
+  - title: Co-Founder and AI Software Lead
+    company: Anora Breast Cancer Research Foundation
+    location: Cameroon and Rwanda
+    period: April 2022 - Present
+    icon: /anora-logo.jpeg
+    status: present
+    tags:
+      - FastAPI
+      - Medical Devices
+      - Offline-first Systems
+      - Bluetooth
     responsibilities:
-      - 'Contributed to open-source software projects focused on performance benchmarking and automation for .NET ecosystem components'
-      - 'Automated benchmarks data processing with CI/CD workflows and reduced manual processing by 90%'
-      - 'Automated performance testing and deployment workflows with GitHub Actions which reduced manual processes time by 60%'
-
-  - title: 'Flutter Mobile Developer'
-    company: 'Enchird Technologies'
-    location: 'Yaounde, Cameroon'
-    period: 'May 2022 - September 2022'
-    icon: '/icons/enchird.png'
+      - >-
+        Led the architecture of a Flutter interface for portable thermal breast-screening hardware, including secure
+        Bluetooth control and real-time device communication for offline operation
+      - >-
+        Architected a Python and FastAPI backend connecting patients, clinicians, specialists, registry officers,
+        administrators, and portable screening devices
+      - >-
+        Designed workflows for screening sessions, device telemetry, AI-generated results, specialist review, follow-up
+        care, audit logs, and role-based access control
+      - >-
+        Built offline-first synchronization patterns with local caching, retryable uploads, and conflict-aware transfer
+        for low-connectivity clinical environments
+  - title: Lead Software Engineer
+    company: Caasitech Group LLC
+    location: Yaounde, Cameroon
+    period: April 2023 - June 2024
+    icon: /icons/caasitech.png
     responsibilities:
-      - 'Responsible for building and integrating mobile applications with complex backends to ensure a smooth seamless user experience'
-      - "Integrated pixel-perfect UI designs, improving the app's visual consistency and user satisfaction"
-      - 'Connected mobile apps with robust backends HTTP REST APIs'
-      - 'Speeded up the development process by implementing reusable components in a clean architecture'
-
-safety_engagement:
-  - title: 'Research Assistant — Jinesis AI Lab, University of Toronto'
-    icon: 'heroicons:magnifying-glass'
-    period: 'June 2026 - Present'
-    description: 'Researching the generalizability of mechanistic interpretability techniques: when do results established on one model transfer to other models, tasks, and settings?'
-    link: ''
-
-  - title: 'BlueDot Impact — Technical AI Safety Project Sprint (Mentee)'
-    icon: 'heroicons:eye'
-    period: 'March 2026 - June 2026'
-    description: 'Selected for hands-on mechanistic interpretability research under expert mentorship, probing for deceptive alignment in LLMs. Grew into my ongoing Mechanistic Audit of Deception Detection project.'
-    link: 'https://github.com/baimamboukar/mechanistic-audit-of-deception-detection-in-llms'
-
-  - title: 'BlueDot Impact — Technical AI Safety Course'
-    icon: 'heroicons:academic-cap'
-    period: 'February 2026 - April 2026'
-    description: 'Intensive training on core safety topics: frontier-lab safety policies, emergent capabilities, model evaluations, and techniques for training safer systems.'
-    link: ''
-
-  - title: 'IBM Research — DeepScanner Internship'
-    icon: 'heroicons:cpu-chip'
-    period: 'June 2025 - September 2025'
-    description: 'Co-designed and developed IBM DeepScanner, a mechanistic interpretability tool detecting anomalous patterns (hallucinations, toxicity) in LLM activations using non-parametric scan statistics.'
-    link: ''
-
-  - title: 'Paper Replications'
-    icon: 'heroicons:document-duplicate'
-    period: 'Ongoing'
-    description: "Replicated recent work on deceptive alignment and circuit analysis, including Apollo Research's probes, the LIAR bench, and Matryoshka Sparse Autoencoders (documented in a public LessWrong writeup)."
-    link: 'https://www.lesswrong.com/posts/EpLj8FTBdGvt44TTF/how-matryoshka-sparse-autoencoders-recover-feature'
-
-  - title: 'Technical Literature Reviews'
-    icon: 'heroicons:book-open'
-    period: 'Ongoing'
-    description: 'In-depth reviews of monosemanticity, probing classifiers, Sparse Autoencoders, Representation Engineering, and the trade-offs between mechanistic interpretability and other safety approaches.'
-    link: ''
-
+      - >-
+        Led five engineers delivering cross-platform production applications serving more than 10,000 users,
+        coordinating architecture, API integration, code review, releases, and incident resolution
+      - >-
+        Introduced automated testing, observability, and performance standards that reduced production-reported issues
+        by 32%
+      - >-
+        Designed GitHub Actions, Fastlane, and Xcode delivery pipelines that reduced release cycles from five days to
+        hours
+  - title: Open-Source Software Engineering Intern (MLH Fellow)
+    company: G-Research
+    location: Remote, London
+    period: June 2023 - August 2023
+    icon: /icons/gresearch.png
+    responsibilities:
+      - >-
+        Automated .NET SDK benchmarking data pipelines with GitHub Actions, reducing manual processing by 90% across
+        Linux and Windows performance runs
+      - >-
+        Designed ETL workflows that collected benchmark outputs from heterogeneous systems, normalized results, and
+        consolidated them into a central database for analysis
+      - >-
+        Built a web dashboard for benchmark visualization and automated reporting while reducing manual deployment work
+        by 60%
+  - title: Flutter Mobile Developer
+    company: Enchird Technologies
+    location: Yaounde, Cameroon
+    period: April 2022 - September 2022
+    icon: /icons/enchird.png
+    responsibilities:
+      - >-
+        Integrated more than 120 REST APIs, Socket.IO connections, and gRPC endpoints for payment, identity, and
+        analytics products
+      - >-
+        Applied clean architecture to build reusable components and maintain responsive application performance across
+        complex real-time data flows
 leadership:
-  - role: 'Reviewer'
-    community: 'Applied Machine Learning Days (AMLD) 2026'
-    icon: '/amld-africa.jpeg'
+  - role: Reviewer
+    community: Applied Machine Learning Days (AMLD) 2026
+    icon: /amld-africa.jpeg
     period: '2026'
-
-  - role: 'Reviewer (Machine Learning)'
-    community: 'Journal of Geophysical Research (JGR)'
-    icon: '/jgr.webp'
-    period: '2024-Present'
-
-  - role: 'Co-organizer'
-    community: 'Google Developer Group Cloud Yaounde'
-    icon: '/icons/gdg.png'
-    period: '2022-Present'
-
-  - role: 'Google Developer Student Clubs Lead'
-    community: 'ICT University'
-    icon: '/icons/gdsc.png'
-    period: '2021-2023'
-
-  - role: 'Postman Student Leader'
-    community: 'ICT University'
-    icon: '/icons/postman.png'
-    period: '2022-2023'
-
-  - role: 'AWS Cloud Club Captain'
-    community: 'Carnegie Mellon University Africa'
-    icon: '/icons/aws-club.png'
-    period: '2024-2025'
-  - role: 'Cameroonian Students Representative at CMU'
-    community: 'Carnegie Mellon University Africa'
-    icon: '/icons/cmu-cylab.png'
-    period: '2024-2025'
-  - role: 'AWS Community Builder ●•Serverless Computing Track'
-    community: 'AWS Community'
-    icon: '/icons/aws-cb.png'
-    period: '2023-Present'
-
-community: [] # Cleared as all covered by leadership now
-
+  - role: Reviewer (Machine Learning)
+    community: Journal of Geophysical Research (JGR)
+    icon: /jgr.webp
+    period: 2024-Present
+  - role: Co-organizer
+    community: Google Developer Group Cloud Yaounde
+    icon: /icons/gdg.png
+    period: 2022-Present
+  - role: Google Developer Student Clubs Lead
+    community: ICT University
+    icon: /icons/gdsc.png
+    period: 2021-2023
+  - role: Postman Student Leader
+    community: ICT University
+    icon: /icons/postman.png
+    period: 2022-2023
+  - role: AWS Cloud Club Captain
+    community: Carnegie Mellon University Africa
+    icon: /icons/aws-club.png
+    period: 2024-2025
+  - role: Cameroonian Students Representative at CMU
+    community: Carnegie Mellon University Africa
+    icon: /icons/cmu-cylab.png
+    period: 2024-2025
+  - role: AWS Community Builder ●•Serverless Computing Track
+    community: AWS Community
+    icon: /icons/aws-cb.png
+    period: 2023-Present
+community: []
 interests:
-  - name: 'Mechanistic Interpretability'
-    icon: 'i-heroicons-cpu-chip'
-  - name: 'AI Alignment & Safety'
-    icon: 'i-heroicons-shield-check'
-  - name: 'Science of Evals'
-    icon: 'i-heroicons-beaker'
-
-# Trimmed to the strongest four for a research-focused profile
+  - name: Mechanistic Interpretability
+    icon: i-heroicons-cpu-chip
+  - name: Reliable Monitoring and Steering
+    icon: i-heroicons-shield-check
+  - name: Generalization and Distribution Shift
+    icon: i-heroicons-beaker
 certifications:
-  - name: 'NASA Open Science'
-    badge: '/icons/nasa-open-science.png'
-  - name: 'IBM Internship Program'
-    badge: '/icons/ibm-internship.png'
-  - name: 'AWS Cloud Practitioner'
-    badge: '/icons/aws-cp.png'
-  - name: 'GitHub Foundations'
-    badge: '/icons/github-foundations.png'
-
-
-
+  - name: NASA Open Science
+    badge: /icons/nasa-open-science.png
+  - name: IBM Internship Program
+    badge: /icons/ibm-internship.png
+  - name: AWS Cloud Practitioner
+    badge: /icons/aws-cp.png
+  - name: GitHub Foundations
+    badge: /icons/github-foundations.png
 achievements:
-  - name: "Cameroon Social Entrepreneurship Prize — 1st Place (Intellibra)"
-    icon: '/anora-logo.jpeg'
-    date: 'July 2026'
-    place: 'Cameroon'
-    description: 'Our AI-powered breast cancer screening project Intellibra won first place'
+  - name: Cameroon Social Entrepreneurship Prize — 1st Place (Intellibra)
+    icon: /anora-logo.jpeg
+    date: July 2026
+    place: Cameroon
+    description: Our AI-powered breast cancer screening project Intellibra won first place
     gallery: []
-
-  - name: 'Presidential Special Prize for Technology Innovation'
-    icon: '/ict-week.jpeg'
-    date: 'April 2025'
-    place: 'Cameroon'
+  - name: Presidential Special Prize for Technology Innovation
+    icon: /ict-week.jpeg
+    date: April 2025
+    place: Cameroon
     gallery: []
-
-  - name: 'ICT University Fellowship of Excellence'
-    icon: '/icons/ict-university.png' # Reusing existing icon
-    date: 'July 2023'
-    place: 'ICT University'
-    description: 'Top <1% students'
+  - name: ICT University Fellowship of Excellence
+    icon: /icons/ict-university.png
+    date: July 2023
+    place: ICT University
+    description: Top <1% students
     gallery: []
-
-  - name: 'Falling Walls Labs National Winner'
-    icon: '/icons/falling-walls.png'
-    date: 'Nov 2024'
-    place: 'Berlin, Germany'
+  - name: Falling Walls Labs National Winner
+    icon: /icons/falling-walls.png
+    date: Nov 2024
+    place: Berlin, Germany
     gallery: []
-
-  - name: 'ACTINSPACE National Winner'
-    icon: '/actinspace.png'
-    date: 'Nov 2022'
-    place: 'European Space Agency'
-    description: 'Space competition by the European Space Agency (Team)'
+  - name: ACTINSPACE National Winner
+    icon: /actinspace.png
+    date: Nov 2022
+    place: European Space Agency
+    description: Space competition by the European Space Agency (Team)
     gallery: []
-
-  - name: 'Top Open Source Contributor in Cameroon'
-    icon: '/icons/oss-contributor.png'
-    date: '2021-2023'
-    place: 'Github Rankings'
+  - name: Top Open Source Contributor in Cameroon
+    icon: /icons/oss-contributor.png
+    date: 2021-2023
+    place: Github Rankings
     gallery: []
-
-  - name: 'National Excellence Awards'
-    icon: '/icons/excellence.png' # Reusing existing icon
-    date: '2017, 2019'
-    place: 'Cameroon'
-    description: '1st Regional, and 7th/9th In BEPC, and Probatoire National Exams'
+  - name: National Excellence Awards
+    icon: /icons/excellence.png
+    date: 2017, 2019
+    place: Cameroon
+    description: 1st Regional, and 7th/9th In BEPC, and Probatoire National Exams
     gallery: []
-
-# Removed old 'Prix D'excellence MINSEEC' and 'Digital Innovator Prize', 'AIM Congress Central Africa Winner'
 memberships:
-  - name: 'IEEE (GRSS, AESS, Computer Society, MTTS)'
-  - name: 'Black In AI'
-  - name: 'AIAA'
+  - name: IEEE (GRSS, AESS, Computer Society, MTTS)
+  - name: Black In AI
+  - name: AIAA
+title: About
+overview: >-
+  I work on mechanistic interpretability and AI safety, with a focus on the reliability of white-box monitoring and
+  activation-level interventions. I study how probing results change across models, layers, datasets, and
+  data-generation settings, and when predictive representations provide useful targets for steering. My research
+  combines reproduction, controlled experiments, and careful evaluation of generalization and failure modes.
+safety_engagement:
+  - title: Research Assistant — Jinesis AI Lab, University of Toronto
+    icon: heroicons:magnifying-glass
+    period: June 2026 - Present
+    description: >-
+      Replication and cross-model evaluation of activation-probing methods, with attention to data generation,
+      activation sites, probe design, and operating thresholds.
+    link: https://github.com/baimamboukar/generalizable-interpretability
+  - title: Sentient Futures Project Incubator — Research Fellow
+    icon: heroicons:beaker
+    period: September 2026 - Present
+    description: >-
+      Developing evaluations of delusion reinforcement and epistemic sycophancy in conversational models, separating
+      affective support from reinforcement of ungrounded beliefs.
+    link: ''
+  - title: BlueDot Impact — Technical AI Safety Project Sprint (Mentee)
+    icon: heroicons:eye
+    period: '2026'
+    description: >-
+      Conducted the initial mechanistic audit of deception probes under mentorship, combining replication, probing, and
+      causal intervention experiments.
+    link: https://github.com/baimamboukar/mechanistic-audit-of-deception-detection-in-llms
+  - title: BlueDot Impact — Technical AI Safety Course
+    icon: heroicons:academic-cap
+    period: '2026'
+    description: >-
+      Completed training on frontier AI risks, model evaluations, safety policies, and methods for monitoring and
+      training safer systems.
+    link: ''
+  - title: Independent Replication and Technical Writing
+    icon: heroicons:document-duplicate
+    period: Ongoing
+    description: >-
+      Replicated work on deception probes and sparse autoencoders, publishing open code and technical writing focused on
+      generalization, failure modes, and reproducibility.
+    link: https://www.lesswrong.com/posts/EpLj8FTBdGvt44TTF/how-matryoshka-sparse-autoencoders-recover-feature
+  - title: IBM Research — DeepScanner Internship
+    icon: heroicons:cpu-chip
+    period: June 2025 - September 2025
+    description: >-
+      Contributed to software infrastructure and experiments for identifying anomalous patterns in neural-network
+      activation spaces using subset-scanning methods.
+    link: ''

@@ -25,3 +25,5 @@ pods/service-connections
 .vercel
 run.sh
 commit.sh
+# Private review material and content-release artifacts
+.private/
