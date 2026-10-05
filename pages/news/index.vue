@@ -1,228 +1,32 @@
 <script setup>
-import { format } from 'date-fns';
-
-definePageMeta({
-  title: "News & Updates",
-  description: "A timeline of research, publications, awards, and community contributions.",
-});
-
-// Fetch all news data
-const { data: newsData } = await useAsyncData('all-news-page', () =>
-  queryContent('news').findOne()
-);
-
-// State
-const selectedType = ref('all');
-const searchQuery = ref('');
-
-// Filter types
-const filterTypes = [
-  { value: 'all', label: 'All Updates' },
-  { value: 'publication', label: 'Publications' },
-  { value: 'conference', label: 'Conferences' },
-  { value: 'opensource', label: 'Open Source' },
-  { value: 'talk', label: 'Talks' },
-  { value: 'award', label: 'Awards' }
-];
-
-// Helper: Format day
-const formatDay = (dateString) => {
-  const date = new Date(dateString);
-  return format(date, 'd'); // e.g., "15"
-};
-
-// Computed: Filtered & Grouped News (Year -> Month)
-const filteredGroupedNews = computed(() => {
-  if (!newsData.value?.updates) return {};
-
-  const query = searchQuery.value.toLowerCase();
-  
-  // 1. Filter raw list first
-  const filteredUpdates = newsData.value.updates.filter(update => {
-    // Type Filter
-    if (selectedType.value !== 'all' && update.type !== selectedType.value) return false;
-    
-    // Search Filter
-    if (query) {
-      const text = `${update.title} ${update.description}`.toLowerCase();
-      if (!text.includes(query)) return false;
-    }
-    return true;
-  });
-
-  // 2. Group by Year -> Month
-  const grouped = {};
-  
-  filteredUpdates.forEach(update => {
-    const date = new Date(update.date);
-    const year = date.getFullYear();
-    const month = format(date, 'MMMM'); // Full month name "August"
-    const monthIndex = date.getMonth(); // 0-11 for sorting
-
-    if (!grouped[year]) grouped[year] = {};
-    if (!grouped[year][monthIndex]) {
-      grouped[year][monthIndex] = {
-        name: month,
-        items: []
-      };
-    }
-    grouped[year][monthIndex].items.push(update);
-  });
-
-  // 3. Sort Keys and Structure as Array (Years Desc -> Months Desc)
-  const sortedArray = Object.keys(grouped)
-    .sort((a, b) => b - a) // Years Descending
-    .map(year => {
-      const months = Object.keys(grouped[year])
-        .sort((a, b) => b - a) // Months Descending
-        .map(monthIndex => {
-          const monthGroup = grouped[year][monthIndex];
-          // Sort items by date descending
-          monthGroup.items.sort((a, b) => new Date(b.date) - new Date(a.date));
-          return monthGroup;
-        });
-      
-      return { year, months };
-    });
-
-  return sortedArray;
-});
+definePageMeta({ title: 'Updates', description: 'Research, work, and community updates from Baimam Boukar.' });
+const { data } = await useAsyncData('all-news-page', () => queryContent('news').findOne());
+const search = ref('');
+const route = useRoute();
+const router = useRouter();
+const syncSearch = () => { search.value = typeof route.query.search === 'string' ? route.query.search : ''; };
+const clearSearch = () => { search.value = ''; const query = { ...route.query }; delete query.search; router.replace({ query }); };
+onMounted(syncSearch);
+watch(() => route.query.search, syncSearch);
+const type = ref('all');
+const updates = computed(() => [...(data.value?.updates || [])].sort((a, b) => b.date.localeCompare(a.date)));
+const types = computed(() => [...new Set(updates.value.map(update => update.type))].sort());
+const filtered = computed(() => updates.value.filter(update => (type.value === 'all' || update.type === type.value) && (update.title + ' ' + update.description).toLowerCase().includes(search.value.trim().toLowerCase())));
+const years = computed(() => [...new Set(filtered.value.map(update => update.date.slice(0, 4)))]);
+const date = value => new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', timeZone: 'UTC' }).format(new Date(value));
+const validLink = value => typeof value === 'string' && /^https?:\/\//.test(value);
+const category = value => ({ position: 'Research and Work', training: 'Learning', publication: 'Publication', talk: 'Speaking', award: 'Award', milestone: 'Milestone' }[value] || value);
 </script>
-
 <template>
-  <div class="max-w-3xl mx-auto px-4 py-12 relative">
-    <!-- Close Button (Top-Right) -->
-    <div class="absolute top-4 right-4 sm:fixed sm:top-8 sm:right-8 z-50">
-      <UButton
-        icon="i-heroicons-x-mark"
-        color="gray"
-        variant="ghost"
-        to="/"
-        size="lg"
-        class="rounded-full bg-white/50 dark:bg-zinc-900/50 backdrop-blur-md shadow-sm border border-gray-200 dark:border-zinc-800"
-        aria-label="Back to home"
-      />
-    </div>
-
-    <!-- Header -->
-    <div class="mb-10 text-center">
-      <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-        News and Updates
-      </h1>
-      <!-- Controls: Search & Filter (Inline with Header) -->
-      <div class="flex flex-col sm:flex-row gap-4 items-center justify-center max-w-lg mx-auto">
-        <UInput
-          v-model="searchQuery"
-          icon="i-heroicons-magnifying-glass"
-          placeholder="Search..."
-          color="gray"
-          variant="outline"
-          class="w-full"
-          size="sm"
-        />
-        <div class="w-full sm:w-40">
-          <USelectMenu
-            v-model="selectedType"
-            :options="filterTypes"
-            value-attribute="value"
-            option-attribute="label"
-            color="gray"
-            variant="outline"
-            size="sm"
-            class="w-full"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- Timeline Content -->
-    <div v-if="filteredGroupedNews.length === 0" class="text-center py-16">
-      <p class="text-gray-500 dark:text-gray-400">No updates found.</p>
-      <UButton 
-        v-if="selectedType !== 'all' || searchQuery"
-        variant="link" 
-        color="sky" 
-        class="mt-2"
-        @click="{ selectedType = 'all'; searchQuery = ''; }"
-      >
-        Clear filters
-      </UButton>
-    </div>
-
-    <div v-else class="space-y-12">
-      <div v-for="group in filteredGroupedNews" :key="group.year" class="relative">
-        
-        <!-- Year Marker (Sticky) -->
-        <div class="sticky top-4 z-10 mb-6">
-          <span class="inline-block bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-3 py-1 rounded-md text-sm font-bold shadow-sm backdrop-blur-md bg-opacity-90 dark:bg-opacity-90">
-            {{ group.year }}
-          </span>
-        </div>
-
-        <!-- Months List -->
-        <div class="space-y-8 border-l border-gray-200 dark:border-gray-800 ml-4 pl-6 sm:ml-6 sm:pl-8">
-          <div v-for="monthGroup in group.months" :key="monthGroup.name" class="relative">
-            
-            <!-- Month Label -->
-            <h3 class="text-sm font-semibold text-sky-600 dark:text-sky-400 mb-4 uppercase tracking-wide">
-              {{ monthGroup.name }}
-            </h3>
-
-            <!-- Updates in Month -->
-            <div class="space-y-6">
-              <div
-                v-for="(update, index) in monthGroup.items"
-                :key="index"
-                class="group relative"
-              >
-                <!-- Dot on Timeline -->
-                <div class="absolute -left-[1.95rem] sm:-left-[2.45rem] top-1.5 w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600 border-2 border-white dark:border-gray-900 group-hover:bg-sky-500 transition-colors"></div>
-
-                <!-- Content -->
-                <div class="flex gap-4">
-                  <!-- Date Number -->
-                  <div class="flex-shrink-0 w-6 text-right">
-                    <span class="text-sm font-medium text-gray-400 dark:text-gray-500 tabular-nums">
-                      {{ formatDay(update.date) }}
-                    </span>
-                  </div>
-
-                  <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800/50 last:border-0">
-                    <div class="flex items-baseline justify-between gap-4">
-                      <h4 class="text-base font-semibold text-gray-900 dark:text-gray-100 leading-snug group-hover:text-sky-600 transition-colors">
-                        <NuxtLink v-if="update.link && update.link !== '#'" :to="update.link" target="_blank" class="hover:underline">
-                          {{ update.title }}
-                        </NuxtLink>
-                        <span v-else>{{ update.title }}</span>
-                      </h4>
-                      
-                      <!-- Arrow Icon if Link exists -->
-                      <NuxtLink 
-                        v-if="update.link && update.link !== '#'"
-                        :to="update.link"
-                        target="_blank"
-                        class="text-gray-400 hover:text-sky-500 transition-colors"
-                      >
-                        <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4" />
-                      </NuxtLink>
-                    </div>
-
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">
-                      {{ update.description }}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <article class="updates-page">
+    <PageHeading title="Updates" description="A running record of research, new beginnings, and conversations along the way." />
+    <div class="collection-toolbar updates-filter"><select v-model="type" aria-label="Update category"><option value="all">Every kind of update</option><option v-for="item in types" :key="item" :value="item">{{ category(item) }}</option></select><button v-if="search" type="button" class="clear-search" @click="clearSearch">Show all updates <SiteIcon name="arrow-right" /></button></div>
+    <section v-for="year in years" :key="year" class="timeline-year" :aria-label="'Updates in ' + year"><header><h2>{{ year }}</h2></header><ol class="timeline"><li v-for="update in filtered.filter(item => item.date.startsWith(year))" :key="update.date + update.title"><div class="update-meta"><time :datetime="update.date">{{ date(update.date) }}</time><span>{{ category(update.type) }}</span></div><h3>{{ update.title }}</h3><p>{{ update.description }}</p><a v-if="validLink(update.link)" :href="update.link" target="_blank" rel="noopener noreferrer" class="update-source">Read the update ↗</a></li></ol></section>
+    <div v-if="!filtered.length" class="collection-empty"><p>No updates match those filters.</p><button type="button" @click="clearSearch(); type = 'all'">Reset filters</button></div>
+  </article>
 </template>
-
 <style scoped>
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
-}
+.updates-filter{justify-content:flex-end}.clear-search{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;color:var(--link-color);min-height:42px}.updates-filter select{flex:none;width:auto}@media(max-width:600px){.updates-filter{justify-content:flex-start}.updates-filter select{width:100%}}
+.timeline-year{display:grid;grid-template-columns:88px minmax(0,1fr);gap:24px;margin-top:var(--section-gap,28px)}.timeline-year>header h2{font-size:var(--section-size);line-height:1.2}.timeline{list-style:none;margin:0;padding:0 0 0 26px;border-left:1px solid var(--line)}.timeline li{position:relative;padding:0 0 calc(var(--row-gap) + 14px)}.timeline li:last-child{padding-bottom:8px}.timeline li::before{content:'';position:absolute;left:-31px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--link-color);box-shadow:0 0 0 5px var(--page,var(--surface))}.update-meta{display:flex;align-items:center;gap:12px;font-size:.75rem;color:var(--muted);margin-bottom:9px}.update-meta>span{border-radius:999px;background:var(--surface-alt);padding:3px 9px}.timeline h3{font-size:var(--paper-size,17px);line-height:1.4;color:var(--ink)}.timeline p{font-size:.93rem;line-height:var(--content-leading,1.65);color:var(--muted);margin-top:7px;max-width:72ch}.update-source{display:inline-flex;padding:6px 11px;border-radius:999px;background:var(--surface-alt);font-size:.78rem;margin-top:11px}@media(max-width:600px){.timeline-year{grid-template-columns:1fr;gap:18px}.timeline-year>header{display:flex;align-items:center;gap:12px}.timeline{margin-left:4px;padding-left:22px}.timeline li::before{left:-27px}.update-meta{gap:9px;flex-wrap:wrap}}
+@media(max-width:560px){:deep(.page-heading h1){font-size:min(var(--name-size),7.6vw)}.collection-toolbar{display:grid;grid-template-columns:minmax(0,1fr)}.collection-toolbar>select{width:100%}}
 </style>

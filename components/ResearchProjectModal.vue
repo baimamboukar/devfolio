@@ -17,7 +17,9 @@ const getStatusColor = (status) => {
   const colors = {
     'Ongoing': 'bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300',
     'Review': 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300',
+    'Submitted': 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300',
     'Published': 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300',
+    'Preprint': 'bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300',
     'In Progress': 'bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300',
     'Completed': 'bg-gray-100 dark:bg-gray-900/30 text-gray-700 dark:text-gray-300'
   };
@@ -25,33 +27,63 @@ const getStatusColor = (status) => {
 };
 
 const getProjectAbstract = (project) => {
-  return project.abstract || `This research investigates ${project.topics?.join(', ') || 'advanced topics'} to address critical challenges in the field. The study focuses on developing innovative methodologies and frameworks that can be applied to real-world scenarios.`;
+  return project.abstract || 'No abstract is available for this project.';
 };
+
+const getProjectAuthors = (project) => {
+  if (project.authors?.length) {
+    return project.authors;
+  }
+
+  return [
+    {
+      name: 'Baimam Boukar Jean Jacques',
+      affiliation: 'Carnegie Mellon University Africa'
+    },
+    ...(project.contributors || [])
+  ];
+};
+
+const isSiteOwner = (author) => author.name === 'Baimam Boukar Jean Jacques';
+
+const isUsableLink = (url) => typeof url === 'string'
+  && url.trim().length > 0
+  && url.trim() !== '#';
 
 // Get project links from data
 const getProjectLinks = (project) => {
   const links = [];
+  const seenUrls = new Set();
 
-  if (project.paper_link && project.paper_link !== '#') {
-    links.push({
-      label: 'Paper',
+  const addLink = (link) => {
+    if (!isUsableLink(link.url) || seenUrls.has(link.url)) {
+      return;
+    }
+
+    seenUrls.add(link.url);
+    links.push(link);
+  };
+
+  if (isUsableLink(project.paper_link)) {
+    addLink({
+      label: project.status === 'Preprint' ? 'Preprint' : 'Paper',
       icon: 'i-heroicons-document-text',
       url: project.paper_link,
-      description: 'Read the full paper'
+      description: project.status === 'Preprint' ? 'Read on arXiv' : 'Read the full paper'
     });
   }
 
-  if (project.links?.preprint) {
-    links.push({
+  if (isUsableLink(project.links?.preprint)) {
+    addLink({
       label: 'Preprint',
       icon: 'i-simple-icons-arxiv',
       url: project.links.preprint,
-      description: 'ArXiv preprint version'
+      description: 'Read on arXiv'
     });
   }
 
-  if (project.links?.code) {
-    links.push({
+  if (isUsableLink(project.links?.code)) {
+    addLink({
       label: 'Code',
       icon: 'i-simple-icons-github',
       url: project.links.code,
@@ -59,8 +91,8 @@ const getProjectLinks = (project) => {
     });
   }
 
-  if (project.links?.data) {
-    links.push({
+  if (isUsableLink(project.links?.data)) {
+    addLink({
       label: 'Data',
       icon: 'i-heroicons-table-cells',
       url: project.links.data,
@@ -68,8 +100,8 @@ const getProjectLinks = (project) => {
     });
   }
 
-  if (project.links?.slides) {
-    links.push({
+  if (isUsableLink(project.links?.slides)) {
+    addLink({
       label: 'Slides',
       icon: 'i-heroicons-presentation-chart-line',
       url: project.links.slides,
@@ -219,28 +251,20 @@ const getProjectLinks = (project) => {
                 Authors
               </h3>
               <div class="space-y-2">
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center">
-                    <span class="text-sm font-semibold text-sky-600 dark:text-sky-400">BB</span>
-                  </div>
-                  <div>
-                    <p class="font-medium text-gray-900 dark:text-gray-100">Baimam Boukar JJ</p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Carnegie Mellon University Africa</p>
-                  </div>
-                </div>
                 <div
-                  v-for="contributor in project.contributors"
-                  :key="contributor.name"
-                  class="flex items-center gap-3"
+                  v-for="author in getProjectAuthors(project)"
+                  :key="author.name"
+                  class="flex items-center"
                 >
-                  <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-                    <span class="text-sm font-semibold text-gray-600 dark:text-gray-400">
-                      {{ contributor.name.split(' ').map(n => n[0]).join('') }}
-                    </span>
-                  </div>
                   <div>
-                    <p class="font-medium text-gray-900 dark:text-gray-100">{{ contributor.name }}</p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ contributor.affiliation }}</p>
+                    <p
+                      :class="isSiteOwner(author)
+                        ? 'font-semibold text-sky-600 dark:text-sky-400'
+                        : 'font-medium text-gray-900 dark:text-gray-100'"
+                    >
+                      {{ author.name }}
+                    </p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ author.affiliation }}</p>
                   </div>
                 </div>
               </div>
@@ -255,7 +279,7 @@ const getProjectLinks = (project) => {
                 <p class="text-gray-900 dark:text-gray-100">{{ project.venue }}</p>
               </div>
 
-              <div>
+              <div v-if="project.supervision">
                 <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
                   Supervision
                 </h3>
@@ -318,27 +342,13 @@ const getProjectLinks = (project) => {
             </div>
           </div>
 
-          <!-- Key Findings (Mock Section) -->
-          <div class="mb-8">
+          <!-- Data-backed contributions, when supplied by the project record -->
+          <div v-if="project.contributions?.length" class="mb-8">
             <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Key Contributions</h3>
             <div class="space-y-3">
-              <div class="flex items-start gap-3">
+              <div v-for="contribution in project.contributions" :key="contribution" class="flex items-start gap-3">
                 <div class="w-2 h-2 rounded-full bg-sky-500 mt-2 flex-shrink-0"></div>
-                <p class="text-gray-700 dark:text-gray-300">
-                  Novel methodology for analyzing {{ project.topics?.[0]?.toLowerCase() || 'the problem domain' }}
-                </p>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 rounded-full bg-sky-500 mt-2 flex-shrink-0"></div>
-                <p class="text-gray-700 dark:text-gray-300">
-                  Comprehensive evaluation on real-world datasets
-                </p>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 rounded-full bg-sky-500 mt-2 flex-shrink-0"></div>
-                <p class="text-gray-700 dark:text-gray-300">
-                  Open-source implementation and reproducible results
-                </p>
+                <p class="text-gray-700 dark:text-gray-300">{{ contribution }}</p>
               </div>
             </div>
           </div>

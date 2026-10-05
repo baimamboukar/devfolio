@@ -1,5 +1,8 @@
 import tailwindTypography from '@tailwindcss/typography'
 
+// Local previews do not need the production analytics worker/iframe bridge.
+const enableAnalytics = process.env.NODE_ENV === 'production'
+
 export default defineNuxtConfig({
   app: {
     // ui: {
@@ -40,17 +43,17 @@ export default defineNuxtConfig({
           href: '/site.webmanifest',
         },
       ],
-      script: [
+      script: enableAnalytics ? [
         {
           type: 'text/partytown',
           src: 'https://measure.baimamboukar.dev/',
           async: true,
           'data-website-id': '1e0e9daa-a25b-4943-af4e-68c91b2d3c72',
         },
-      ],
+      ] : [],
     },
-    pageTransition: { name: 'slide', mode: 'out-in' },
-    layoutTransition: { name: 'slide', mode: 'out-in' },
+    pageTransition: false,
+    layoutTransition: false,
   },
 
   components: [{ path: '~/components', pathPrefix: false }],
@@ -68,15 +71,8 @@ export default defineNuxtConfig({
     },
   },
 
-  fonts: {
-    devtools: true,
-    families: [
-      { name: 'Space Grotesk', provider: 'google' },
-      { name: 'carbona', provider: 'local' },
-    ],
-  },
   ui: {
-    primary: 'crimson',
+    primary: 'blue',
     gray: 'cool',
   },
 
@@ -94,13 +90,12 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxt/content',
-    '@nuxtjs/partytown',
+    ...(enableAnalytics ? ['@nuxtjs/partytown'] : []),
     '@nuxtjs/turnstile',
     '@nuxt/image',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     'nuxt-icon',
-    '@nuxt/fonts',
   ],
 
   icon: {
@@ -108,8 +103,18 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
+    '/research/phoenix-safe-end-to-end-codebase-refactoring-via-multi-agent-llms': {
+      redirect: { to: '/research/phoenix-safe-github-issue-resolution-via-multi-agent-llms', statusCode: 301 },
+    },
     '/': { prerender: true },
     '/**': { prerender: true },
+  },
+
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      ignore: ['/_vercel/image'],
+    },
   },
 
   runtimeConfig: {
@@ -141,10 +146,12 @@ export default defineNuxtConfig({
     siteKey: '0x4AAAAAAABlDwSHN3HVmFWH',
   },
 
+  // Serve shared CSS once as a cacheable stylesheet, rather than inlining it on every page.
+  features: { inlineStyles: false },
   experimental: { appManifest: false },
   compatibilityDate: '2025-01-09',
 
   devtools: {
-    enabled: true,
+    enabled: false,
   },
 })

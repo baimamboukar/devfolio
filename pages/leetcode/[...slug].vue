@@ -1,83 +1,13 @@
 <script setup>
-  definePageMeta({
-    layout: "blog-layout",
-  });
-
-  useHead({
-    titleTemplate: "%s (LeetCode Solution) · Baimam Boukar",
-  });
-
-  const route = useRoute();
-
-  const { data } = await useAsyncData("get-leetcode-post", () =>
-    queryContent(route.path).only(["title", "description"]).findOne()
-  );
-
-  const { title: postTitle, description: postDescription } = data.value;
-
-  const serverMeta = {
-    ogImage: "/og-image.jpg",
-    twitterImage: "/og-image.jpg",
-    ogType: "article",
-    ogLocale: "en_US",
-    twitterCard: "summary",
-    twitterCreator: "@baimamboukar",
-  };
-
-  useSeoMeta({
-    title: () => postTitle,
-    description: () => postDescription,
-    ogTitle: () => `${postTitle} (LeetCode Solution) · Baimam Boukar`,
-    twitterTitle: () => `${postTitle} (LeetCode Solution) · Baimam Boukar`,
-    ogDescription: () => postDescription,
-    twitterDescription: () => postDescription,
-    ogUrl: () => `https://baimamboukar.dev${route.path}`,
-    ...serverMeta,
-  });
+definePageMeta({ layout: 'default', key: route => route.path });
+const route = useRoute();
+const { data: solution } = await useAsyncData('code-detail-' + route.path, () => queryContent(route.path).findOne().catch(() => null));
+const validLink = value => typeof value === 'string' && /^https?:\/\//.test(value);
+useSeoMeta({ title: () => solution.value?.title ? `${solution.value.title} · Code notebook · Baimam Boukar` : 'Code notebook · Baimam Boukar', description: () => solution.value?.description, ogType: 'article' });
 </script>
-
 <template>
-  <ContentDoc>
-    <template #default="{ doc }">
-      <!-- Problem Title -->
-      <h1 class="mb-4">
-        {{ doc.title }}
-      </h1>
-
-      <!-- Solution Tags -->
-      <ul class="p-0 mb-1">
-        <li
-          class="px-2 py-[.125rem] inline-block rounded-full font-semibold font-mono text-xs mr-1 border border-zinc-300 dark:border-zinc-500 bg-zinc-200 dark:bg-zinc-600 text-zinc-800 dark:text-zinc-100"
-          v-for="tag in doc.tags"
-          :key="tag"
-        >
-          {{ tag }}
-        </li>
-      </ul>
-
-      <!-- Problem URL -->
-      <p>
-        <b class="mr-2">Problem URL:</b>
-        <nuxt-link
-          v-if="doc.problemUrl"
-          target="_blank"
-          :to="doc.problemUrl"
-          external
-        >
-          {{ doc.title }}
-        </nuxt-link>
-      </p>
-
-      <!-- Main Content -->
-      <ContentRenderer :value="doc" />
-
-      <app-divider class="w-1/2 my-8 md:w-2/3" />
-
-      <!-- Let's Connect -->
-      <app-post-footer />
-    </template>
-    <template #not-found>
-      <app-not-found />
-    </template>
-  </ContentDoc>
+  <article v-if="solution" class="reading-desk"><NuxtLink to="/leetcode" class="reading-back">← Code notebook</NuxtLink><PageHeading :title="solution.title" :description="solution.description" /><div class="reading-meta"><div v-if="solution.tags?.length" class="reading-tags"><span v-for="tag in solution.tags" :key="tag">{{ tag }}</span></div><a v-if="validLink(solution.problemUrl)" :href="solution.problemUrl" target="_blank" rel="noopener noreferrer" class="resource-link">Original problem ↗</a></div><div class="reading-body"><ContentRenderer :value="solution" /></div><AppPostFooter /></article><AppNotFound v-else />
 </template>
+<style scoped>
+.reading-desk{max-width:100%;min-width:0}.reading-back{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;margin-bottom:20px;border-radius:999px;background:var(--surface-alt);font-size:.82rem}.reading-meta{display:flex;align-items:center;gap:9px 16px;flex-wrap:wrap;color:var(--muted);font-size:.78rem;margin:-10px 0 22px}.reading-cover{margin:0 0 24px;background:var(--surface-alt);border-radius:var(--corner-radius,12px);overflow:hidden}.reading-cover img{display:block;width:100%;height:auto;max-height:360px;object-fit:contain}.reading-grid{display:grid;grid-template-columns:170px minmax(0,1fr);gap:32px}.reading-grid.no-outline{grid-template-columns:minmax(0,1fr)}.reading-outline{align-self:start;position:sticky;top:100px;background:var(--surface-alt);border-radius:var(--corner-radius,12px);padding:16px;font-size:.78rem}.reading-outline summary{cursor:pointer;font-weight:600;min-height:28px}.reading-outline ol{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:12px}.reading-outline a{color:var(--muted);line-height:1.5;display:block}.reading-body{min-width:0;font-size:1rem;line-height:var(--content-leading,1.7);color:var(--ink)}.reading-body :deep(h2){margin:28px 0 12px;font-size:var(--section-size,20px);line-height:1.4}.reading-body :deep(h3){margin:22px 0 10px;font-size:var(--paper-size,17px);line-height:1.4}.reading-body :deep(p){margin:0 0 18px}.reading-body :deep(ul),.reading-body :deep(ol){padding-left:22px;margin:15px 0;list-style:revert}.reading-body :deep(li){margin:7px 0}.reading-body :deep(pre){padding:16px;background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;overflow:auto;font-size:.82rem;max-width:100%}.reading-body :deep(code){font-family:monospace;font-size:.9em;overflow-wrap:anywhere}.reading-body :deep(img){max-width:100%;height:auto;border-radius:8px}.reading-body :deep(blockquote){margin:20px 0;padding:10px 18px;border-left:3px solid var(--link-color);background:var(--surface-alt)}.reading-body :deep(table){display:block;overflow:auto;width:100%;font-size:.9rem}.reading-body :deep(th),.reading-body :deep(td){padding:8px;border-bottom:1px solid var(--line);text-align:left}.reading-tags{display:flex;gap:6px;flex-wrap:wrap}.reading-tags span{border-radius:999px;background:var(--surface-alt);padding:4px 9px;color:var(--muted)}.resource-link{display:inline-flex;padding:7px 12px;background:var(--surface-alt);border-radius:999px}@media(max-width:800px){.reading-grid{grid-template-columns:1fr;gap:22px}.reading-outline{position:static}.reading-outline ol{display:flex;flex-wrap:wrap;gap:10px 18px}.reading-back{margin-bottom:16px}}
+</style>

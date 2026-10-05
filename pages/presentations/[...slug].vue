@@ -1,118 +1,13 @@
 <script setup>
-  definePageMeta({
-    layout: "project-layout",
-  });
-
-  useHead({
-    titleTemplate: "%s (Presentation) · Baimam Boukar JJ",
-  });
-
-  const route = useRoute();
-
-  const { data } = await useAsyncData("get-presentation", () =>
-    queryContent(route.path).only(["title", "description", "cover"]).findOne()
-  );
-
-  const {
-    title: projectTitle,
-    description: projectDescription,
-    image: projectImage,
-  } = data.value;
-
-  const serverMeta = {
-    ogType: "article",
-    ogLocale: "en_US",
-    twitterCard: "summary",
-    twitterCreator: "@baimamboukar",
-  };
-
-  useSeoMeta({
-    title: () => projectTitle,
-    description: () => projectDescription,
-    ogTitle: () => `${projectTitle} (Presentation) · Baimam Boukar JJ`,
-    twitterTitle: () => `${projectTitle} (Presentation) · Baimam Boukar JJ`,
-    ogDescription: () => projectDescription,
-    twitterDescription: () => projectDescription,
-    ogImage: () => projectImage,
-    twitterImage: () => projectImage,
-    ogUrl: () => `https://baimamboukar.dev${route.path}`,
-    ...serverMeta,
-  });
+definePageMeta({ layout: 'default', key: route => route.path });
+const route = useRoute();
+const { data: talk } = await useAsyncData('presentation-detail-' + route.path, () => queryContent(route.path).findOne().catch(() => null));
+const validLink = value => typeof value === 'string' && /^https?:\/\//.test(value);
+useSeoMeta({ title: () => talk.value?.title ? `${talk.value.title} · Talks · Baimam Boukar` : 'Talks · Baimam Boukar', description: () => talk.value?.description, ogType: 'article', ogImage: () => talk.value?.cover || talk.value?.image });
 </script>
-
 <template>
-  <ContentDoc>
-    <template #default="{ doc }">
-      <!-- Project Name -->
-      <h1
-        class="flex items-center mb-4 text-xl font-bold text-left not-prose sm:text-3xl"
-      >
-        <nuxt-link
-          to="/projects"
-          class="no-underline focus-visible:global-focus border-b-[.1rem] border-b-blue-500/75"
-          >Presentations</nuxt-link
-        >
-        <Icon
-          name="heroicons:chevron-right-20-solid"
-          class="mx-1 text-sky-500"
-        />
-        <span>{{ doc.title }}</span>
-      </h1>
-
-      <!-- Project Screenshot -->
-      <section class="my-4 overflow-hidden rounded-xl max-h-72 card-style">
-        <nuxt-img
-          preload
-          placeholder
-          height="350"
-          format="webp"
-          loading="lazy"
-          :src="doc.image"
-          :alt="`Presentation Cover for My ${doc.title} Talk`"
-          class="object-cover object-top w-full h-full m-0 text-center"
-        />
-      </section>
-
-      <section
-        class="flex items-start justify-between gap-4 mt-2 mb-4 sm:items-center"
-      >
-        <!-- Project Tags -->
-        <!-- <ul class="p-0 m-0 space-x-1">
-          <li
-            class="my-0 px-2 py-[.125rem] inline-block rounded-full font-medium font-mono text-xs bg-zinc-300/75 dark:bg-zinc-700/75 text-zinc-800 dark:text-zinc-100"
-            v-for="tag in doc.tags"
-            :key="tag"
-          >
-            {{ tag }}
-          </li>
-        </ul> -->
-
-        <!-- Relevant Links -->
-        <div class="flex items-center space-x-2 text-xl">
-          <nuxt-link
-            :to="doc.url"
-            title="Source Code"
-            aria-label="Source Code"
-            class="flex items-center justify-center w-8 h-8 p-1 border-none rounded-full bg-zinc-800 text-zinc-50"
-          >
-            <Icon name="simple-icons:github" />
-          </nuxt-link>
-          <nuxt-link
-            :to="doc.url"
-            title="Live Preview"
-            aria-label="Live Preview"
-            class="flex items-center justify-center w-8 h-8 p-1 bg-sky-500 border-none rounded-full text-zinc-800"
-          >
-            <Icon name="heroicons:arrow-up-right-20-solid" />
-          </nuxt-link>
-        </div>
-      </section>
-
-      <!-- Main Project content -->
-      <ContentRenderer :value="doc" />
-    </template>
-    <template #not-found>
-      <app-not-found />
-    </template>
-  </ContentDoc>
+  <article v-if="talk" class="reading-desk"><NuxtLink to="/presentations" class="reading-back">← All talks</NuxtLink><PageHeading :title="talk.title" :description="talk.description" /><div class="reading-meta"><span v-if="talk.event">{{ talk.event }}</span><time v-if="talk.date" :datetime="talk.date">{{ talk.date }}</time><a v-if="validLink(talk.slides)" :href="talk.slides" target="_blank" rel="noopener noreferrer" class="resource-link">Open slides ↗</a><a v-if="validLink(talk.video)" :href="talk.video" target="_blank" rel="noopener noreferrer" class="resource-link">Watch recording ↗</a><a v-if="validLink(talk.url)" :href="talk.url" target="_blank" rel="noopener noreferrer" class="resource-link">Event resource ↗</a></div><figure v-if="talk.cover || talk.image" class="reading-cover"><img :src="talk.cover || talk.image" :alt="talk.title" width="960" height="540" decoding="async" /></figure><div v-if="talk.body" class="reading-body"><ContentRenderer :value="talk" /></div><AppPostFooter /></article><AppNotFound v-else />
 </template>
+<style scoped>
+.reading-desk{max-width:100%;min-width:0}.reading-back{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;margin-bottom:20px;border-radius:999px;background:var(--surface-alt);font-size:.82rem}.reading-meta{display:flex;align-items:center;gap:9px 16px;flex-wrap:wrap;color:var(--muted);font-size:.78rem;margin:-10px 0 22px}.reading-cover{margin:0 0 24px;background:var(--surface-alt);border-radius:var(--corner-radius,12px);overflow:hidden}.reading-cover img{display:block;width:100%;height:auto;max-height:360px;object-fit:contain}.reading-grid{display:grid;grid-template-columns:170px minmax(0,1fr);gap:32px}.reading-grid.no-outline{grid-template-columns:minmax(0,1fr)}.reading-outline{align-self:start;position:sticky;top:100px;background:var(--surface-alt);border-radius:var(--corner-radius,12px);padding:16px;font-size:.78rem}.reading-outline summary{cursor:pointer;font-weight:600;min-height:28px}.reading-outline ol{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:12px}.reading-outline a{color:var(--muted);line-height:1.5;display:block}.reading-body{min-width:0;font-size:1rem;line-height:var(--content-leading,1.7);color:var(--ink)}.reading-body :deep(h2){margin:28px 0 12px;font-size:var(--section-size,20px);line-height:1.4}.reading-body :deep(h3){margin:22px 0 10px;font-size:var(--paper-size,17px);line-height:1.4}.reading-body :deep(p){margin:0 0 18px}.reading-body :deep(ul),.reading-body :deep(ol){padding-left:22px;margin:15px 0;list-style:revert}.reading-body :deep(li){margin:7px 0}.reading-body :deep(pre){padding:16px;background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;overflow:auto;font-size:.82rem;max-width:100%}.reading-body :deep(code){font-family:monospace;font-size:.9em;overflow-wrap:anywhere}.reading-body :deep(img){max-width:100%;height:auto;border-radius:8px}.reading-body :deep(blockquote){margin:20px 0;padding:10px 18px;border-left:3px solid var(--link-color);background:var(--surface-alt)}.reading-body :deep(table){display:block;overflow:auto;width:100%;font-size:.9rem}.reading-body :deep(th),.reading-body :deep(td){padding:8px;border-bottom:1px solid var(--line);text-align:left}.reading-tags{display:flex;gap:6px;flex-wrap:wrap}.reading-tags span{border-radius:999px;background:var(--surface-alt);padding:4px 9px;color:var(--muted)}.resource-link{display:inline-flex;padding:7px 12px;background:var(--surface-alt);border-radius:999px}@media(max-width:800px){.reading-grid{grid-template-columns:1fr;gap:22px}.reading-outline{position:static}.reading-outline ol{display:flex;flex-wrap:wrap;gap:10px 18px}.reading-back{margin-bottom:16px}}
+</style>

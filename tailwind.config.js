@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // TWEAK PANEL: body font flows through --font-body so preflight follows it too
-        sans: ['var(--font-body)', 'Inter', ...defaultTheme.fontFamily.sans],
+        // Shared with the locally hosted font faces.
+        sans: ['var(--font-body)', 'DM Sans', ...defaultTheme.fontFamily.sans],
         mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
       },
       maxWidth: {

@@ -1,236 +1,375 @@
 research:
-  - title: 'Phoenix: Safe End to End Codebase Refactoring via Multi-Agent LLMs'
-    cover: 'https://placehold.co/600x400?text=Phoenix'
-    paper_link: 'https://arxiv.org/abs/2606.20243'
+  - title: Cross-Model Generalization of Mechanistic-Interpretability Probes
+    cover: https://placehold.co/600x400?text=Probe+Generalization
+    paper_link: ''
     topics:
-      [
-        'LLM Agents',
-        'AI Safety',
-        'Safety Gates',
-        'Evaluation',
-      ]
+      - Mechanistic Interpretability
+      - Activation Probes
+      - Generalization
+      - Reproducibility
     supervision: ''
-    contributors:
-      - name: 'Kipngeno Koech'
-        affiliation: 'Carnegie Mellon University Africa'
-      - name: 'Muhammad Adam'
-        affiliation: 'Carnegie Mellon University Africa'
-      - name: 'Joao Barros'
-        affiliation: 'Carnegie Mellon University Africa'
-    status: 'Published'
-    venue: 'International Conference on Responsible AI (ICRAI) 2026'
+    authors:
+      - name: Baimam Boukar
+      - name: Johannes Taraz
+      - name: Florent Draye
+      - name: Terry Jingchen Zhang
+      - name: Zhijing Jin
+    status: Manuscript
+    venue: ''
     featured: true
-    abstract: 'Autonomous LLM agents can synthesize code changes at scale, but deploying them safely on real codebases requires guarantees that generated patches preserve correctness. Phoenix is a multi-agent LLM system that resolves GitHub issues from triage through pull-request creation, combining seven layered safety controls with a baseline-aware test evaluation strategy. Work is decomposed across six specialized agents — planner, reproducer, coder, tester, failure analyst, and PR agent — coordinated by a label-based GitHub webhook state machine, with every change checked against a baseline test run before a pull request is opened.'
+    abstract: >-
+      A reproduction-first audit of activation-probing methods across model families. We examine how response
+      generation, activation-site selection, probe design, and operating thresholds affect the scope of
+      generalization claims. Each target model receives a newly fitted probe; the study does not test
+      zero-shot transfer of probe weights.
     links:
-      preprint: 'https://arxiv.org/abs/2606.20243'
-      code: '#'
-      data: '#'
-
-  - title: 'An Adaptive Latent Semantic Analysis Framework for Binary Text Classification'
-    cover: 'https://placehold.co/600x400?text=A-LSA+Classification'
-    paper_link: '#'
+      code: https://github.com/baimamboukar/generalizable-interpretability
+  - title: 'Selection Regret: Auditing Deception Probes as Intervention Selectors'
+    cover: https://placehold.co/600x400?text=Selection+Regret
+    paper_link: ''
     topics:
-      [
-        'NLP',
-        'Latent Semantic Analysis',
-        'Interpretability',
-        'Text Classification',
-      ]
-    supervision: 'Prof. Kolyang'
-    contributors:
-      - name: 'Isaac Touza'
-        affiliation: 'University of Maroua'
-      - name: 'Kaladzavi Guidedi'
-        affiliation: 'University of Maroua'
-      # - name: 'Kolyang'
-      #   affiliation: ''
-    status: 'Submitted'
-    venue: 'International Journal of Information Management'
-    featured: false
-    abstract: 'Binary text classification is a fundamental task in natural language processing, typically addressed using discriminative machine learning models or deep neural architectures. While Latent Semantic Analysis (LSA) has historically played an important role in semantic representation, it is now largely confined to a preprocessing function due to its static and task-independent formulation. This paper proposes an Adaptive Latent Semantic Analysis (A-LSA) framework that redefines LSA as a discriminative, class-aware classification model. The proposed approach constructs class-conditional latent semantic spaces and introduces a semantic differential distance as a direct decision criterion. Experimental results on benchmark datasets demonstrate that A-LSA achieves competitive performance compared to standard classifiers, while offering superior interpretability and significantly reduced computational cost (inference time 40x faster than BERT).'
+      - Mechanistic Interpretability
+      - Deception Monitoring
+      - Activation Steering
+      - Evaluation
+    supervision: ''
+    authors:
+      - name: Baimam Boukar
+      - name: Pauline Nyaboe
+      - name: Allassan A. Nken
+    status: Under Review
+    venue: ''
+    featured: true
+    abstract: >-
+      We test whether accurate deception probes can select useful interventions. The audit compares
+      probe-derived and contrastive steering under held-out behavioral tests and explicit limits on capability
+      loss. Detection accuracy and intervention quality require separate evidence. The experiments use
+      controlled, task-defined deceptive choices and do not establish intent or a deployable intervention
+      selector.
     links:
-      preprint: '#'
-      code: '#'
-      data: '#'
-
-  - title: 'Zero-Shot Neural Priors for Generalizable Cross-Subject and Cross-Task EEG Decoding'
-    cover: '/eeg-decoding.png'
-    paper_link: 'https://arxiv.org/abs/2606.23706'
+      code: https://github.com/baimamboukar/mechanistic-audit-of-deception-detection-in-llms
+  - title: 'Phoenix: Safe GitHub Issue Resolution via Multi-Agent LLMs'
+    cover: https://placehold.co/600x400?text=Phoenix
+    paper_link: https://arxiv.org/abs/2606.20243
     topics:
-      [
-        'EEG',
-        'Brain-Computer Interfaces',
-        'Zero-Shot Learning',
-        'Neural Decoding',
-      ]
-    supervision: 'Carnegie Mellon University'
-    contributors:
-      - name: 'Brandone Fonya'
-        affiliation: 'Carnegie Mellon University Africa'
-      - name: 'Nchofon Tagha Ghogomu'
-        affiliation: 'Carnegie Mellon University Africa'
-      - name: 'Pauline Nyaboe'
-        affiliation: 'Carnegie Mellon University Africa'
-    status: 'Submitted'
-    venue: 'Medical Imaging with Deep Learning (MIDL) 2026'
-    featured: true
-    abstract: 'The development of generalizable electroencephalography (EEG) decoding models is essential for robust brain-computer interfaces (BCI) and objective neural biomarkers in mental health. Conventional approaches have been hindered by poor cross-subject and cross-task generalization, owing to high inter-subject variability and non-stationary neural signals. We address this challenge with a zero-shot cross-subject decoding framework on the large-scale Healthy Brain Network dataset,benchmarking a convolutional neural network baseline, a hybrid LSTM, and a Transformer-based foundation model. To adapt the Transformer for regression while averting catastrophic forgetting, we propose a novel progressive unfreezing strategy. The baseline yielded an nRMSE of 0.9991, whereas our fine-tuned Transformer achieved 0.9799 on unseen subjects.This work establishes scalable, calibration-free EEG decoding for computational psychiatry and behavioral prediction.'
-    links:
-      preprint: 'https://arxiv.org/abs/2606.23706'
-      code: 'https://github.com/baimamboukar/EEG-cross-subject-decoding'
-      data: '#'
-
-  - title: 'Retrieval with Multiple Query Vectors through Anomalous Pattern Detection'
-    cover: '/retrieval.png'
-    paper_link: 'https://arxiv.org/abs/2605.01965'
-    topics:
-      [
-        'Information Retrieval',
-        'DeepScan',
-        'LLMs Embeddings',
-        'Anomalous Pattern',
-      ]
-    supervision: 'Skyler Speakman'
-    contributors:
-      - name: 'Allassan Nken'
-        affiliation: 'IBM Research Africa'
-      - name: 'Miriam Rateike'
-        affiliation: 'IBM Research Africa'
-      - name: 'Celia Cintas'
-        affiliation: 'IBM Research Africa'
-    status: 'Published'
-    venue: 'AAAI Conference on Artificial Intelligence 2026'
-    featured: true
-    abstract: 'A classical vector retrieval problem typically considers a single query embedding vector as input and retrieves the most similar embedding vectors from a vector database. However, complex reasoning and retrieval tasks frequently require multiple query vectors, rather than a single one. In this work, we propose a retrieval method that considers multiple query vectors simultaneously and retrieves the most relevant vectors from the database using concepts from anomalous pattern detection. Specifically, our approach leverages a set of query vectors Q (with |Q| ≥ 1), and identifies the subset of vector dimensions within Q that standout (anomalous) from the rest of dimensions. Next, we scan the vector database to retrieve the set of vectors that are also anomalous across the previously identified vector dimensions and return them as our retrieved set of vectors. We validate our approach on two image datasets, a text dataset, and a tabular dataset.'
-    links:
-      preprint: 'https://arxiv.org/abs/2605.01965'
-      code: '#'
-      data: '#'
-
-  - title: 'Mapping Socioeconomic Air Quality Disparities In Rwanda Using Sentinel-5P TROPOMI Data In Google Earth Engine'
-    cover: 'https://raw.githubusercontent.com/baimamboukar/air-quality-socioeconomic-analysis-research/refs/heads/main/results/figures/distribution%20in%202025.png'
-    paper_link: '#'
-    topics: ['Air Quality', 'Remote Sensing', 'Google EE']
-    supervision: ' Emily Aiken'
-    contributors:
-      - name: 'Kamikazi Raissa'
-        affiliation: 'Carnegie Mellon University Africa'
-      - name: 'Bertin Ndahayo'
-        affiliation: 'Carnegie Mellon University Africa'
-      - name: 'Evelyne Umubyeyi'
-        affiliation: 'Carnegie Mellon University Africa'
-    status: 'Published'
-    venue: 'IEEE MIGARS 2025'
-    featured: false
-    abstract: 'This study investigates socioeconomic disparities in air quality across Rwanda using Sentinel-5P TROPOMI satellite data processed through Google Earth Engine. We develop novel methodologies to correlate atmospheric pollutant concentrations with demographic and economic indicators, revealing significant patterns in environmental justice. Our analysis demonstrates how satellite-based monitoring can inform policy decisions for equitable environmental health outcomes.'
-    links:
-      preprint: '#'
-      code: 'https://github.com/baimamboukar/air-quality-socioeconomic-analysis-research'
-      data: 'https://github.com/baimamboukar/air-quality-socioeconomic-analysis-research'
-
-  - title: 'Explainable Deep-Learning Based Potentially Hazardous Asteroids Classification Using Graph Neural Networks'
-    cover: '/asteroids.png'
-    paper_link: 'https://arxiv.org/html/2504.18605v1'
-    topics: ['Space', 'AI', 'Astrophysics']
-    supervision: ' Clarence Worrel'
-    contributors:
-      - name: 'Clarence Worrel'
-        affiliation: 'Carnegie Mellon University Africa'
-    featured: true
-    status: 'Presented'
-    venue: 'Harvard AstroAI Workshop 2025.'
-    abstract: 'Classifying Potentially Hazardous Asteroids (PHAs) is crucial for planetary defense. While the official designation relies on simple metrics (Earth MOID and Absolute Magnitude H), we explore if complex dynamical relationships offer a robust, interpretable hazard assessment framework. We introduce a Graph Neural Network (GNN) approach that models asteroids as nodes defined by 11 orbital and physical features. Edges are defined using the Tisserand parameter relative to Jupiter (TJ) as a proxy for dynamical similarity, allowing the GNN to capture latent relationships among asteroid groups. Using the NASA/JPL Small-Body Database dataset, the model achieves an overall accuracy of 99% and an AUC of 0.99.'
-    links:
-      preprint: 'https://arxiv.org/html/2504.18605v1'
-      code: 'https://github.com/baimamboukar/hazardous-asteroid-classification'
-      data: 'https://github.com/baimamboukar/hazardous-asteroid-classification'
-
-  - title: 'Computer Vision-based Calibration of Visual Landing Aids Using Autonomous Drones (PAPI Case Study)'
-    cover: '/calibration.png'
-    paper_link: '#'
-    topics: ['Computer Vision', 'AI', 'Aerospace']
-    supervision: ' Moise Busogi'
-    contributors:
-      - name: 'Alice Mugengano'
-        affiliation: 'Carnegie Mellon University Africa'
-      - name: 'Jonathan Kayizzi'
-        affiliation: 'Carnegie Mellon University Africa'
-      - name: 'Richard Muhirwa'
-        affiliation: 'Carnegie Mellon University Africa'
-    status: 'Review'
-    featured: true
-    venue: 'IEEE Aerospace Conference 2026.'
-    abstract: 'This research presents a vision-based approach to autonomous drone navigation and landing trajectory optimization, demonstrated for the calibration of Precision Approach Path Indicators (PAPI). Traditional calibration methods require specialized aircraft equipped with photometric equipment, resulting in high operational costs (5,000-25,000 per calibration), runway disruptions, and significant carbon emissions. Our proposed system leverages computer vision and machine learning to detect and classify PAPI light configurations under diverse environmental conditions. A convolutional neural network, trained on the LARD dataset comprising over 17,000 real and synthetic aerial runway images, enables accurate pattern recognition. This is integrated with a trajectory generation algorithm that aligns drone flight paths to evaluate and verify standard approach angles. The system achieves a modal classification accuracy of 97% in detecting PAPI light patterns and a fivefold improvement in angular measurement precision (±0.01° vs. ±0.05°).'
-    links:
-      preprint: '#'
-      code: '#'
-      data: '#'
-
-  - title: 'Humidity Inference with Geographic Features and Machine Learning for Enhanced Contrail Prediction for African Airspace'
-    cover: '/contrails.png'
-    paper_link: '#'
-    topics: ['AI', 'Aviation', 'Contrails']
-    supervision: ' Moise Busogi'
-    contributors:
-      - name: 'Alice Mugengano'
-        affiliation: 'Carnegie Mellon University Africa'
-      - name: 'Jonathan Kayizzi'
-        affiliation: 'Carnegie Mellon University Africa'
-    status: 'Published'
-    featured: true
-    venue: 'IEEE MIGARS 2025'
-    abstract: "Air travel's 3.8% yearly growth amplifies aviation's impact, with contrails causing about 4% of global warming. In Africa, sparse meteorological data and coarse ERA5 resolution underpredict contrails in cities like Nairobi and Lagos. This study uses a Random Forest model within PyContrails to infer upper-tropospheric humidity (RHi) from water proximity, forest density, and topography. Using global datasets, it achieves an R2 of 0.59 identifying water proximity as the main driver. African cities show only 32 contrail segments versus 450 in Europe, underscoring the model's potential to refine predictions and reduce aviation's non-CO₂ climate effects."
-    links:
-      preprint: '#'
-      code: 'https://github.com/JonahKayizzi/Environment-Impact-Assessment-of-Aircraft-Contrails'
-      data: 'https://github.com/JonahKayizzi/Environment-Impact-Assessment-of-Aircraft-Contrails'
-
-  - title: 'Thermography for Breast Cancer Diagnosis using AI'
-    cover: 'https://placehold.co/600x400?text=Breast+Cancer+AI'
-    paper_link: '#'
-    topics: ['AI', 'Healthcare', 'Medical Imaging']
-    supervision: ' Edith Luhanga'
-    contributors:
-      - name: 'Peace Bakare'
-        affiliation: 'Carnegie Mellon University Africa'
-      - name: 'Lucie Niyomutoni'
-        affiliation: 'Carnegie Mellon University Africa'
-    status: 'Ongoing'
+      - LLM Agents
+      - AI Safety
+      - Safety Gates
+      - Evaluation
+    supervision: ''
+    authors:
+      - name: Kipngeno Koech
+        affiliation: Carnegie Mellon University Africa
+      - name: Muhammad Adam
+        affiliation: Carnegie Mellon University Africa
+      - name: Baimam Boukar Jean Jacques
+        affiliation: Carnegie Mellon University Africa
+      - name: Joao Barros
+        affiliation: Carnegie Mellon University Africa
+    status: Preprint
     venue: ''
     featured: false
-    abstract: 'Early detection of breast cancer is crucial for patient outcomes, particularly in resource-constrained settings. This study develops an AI-powered thermography system for breast cancer screening using deep learning approaches. Our method provides a non-invasive, cost-effective alternative to traditional screening methods, making it accessible for underserved populations.'
+    abstract: >-
+      Autonomous LLM agents can synthesize code changes at scale, but deploying them safely on real codebases
+      requires guarantees that generated patches preserve correctness. Phoenix is a multi-agent LLM system
+      that resolves GitHub issues from triage through pull-request creation, combining seven layered safety
+      controls with a baseline-aware test evaluation strategy. Work is decomposed across six specialized
+      agents — planner, reproducer, coder, tester, failure analyst, and PR agent — coordinated by a
+      label-based GitHub webhook state machine, with every change checked against a baseline test run before a
+      pull request is opened.
     links:
-      preprint: '#'
-      code: '#'
-      data: '#'
-
-  - title: 'Causal Structure Analysis for Telemetry Anomaly Detection in Spacecraft Systems'
-    cover: '/telemetry.png'
-    paper_link: '#'
-    topics: ['Satellites Operations', 'Telemetry', 'Graphical Models']
+      preprint: https://arxiv.org/abs/2606.20243
+      code: https://github.com/kkipngenokoech/phoenix
+  - title: An Adaptive Latent Semantic Analysis Framework for Binary Text Classification
+    listed: false
+    cover: https://placehold.co/600x400?text=A-LSA+Classification
+    paper_link: ''
+    topics:
+      - NLP
+      - Latent Semantic Analysis
+      - Interpretability
+      - Text Classification
+    supervision: Prof. Kolyang
+    contributors:
+      - name: Isaac Touza
+        affiliation: University of Maroua
+      - name: Kaladzavi Guidedi
+        affiliation: University of Maroua
+    status: Submitted
+    venue: International Journal of Information Management
+    featured: false
+    abstract: >-
+      Binary text classification is a fundamental task in natural language processing, typically addressed
+      using discriminative machine learning models or deep neural architectures. While Latent Semantic
+      Analysis (LSA) has historically played an important role in semantic representation, it is now largely
+      confined to a preprocessing function due to its static and task-independent formulation. This paper
+      proposes an Adaptive Latent Semantic Analysis (A-LSA) framework that redefines LSA as a discriminative,
+      class-aware classification model. The proposed approach constructs class-conditional latent semantic
+      spaces and introduces a semantic differential distance as a direct decision criterion. Experimental
+      results on benchmark datasets demonstrate that A-LSA achieves competitive performance compared to
+      standard classifiers, while offering superior interpretability and significantly reduced computational
+      cost (inference time 40x faster than BERT).
+  - title: Zero-Shot Neural Priors for Generalizable Cross-Subject and Cross-Task EEG Decoding
+    cover: /eeg-decoding.png
+    paper_link: https://arxiv.org/abs/2606.23706
+    topics:
+      - EEG
+      - Brain-Computer Interfaces
+      - Zero-Shot Learning
+      - Neural Decoding
+    supervision: Carnegie Mellon University
+    contributors:
+      - name: Brandone Fonya
+        affiliation: Carnegie Mellon University Africa
+      - name: Nchofon Tagha Ghogomu
+        affiliation: Carnegie Mellon University Africa
+      - name: Pauline Nyaboe
+        affiliation: Carnegie Mellon University Africa
+      - name: Kipngeno Koech
+        affiliation: Carnegie Mellon University Africa
+    status: Preprint
+    venue: ''
+    featured: true
+    abstract: >-
+      The development of generalizable electroencephalography (EEG) decoding models is essential for robust
+      brain-computer interfaces (BCI) and objective neural biomarkers in mental health. Conventional
+      approaches have been hindered by poor cross-subject and cross-task generalization, owing to high
+      inter-subject variability and non-stationary neural signals. We address this challenge with a zero-shot
+      cross-subject decoding framework on the large-scale Healthy Brain Network dataset,benchmarking a
+      convolutional neural network baseline, a hybrid LSTM, and a Transformer-based foundation model. To adapt
+      the Transformer for regression while averting catastrophic forgetting, we propose a novel progressive
+      unfreezing strategy. The baseline yielded an nRMSE of 0.9991, whereas our fine-tuned Transformer
+      achieved 0.9799 on unseen subjects.This work establishes scalable, calibration-free EEG decoding for
+      computational psychiatry and behavioral prediction.
+    links:
+      preprint: https://arxiv.org/abs/2606.23706
+      code: https://github.com/baimamboukar/EEG-cross-subject-decoding
+  - title: Retrieval with Multiple Query Vectors through Anomalous Pattern Detection
+    cover: /retrieval.png
+    paper_link: https://arxiv.org/abs/2605.01965
+    topics:
+      - Information Retrieval
+      - DeepScan
+      - LLM Embeddings
+      - Anomalous Pattern
+    supervision: ''
+    authors:
+      - name: Allassan Tchangmena A Nken
+        affiliation: University of Galway
+      - name: Baimam Boukar Jean Jacques
+        affiliation: Carnegie Mellon University Africa
+      - name: Miriam Rateike
+        affiliation: IBM Research Africa
+      - name: Celia Cintas
+        affiliation: IBM Research Africa
+      - name: Skyler Speakman
+        affiliation: IBM Research Africa
+    status: Preprint
+    venue: AAAI 2026 Workshop on New Frontiers in Information Retrieval
+    featured: false
+    abstract: >-
+      A classical vector retrieval problem typically considers a single query embedding vector as input and
+      retrieves the most similar embedding vectors from a vector database. However, complex reasoning and
+      retrieval tasks frequently require multiple query vectors, rather than a single one. In this work, we
+      propose a retrieval method that considers multiple query vectors simultaneously and retrieves the most
+      relevant vectors from the database using concepts from anomalous pattern detection. Specifically, our
+      approach leverages a set of query vectors Q (with |Q| ≥ 1), and identifies the subset of vector
+      dimensions within Q that standout (anomalous) from the rest of dimensions. Next, we scan the vector
+      database to retrieve the set of vectors that are also anomalous across the previously identified vector
+      dimensions and return them as our retrieved set of vectors. We validate our approach on two image
+      datasets, a text dataset, and a tabular dataset.
+    links:
+      preprint: https://arxiv.org/abs/2605.01965
+  - title: >-
+      Mapping Socioeconomic Air Quality Disparities In Rwanda Using Sentinel-5P TROPOMI Data In Google Earth
+      Engine
+    cover: /images/research/rwanda-air-quality-distribution.png
+    cover_alt: Six maps showing pollutant distributions across Rwanda from Sentinel-5P satellite data.
+    cover_caption: Pollutant distributions across Rwanda, from the study’s analysis.
+    paper_link: https://doi.org/10.1109/MIGARS67156.2025.11232033
+    topics:
+      - Air Quality
+      - Remote Sensing
+      - Google EE
+    supervision: ' Emily Aiken'
+    authors:
+      - name: Baimam Boukar Jean Jacques
+        affiliation: Carnegie Mellon University Africa
+      - name: Kamikazi Ndayizeye Raissa
+        affiliation: Carnegie Mellon University Africa
+      - name: Umubyeyi Evelyne
+        affiliation: Carnegie Mellon University Africa
+      - name: Bertinn Ndahayo Singizwa
+        affiliation: Carnegie Mellon University Africa
+      - name: Emily Aiken
+        affiliation: Carnegie Mellon University Africa
+    status: Published
+    venue: IEEE MIGARS 2025
+    featured: false
+    abstract: >-
+      This study investigates socioeconomic disparities in air quality across Rwanda using Sentinel-5P TROPOMI
+      satellite data processed through Google Earth Engine. We develop novel methodologies to correlate
+      atmospheric pollutant concentrations with demographic and economic indicators, revealing significant
+      patterns in environmental justice. Our analysis demonstrates how satellite-based monitoring can inform
+      policy decisions for equitable environmental health outcomes.
+    links:
+      code: https://github.com/baimamboukar/air-quality-socioeconomic-analysis-research
+  - title: >-
+      Explainable Deep-Learning Based Potentially Hazardous Asteroids Classification Using Graph Neural
+      Networks
+    cover: /asteroids.png
+    paper_link: https://arxiv.org/abs/2504.18605
+    topics:
+      - Space
+      - AI
+      - Astrophysics
+    supervision: ' Clarence Worrel'
+    authors:
+      - name: Baimam Boukar Jean Jacques
+        affiliation: Carnegie Mellon University Africa
+    featured: false
+    status: Presented
+    venue: Harvard AstroAI Workshop 2025.
+    abstract: >-
+      Classifying Potentially Hazardous Asteroids (PHAs) is crucial for planetary defense. While the official
+      designation relies on simple metrics (Earth MOID and Absolute Magnitude H), we explore if complex
+      dynamical relationships offer a robust, interpretable hazard assessment framework. We introduce a Graph
+      Neural Network (GNN) approach that models asteroids as nodes defined by 11 orbital and physical
+      features. Edges are defined using the Tisserand parameter relative to Jupiter (TJ) as a proxy for
+      dynamical similarity, allowing the GNN to capture latent relationships among asteroid groups. On a
+      dataset with a 0.22% hazardous class, the paper reports 99% accuracy and 0.99 AUROC, alongside 78%
+      recall and 37% F1 for hazardous asteroids after SMOTE.
+    links:
+      preprint: https://arxiv.org/abs/2504.18605
+      code: https://github.com/baimamboukar/hazardous-asteroid-classification
+  - title: Computer Vision-based Calibration of Visual Landing Aids Using Autonomous Drones (PAPI Case Study)
+    listed: false
+    cover: /calibration.png
+    paper_link: ''
+    topics:
+      - Computer Vision
+      - AI
+      - Aerospace
+    supervision: ' Moise Busogi'
+    contributors:
+      - name: Alice Mugengano
+        affiliation: Carnegie Mellon University Africa
+      - name: Jonathan Kayizzi
+        affiliation: Carnegie Mellon University Africa
+      - name: Richard Muhirwa
+        affiliation: Carnegie Mellon University Africa
+    status: Review
+    featured: false
+    venue: IEEE Aerospace Conference 2026.
+    abstract: >-
+      This research presents a vision-based approach to autonomous drone navigation and landing trajectory
+      optimization, demonstrated for the calibration of Precision Approach Path Indicators (PAPI). Traditional
+      calibration methods require specialized aircraft equipped with photometric equipment, resulting in high
+      operational costs (5,000-25,000 per calibration), runway disruptions, and significant carbon emissions.
+      Our proposed system leverages computer vision and machine learning to detect and classify PAPI light
+      configurations under diverse environmental conditions. A convolutional neural network, trained on the
+      LARD dataset comprising over 17,000 real and synthetic aerial runway images, enables accurate pattern
+      recognition. This is integrated with a trajectory generation algorithm that aligns drone flight paths to
+      evaluate and verify standard approach angles. The system achieves a modal classification accuracy of 97%
+      in detecting PAPI light patterns and a fivefold improvement in angular measurement precision (±0.01° vs.
+      ±0.05°).
+  - title: >-
+      Humidity Inference with Geographic Features and Machine Learning for Enhanced Contrail Prediction for
+      African Airspace
+    cover: /contrails.png
+    paper_link: https://doi.org/10.1109/MIGARS67156.2025.11232330
+    topics:
+      - AI
+      - Aviation
+      - Contrails
+    supervision: ' Moise Busogi'
+    authors:
+      - name: Alice Mugengano
+        affiliation: Carnegie Mellon University Africa
+      - name: Baimam Boukar Jean Jacques
+        affiliation: Carnegie Mellon University Africa
+      - name: Jonathan Kayizzi
+        affiliation: Carnegie Mellon University Africa
+      - name: Moise Busogi
+        affiliation: Carnegie Mellon University Africa
+    status: Published
+    featured: false
+    venue: IEEE MIGARS 2025
+    abstract: >-
+      Air travel's 3.8% yearly growth amplifies aviation's impact, with contrails causing about 4% of global
+      warming. In Africa, sparse meteorological data and coarse ERA5 resolution underpredict contrails in
+      cities like Nairobi and Lagos. This study uses a Random Forest model within PyContrails to infer
+      upper-tropospheric humidity (RHi) from water proximity, forest density, and topography. Using global
+      datasets, it achieves an R2 of 0.59 identifying water proximity as the main driver. African cities show
+      only 32 contrail segments versus 450 in Europe, underscoring the model's potential to refine predictions
+      and reduce aviation's non-CO₂ climate effects.
+    links:
+      code: https://github.com/JonahKayizzi/Environment-Impact-Assessment-of-Aircraft-Contrails
+  - title: Thermography for Breast Cancer Diagnosis using AI
+    listed: false
+    cover: https://placehold.co/600x400?text=Breast+Cancer+AI
+    paper_link: ''
+    topics:
+      - AI
+      - Healthcare
+      - Medical Imaging
+    supervision: ' Edith Luhanga'
+    contributors:
+      - name: Peace Bakare
+        affiliation: Carnegie Mellon University Africa
+      - name: Lucie Niyomutoni
+        affiliation: Carnegie Mellon University Africa
+    status: Ongoing
+    venue: ''
+    featured: false
+    abstract: >-
+      Early detection of breast cancer is crucial for patient outcomes, particularly in resource-constrained
+      settings. This study develops an AI-powered thermography system for breast cancer screening using deep
+      learning approaches. Our method provides a non-invasive, cost-effective alternative to traditional
+      screening methods, making it accessible for underserved populations.
+  - title: Causal Structure Analysis for Telemetry Anomaly Detection in Spacecraft Systems
+    cover: /telemetry.png
+    paper_link: ''
+    topics:
+      - Satellites Operations
+      - Telemetry
+      - Graphical Models
     supervision: ' Assane Gueye'
     contributors:
-      - name: 'Kip Koech'
-        affiliation: 'Carnegie Mellon University Africa'
-    status: 'Ongoing'
-    venue: '10th TTC International Workshop'
+      - name: Kip Koech
+        affiliation: Carnegie Mellon University Africa
+    status: Ongoing
+    venue: 10th TTC International Workshop
     featured: false
-    abstract: 'Spacecraft telemetry anomaly detection is critical for mission success and safety. This research applies causal inference methods to understand the underlying causal structure in spacecraft telemetry data. We developed graphical models that can identify root causes of anomalies, enabling more effective predictive maintenance and mission planning strategies.'
+    abstract: >-
+      Spacecraft telemetry anomaly detection is critical for mission success and safety. This research applies
+      causal inference methods to understand the underlying causal structure in spacecraft telemetry data. We
+      developed graphical models that can identify root causes of anomalies, enabling more effective
+      predictive maintenance and mission planning strategies.
     links:
-      preprint: '#'
-      code: 'https://github.com/baimamboukar/causual-structure-discovery-spacecraft-telemetry'
-      data: 'https://github.com/baimamboukar/causual-structure-discovery-spacecraft-telemetry'
-
-  - title: 'Towards the Africa we want: What is the role of space technology in achieving the African Union Agenda 2063?'
-    cover: 'https://placehold.co/600x400?text=Space+Policy'
-    paper_link: '#'
-    topics: ['African Union', 'Satellites', 'AfSA']
+      code: https://github.com/baimamboukar/causual-structure-discovery-spacecraft-telemetry
+  - title: >-
+      Towards the Africa we want: What is the role of space technology in achieving the African Union Agenda
+      2063?
+    listed: false
+    cover: https://placehold.co/600x400?text=Space+Policy
+    paper_link: ''
+    topics:
+      - African Union
+      - Satellites
+      - AfSA
     supervision: ''
     contributors:
-      - name: 'Manyara Baraka'
-        affiliation: 'Carnegie Mellon University Africa'
-      - name: 'Kip Koech'
-        affiliation: 'Carnegie Mellon University Africa'
-    status: 'In Progress'
-    venue: 'Newspace Africa Conference 2026'
-    abstract: "The African Union's Agenda 2063 outlines ambitious goals for continental transformation. This policy analysis examines how space technology can accelerate progress toward these objectives, focusing on applications in agriculture, telecommunications, climate monitoring, and governance. We provide recommendations for space policy frameworks that align with Africa's development priorities."
+      - name: Manyara Baraka
+        affiliation: Carnegie Mellon University Africa
+      - name: Kip Koech
+        affiliation: Carnegie Mellon University Africa
+    status: In Progress
+    venue: Newspace Africa Conference 2026
+    abstract: >-
+      The African Union's Agenda 2063 outlines ambitious goals for continental transformation. This policy
+      analysis examines how space technology can accelerate progress toward these objectives, focusing on
+      applications in agriculture, telecommunications, climate monitoring, and governance. We provide
+      recommendations for space policy frameworks that align with Africa's development priorities.
+    featured: false
+title: Research

@@ -1,3 +1,3 @@
 export default function (count) {
-  return [...Array(count).fill(Math.random())];
+  return Array.from({ length: count }, (_, index) => index);
 }

@@ -1,6 +1,6 @@
 <script setup>
   useHead({
-    titleTemplate: "%s · Baimam Boukar JJ",
+    titleTemplate: "%s · Baimam Boukar",
   });
 
   const route = useRoute();
@@ -17,8 +17,8 @@
   useSeoMeta({
     title: () => route.meta.title,
     description: () => route.meta.description,
-    ogTitle: () => `${route.meta.title} · Baimam Boukar JJ`,
-    twitterTitle: () => `${route.meta.title} · Baimam Boukar JJ`,
+    ogTitle: () => `${route.meta.title} · Baimam Boukar`,
+    twitterTitle: () => `${route.meta.title} · Baimam Boukar`,
     ogDescription: () => route.meta.description,
     twitterDescription: () => route.meta.description,
     ogUrl: () => `https://baimamboukar.dev${route.path}`,
@@ -28,7 +28,7 @@
 
 <!-- Default Layout -->
 <template>
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
     <slot />
   </main>
 </template>

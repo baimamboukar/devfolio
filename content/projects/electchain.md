@@ -7,10 +7,12 @@ tags:
   - Voting
   - SaaS
   - Firebase
-live_url: "https://electchain.baimamboukar.dev"
-source_url: "https://github.com/baimamboukar/voting_system_app"
-image: "https://user-images.githubusercontent.com/49169158/124393913-bb73ee00-dcf4-11eb-9845-2af9dc7c5a31.png"
-icon: "https://github.com/baimamboukar/voting_system_app/blob/main/android/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true"
+live_url: https://electchain.baimamboukar.dev
+source_url: https://github.com/baimamboukar/voting_system_app
+image: https://user-images.githubusercontent.com/49169158/124393913-bb73ee00-dcf4-11eb-9845-2af9dc7c5a31.png
+icon: >-
+  https://github.com/baimamboukar/voting_system_app/blob/main/android/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true
+featured: false
 ---
 
 ## What

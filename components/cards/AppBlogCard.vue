@@ -1,72 +1,11 @@
 <script setup>
-  const props = defineProps({
-    description: String,
-    blogTitle: String,
-    url: String,
-    title: String,
-    tags: Array,
-    readTime: String,
-    pubDate: String,
-    coverImage: String
-  });
-
-  // Limit tags to maximum of 3
-  const displayTags = computed(() => {
-    return props.tags ? props.tags.slice(0, 3) : [];
-  });
-
-  const lastUpdateTime = computed(() => {
-    const dateObj = new Date(props.pubDate);
-
-    return dateObj.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric"
-    });
-  });
+const props = defineProps({ description: String, blogTitle: String, url: String, title: String, tags: Array, readTime: String, pubDate: String, coverImage: String });
+const published = computed(() => { const value = new Date(props.pubDate); return Number.isNaN(value.getTime()) ? '' : new Intl.DateTimeFormat('en', { dateStyle: 'medium', timeZone: 'UTC' }).format(value); });
+const isExternal = computed(() => /^https?:\/\//.test(props.url || ''));
 </script>
-
-<!-- Blog: Card -->
 <template>
-  <nuxt-link
-    class="focus-visible:global-focus rounded-lg w-full p-0 overflow-hidden flex flex-col border-none bg-none bg-transparent dark:bg-transparent [&_img]:hover:scale-105"
-    :to="url"
-  >
-    <!-- Blog Cover Image -->
-    <div
-      v-if="coverImage"
-      class="flex items-center justify-center flex-shrink-0 w-full h-48 mr-1 overflow-hidden card-style rounded-xl"
-    >
-      <nuxt-img
-        preload
-        placeholder
-        format="webp"
-        height="500"
-        :src="coverImage"
-        :alt="`Cover Image for an Article Titled ${blogTitle}`"
-        class="object-cover w-full h-auto text-center"
-      />
-    </div>
-    <div class="flex flex-col justify-between flex-shrink-0 w-full p-2">
-      <!-- Blog Tags -->
-      <div class="flex flex-wrap gap-2 mb-3">
-        <span
-          v-for="tag in displayTags"
-          :key="tag"
-          class="px-3 py-1 text-xs font-medium bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 rounded-full"
-        >
-          {{ tag }}
-        </span>
-      </div>
-
-      <!-- Blog Title -->
-      <h3 class="font-bold text-gray-900 dark:text-gray-100 mb-2">{{ blogTitle }}</h3>
-
-      <!-- Publish Date and Read Time -->
-      <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
-        <span>{{ lastUpdateTime }}</span>
-        <span v-if="readTime" class="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">{{ readTime }}</span>
-      </div>
-    </div>
-  </nuxt-link>
+  <article class="writing-note"><img v-if="coverImage" :src="coverImage" :alt="blogTitle || title" width="240" height="160" loading="lazy" decoding="async" /><div><div class="writing-note-meta"><time v-if="published" :datetime="pubDate">{{ published }}</time><span v-if="readTime">{{ readTime }}</span></div><h3><NuxtLink :to="url" :external="isExternal" :target="isExternal ? '_blank' : undefined" rel="noopener noreferrer">{{ blogTitle || title }}</NuxtLink></h3><p v-if="description">{{ description }}</p><small v-if="tags?.length">{{ tags.slice(0, 3).join(' · ') }}</small></div></article>
 </template>
+<style scoped>
+.writing-note{display:flex;gap:20px;padding:var(--row-gap,16px) 0;border-bottom:1px solid var(--line)}.writing-note>img{width:112px;height:84px;object-fit:cover;border-radius:8px}.writing-note>div{min-width:0}.writing-note-meta{display:flex;gap:12px;font-size:.73rem;color:var(--muted);margin-bottom:7px}.writing-note h3{font-size:var(--paper-size,17px);line-height:1.45}.writing-note h3 a{color:var(--ink)}.writing-note p{color:var(--muted);font-size:.9rem;line-height:1.6;margin-top:8px}.writing-note small{display:block;font-size:.74rem;color:var(--muted);margin-top:9px}@media(max-width:500px){.writing-note{flex-direction:column}.writing-note>img{width:100%;height:150px}}
+</style>

@@ -1,22 +1,8 @@
-<!-- Not Found -->
-<template>
-  <div class="flex flex-col items-center justify-center h-96">
-    <Icon
-      aria-labelledby="not-found"
-      name="fluent-emoji:construction"
-      size="10rem"
-      class="mb-8"
-    />
-    <h1
-      id="not-found"
-      class="mb-6 text-xl font-semibold text-center sm:text-2xl text-zinc-700 dark:text-zinc-300"
-    >
-      This page doesn't exist.
-    </h1>
-    <nuxt-link
-      to="/"
-      class="flex items-center justify-center w-24 py-2 font-semibold no-underline duration-150 bg-sky-500 rounded-md focus-visible:global-focus text-zinc-800 group/hover-effect"
-      >Go Home</nuxt-link
-    >
-  </div>
-</template>
+<template><section class="missing-page"><span>404</span><h1>This page isn't here.</h1><p>You can return to the work collection or start from the home page.</p><nav aria-label="Find a page"><NuxtLink to="/">Home</NuxtLink><NuxtLink to="/work">Work</NuxtLink></nav></section></template>
+<style scoped>
+.missing-page { padding:var(--section-gap) 0; }
+span { font-size:.8rem; color:var(--muted); }
+h1 { margin:8px 0; } p { color:var(--muted); }
+nav { display:flex; gap:20px; margin-top:18px; color:var(--link-color); }
+nav a { min-height:44px; display:inline-flex; align-items:center; }
+</style>

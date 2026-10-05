@@ -1,0 +1,31 @@
+projects:
+  - title: "Figure Studio"
+    description: "A browser editor for charts, annotated figures, and multi-panel layouts, with PNG, JPEG, and SVG export."
+    url: "https://github.com/baimamboukar/figure-studio"
+    tags: ["Vue", "Data visualization", "Research tools"]
+    group: "applications"
+  - title: "PaperFlow"
+    description: "Python tools for converting LaTeX papers into web pages with equations, figures, citations, and cross-references."
+    url: "https://github.com/baimamboukar/paperflow"
+    tags: ["Python", "LaTeX", "Research tools"]
+    group: "systems"
+  - title: "Transformer Sequence Modeling"
+    description: "PyTorch implementations of decoder-only language modeling and encoder-decoder speech recognition, with training and decoding pipelines."
+    url: "https://github.com/baimamboukar/autoregressive-language-modeling-with-transformer-decoder"
+    tags: ["PyTorch", "Transformers", "Speech recognition"]
+    group: "learning"
+  - title: "Rwanda Air Quality Analysis"
+    description: "Notebooks relating Sentinel-5P air-quality measurements to socioeconomic data in Rwanda using Google Earth Engine."
+    url: "https://github.com/baimamboukar/air-quality-socioeconomic-analysis-research"
+    tags: ["Python", "Google Earth Engine", "Geospatial analysis"]
+    group: "learning"
+  - title: "Spacecraft Telemetry Anomaly Detection"
+    description: "Probabilistic graphical models and deep-learning experiments for anomaly detection in ESA-Mission1 spacecraft telemetry."
+    url: "https://github.com/baimamboukar/causual-structure-discovery-spacecraft-telemetry"
+    tags: ["Python", "Anomaly detection", "Probabilistic models"]
+    group: "learning"
+  - title: "Asteroid Classification with GNNs"
+    description: "Graph neural network experiments for classifying potentially hazardous asteroids using NASA JPL small-body data."
+    url: "https://github.com/baimamboukar/hazardous-asteroid-classification"
+    tags: ["Python", "Graph neural networks", "Astronomy"]
+    group: "learning"

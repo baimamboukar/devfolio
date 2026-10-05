@@ -1,24 +1,36 @@
 hero:
-  greeting: "Hi, I'm Baimam Boukar"
-  emoji: '👋'
-  introduction: "I am a researcher working on mechanistic interpretability and AI alignment. I study why current interpretability methods fail to generalize, and build more reliable tools to understand and control large language models. I recently completed my master's in Applied Machine Learning at Carnegie Mellon University, and I am currently a Research Assistant at Jinesis AI Lab, University of Toronto, working on the generalizability of mechanistic interpretability techniques."
+  name: Baimam Boukar
+  discipline: Understanding and Steering Language Models
+  introduction: >-
+    I’m interested in what we can learn from the inner workings of language models—and what that understanding lets us do.
+  research_summary: >-
+    My research tests whether interpretability methods generalize across models and tasks, and whether the signals they find can guide reliable interventions.
+  current_work: >-
+    At Jinesis AI Lab, I work on reproducing activation-probing studies and evaluating their generalization across
+    models, independently refitting probes for each target model.
+  background: >-
+    My background spans machine learning at CMU-Africa, research at IBM, and software engineering.
 quick_links:
   book_call:
-    title: "Let's Connect"
-    subtitle: 'Schedule a conversation'
-    button_text: 'Book Call'
-    url: 'https://calendly.com/baimamboukar'
+    title: Let's Connect
+    subtitle: Schedule a conversation
+    button_text: Book Call
+    url: https://calendly.com/baimamboukar
   links:
-    - label: 'Research'
-      icon: 'fluent-emoji:scientist'
-      url: '/research'
-    - label: 'My Talks'
-      icon: 'fluent-emoji:laptop'
-      url: '/presentations'
+    - label: Work
+      icon: fluent-emoji:scientist
+      url: /work
+    - label: My Talks
+      icon: fluent-emoji:laptop
+      url: /presentations
       external: true
-    - label: 'Projects'
-      icon: 'fluent-emoji:sparkles'
-      url: '/projects'
-    - label: 'Blog'
-      icon: 'fluent-emoji:writing-hand'
-      url: '/blog'
+    - label: Blog
+      icon: fluent-emoji:writing-hand
+      url: /blog
+title: Homepage
+
+selected_research:
+  - slug: cross-model-generalization-of-mechanistic-interpretability-probes
+    summary: A reproduction-first audit across model families, with probes refit for each target model.
+  - slug: selection-regret-auditing-deception-probes-as-intervention-selectors
+    summary: Testing whether a probe that detects deception can also select an intervention that changes behavior.

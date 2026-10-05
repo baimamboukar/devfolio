@@ -1,37 +1,6 @@
 <template>
-  <section
-    class="flex items-center [&>span]:text-zinc-300 [&>span]:dark:text-zinc-700 space-x-3 text-zinc-400 [&>a]:border-b-[.1rem]"
-  >
-    <p class="my-0 font-bold">Let's Connect</p>
-
-    <Icon name="heroicons:chevron-right-20-solid" class="text-sky-500" />
-
-    <nuxt-link
-      class="focus-visible:global-focus"
-      to="https://twitter.com/baimamboukarr"
-      target="_blank"
-      external
-      >Twitter
-    </nuxt-link>
-
-    <span>&bull;</span>
-
-    <nuxt-link
-      class="focus-visible:global-focus"
-      to="https://github.com/baimamboukar"
-      target="_blank"
-      external
-      >GitHub
-    </nuxt-link>
-
-    <span>&bull;</span>
-
-    <nuxt-link
-      class="focus-visible:global-focus"
-      to="https://linkedin.com/in/baimamboukar"
-      target="_blank"
-      external
-      >LinkedIn
-    </nuxt-link>
-  </section>
+  <footer class="note-footer"><span>Continue the conversation</span><nav aria-label="Author profiles"><a href="https://github.com/baimamboukar" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://linkedin.com/in/baimamboukar" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://twitter.com/baimamboukarr" target="_blank" rel="noopener noreferrer">Twitter ↗</a></nav></footer>
 </template>
+<style scoped>
+.note-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-top:32px;padding:18px 0;border-top:1px solid var(--line);font-size:.8rem}.note-footer>span{color:var(--muted)}.note-footer nav{display:flex;gap:8px;flex-wrap:wrap}.note-footer a{padding:6px 10px;background:var(--surface-alt);border-radius:999px}
+</style>

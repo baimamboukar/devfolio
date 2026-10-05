@@ -6,6 +6,9 @@
     "dev": "nuxi dev",
     "generate": "nuxi generate",
     "preview": "nuxi preview",
+    "content:check": "node scripts/website-updates.mjs check",
+    "news:drafts": "node scripts/website-updates.mjs list",
+    "test:updates": "node --test tests/website-updates.test.mjs",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "nuxi prepare"
   },
@@ -24,7 +27,7 @@
     "nuxt-icon": "^0.6.10"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.2.8",
+    "@fontsource/fraunces": "^5.2.9",
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@nuxt/ui": "^2.20.0",
     "@nuxt/ui-pro": "^1.6.0",

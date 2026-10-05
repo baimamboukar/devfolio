@@ -1,41 +1,7 @@
 <script setup>
-// TEMPORARY design tweak panel — delete this component (and its plumbing in
-// app.vue + tailwind.config.js) once fonts/colors are chosen.
-
-const FONTS = [
-  // Sans / grotesque
-  { name: 'Inter', gf: 'Inter:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Onest', gf: 'Onest:wght@400;500;600;700' },
-  { name: 'Plus Jakarta Sans', gf: 'Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Space Grotesk', gf: 'Space+Grotesk:wght@400;500;600;700' },
-  { name: 'Sora', gf: 'Sora:wght@400;500;600;700' },
-  { name: 'Manrope', gf: 'Manrope:wght@400;500;600;700' },
-  { name: 'Outfit', gf: 'Outfit:wght@400;500;600;700' },
-  { name: 'DM Sans', gf: 'DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Work Sans', gf: 'Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Figtree', gf: 'Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Albert Sans', gf: 'Albert+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Hanken Grotesk', gf: 'Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Public Sans', gf: 'Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Schibsted Grotesk', gf: 'Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Bricolage Grotesque', gf: 'Bricolage+Grotesque:wght@400;500;600;700' },
-  { name: 'Instrument Sans', gf: 'Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Geist', gf: 'Geist:wght@400;500;600;700' },
-  { name: 'IBM Plex Sans', gf: 'IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Libre Franklin', gf: 'Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  // Serif / editorial
-  { name: 'Fraunces', gf: 'Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Source Serif 4', gf: 'Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Newsreader', gf: 'Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Lora', gf: 'Lora:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Spectral', gf: 'Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Crimson Pro', gf: 'Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'EB Garamond', gf: 'EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Playfair Display', gf: 'Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400' },
-  { name: 'Instrument Serif', gf: 'Instrument+Serif:ital@0;1' },
-];
-
+// Local preview controls. These settings stay in this browser.
 const PALETTES = {
+  meta:    { 50:'#eef5ff',100:'#dbeaff',200:'#b8d5ff',300:'#89b6ff',400:'#5193ff',500:'#0866ff',600:'#0054df',700:'#0044b8',800:'#00378f',900:'#002b70',950:'#001b47' },
   sky:     { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',300:'#7dd3fc',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',800:'#075985',900:'#0c4a6e',950:'#082f49' },
   blue:    { 50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a',950:'#172554' },
   indigo:  { 50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b' },
@@ -55,247 +21,287 @@ const PALETTES = {
   slate:   { 50:'#f8fafc',100:'#f1f5f9',200:'#e2e8f0',300:'#cbd5e1',400:'#94a3b8',500:'#64748b',600:'#475569',700:'#334155',800:'#1e293b',900:'#0f172a',950:'#020617' },
 };
 
-const UNDERLINES = ['none', 'gradient', 'wavy', 'highlight'];
-const WEIGHTS = ['default', '600', '700', '800'];
-const TRACKINGS = ['default', 'tight', 'wide'];
-const RADII = ['sharp', 'default', 'round'];
-const BACKGROUNDS = ['default', 'white', 'warm', 'tint'];
-const TEXT_SCALES = { S: '15px', M: '', L: '17.5px' };
 
+const STORAGE_KEY = 'tweak-config-v7';
+const LEGACY_KEYS = ['tweak-config-v6', 'tweak-config-v5', 'tweak-config-v4', 'tweak-config-v3', 'tweak-config-v2'];
 const DEFAULTS = {
-  heading: 'Inter',
-  body: 'Inter',
-  color: 'sky',
-  italicHero: false,
-  underline: 'none',
-  weight: 'default',
-  tracking: 'default',
-  capsSections: false,
-  radius: 'default',
-  background: 'default',
-  textScale: 'M',
+  width: 69, bodySize: 16, nameSize: 36, sectionSize: 24, paperSize: 18,
+  leading: 1.6, sectionGap: 30, rowGap: 14, portraitSize: 160,
+  heading: 'DM Sans', body: 'DM Sans', headingWeight: 700, corners: 12,
+  color: 'meta', theme: 'light', portrait: 'show', summaries: 'show',
+  authors: 'show', updates: 'show', links: 'show', dividers: 'show',
+  motion: 'subtle', headingStyle: 'normal', sectionCase: 'normal',
+  linkStyle: 'hover', surface: 'white', projectSurface: 'neutral', textAlign: 'left',
+  navPosition: 'sticky', navAlign: 'center', navIndicator: 'pill', navDensity: 'compact',
+  // Retain retired navigation keys for saved-settings compatibility; their controls stay hidden.
+  navWriting: 'show', navTalks: 'show', navPhotos: 'hide', navNews: 'hide', navCv: 'hide', navCustomize: 'show', navBrand: 'home',
 };
-
-// Load every candidate font (browsers only download faces actually rendered)
-useHead({
-  link: [
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-    ...FONTS.map((f) => ({
-      rel: 'stylesheet',
-      href: `https://fonts.googleapis.com/css2?family=${f.gf}&display=swap`,
-    })),
-  ],
-});
-
-const open = ref(false);
+const FONT_STACKS = {
+  Fraunces: '"Fraunces", Georgia, serif',
+  'DM Sans': '"DM Sans", system-ui, sans-serif',
+  Georgia: 'Georgia, serif',
+  'System sans': 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+  'System mono': 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',
+};
+const RANGES = {
+  width: [68, 70, 1, '%'], bodySize: [13, 18, 1, 'px'], nameSize: [24, 36, 1, 'px'],
+  sectionSize: [16, 24, 1, 'px'], paperSize: [14, 20, 1, 'px'], leading: [1.4, 1.9, .05, ''],
+  sectionGap: [16, 44, 2, 'px'], rowGap: [8, 24, 1, 'px'], portraitSize: [96, 176, 8, 'px'],
+  headingWeight: [400, 700, 100, ''], corners: [0, 18, 1, 'px'],
+};
+const CHOICES = {
+  heading: ['Fraunces', 'DM Sans', 'Georgia', 'System sans'],
+  body: ['DM Sans', 'System sans', 'Georgia', 'System mono'],
+  color: Object.keys(PALETTES), theme: ['light', 'dark', 'black', 'monochrome', 'system'],
+  portrait: ['show', 'hide'], summaries: ['show', 'hide'], authors: ['show', 'hide'],
+  updates: ['show', 'hide'], links: ['show', 'hide'], dividers: ['show', 'hide'],
+  motion: ['subtle', 'none'], headingStyle: ['normal', 'italic'], sectionCase: ['normal', 'uppercase'],
+  linkStyle: ['hover', 'always'], surface: ['white', 'warm', 'cool'], projectSurface: ['neutral', 'tinted'], textAlign: ['left', 'justify'],
+  navPosition: ['sticky', 'static'], navAlign: ['left', 'center'], navIndicator: ['pill', 'quiet', 'dot', 'solid'], navDensity: ['compact', 'comfortable'],
+  navWriting: ['show', 'hide'], navTalks: ['show', 'hide'], navPhotos: ['show', 'hide'], navNews: ['show', 'hide'], navCv: ['show', 'hide'], navCustomize: ['show', 'hide'], navBrand: ['home', 'initials', 'name'],
+};
+const GROUPS = [
+  { name: 'Appearance', open: true, ranges: [], selects: [['theme', 'Theme']] },
+  { name: 'Navigation', open: true, ranges: [], selects: [['navPosition', 'Bar position'], ['navAlign', 'Bar alignment'], ['navIndicator', 'Active link'], ['navDensity', 'Bar spacing'], ['navBrand', 'Home label']] },
+  { name: 'Layout', open: true, ranges: [['width', 'Page width'], ['sectionGap', 'Section spacing'], ['rowGap', 'Row spacing'], ['portraitSize', 'Portrait size'], ['corners', 'Corner radius']], selects: [['dividers', 'Section dividers'], ['textAlign', 'Paragraph alignment']] },
+  { name: 'Typography', open: false, ranges: [['bodySize', 'Body text'], ['nameSize', 'Name heading'], ['sectionSize', 'Section headings'], ['paperSize', 'Paper titles'], ['leading', 'Line height'], ['headingWeight', 'Heading weight']], selects: [['heading', 'Heading font'], ['body', 'Body font'], ['headingStyle', 'Heading style'], ['sectionCase', 'Section case'], ['linkStyle', 'Link treatment']] },
+  { name: 'Color', open: false, ranges: [], selects: [['surface', 'Light background'], ['projectSurface', 'Featured cards']] },
+  { name: 'Content', open: false, ranges: [], selects: [['portrait', 'Portrait'], ['summaries', 'Paper summaries'], ['authors', 'Paper authors'], ['updates', 'Recent updates'], ['links', 'Profile links']] },
+  { name: 'Motion', open: false, ranges: [], selects: [['motion', 'Transitions']] },
+];
+const open = useState('preview-appearance-open', () => false);
+const mobileNavigationExpanded = useState('preview-mobile-nav-expanded', () => false);
+const colorMode = useColorMode();
+const navigationPreferences = useState('site-navigation-preferences', () => ({}));
+let returnFocus = null;
 const state = reactive({ ...DEFAULTS });
+const isNeutralTheme = computed(() => ['black', 'monochrome'].includes(state.theme));
+const resolvedColorMode = () => state.theme === 'black' ? 'dark' : state.theme === 'monochrome' ? 'light' : state.theme;
+const NEUTRAL_PALETTE = { 50:'#fafafa',100:'#f0f0f0',200:'#dedede',300:'#c4c4c4',400:'#9a9a9a',500:'#404040',600:'#303030',700:'#242424',800:'#181818',900:'#101010',950:'#080808' };
+const panel = ref(null);
+const trigger = ref(null);
+const settingsText = ref('');
+const settingsMessage = ref('');
+const panelId = 'preview-appearance-panel';
 
-const hexToTriplet = (hex) => {
-  const n = parseInt(hex.slice(1), 16);
-  return `${(n >> 16) & 255} ${(n >> 8) & 255} ${n & 255}`;
+const normalize = (saved) => {
+  const result = { ...DEFAULTS };
+  if (!saved || typeof saved !== 'object' || Array.isArray(saved)) return result;
+  for (const [key, options] of Object.entries(CHOICES)) {
+    if (options.includes(saved[key])) result[key] = saved[key];
+  }
+  for (const [key, [min, max, step]] of Object.entries(RANGES)) {
+    if (typeof saved[key] !== 'number' || !Number.isFinite(saved[key])) continue;
+    const clamped = Math.min(max, Math.max(min, saved[key]));
+    result[key] = Number((min + Math.round((clamped - min) / step) * step).toFixed(2));
+  }
+  return result;
 };
-
+const hexToTriplet = (hex) => {
+  const value = parseInt(hex.slice(1), 16);
+  return `${(value >> 16) & 255} ${(value >> 8) & 255} ${value & 255}`;
+};
 const apply = () => {
   const root = document.documentElement;
-  root.style.setProperty('--font-heading', `"${state.heading}"`);
-  root.style.setProperty('--font-body', `"${state.body}"`);
-  const palette = PALETTES[state.color];
-  for (const [shade, hex] of Object.entries(palette)) {
-    root.style.setProperty(`--primary-${shade}`, hexToTriplet(hex));
-  }
-  root.classList.toggle('tw-italic-hero', state.italicHero);
-  root.classList.toggle('tw-caps-sections', state.capsSections);
-  UNDERLINES.forEach((u) => root.classList.toggle(`tw-underline-${u}`, state.underline === u));
-  WEIGHTS.forEach((w) => root.classList.toggle(`tw-hw-${w}`, state.weight === w));
-  TRACKINGS.forEach((t) => root.classList.toggle(`tw-track-${t}`, state.tracking === t));
-  RADII.forEach((r) => root.classList.toggle(`tw-radius-${r}`, state.radius === r));
-  BACKGROUNDS.forEach((b) => root.classList.toggle(`tw-bg-${b}`, state.background === b));
-  root.style.fontSize = TEXT_SCALES[state.textScale] || '';
-  localStorage.setItem('tweak-config', JSON.stringify(state));
+  // Remove previous preview experiments before applying the current settings.
+  Array.from(root.classList).filter(name => name.startsWith('tw-')).forEach(name => root.classList.remove(name));
+  root.style.removeProperty('font-size');
+  const variables = {
+    '--site-width': `${state.width}%`, '--body-size': `${state.bodySize}px`,
+    '--name-size': `${state.nameSize}px`, '--section-size': `${state.sectionSize}px`,
+    '--paper-size': `${state.paperSize}px`, '--content-leading': String(state.leading),
+    '--section-gap': `${state.sectionGap}px`, '--row-gap': `${state.rowGap}px`,
+    '--portrait-size': `${state.portraitSize}px`, '--heading-weight': String(state.headingWeight),
+    '--corner-radius': `${state.corners}px`, '--font-heading': FONT_STACKS[state.heading],
+    '--font-body': FONT_STACKS[state.body],
+    '--project-card-surface': state.projectSurface === 'tinted' ? 'var(--study-surface)' : 'var(--surface)',
+  };
+  for (const [name, value] of Object.entries(variables)) root.style.setProperty(name, value);
+  const palette = isNeutralTheme.value ? NEUTRAL_PALETTE : PALETTES[state.color];
+  for (const [shade, hex] of Object.entries(palette)) root.style.setProperty(`--primary-${shade}`, hexToTriplet(hex));
+  const attributes = {
+    siteTheme: state.theme, portrait: state.portrait, paperSummaries: state.summaries,
+    paperAuthors: state.authors, homeUpdates: state.updates, homeLinks: state.links,
+    dividers: state.dividers, motion: state.motion, headingStyle: state.headingStyle,
+    sectionCase: state.sectionCase, linkStyle: state.linkStyle, surface: state.surface,
+    projectSurface: state.projectSurface, textAlign: state.textAlign, navPosition: state.navPosition, navAlign: state.navAlign,
+    navIndicator: state.navIndicator, navDensity: state.navDensity,
+  };
+  for (const [name, value] of Object.entries(attributes)) root.dataset[name] = value;
+  navigationPreferences.value = Object.fromEntries(Object.keys(DEFAULTS).filter(key => key.startsWith('nav')).map(key => [key.slice(3).toLowerCase(), state[key]]));
+  if (colorMode.preference !== resolvedColorMode()) colorMode.preference = resolvedColorMode();
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch {}
 };
-
 const reset = () => {
   Object.assign(state, DEFAULTS);
-  localStorage.removeItem('tweak-config');
+  settingsText.value = '';
+  settingsMessage.value = 'Default settings restored.';
+  try { LEGACY_KEYS.forEach(key => localStorage.removeItem(key)); } catch {}
+  apply();
 };
-
+const close = () => {
+  open.value = false;
+  (returnFocus?.isConnected ? returnFocus : trigger.value)?.focus();
+};
+const exportSettings = () => {
+  settingsText.value = JSON.stringify(normalize(state), null, 2);
+  settingsMessage.value = 'Settings ready to copy.';
+};
+const importSettings = () => {
+  try {
+    const value = JSON.parse(settingsText.value);
+    if (!value || typeof value !== 'object' || Array.isArray(value) || !Object.keys(DEFAULTS).some(key => Object.hasOwn(value, key))) throw new Error('Invalid settings');
+    Object.assign(state, normalize(value));
+    apply();
+    settingsMessage.value = 'Settings applied. Unsupported values use defaults.';
+  } catch {
+    settingsMessage.value = 'Enter a valid settings JSON object.';
+  }
+};
+watch(open, async (value) => {
+  if (value) { returnFocus = document.activeElement; await nextTick(); panel.value?.focus(); }
+});
+watch(mobileNavigationExpanded, expanded => { if (expanded) open.value = false; });
 onMounted(() => {
   try {
-    const saved = JSON.parse(localStorage.getItem('tweak-config') || 'null');
-    if (saved) Object.assign(state, { ...DEFAULTS, ...saved });
+    const current = localStorage.getItem(STORAGE_KEY);
+    if (current) Object.assign(state, normalize(JSON.parse(current)));
+    else {
+      for (const key of LEGACY_KEYS) {
+        try {
+          const legacy = JSON.parse(localStorage.getItem(key) || 'null');
+          if (legacy && typeof legacy === 'object' && !Array.isArray(legacy)) {
+            const migrated = normalize(legacy);
+            // A new design resets dimensions and heading defaults, retaining reading/color preferences.
+            for (const name of ['width', 'bodySize', 'nameSize', 'sectionSize', 'paperSize', 'sectionGap', 'rowGap', 'portraitSize', 'corners', 'heading', 'headingWeight', ...Object.keys(DEFAULTS).filter(key => key.startsWith('nav'))]) migrated[name] = DEFAULTS[name];
+            Object.assign(state, migrated);
+            break;
+          }
+        } catch {}
+      }
+    }
   } catch {}
   apply();
-  watch(state, apply);
+  watch(state, apply, { deep: true });
+  watch(() => colorMode.preference, preference => {
+    if (preference === resolvedColorMode() || !['light', 'dark', 'system'].includes(preference)) return;
+    // The header's sun/moon switch keeps the selected neutral theme family.
+    state.theme = isNeutralTheme.value && preference !== 'system'
+      ? (preference === 'dark' ? 'black' : 'monochrome')
+      : preference;
+  });
 });
-
-const summary = computed(() => {
-  const extras = Object.entries(state)
-    .filter(([k, v]) => !['heading', 'body', 'color'].includes(k) && v !== DEFAULTS[k])
-    .map(([k, v]) => (v === true ? k : `${k}:${v}`));
-  return `${state.heading} / ${state.body} / ${state.color}` + (extras.length ? ' / ' + extras.join(' / ') : '');
-});
+const colorName = name => name === 'meta' ? 'Meta blue' : name.charAt(0).toUpperCase() + name.slice(1);
+const choiceLabel = (key, value) => {
+  if (key === 'theme') return ({ light: 'Light', dark: 'Dark', black: 'True black', monochrome: 'Black and white', system: 'System' })[value];
+  if (key === 'linkStyle') return value === 'hover' ? 'Color on hover' : 'Always underline';
+  if (key === 'navIndicator') return ({ pill: 'Filled pill', quiet: 'Quiet pill', dot: 'Dot', solid: 'Filled tab' })[value];
+  if (key === 'navBrand') return ({ home: 'Home', initials: 'BB initials', name: 'Baimam' })[value];
+  if (key === 'navPosition') return value === 'sticky' ? 'Stays in view' : 'Scrolls with page';
+  if (key === 'motion') return value === 'subtle' ? 'Subtle' : 'Off';
+  return value.charAt(0).toUpperCase() + value.slice(1);
+};
 </script>
 
 <template>
-  <div class="fixed bottom-4 left-4 z-[60] print:hidden">
-    <!-- Toggle button -->
+  <div class="appearance-tools print:hidden" :class="{ 'navigation-expanded': mobileNavigationExpanded }" @keydown.esc.stop.prevent="close">
     <button
+      id="appearance-toggle"
+      ref="trigger"
+      type="button"
+      class="appearance-trigger"
+      :aria-expanded="open"
+      :aria-controls="panelId"
       @click="open = !open"
-      class="flex items-center gap-2 px-3 h-10 rounded-full shadow-lg bg-zinc-900 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 text-sm font-semibold hover:scale-105 transition-transform"
-      title="Design tweak panel (temporary)"
     >
-      <Icon name="heroicons:paint-brush-20-solid" class="w-4 h-4" />
-      <span v-if="!open">Tweak</span>
-      <span v-else>Close</span>
+      <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 2v16M10 2v16M16 2v16M1 7h6M7 13h6M13 6h6" /></svg>
+      Tweak
     </button>
-
-    <!-- Panel -->
-    <div
-      v-if="open"
-      class="absolute bottom-12 left-0 w-[22rem] max-h-[75vh] overflow-y-auto rounded-2xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-2xl p-4 space-y-5"
-    >
-      <p class="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold">
-        Temporary design panel — current: <span class="text-zinc-700 dark:text-zinc-200 normal-case">{{ summary }}</span>
-      </p>
-
-      <!-- Primary color -->
-      <div>
-        <h4 class="text-xs font-bold mb-2 text-zinc-600 dark:text-zinc-300 uppercase tracking-wide">Primary color</h4>
-        <div class="grid grid-cols-9 gap-2">
-          <button
-            v-for="(palette, name) in PALETTES"
-            :key="name"
-            @click="state.color = name"
-            :title="name"
-            class="w-7 h-7 rounded-full border border-black/10 transition-transform hover:scale-110"
-            :class="state.color === name ? 'ring-2 ring-offset-2 ring-zinc-500 dark:ring-offset-zinc-900' : ''"
-            :style="{ backgroundColor: palette[500] }"
-          />
-        </div>
-      </div>
-
-      <!-- Heading font -->
-      <div>
-        <h4 class="text-xs font-bold mb-2 text-zinc-600 dark:text-zinc-300 uppercase tracking-wide">Heading font</h4>
-        <div class="max-h-44 overflow-y-auto rounded-lg border border-zinc-200 dark:border-zinc-700 divide-y divide-zinc-100 dark:divide-zinc-800">
-          <button
-            v-for="f in FONTS"
-            :key="'h-' + f.name"
-            @click="state.heading = f.name"
-            class="w-full text-left px-3 py-1.5 text-base hover:bg-zinc-100 dark:hover:bg-zinc-800 flex items-center justify-between"
-            :style="{ fontFamily: `'${f.name}'` }"
-          >
-            {{ f.name }}
-            <Icon v-if="state.heading === f.name" name="heroicons:check-20-solid" class="w-4 h-4 text-emerald-500 shrink-0" />
-          </button>
-        </div>
-      </div>
-
-      <!-- Body font -->
-      <div>
-        <h4 class="text-xs font-bold mb-2 text-zinc-600 dark:text-zinc-300 uppercase tracking-wide">Body font</h4>
-        <div class="max-h-44 overflow-y-auto rounded-lg border border-zinc-200 dark:border-zinc-700 divide-y divide-zinc-100 dark:divide-zinc-800">
-          <button
-            v-for="f in FONTS"
-            :key="'b-' + f.name"
-            @click="state.body = f.name"
-            class="w-full text-left px-3 py-1.5 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800 flex items-center justify-between"
-            :style="{ fontFamily: `'${f.name}'` }"
-          >
-            {{ f.name }} — why methods fail to generalize
-            <Icon v-if="state.body === f.name" name="heroicons:check-20-solid" class="w-4 h-4 text-emerald-500 shrink-0" />
-          </button>
-        </div>
-      </div>
-
-      <!-- Typography -->
-      <div>
-        <h4 class="text-xs font-bold mb-2 text-zinc-600 dark:text-zinc-300 uppercase tracking-wide">Typography</h4>
-        <div class="space-y-2">
-          <div class="flex items-center gap-2 text-xs">
-            <span class="w-24 text-zinc-500 shrink-0">Text size</span>
-            <button
-              v-for="(px, label) in TEXT_SCALES" :key="label" @click="state.textScale = label"
-              class="px-2.5 py-1 rounded-full border"
-              :class="state.textScale === label ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border-transparent' : 'border-zinc-300 dark:border-zinc-600 text-zinc-600 dark:text-zinc-300'"
-            >{{ label }}</button>
+    <section v-if="open" :id="panelId" ref="panel" class="appearance-panel" aria-labelledby="appearance-title" tabindex="-1">
+      <header class="appearance-header">
+        <div><h2 id="appearance-title">Customize</h2><p>Saved in this browser.</p></div>
+        <button type="button" class="appearance-close" aria-label="Close customization" @click="close">×</button>
+      </header>
+      <div class="appearance-content">
+        <details v-for="group in GROUPS" :key="group.name" class="settings-group" :open="group.open">
+          <summary>{{ group.name }}</summary>
+          <div class="group-controls">
+            <label v-for="[key, label] in group.ranges" :key="key" class="range-control" :for="`tweak-${key}`">
+              <span>{{ label }}</span><output :for="`tweak-${key}`">{{ state[key] }}{{ RANGES[key][3] }}</output>
+              <input :id="`tweak-${key}`" v-model.number="state[key]" type="range" :min="RANGES[key][0]" :max="RANGES[key][1]" :step="RANGES[key][2]">
+            </label>
+            <label v-for="[key, label] in group.selects" :key="key" class="select-control" :for="`tweak-${key}`">
+              <span>{{ label }}</span>
+              <select :id="`tweak-${key}`" v-model="state[key]"><option v-for="option in CHOICES[key]" :key="option" :value="option">{{ choiceLabel(key, option) }}</option></select>
+            </label>
+            <fieldset v-if="group.name === 'Color'" class="accent-control" :disabled="isNeutralTheme">
+              <legend>Accent <span>{{ colorName(state.color) }}</span></legend>
+              <div class="palette-options">
+                <button v-for="(palette, name) in PALETTES" :key="name" type="button" class="palette-option" :style="{ '--swatch': palette[500] }" :title="colorName(name)" :aria-label="colorName(name)" :aria-pressed="state.color === name" @click="state.color = name"><span v-if="state.color === name" aria-hidden="true">✓</span></button>
+              </div>
+            </fieldset>
+            <p v-if="group.name === 'Color' && isNeutralTheme" class="control-note">Neutral colors throughout. Your accent choice is saved for Light and Dark.</p>
+            <p v-if="group.name === 'Appearance'" class="control-note">True black uses a pure black background.</p>
+            <p v-if="group.name === 'Motion'" class="control-note">Your device’s reduced-motion preference is always respected.</p>
           </div>
-          <div class="flex items-center gap-2 text-xs">
-            <span class="w-24 text-zinc-500 shrink-0">Heading weight</span>
-            <button
-              v-for="w in WEIGHTS" :key="w" @click="state.weight = w"
-              class="px-2.5 py-1 rounded-full border capitalize"
-              :class="state.weight === w ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border-transparent' : 'border-zinc-300 dark:border-zinc-600 text-zinc-600 dark:text-zinc-300'"
-            >{{ w }}</button>
+        </details>
+        <details class="settings-group settings-transfer">
+          <summary>Save / restore settings</summary>
+          <div class="group-controls">
+            <label for="tweak-settings-json">Settings JSON</label>
+            <textarea id="tweak-settings-json" v-model="settingsText" rows="5" spellcheck="false" placeholder="Generate settings to copy, or paste saved settings here." />
+            <div class="transfer-actions"><button type="button" @click="exportSettings">Generate JSON</button><button type="button" @click="importSettings">Apply JSON</button></div>
           </div>
-          <div class="flex items-center gap-2 text-xs">
-            <span class="w-24 text-zinc-500 shrink-0">Tracking</span>
-            <button
-              v-for="t in TRACKINGS" :key="t" @click="state.tracking = t"
-              class="px-2.5 py-1 rounded-full border capitalize"
-              :class="state.tracking === t ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border-transparent' : 'border-zinc-300 dark:border-zinc-600 text-zinc-600 dark:text-zinc-300'"
-            >{{ t }}</button>
-          </div>
-        </div>
+        </details>
       </div>
-
-      <!-- Accents -->
-      <div>
-        <h4 class="text-xs font-bold mb-2 text-zinc-600 dark:text-zinc-300 uppercase tracking-wide">Accents</h4>
-        <label class="flex items-center gap-2 text-sm mb-2 cursor-pointer">
-          <input type="checkbox" v-model="state.italicHero" class="accent-zinc-700" />
-          Italic hero intro
-        </label>
-        <label class="flex items-center gap-2 text-sm mb-2 cursor-pointer">
-          <input type="checkbox" v-model="state.capsSections" class="accent-zinc-700" />
-          Uppercase section titles
-        </label>
-        <div class="flex flex-wrap gap-2">
-          <button
-            v-for="u in UNDERLINES"
-            :key="u"
-            @click="state.underline = u"
-            class="px-2.5 py-1 rounded-full text-xs border capitalize"
-            :class="state.underline === u
-              ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border-transparent'
-              : 'border-zinc-300 dark:border-zinc-600 text-zinc-600 dark:text-zinc-300'"
-          >
-            {{ u }} underline
-          </button>
-        </div>
-      </div>
-
-      <!-- Shape & background -->
-      <div>
-        <h4 class="text-xs font-bold mb-2 text-zinc-600 dark:text-zinc-300 uppercase tracking-wide">Shape &amp; background</h4>
-        <div class="space-y-2">
-          <div class="flex items-center gap-2 text-xs">
-            <span class="w-24 text-zinc-500 shrink-0">Corners</span>
-            <button
-              v-for="r in RADII" :key="r" @click="state.radius = r"
-              class="px-2.5 py-1 rounded-full border capitalize"
-              :class="state.radius === r ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border-transparent' : 'border-zinc-300 dark:border-zinc-600 text-zinc-600 dark:text-zinc-300'"
-            >{{ r }}</button>
-          </div>
-          <div class="flex items-center gap-2 text-xs">
-            <span class="w-24 text-zinc-500 shrink-0">Background</span>
-            <button
-              v-for="b in BACKGROUNDS" :key="b" @click="state.background = b"
-              class="px-2.5 py-1 rounded-full border capitalize"
-              :class="state.background === b ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border-transparent' : 'border-zinc-300 dark:border-zinc-600 text-zinc-600 dark:text-zinc-300'"
-            >{{ b }}</button>
-          </div>
-          <p class="text-[10px] text-zinc-400">Background applies in light mode only.</p>
-        </div>
-      </div>
-
-      <button
-        @click="reset"
-        class="w-full py-2 rounded-lg text-sm font-semibold border border-zinc-300 dark:border-zinc-600 hover:bg-zinc-100 dark:hover:bg-zinc-800"
-      >
-        Reset to defaults
-      </button>
-    </div>
+      <footer class="appearance-footer">
+        <span>{{ state.width }}% width · {{ state.bodySize }}px text</span>
+        <button type="button" @click="reset">Reset all</button>
+      </footer>
+      <p v-if="settingsMessage" class="settings-message" role="status">{{ settingsMessage }}</p>
+    </section>
   </div>
 </template>
+
+<style scoped>
+.appearance-tools { position: fixed; bottom: max(18px, env(safe-area-inset-bottom)); right: max(18px, env(safe-area-inset-right)); z-index: 60; font-family: "DM Sans", system-ui, sans-serif; font-size: 13px; line-height: 1.4; }
+.appearance-trigger { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 38px; padding: 0 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); box-shadow: 0 2px 9px #172b4d12; font-size: 12px; font-weight: 500; }
+.appearance-trigger:hover { color: rgb(var(--primary-600)); border-color: currentColor; }
+.appearance-panel { position: absolute; bottom: 48px; right: 0; display: flex; flex-direction: column; width: min(350px, calc(100vw - 36px)); max-height: min(700px, calc(100dvh - 94px - env(safe-area-inset-bottom))); border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--ink); box-shadow: 0 8px 30px #172b4d1f; overflow: hidden; outline: none; text-align: left; }
+.appearance-header { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px 12px; border-bottom: 1px solid var(--line); }
+.appearance-header h2 { margin: 0; font-family: "DM Sans", system-ui, sans-serif; font-size: 16px; font-style: normal; font-weight: 600; line-height: 1.3; letter-spacing: 0; text-transform: none; }
+.appearance-header p { margin-top: 3px; color: var(--muted); font-size: 11px; }
+.appearance-close { display: grid; place-items: center; min-width: 32px; min-height: 32px; border: 1px solid transparent; border-radius: 4px; color: var(--muted); font-size: 23px; font-weight: 400; }
+.appearance-close:hover { border-color: var(--line); color: var(--ink); }
+.appearance-content { min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; padding: 0 16px; }
+.settings-group { border-bottom: 1px solid var(--line); }
+.settings-group:last-child { border-bottom: 0; }
+.settings-group summary { cursor: pointer; padding: 13px 0; font-size: 12px; font-weight: 600; }
+.group-controls { display: grid; gap: 13px; padding: 0 0 16px; }
+.range-control { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 12px; font-size: 12px; }
+.range-control output { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 11px; }
+.range-control input { grid-column: 1 / -1; width: 100%; min-width: 0; height: 22px; margin: 2px 0 0; padding: 0; accent-color: rgb(var(--primary-500)); cursor: pointer; }
+.select-control { display: grid; grid-template-columns: minmax(95px, 1fr) minmax(0, 145px); align-items: center; gap: 12px; font-size: 12px; }
+.select-control select { width: 100%; min-width: 0; min-height: 32px; padding: 5px 25px 5px 8px; border: 1px solid var(--line); border-radius: 4px; background-color: var(--surface); color: var(--ink); font-family: inherit; font-size: 12px; }
+.accent-control { min-width: 0; margin: 0; }
+.accent-control:disabled .palette-options { opacity: .45; filter: grayscale(1); }
+.accent-control legend { padding: 0; margin-bottom: 10px; font-size: 12px; }
+.accent-control legend span { margin-left: 8px; color: var(--muted); font-size: 11px; }
+.palette-options { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 5px; }
+.palette-option { display: grid; place-items: center; width: 100%; aspect-ratio: 1; min-height: 24px; border: 3px solid var(--surface); border-radius: 50%; background: var(--swatch); color: white; box-shadow: 0 0 0 1px transparent; font-size: 11px; }
+.palette-option[aria-pressed='true'] { box-shadow: 0 0 0 1.5px var(--ink); }
+.palette-option:hover { box-shadow: 0 0 0 1px var(--muted); }
+.control-note { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.settings-transfer label { font-size: 12px; }
+.settings-transfer textarea { width: 100%; min-width: 0; max-width: 100%; min-height: 80px; resize: vertical; padding: 8px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink); font-family: ui-monospace, monospace; font-size: 11px; }
+.transfer-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.transfer-actions button, .appearance-footer button { min-height: 32px; padding: 5px 9px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink); font-size: 11px; }
+.transfer-actions button:hover, .appearance-footer button:hover { border-color: currentColor; color: rgb(var(--primary-600)); }
+.appearance-footer { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; border-top: 1px solid var(--line); }
+.appearance-footer span { color: var(--muted); font-size: 11px; }
+.settings-message { flex: none; padding: 0 16px 10px; color: var(--muted); font-size: 11px; }
+.appearance-tools :is(button, input, select, summary, textarea):focus-visible { outline: 2px solid rgb(var(--primary-500)); outline-offset: 3px; }
+:global(.dark) .appearance-trigger:hover, :global(.dark) .transfer-actions button:hover, :global(.dark) .appearance-footer button:hover { color: rgb(var(--primary-300)); }
+@media (max-width: 767px) { .appearance-tools.navigation-expanded { display: none; } }
+@media (max-width: 380px) { .appearance-tools { right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); } .appearance-panel { width: calc(100vw - 24px); max-height: calc(100dvh - 84px - env(safe-area-inset-bottom)); } .appearance-header, .appearance-footer { padding-left: 13px; padding-right: 13px; } .appearance-content { padding: 0 13px; } }
+</style>

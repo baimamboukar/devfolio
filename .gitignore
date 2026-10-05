@@ -25,3 +25,10 @@ pods/service-connections
 .vercel
 run.sh
 commit.sh
+
+# Private website drafts and source references
+.private/
+drafts/
+docs/profile-content-audit.md
+docs/personal-pages.md
+.env*

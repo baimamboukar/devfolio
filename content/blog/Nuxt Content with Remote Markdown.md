@@ -22,6 +22,7 @@ head:
     - name: "twitter:card"
       content: summary_large_image
 published: true
+listed: false
 published_on: "2024-04-15"
 ---
 

@@ -1,93 +1,33 @@
 <script setup>
-  const profiles = [
-    {
-      name: "GitHub",
-      icon: "simple-icons:github",
-      url: "https://github.com/baimamboukar"
-    },
-    {
-      name: "LinkedIn",
-      icon: "simple-icons:linkedin",
-      url: "https://linkedin.com/in/baimamboukar"
-    },
-    {
-      name: "Google Scholar",
-      icon: "fa7-brands:google-scholar",
-      url: "https://scholar.google.com/citations?user=e7-bpzMAAAAJ"
-    },
-    // {
-    //   name: "HuggingFace",
-    //   icon: "simple-icons:huggingface",
-    //   url: "https://huggingface.co/baimamboukar"
-    // },
-    {
-      name: "Medium",
-      icon: "simple-icons:medium",
-      url: "https://medium.com/@baimamboukar"
-    },
-    {
-      name: "Kaggle",
-      icon: "cib:kaggle",
-      url: "https://www.kaggle.com/baimamboukar"
-    },
-    // {
-    //   name: "X",
-    //   icon: "simple-icons:x",
-    //   url: "https://twitter.com/baimamboukar"
-    // },
-    {
-      name: "Credly",
-      icon: "simple-icons:credly",
-      url: "https://www.credly.com/users/baimamboukar"
-    },
-    {
-      name: "Instagram",
-      icon: "simple-icons:instagram",
-      url: "https://instagram.com/baimamboukar"
-    }
-  ];
+const profiles = [
+  { name: 'GitHub', icon: 'github', url: 'https://github.com/baimamboukar' },
+  { name: 'Google Scholar', icon: 'scholar', url: 'https://scholar.google.com/citations?view_op=list_works&hl=en&user=nufEeDEAAAAJ' },
+  { name: 'LinkedIn', icon: 'linkedin', url: 'https://linkedin.com/in/baimamboukar' },
+  { name: 'Hugging Face', icon: 'huggingface', url: 'https://huggingface.co/baimamboukar' },
+];
 </script>
-
-<!-- Profile card: Profile Picture, Name, Title + Social Profiles -->
 <template>
-  <div
-    class="w-full flex flex-col items-center bg-transparent relative [&>*]:mb-1 md:[&>*]:mb-3 last:[&>*]:mb-0 p-1 pb-2 md:pb-1"
-  >
-    <nuxt-img
-      preload
-      placeholder
-      format="webp"
-      loading="lazy"
-      width="112"
-      height="112"
-      src="/self.jpg"
-      alt="Profile Picture"
-      class="text-center border rounded-full w-28 border-zinc-200 dark:border-zinc-800"
-    />
-    <h2 class="text-xl font-bold md:text-2xl text-zinc-900 dark:text-zinc-100">
-      Baimam Boukar JJ
-    </h2>
-
-    <h2
-      class="font-xs md:text-smtext-xs font-semi-bold text-sky-600 dark:text-sky-400"
-    >
-      Building Verifiable Models
-    </h2>
-    <div
-      class="flex items-center justify-center w-full h-8 text-zinc-900 dark:text-zinc-200"
-    >
-      <nuxt-link
-        v-for="profile in profiles"
-        :key="profile.name"
-        class="focus-visible:global-focus icon-link"
-        :to="profile.url"
-        :title="profile.name"
-        :aria-label="`Link to My ${profile.name} Profile`"
-        target="_blank"
-        external
-      >
-        <Icon :name="profile.icon" />
-      </nuxt-link>
+  <div class="profile-identity">
+    <NuxtLink to="/" class="profile-home" aria-label="Baimam Boukar home">
+      <img src="/images/baimam-portrait-160.webp" alt="" width="64" height="64" class="profile-avatar" decoding="async" />
+      <div>
+        <p class="profile-name">Baimam Boukar JJ</p>
+        <p class="profile-role">Mechanistic Interpretability and AI Safety</p>
+      </div>
+    </NuxtLink>
+    <div class="profile-socials" aria-label="Find me online">
+      <a v-for="profile in profiles" :key="profile.name" :href="profile.url" :title="profile.name" :aria-label="profile.name" target="_blank" rel="noopener noreferrer"><SiteIcon :name="profile.icon" /></a>
+      <a href="mailto:baimamboukar@gmail.com" title="Email" aria-label="Email Baimam"><SiteIcon name="mail" /></a>
     </div>
   </div>
 </template>
+<style scoped>
+.profile-home { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.profile-avatar { width: 64px; height: 64px; border-radius: 20px; object-fit: cover; object-position: center 25%; box-shadow: 0 2px 8px #17255414; }
+.profile-name { color: var(--ink); font-size: 1.15rem; font-weight: 600; letter-spacing: -.035em; }
+.profile-role { margin-top: 4px; font-size: .82rem; color: var(--muted); }
+.profile-socials { display: flex; gap: 5px; margin: 14px 0 0 -7px; }
+.profile-socials a { display: grid; place-items: center; width: 32px; height: 36px; border-radius: 10px; color: var(--muted); transition: background .15s, color .15s; }
+.profile-socials a:hover { background: var(--surface); color: rgb(var(--primary-600)); }
+@media (max-width: 767px) { .profile-home { flex-direction: row; align-items: center; gap: 11px; } .profile-avatar { width: 42px; height: 42px; border-radius: 14px; } .profile-name { font-size: 1rem; } .profile-role { font-size: .72rem; margin-top: 1px; } .profile-socials { display: none; } }
+</style>

@@ -1,109 +1,50 @@
 <script setup>
-import { format } from 'date-fns';
-
-// Fetch the news document
-const { data: newsDoc } = await useAsyncData('news-ticker', () =>
-  queryContent('news').findOne()
-);
-
-// Process news items
-const items = computed(() => {
-  const updates = newsDoc.value?.updates || [];
-  if (updates.length === 0) return [];
-
-  // Sort by date descending and take top 5
-  return [...updates]
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 5);
+const { data: items } = await useAsyncData('home-recent-news', async () => {
+  const doc = await queryContent('news').findOne();
+  return [...(doc?.updates || [])].sort((a,b) => b.date.localeCompare(a.date)).slice(0,5).map(({date,title}) => ({date,title}));
 });
-
-const currentIndex = ref(0);
-let intervalId = null;
-
-const startInterval = () => {
-  intervalId = setInterval(() => {
-    if (items.value.length > 0) {
-      currentIndex.value = (currentIndex.value + 1) % items.value.length;
-    }
-  }, 5000);
-};
-
+const index = ref(0);
+const currentItem = computed(() => items.value?.[index.value]);
+const paused = ref(false);
+const hovering = ref(false);
+const focused = ref(false);
+const reducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
+const dateFormat = new Intl.DateTimeFormat('en-US', { month:'short', day:'numeric', year:'numeric', timeZone:'UTC' });
+let timer;
 onMounted(() => {
-  startInterval();
+  timer = window.setInterval(() => {
+    if (!paused.value && !hovering.value && !focused.value && !reducedMotion.value && document.visibilityState === 'visible' && document.documentElement.dataset.motion !== 'none' && items.value?.length > 1) index.value = (index.value + 1) % items.value.length;
+  }, 5000);
 });
-
-onUnmounted(() => {
-  if (intervalId) clearInterval(intervalId);
-});
-
-const setIndex = (index) => {
-  currentIndex.value = index;
-  // Reset timer on manual interaction
-  if (intervalId) clearInterval(intervalId);
-  startInterval();
-};
-
-const formatDate = (dateString) => {
-  if (!dateString) return '';
-  return format(new Date(dateString), 'MMM d, yyyy');
-};
+onBeforeUnmount(() => window.clearInterval(timer));
+const leaveFocus = event => { if (!event.currentTarget.contains(event.relatedTarget)) focused.value = false; };
 </script>
-
 <template>
-  <div v-if="items.length > 0" class="relative overflow-hidden bg-gradient-to-r from-sky-50 to-blue-50 dark:from-zinc-800 dark:to-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-lg p-3 flex items-center justify-between gap-4">
-    
-    <!-- Label -->
-    <div class="flex-shrink-0 flex items-center gap-2 text-xs font-bold text-sky-600 dark:text-sky-400 tracking-wider">
-      <span class="relative flex h-2 w-2">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
-      </span>
-      Recent updates
+  <section v-if="currentItem" class="news-widget" aria-labelledby="news-heading" @mouseenter="hovering = true" @mouseleave="hovering = false" @focusin="focused = true" @focusout="leaveFocus">
+    <h2 id="news-heading"><span class="news-dot" aria-hidden="true" />Recent updates</h2>
+    <NuxtLink class="current-update" :to="{path:'/news',query:{search:currentItem.title}}" :title="currentItem.title" prefetch-on="interaction"><time :datetime="currentItem.date">{{ dateFormat.format(new Date(currentItem.date)) }}</time><span>{{ currentItem.title }}</span></NuxtLink>
+    <div v-if="items.length > 1" class="news-controls" role="group" aria-label="Choose an update">
+      <button v-for="(item,itemIndex) in items" :key="item.date+item.title" type="button" class="update-selector" :aria-label="item.title" :aria-pressed="index === itemIndex" @click="index = itemIndex"><span /></button>
+      <button type="button" class="pause-updates" :aria-label="paused ? 'Resume rotating updates' : 'Pause rotating updates'" :aria-pressed="paused" @click="paused = !paused"><svg viewBox="0 0 20 20" aria-hidden="true"><path v-if="paused" d="m7 4 9 6-9 6Z" fill="currentColor" /><path v-else d="M7 5v10M13 5v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg></button>
     </div>
-
-    <!-- Content Slider -->
-    <div class="flex-1 min-w-0 flex items-center justify-between gap-4">
-       <!-- Animated Text -->
-       <div class="flex-1 min-w-0 relative h-6 overflow-hidden">
-          <transition 
-            enter-active-class="transition duration-300 ease-out absolute inset-0"
-            enter-from-class="translate-y-full opacity-0"
-            enter-to-class="translate-y-0 opacity-100"
-            leave-active-class="transition duration-300 ease-in absolute inset-0"
-            leave-from-class="translate-y-0 opacity-100"
-            leave-to-class="-translate-y-full opacity-0"
-          >
-            <div :key="currentIndex" class="absolute inset-0 flex items-center w-full">
-              <p class="text-sm font-medium text-gray-700 dark:text-gray-200 line-clamp-1 whitespace-nowrap overflow-hidden text-ellipsis w-full">
-                 <span class="text-xs font-semibold text-gray-500 dark:text-gray-400 mr-2 whitespace-nowrap">
-                   {{ formatDate(items[currentIndex].date) }}
-                 </span>
-                 {{ items[currentIndex].title }}
-              </p>
-            </div>
-          </transition>
-       </div>
-
-       <!-- Dot Indicators -->
-       <div class="hidden sm:flex space-x-1 flex-shrink-0">
-          <button
-            v-for="(_, index) in items"
-            :key="index"
-            @click="setIndex(index)"
-            class="h-1.5 rounded-full transition-all duration-300"
-            :class="currentIndex === index ? 'bg-sky-500 w-4' : 'bg-gray-300 dark:bg-gray-600 w-1.5 hover:bg-gray-400'"
-            :aria-label="'Go to update ' + (index + 1)"
-          />
-       </div>
-    </div>
-
-    <!-- Action -->
-    <NuxtLink 
-      to="/news"
-      class="flex-shrink-0 text-xs font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 transition-colors"
-    >
-      See All
-    </NuxtLink>
-
-  </div>
+    <NuxtLink to="/news" class="all-news" prefetch-on="interaction">See all</NuxtLink>
+  </section>
 </template>
+<style scoped>
+.news-widget { display:flex; align-items:center; gap:16px; min-width:0; padding:11px 14px; border:1px solid var(--line); border-radius:var(--corner-radius); background:var(--study-surface); }
+.news-widget h2 { display:flex; align-items:center; gap:8px; flex:none; font-family:var(--font-body); font-size:.75rem; font-weight:600; letter-spacing:0; color:var(--link-color); }
+.news-dot { width:6px; height:6px; flex:none; border-radius:50%; background:rgb(var(--primary-500)); }
+.current-update { min-width:0; flex:1; display:flex; align-items:baseline; gap:9px; color:var(--ink); font-size:.8125rem; line-height:1.5; }
+.current-update time { flex:none; font-size:.7rem; color:var(--muted); }
+.current-update > span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.news-controls { display:flex; align-items:center; flex:none; gap:0; }
+.update-selector { width:20px; height:28px; display:grid; place-items:center; border-radius:5px; }
+.update-selector span { width:5px; height:5px; border-radius:99px; background:var(--muted); opacity:.45; }
+.update-selector[aria-pressed=true] span { width:14px; background:rgb(var(--primary-500)); opacity:1; }
+.pause-updates { width:25px; height:28px; display:grid; place-items:center; color:var(--muted); border-radius:5px; }
+.pause-updates svg { width:14px; height:14px; }
+@media (prefers-reduced-motion: reduce) { .pause-updates { display:none; } }
+.all-news { display:inline-flex; align-items:center; gap:5px; flex:none; min-height:28px; font-size:.72rem; font-weight:500; color:var(--link-color); }
+@media(max-width:1100px) { .news-widget { flex-wrap:wrap; gap:7px 12px; } .news-widget h2 { order:0; } .current-update { order:2; flex-basis:100%; } .all-news { order:1; margin-left:auto; } .news-controls { order:3; margin-left:auto; } }
+@media(max-width:600px) { .news-widget { padding:12px; } .current-update { display:block; font-size:.8rem; } .current-update time { display:block; margin-bottom:4px; } .current-update > span { display:block; white-space:normal; } .update-selector { width:30px; height:36px; } .pause-updates { width:30px; height:36px; } }
+</style>

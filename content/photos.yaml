@@ -1,0 +1,244 @@
+title: Photo album
+description: Work, walks, and moments in between.
+photos:
+  - id: ibm-research
+    src: /images/baimam-at-ibm.webp
+    width: 900
+    height: 675
+    title: Presenting at IBM Research
+    caption: Sharing my internship work on IBM DeepScanner.
+    alt: Baimam presenting his internship research beside an IBM research poster.
+    collection: At work
+    year: '2025'
+    source: https://www.africa.engineering.cmu.edu/news/2026/02/03-jacques.html
+    credit: CMU-Africa
+    sample: false
+    position: left center
+  - id: kenya-hike
+    src: /images/album/kenya-hike.webp
+    width: 400
+    height: 533
+    title: Out for a hike
+    caption: Hiking during my internship in Kenya.
+    alt: Baimam and a fellow hiker on a green woodland trail in Kenya.
+    collection: Kenya
+    year: '2025'
+    source: https://www.africa.engineering.cmu.edu/news/2026/02/03-jacques.html
+    credit: CMU-Africa
+    sample: false
+  - id: kenya-outing
+    src: /images/album/kenya-outing.webp
+    width: 400
+    height: 533
+    title: An afternoon in Kenya
+    caption: An outing during my summer at IBM Research.
+    alt: Baimam taking a photo with a companion in a green field in Kenya.
+    collection: Kenya
+    year: '2025'
+    source: https://www.africa.engineering.cmu.edu/news/2026/02/03-jacques.html
+    credit: CMU-Africa
+    sample: false
+  - id: sample-10
+    src: /images/photos/sample-10.webp
+    thumbnail: /images/photos/sample-10-small.webp
+    width: 1200
+    height: 800
+    title: Beyond the trees
+    caption: A turquoise lake and distant mountains beyond an evergreen forest.
+    alt: A turquoise lake and distant mountains beyond an evergreen forest.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/6J--NXulQCs
+    credit: Paul Jarvis / Unsplash
+  - id: sample-11
+    src: /images/photos/sample-11.webp
+    thumbnail: /images/photos/sample-11-small.webp
+    width: 1200
+    height: 800
+    title: The river bends
+    caption: A shallow river meandering through grassland between forested slopes.
+    alt: A shallow river meandering through grassland between forested slopes.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/Cm7oKel-X2Q
+    credit: Paul Jarvis / Unsplash
+  - id: sample-13
+    src: /images/photos/sample-13.webp
+    thumbnail: /images/photos/sample-13-small.webp
+    width: 1200
+    height: 800
+    title: A quiet shoreline
+    caption: A pebble beach with fallen driftwood beside a blue lake.
+    alt: A pebble beach with fallen driftwood beside a blue lake.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/3MtiSMdnoCo
+    credit: Paul Jarvis / Unsplash
+  - id: sample-14
+    src: /images/photos/sample-14.webp
+    thumbnail: /images/photos/sample-14-small.webp
+    width: 1200
+    height: 800
+    title: Rock and water
+    caption: Weathered rocks along the edge of a calm grey sea.
+    alt: Weathered rocks along the edge of a calm grey sea.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/IQ1kOQTJrOQ
+    credit: Paul Jarvis / Unsplash
+  - id: sample-15
+    src: /images/photos/sample-15.webp
+    thumbnail: /images/photos/sample-15-small.webp
+    width: 1200
+    height: 800
+    title: Below the falls
+    caption: A tall waterfall descending into a rocky valley.
+    alt: A tall waterfall descending into a rocky valley.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/NYDo21ssGao
+    credit: Paul Jarvis / Unsplash
+  - id: sample-16
+    src: /images/photos/sample-16.webp
+    thumbnail: /images/photos/sample-16-small.webp
+    width: 1200
+    height: 800
+    title: Open water
+    caption: A driftwood-covered rocky shore beside a broad blue lake.
+    alt: A driftwood-covered rocky shore beside a broad blue lake.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/gkT4FfgHO5o
+    credit: Paul Jarvis / Unsplash
+  - id: sample-17
+    src: /images/photos/sample-17.webp
+    thumbnail: /images/photos/sample-17-small.webp
+    width: 1200
+    height: 800
+    title: The path ahead
+    caption: A narrow path through green grass and woodland.
+    alt: A narrow path through green grass and woodland.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/Ven2CV8IJ5A
+    credit: Paul Jarvis / Unsplash
+  - id: sample-18
+    src: /images/photos/sample-18.webp
+    thumbnail: /images/photos/sample-18-small.webp
+    width: 1200
+    height: 800
+    title: In the grass
+    caption: Sunlit blades of grass against a softly blurred forest.
+    alt: Sunlit blades of grass against a softly blurred forest.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/Ps2n0rShqaM
+    credit: Paul Jarvis / Unsplash
+  - id: sample-19
+    src: /images/photos/sample-19.webp
+    thumbnail: /images/photos/sample-19-small.webp
+    width: 1200
+    height: 800
+    title: Looking up
+    caption: Moss on a tree trunk viewed from below toward its canopy.
+    alt: Moss on a tree trunk viewed from below toward its canopy.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/P7Lh0usGcuk
+    credit: Paul Jarvis / Unsplash
+  - id: sample-28
+    src: /images/photos/sample-28.webp
+    thumbnail: /images/photos/sample-28-small.webp
+    width: 1200
+    height: 795
+    title: Through the woodland
+    caption: A rocky stream surrounded by dense green woodland.
+    alt: A rocky stream surrounded by dense green woodland.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/_WiFMBRT7Aw
+    credit: Jerry Adney / Unsplash
+  - id: sample-29
+    src: /images/photos/sample-29.webp
+    thumbnail: /images/photos/sample-29-small.webp
+    width: 1200
+    height: 801
+    title: High country
+    caption: A valley framed by steep snow-covered mountain ridges.
+    alt: A valley framed by steep snow-covered mountain ridges.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/V0yAek6BgGk
+    credit: Go Wild / Unsplash
+  - id: sample-35
+    src: /images/photos/sample-35.webp
+    thumbnail: /images/photos/sample-35-small.webp
+    width: 1200
+    height: 1576
+    title: Small details
+    caption: A golden seed head in close focus against a blurred background.
+    alt: A golden seed head in close focus against a blurred background.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/znM0ujn2RUA
+    credit: Shane Colella / Unsplash
+  - id: sample-37
+    src: /images/photos/sample-37.webp
+    thumbnail: /images/photos/sample-37-small.webp
+    width: 1200
+    height: 800
+    title: Along the coast
+    caption: A quiet coastal view framed by green trees and flowering shrubs.
+    alt: A quiet coastal view framed by green trees and flowering shrubs.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/erTjj730fMk
+    credit: Austin Neill / Unsplash
+  - id: sample-42
+    src: /images/photos/sample-42.webp
+    thumbnail: /images/photos/sample-42-small.webp
+    width: 1200
+    height: 800
+    title: Window seat
+    caption: A coffee cup on a long wooden table beside a cafe window.
+    alt: A coffee cup on a long wooden table beside a cafe window.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/KR2mdHJ5qMg
+    credit: Luke Chesser / Unsplash
+  - id: sample-49
+    src: /images/photos/sample-49.webp
+    thumbnail: /images/photos/sample-49-small.webp
+    width: 1200
+    height: 742
+    title: White rooftops
+    caption: White buildings and domed rooftops overlooking a pale blue sea.
+    alt: White buildings and domed rooftops overlooking a pale blue sea.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/Qo51KwK1dKg
+    credit: Margaret Barley / Unsplash
+  - id: sample-50
+    src: /images/photos/sample-50.webp
+    thumbnail: /images/photos/sample-50-small.webp
+    width: 1200
+    height: 800
+    title: At the harbour
+    caption: A seagull flying low over still water beside a moored boat.
+    alt: A seagull flying low over still water beside a moored boat.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/L7MpmBGpM94
+    credit: Tyler Wanlass / Unsplash
+  - id: sample-54
+    src: /images/photos/sample-54.webp
+    thumbnail: /images/photos/sample-54-small.webp
+    width: 1200
+    height: 800
+    title: Under a wide sky
+    caption: A rocky summit beneath a blue sky and scattered white clouds.
+    alt: A rocky summit beneath a blue sky and scattered white clouds.
+    collection: Sample photographs
+    sample: true
+    source: https://unsplash.com/photos/d19by2PLaPc
+    credit: Nicholas Swanson / Unsplash

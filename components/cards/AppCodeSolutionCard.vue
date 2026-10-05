@@ -1,53 +1,10 @@
 <script setup>
-  const props = defineProps({
-    problemTitle: String,
-    url: String,
-    tags: Array,
-    problemUrl: String,
-  });
-
-  const platform = computed(() => {
-    let urlHostname = new URL(props.problemUrl).hostname.split(".");
-    return urlHostname[urlHostname.length - 2].toLowerCase();
-  });
+const props = defineProps({ problemTitle: String, url: String, tags: Array, problemUrl: String });
+const platform = computed(() => { try { return new URL(props.problemUrl).hostname.replace(/^www\./, ''); } catch { return ''; } });
 </script>
-
-<!-- Coding Solution: Card -->
 <template>
-  <nuxt-link
-    class="relative flex items-center justify-start w-full px-4 py-2 transition-colors duration-150 focus-visible:global-focus card-style rounded-xl hover:bg-sky-50/25 dark:hover:bg-zinc-700/75"
-    :to="url"
-    :title="problemTitle"
-  >
-    <div
-      class="flex items-center justify-center flex-shrink-0 w-10 h-10 p-1 mr-2 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-900"
-    >
-      <nuxt-img
-        preload
-        placeholder
-        format="webp"
-        loading="lazy"
-        width="40"
-        height="40"
-        :src="`/icons/${platform}.png`"
-        :alt="`${platform}`"
-        :title="`${platform}`"
-        class="object-cover text-center rounded-full"
-      />
-    </div>
-    <div class="px-2 py-1">
-      <!-- Problem Title -->
-      <h3 class="mb-1 font-semibold">{{ problemTitle }}</h3>
-      <!-- Tags -->
-      <ul class="p-0 mb-1">
-        <li
-          class="px-3 py-[.125rem] inline-block rounded-full font-mono text-xs mr-1 border border-zinc-300 dark:border-zinc-600 bg-zinc-200 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-300"
-          v-for="tag in tags"
-          :key="tag"
-        >
-          {{ tag }}
-        </li>
-      </ul>
-    </div>
-  </nuxt-link>
+  <div class="solution-note"><div><h3><NuxtLink :to="url">{{ problemTitle }}</NuxtLink></h3><p v-if="tags?.length">{{ tags.join(' · ') }}</p><span v-if="platform" class="solution-platform">{{ platform }}</span></div><NuxtLink :to="url" class="solution-open" :aria-label="'Read solution: ' + problemTitle">Read ↗</NuxtLink></div>
 </template>
+<style scoped>
+.solution-note{display:flex;justify-content:space-between;align-items:center;gap:20px;width:100%;min-width:0}.solution-note h3{font-size:var(--paper-size,17px);line-height:1.4}.solution-note h3 a{color:var(--ink)}.solution-note p{font-size:.78rem;color:var(--muted);margin-top:6px}.solution-platform{display:block;font-size:.72rem;color:var(--muted);margin-top:5px}.solution-open{flex-shrink:0;font-size:.78rem;padding:8px 12px;border-radius:999px;background:var(--surface-alt)}@media(max-width:500px){.solution-note{align-items:flex-start;flex-direction:column;gap:10px}}
+</style>

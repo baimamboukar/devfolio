@@ -1,0 +1,26 @@
+Typography
+Tropikal by Gabriel Reyes. Copyright 2020 Gabriel Reyes.
+Free for personal and commercial use with attribution (font-embedded license).
+https://pixelsurplus.com/products/tropikal-free-font
+
+Creato Display by Anugrah Pasau / Lafontype. Copyright 2021 Anugrah Pasau.
+Licensed under the SIL Open Font License 1.1. Full license: /fonts/OFL-Creato.txt
+https://www.dafont.com/creato-display.font
+
+Photography
+Studio portrait: Baimam Boukar's existing portfolio collection.
+IBM Research presentation and Kenya hiking/outing photographs: Carnegie Mellon University Africa.
+https://www.africa.engineering.cmu.edu/news/2026/02/03-jacques.html
+
+Interface icons
+Heroicons (MIT) and Simple Icons (CC0), served locally.
+https://github.com/tailwindlabs/heroicons
+https://github.com/simple-icons/simple-icons
+
+JetBrains Mono by JetBrains, licensed under SIL OFL 1.1.
+Full license: /fonts/OFL-JetBrains.txt
+https://www.jetbrains.com/lp/mono/
+
+Bookshelf
+Book covers are original typographic treatments for this site, not reproductions of publisher artwork.
+Bibliographic and reading links point to Project Gutenberg, O'Reilly Media, and the authors' repositories.

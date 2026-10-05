@@ -1,46 +1,17 @@
 <script setup>
-  const pageMeta = {
-    title: "Page Not Found",
-    description: "This page doesn't exist.",
-  };
-
-  const serverMeta = {
-    ogImage: "/og-image.jpg",
-    twitterImage: "/og-image.jpg",
-    ogType: "website",
-    ogLocale: "en_US",
-    twitterCard: "summary",
-    twitterCreator: "@baimamboukar",
-  };
-
-  useSeoMeta({
-    title: () => pageMeta.title,
-    description: () => pageMeta.description,
-    ogTitle: () => pageMeta.title,
-    twitterTitle: () => pageMeta.title,
-    ogDescription: () => pageMeta.description,
-    twitterDescription: () => pageMeta.description,
-    ...serverMeta,
-  });
+import '~/assets/css/fonts.css';
+import '~/assets/css/research-design.css';
+const props=defineProps({error:Object});
+const missing=computed(()=>props.error?.statusCode===404);
+useHead({title:()=>`${missing.value?'Page not found':'Unable to open page'} · Baimam Boukar`,htmlAttrs:{'data-preview-design':'research'}});
 </script>
-
-<template>
-  <!-- Sidebar -->
-  <app-side-bar />
-
-  <!-- Main Content -->
-  <main id="main-content" class="main-error">
-    <app-not-found />
-  </main>
-
-  <!-- Mobile Navigation -->
-  <app-nav
-    class="flex ring-1 ring-inset ring-blue-500 md:hidden after:shadow-2xl"
-  />
-</template>
-
+<template><div class="site-shell"><AppHeader /><main id="main-content" class="error-page" tabindex="-1"><section><span class="error-code">{{ error?.statusCode||500 }}</span><h1>{{ missing?"This page isn't here.":'This page could not load.' }}</h1><p>{{ missing?'The address may have changed. Research and projects are available from the navigation.':'Try returning home, then open the page again.' }}</p><div class="error-actions"><button type="button" @click="clearError({redirect:'/'})">Return home</button><a href="/research">Research index ↗</a></div></section><AppFooter /></main></div><ClientOnly><LazyTweakPanel /></ClientOnly></template>
 <style scoped>
-  #main-content.main-error {
-    @apply h-full flex flex-col items-center justify-center;
-  }
+.error-page > section { padding:var(--section-gap) 0; min-height:40vh; }
+.error-code { font-size:.8rem; color:var(--muted); }
+h1 { margin:12px 0; }
+p { max-width:60ch; color:var(--muted); }
+.error-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px; margin-top:24px; font-size:.85rem; }
+.error-actions button { padding:8px 15px; min-height:42px; border:0; border-radius:var(--corner-radius); color:white; background:rgb(var(--primary-600)); }
+.error-actions a { color:var(--link-color); }
 </style>

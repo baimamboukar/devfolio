@@ -1,234 +1,102 @@
 <script setup>
-// Static page meta
-definePageMeta({
-  title: "Baimam Boukar Jean Jacques",
-  description: "AI Safety Researcher working on mechanistic interpretability and AI alignment. Research Assistant at Jinesis AI Lab, University of Toronto. Carnegie Mellon University alum.",
-});
+import { slugify } from '~/utils/slugify';
+import StudySketch from '~/components/StudySketch.vue';
+import ProfileSocialLinks from '~/components/ProfileSocialLinks.vue';
+definePageMeta({ title: 'Baimam Boukar', description: 'Mechanistic interpretability and AI safety research by Baimam Boukar.' });
+const [{ content }, { data: papers }] = await Promise.all([
+  useHomepageContent(),
+  useAsyncData('home-study-workspace', async () => {
+    const doc=await queryContent('research').findOne();
+    return (doc?.research||[]).filter(paper=>paper.featured).slice(0,2).map(({title,status,links,authors})=>({title,status,links,authors,slug:slugify(title)}));
+  }),
 
-// Load centralized configuration
-const { config: siteConfig } = await useSiteConfig();
-const { content: homepageContent } = await useHomepageContent();
-const { getMessage } = await useUIMessages();
-
-// Dynamic head configuration (SEO)
-useHead({
-  titleTemplate: siteConfig?.seo.title_template || "Baimam Boukar JJ",
-  title: siteConfig?.personal.name || "Baimam Boukar Jean Jacques",
-  meta: [
-    {
-      name: 'description',
-      content: 'AI Safety Researcher working on mechanistic interpretability and AI alignment. Research Assistant at Jinesis AI Lab, University of Toronto. Carnegie Mellon University alum.'
-    }
-  ]
-});
-
-const route = useRoute();
-
-useSeoMeta({
-  ogTitle: () => siteConfig?.personal.name || route.meta.title,
-  twitterTitle: () => siteConfig?.personal.name || route.meta.title,
-  ogDescription: () => siteConfig?.personal.tagline,
-  twitterDescription: () => siteConfig?.personal.tagline,
-  twitterCreator: () => siteConfig?.seo.twitter_creator,
-});
-
-// Fetch featured projects (limit 5)
-const { data: featuredProjects } = await useLazyAsyncData(
-  "homex-projects",
-  () => queryContent("/projects")
-    .where({ title: { $ne: "More" }, featured: true })
-    .limit(5)
-    .find()
-);
-
-// Fetch featured research (limit 3)
-const { data: featuredResearchData } = await useLazyAsyncData(
-  "homex-research",
-  () => queryContent("/research").findOne()
-);
-const featuredResearch = computed(() => {
-  return featuredResearchData.value?.research?.filter(r => r.featured).slice(0, 3) || [];
-});
-
-// Abbreviate co-author names for the citation-style publication list
-const coAuthors = (paper) =>
-  (paper.contributors || [])
-    .map((c) => {
-      const parts = c.name.trim().split(/\s+/);
-      return parts.length > 1 ? `${parts[0][0]}. ${parts.slice(1).join(' ')}` : parts[0];
-    })
-    .join(', ');
-
-// Debug function for development
+]);
+const selected=ref(0);
+const current=computed(()=>papers.value?.[selected.value]);
+const tabs=[{label:'Generalization',question:'When does a probe generalize?',kind:'refit'},{label:'Interventions',question:'Can a probe guide an intervention?',kind:'selection'}];
+const changeTab=(event,index)=>{
+  let next=index;
+  if(event.key==='ArrowRight') next=(index+1)%tabs.length;
+  else if(event.key==='ArrowLeft') next=(index+tabs.length-1)%tabs.length;
+  else if(event.key==='Home') next=0;
+  else if(event.key==='End') next=tabs.length-1;
+  else return;
+  event.preventDefault(); selected.value=next;
+  nextTick(()=>document.getElementById(`study-tab-${next}`)?.focus());
+};
+const summaryFor=slug=>content?.selected_research?.find(item=>item.slug===slug)?.summary||'';
+const introduction=computed(()=>[content?.hero.introduction,content?.hero.research_summary].filter(Boolean).join(' '));
+useHead({ title:'Baimam Boukar',titleTemplate:'%s' });
+useSeoMeta({description:()=>introduction.value,ogTitle:'Baimam Boukar',ogDescription:()=>introduction.value});
 </script>
-
 <template>
-  <div class="space-y-16 py-8">
-    
-    <!-- 1. Hero Section: 2-Column Layout -->
-    <section class="max-w-5xl mx-auto px-4">
-      <div class="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
-        
-        <!-- Text Column (Left) -->
-        <div class="flex-1 space-y-6 text-center md:text-left">
-          <div>
-            <h1 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
-              {{ homepageContent?.hero.greeting || "Hi, I'm Baimam Boukar" }}
-              <span class="inline-block ml-1 origin-[70%_70%] animate-[10s_ease_2s_infinite_wave] hover:animate-[1.5s_ease_hoverwave]">{{ homepageContent?.hero.emoji || "👋" }}</span>
-            </h1>
-          </div>
-
-          <p class="hero-intro text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl mx-auto md:mx-0 text-justify">
-            {{ homepageContent?.hero.introduction }}
-          </p>
+  <div class="home-page">
+    <section class="research-introduction" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <h1 id="intro-title">{{ content?.hero.name }}</h1>
+        <p class="intro-discipline">{{ content?.hero.discipline }}</p>
+        <p class="intro-summary">{{ introduction }}</p>
+        <div class="intro-context">
+          <div class="profile-links"><ProfileSocialLinks /></div>
+          <NuxtLink to="/about?section=experience" class="lab-affiliation" prefetch-on="interaction">
+            <img src="/images/jinesis-lab.webp" alt="Jinesis AI Lab logo" width="30" height="30" decoding="async" />
+            <span>Research Assistant · Jinesis AI Lab, University of Toronto</span>
+          </NuxtLink>
         </div>
-
-        <!-- Image Column (Right) -->
-        <div class="flex-shrink-0 w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 relative">
-          <img
-            :src="siteConfig?.personal.photo || '/self.jpg'"
-            alt="Profile"
-            class="w-full h-full object-cover rounded-2xl shadow-xl rotate-3 hover:rotate-0 transition-transform duration-500"
-          />
-          <!-- Decorative element behind -->
-          <div class="absolute inset-0 bg-sky-100 dark:bg-sky-900/30 rounded-2xl -z-10 -rotate-6 scale-95"></div>
-        </div>
-
+      </div>
+      <figure class="intro-portrait"><img src="/images/baimam-portrait-320.webp" srcset="/images/baimam-portrait-320.webp 320w, /images/baimam-portrait-640.webp 640w" sizes="(max-width: 760px) 96px, 176px" width="320" height="368" alt="Baimam Boukar" fetchpriority="high" decoding="async" /></figure>
+    </section>
+    <NewsTicker class="recent-updates" />
+    <section v-if="current" class="research-workspace" aria-labelledby="current-heading">
+      <div class="home-section-heading"><h2 id="current-heading">Research In Progress</h2></div>
+      <div class="study-tabs" role="tablist" aria-label="Current research topics"><button v-for="(tab,index) in tabs" :id="`study-tab-${index}`" :key="tab.kind" type="button" role="tab" :aria-selected="selected===index" :tabindex="selected===index?0:-1" aria-controls="current-study-panel" @click="selected=index" @keydown="changeTab($event,index)">{{ tab.label }}</button></div>
+      <div id="current-study-panel" class="study-workspace" role="tabpanel" :aria-labelledby="`study-tab-${selected}`" tabindex="0">
+        <div class="study-question"><h3>{{ tabs[selected].question }}</h3><p class="research-summary">{{ summaryFor(current.slug) }}</p><div class="study-actions"><NuxtLink :to="'/research/'+current.slug" class="read-study" prefetch-on="interaction">Read study</NuxtLink></div></div>
+        <StudySketch :kind="tabs[selected].kind" />
       </div>
     </section>
-
-    <AppDivider />
-
-    <section class="max-w-5xl mx-auto px-4 mb-2">
-      <!-- Latest Update Ticker -->
-      <NewsTicker />
-    </section>
-
-    <AppDivider />
-
-    <!-- 2. Research Interests -->
-    <ResearchInterests />
-
-    <AppDivider />
-
-    <!-- 3. Selected Work: Split Columns with Vertical Divider -->
-    <section>
-      <div class="flex items-center justify-between mb-8">
-        <h2 class="text-2xl font-bold">Selected Work</h2>
-        <UButton to="/research" variant="ghost" color="gray">View All <span aria-hidden="true">&rarr;</span></UButton>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
-        
-        <!-- Projects Column -->
-        <div class="space-y-6">
-          <h3 class="text-sm font-bold capitalize tracking-wider text-sky-600 dark:text-sky-400">
-             Featured Projects
-          </h3>
-          <div class="grid grid-cols-1 gap-4">
-            <div v-for="project in featuredProjects" :key="project.title">
-              <AppProjectCard
-                :project-title="project.title"
-                :project-description="project.description"
-                :icon="project.icon"
-                :project-url="project._path"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Vertical Divider (Visible on LG screens) -->
-        <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 dark:via-zinc-700 to-transparent"></div>
-
-        <!-- Publications Column (citation style) -->
-        <div class="space-y-6 lg:pl-8">
-          <h3 class="text-sm font-bold capitalize tracking-wider text-sky-600 dark:text-sky-400">
-             Selected Publications
-          </h3>
-          <div class="divide-y divide-gray-100 dark:divide-zinc-800">
-            <NuxtLink
-              v-for="paper in featuredResearch"
-              :key="paper.title"
-              :to="'/research/' + slugify(paper.title)"
-              class="block group py-4 first:pt-0"
-            >
-              <h4 class="font-semibold text-base leading-snug mb-1.5 group-hover:text-sky-600 transition-colors">
-                {{ paper.title }}
-              </h4>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mb-1.5">
-                <span class="font-medium text-gray-800 dark:text-gray-200">Baimam Boukar</span><span v-if="coAuthors(paper)" class="text-gray-500 dark:text-gray-400"> · with {{ coAuthors(paper) }}</span>
-              </p>
-              <p class="text-xs text-gray-500 dark:text-gray-500">
-                <span class="italic">{{ paper.venue }}</span>
-                <span class="mx-1.5 text-gray-300 dark:text-zinc-700">•</span>
-                <span class="text-sky-600 dark:text-sky-400 font-medium">{{ paper.status }}</span>
-              </p>
-            </NuxtLink>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <AppFooter />
   </div>
 </template>
-
 <style scoped>
-  #wave {
-    @apply inline-block ml-1 origin-[70%_70%] animate-[10s_ease_2s_infinite_wave] hover:animate-[1.5s_ease_hoverwave];
-  }
-
-  @keyframes wave {
-    0% {
-      transform: rotate(0deg);
-    }
-    2.5%,
-    7.5% {
-      transform: rotate(14deg);
-    }
-    5% {
-      transform: rotate(-8deg);
-    }
-    10% {
-      transform: rotate(-4deg);
-    }
-    12.5% {
-      transform: rotate(10deg);
-    }
-    15% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-
-  @keyframes hoverwave {
-    0% {
-      transform: rotate(0deg);
-    }
-    10% {
-      transform: rotate(14deg);
-    }
-    20% {
-      transform: rotate(-8deg);
-    }
-    30% {
-      transform: rotate(14deg);
-    }
-    40% {
-      transform: rotate(-4deg);
-    }
-    50% {
-      transform: rotate(10deg);
-    }
-    60% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
+.home-page { display:grid; gap:var(--section-gap); }
+.research-introduction { display:grid; grid-template-columns:minmax(0,1fr) var(--portrait-size); gap:38px; align-items:start; }
+.intro-copy { min-width:0; }
+h1 { margin:0; font-size:var(--name-size); font-weight:var(--heading-weight); line-height:1.18; letter-spacing:-.035em; }
+.intro-discipline { margin-top:7px; font-size:1.25rem; line-height:1.4; color:var(--muted); }
+.intro-summary { margin-top:16px; max-width:64ch; font-family:var(--font-body); font-size:1rem; line-height:var(--content-leading); text-wrap:pretty; }
+.intro-portrait { margin:0; overflow:hidden; aspect-ratio:20/23; border-radius:var(--corner-radius); background:var(--surface-alt); }
+.intro-portrait img { display:block; width:100%; height:100%; object-fit:contain; }
+.intro-context { display:flex; flex-direction:column; align-items:flex-start; gap:8px; margin-top:12px; }
+.lab-affiliation { display:flex; align-items:center; gap:10px; font-size:.875rem; line-height:1.5; color:var(--muted); }
+.lab-affiliation img { width:30px; height:30px; border-radius:50%; object-fit:cover; flex:none; }
+.profile-links { display:flex; align-items:center; flex-wrap:wrap; gap:10px 18px; width:100%; font-size:.875rem; font-weight:500; }
+.home-section-heading { margin-bottom:10px; }
+.home-section-heading h2 { font-size:var(--section-size); line-height:1.35; font-weight:var(--heading-weight); letter-spacing:-.025em; }
+.study-tabs { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:12px; }
+.study-tabs button { min-height:36px; padding:7px 27px; border-radius:999px; background:var(--surface-alt); color:var(--ink); font-size:.875rem; line-height:1.4; }
+.study-tabs button[aria-selected='true'] { background:rgb(var(--primary-500)); color:white; box-shadow:0 3px 8px rgb(var(--primary-500) / .08); }
+.study-workspace { display:grid; grid-template-columns:minmax(0,.43fr) minmax(0,.57fr); gap:26px; align-items:stretch; padding:16px 20px; background:var(--study-surface); border-radius:var(--corner-radius); }
+.study-question { display:flex; flex-direction:column; align-items:flex-start; min-width:0; }
+.study-question h3 { font-size:var(--section-size); line-height:1.3; margin-top:0; font-weight:var(--heading-weight); letter-spacing:-.035em; }
+.research-summary { margin:8px 0 18px; font-size:1rem; line-height:1.5; color:var(--muted); }
+.study-actions { margin-top:auto; padding-top:9px; display:flex; flex-wrap:wrap; gap:9px 13px; font-size:.875rem; }
+.study-actions a { min-height:38px; padding:7px 16px; border:1px solid var(--line); display:inline-flex; gap:13px; align-items:center; border-radius:var(--corner-radius); color:var(--ink); background:color-mix(in srgb,var(--surface-alt) 80%,var(--surface)); }
+.study-actions .site-icon { width:17px; height:17px; }
+.study-actions .read-study { background:rgb(var(--primary-500)); border-color:transparent; border-radius:999px; color:white; }
+.study-actions .read-study:hover { background:rgb(var(--primary-600)); }
+.study-workspace :deep(.study-sketch) { background:transparent; border-left:1px solid var(--line); border-radius:0; padding:0 0 0 26px; }
+.study-workspace :deep(.sketch-label) { margin-bottom:8px; }
+.study-workspace :deep(.method-note) { display:none; }
+@media(max-width:1100px) { .intro-context { gap:8px 20px; } .research-introduction { gap:24px; } .study-workspace { gap:18px; padding:18px; } .study-workspace :deep(.study-sketch) { padding-left:18px; } }
+@media(max-width:900px) { .study-workspace { grid-template-columns:1fr; } .study-workspace :deep(.study-sketch) { padding:18px 0 0; border-left:0; border-top:1px solid var(--line); } }
+@media(max-width:760px) {
+  .research-introduction { grid-template-columns:minmax(0,1fr) calc(var(--portrait-size) * .55); gap:12px; }
+  .intro-copy { display:contents; } h1 { grid-column:1; grid-row:1; align-self:center; font-size:min(var(--name-size),30px); }
+  .intro-portrait { grid-column:2; grid-row:1; align-self:center; }
+  .intro-discipline,.intro-summary,.intro-context { grid-column:1/-1; margin-top:0; }
+  .intro-discipline { font-size:1.0625rem; }
+  .study-tabs button,.study-actions a { min-height:44px; }
+  .study-tabs { gap:8px; } .study-tabs button { padding-inline:18px; }
+}
+@media(max-width:400px) { .study-workspace { padding:14px; } h1 { font-size:min(var(--name-size),26px); } .research-introduction { grid-template-columns:minmax(0,1fr) 64px; } .study-tabs button { padding-inline:11px; font-size:.8rem; } .lab-affiliation { align-items:flex-start; font-size:.8rem; } .study-question h3 { font-size:21px; } }
 </style>

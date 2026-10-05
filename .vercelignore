@@ -1,0 +1,6 @@
+# Local review material must never enter a deployment upload.
+.private/
+docs/
+tests/
+drafts/
+.env*
