@@ -1,5 +1,3 @@
-import tailwindTypography from '@tailwindcss/typography'
-
 // Local previews do not need the production analytics worker/iframe bridge.
 const enableAnalytics = process.env.NODE_ENV === 'production'
 
@@ -85,8 +83,6 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-  extends: ['@nuxt/ui-pro'],
-
   modules: [
     '@nuxt/ui',
     '@nuxt/content',
@@ -103,6 +99,10 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
+    // These pages preserve search and view queries when redirecting to Work.
+    '/research': { prerender: false },
+    '/projects': { prerender: false },
+    '/projects/more': { prerender: false },
     '/research/phoenix-safe-end-to-end-codebase-refactoring-via-multi-agent-llms': {
       redirect: { to: '/research/phoenix-safe-github-issue-resolution-via-multi-agent-llms', statusCode: 301 },
     },

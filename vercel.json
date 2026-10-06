@@ -1,4 +1,6 @@
 {
+  "framework": "nuxtjs",
+  "buildCommand": "pnpm build",
   "headers": [
     {
       "source": "/(.*)",
