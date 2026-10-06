@@ -2,9 +2,9 @@ hero:
   name: Baimam Boukar
   discipline: Understanding and Steering Language Models
   introduction: >-
-    I’m interested in what we can learn from the inner workings of language models—and what that understanding lets us do.
-  research_summary: >-
-    My research tests whether interpretability methods generalize across models and tasks, and whether the signals they find can guide reliable interventions.
+    I am interested in what we can learn from language models internals, and what that understanding lets us do.
+    My current focus is the generalizability of interpretability methods across models, tasks and distribution shifts,
+    and their implications for reliable interventions.
   current_work: >-
     At Jinesis AI Lab, I work on reproducing activation-probing studies and evaluating their generalization across
     models, independently refitting probes for each target model.

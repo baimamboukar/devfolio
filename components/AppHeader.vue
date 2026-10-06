@@ -1,8 +1,9 @@
 <script setup>
+import { SITE_SETTINGS, navigationSettings } from '~/utils/siteSettings';
 const route = useRoute();
 const expanded = useState('preview-mobile-nav-expanded', () => false);
 const preferences = useState('site-navigation-preferences', () => ({}));
-const defaults = { position: 'sticky', align: 'center', indicator: 'pill', density: 'compact', brand: 'home' };
+const defaults = navigationSettings(SITE_SETTINGS);
 const settings = computed(() => ({ ...defaults, ...preferences.value }));
 const header = ref(null);
 const menuButton = ref(null);

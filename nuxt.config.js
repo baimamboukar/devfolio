@@ -1,3 +1,5 @@
+import { SITE_SETTINGS, resolvedColorMode } from './utils/siteSettings.js'
+
 // Local previews do not need the production analytics worker/iframe bridge.
 const enableAnalytics = process.env.NODE_ENV === 'production'
 
@@ -76,7 +78,7 @@ export default defineNuxtConfig({
 
   colorMode: {
     disableTransition: false,
-    preference: 'light',
+    preference: resolvedColorMode(SITE_SETTINGS.theme),
   },
 
   future: {
