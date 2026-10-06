@@ -1,6 +1,12 @@
-# Local review material must never enter a deployment upload.
+# Local review material and agent folders must never enter a deployment upload.
 .private/
+.agents/
+.codex/
+.claude/
 docs/
 tests/
 drafts/
 .env*
+# Local build output; Vercel rebuilds remotely.
+.nuxt/
+.output/
